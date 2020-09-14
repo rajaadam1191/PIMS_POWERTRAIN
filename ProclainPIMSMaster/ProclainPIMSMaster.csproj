@@ -1,0 +1,904 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E88D0D0E-51B2-4335-A6B4-8CF859EC260E}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ProclainPIMSMaster</RootNamespace>
+    <AssemblyName>ProclainPIMSMaster</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.1.0, Culture=neutral, PublicKeyToken=0e99375e54769942, processorArchitecture=MSIL">
+      <HintPath>..\packages\Portable.BouncyCastle.1.8.1.3\lib\net40\BouncyCastle.Crypto.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ClosedXML, Version=0.95.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ClosedXML.0.95.3\lib\net46\ClosedXML.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Common.Logging, Version=3.4.1.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Common.Logging.3.4.1\lib\net40\Common.Logging.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Common.Logging.Core, Version=3.4.1.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Common.Logging.Core.3.4.1\lib\net40\Common.Logging.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DocumentFormat.OpenXml, Version=2.7.2.0, Culture=neutral, PublicKeyToken=8fb06cb64d019a17, processorArchitecture=MSIL">
+      <HintPath>..\packages\DocumentFormat.OpenXml.2.7.2\lib\net46\DocumentFormat.OpenXml.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ExcelNumberFormat, Version=1.0.10.0, Culture=neutral, PublicKeyToken=23c6f5d73be07eca, processorArchitecture=MSIL">
+      <HintPath>..\packages\ExcelNumberFormat.1.0.10\lib\net20\ExcelNumberFormat.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="itext.barcodes, Version=7.1.9.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext7.7.1.9\lib\net40\itext.barcodes.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="itext.forms, Version=7.1.9.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext7.7.1.9\lib\net40\itext.forms.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="itext.io, Version=7.1.9.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext7.7.1.9\lib\net40\itext.io.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="itext.kernel, Version=7.1.9.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext7.7.1.9\lib\net40\itext.kernel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="itext.layout, Version=7.1.9.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext7.7.1.9\lib\net40\itext.layout.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="itext.pdfa, Version=7.1.9.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext7.7.1.9\lib\net40\itext.pdfa.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="itext.sign, Version=7.1.9.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext7.7.1.9\lib\net40\itext.sign.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="itext.styledxmlparser, Version=7.1.9.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext7.7.1.9\lib\net40\itext.styledxmlparser.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="itext.svg, Version=7.1.9.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext7.7.1.9\lib\net40\itext.svg.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.13.1, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.13.1\lib\itextsharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Agent.Intercept, Version=1.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.1.2.1\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.0.0\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.0.0\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.0.0\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.0.0\lib\net45\Microsoft.AI.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.0.0\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.0.0\lib\net46\Microsoft.ApplicationInsights.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\..\..\raja\10-03-2020\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.FileSystem.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.FileSystem.Primitives.4.0.1\lib\net46\System.IO.FileSystem.Primitives.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO.Packaging, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.Packaging.4.0.0\lib\net46\System.IO.Packaging.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AdminMaster.Master" />
+    <Content Include="Form\BeneficiaryApproval.aspx" />
+    <Content Include="Form\Beneficiaryapprovalbulkprocess.aspx" />
+    <Content Include="Form\BeneficiaryApprovalMainDashboard.aspx" />
+    <Content Include="Form\BeneficiaryDashboard.aspx" />
+    <Content Include="Form\BeneficiaryMainDashboard.aspx" />
+    <Content Include="Form\DBMDashboard.aspx" />
+    <Content Include="Form\DBMRankInsert.aspx" />
+    <Content Include="Form\DBMSent.aspx" />
+    <Content Include="Form\DBM_Employee_Suggestion.aspx" />
+    <Content Include="Form\DBM_HR_Module.aspx" />
+    <Content Include="Form\DeptWiseRecord.aspx" />
+    <Content Include="Form\EmployeeDisable.aspx" />
+    <Content Include="Form\EmployeeTask.aspx" />
+    <Content Include="Form\AdminDashboard.aspx" />
+    <Content Include="Form\AdminSend.aspx" />
+    <Content Include="Form\CommiteeEvalSend.aspx" />
+    <Content Include="Form\CommitteeEvalDashboard.aspx" />
+    <Content Include="Form\Default.aspx" />
+    <Content Include="Form\Deptdashboardlink.aspx" />
+    <Content Include="Form\EmployeeAdd.aspx" />
+    <Content Include="Form\Employee_Full_Suggestion.aspx" />
+    <Content Include="Form\FinanceDashboard.aspx" />
+    <Content Include="Form\FinanceDetails.aspx" />
+    <Content Include="Form\FinanceExcel.aspx" />
+    <Content Include="Form\FinanceImplDashboard.aspx" />
+    <Content Include="Form\FinanceMainDashboard.aspx" />
+    <Content Include="Form\HODMainDashboard.aspx" />
+    <Content Include="Form\HOSAdd.aspx" />
+    <Content Include="Form\HOSDashboard.aspx" />
+    <Content Include="Form\HOSMainDashboard.aspx" />
+    <Content Include="Form\HR_Module.aspx" />
+    <Content Include="Form\MailDashboard.aspx" />
+    <Content Include="Form\Main.aspx" />
+    <Content Include="Form\CommitteeEvaluvation.aspx" />
+    <Content Include="Form\MainDashBoard.aspx" />
+    <Content Include="Form\New_Suggestion.aspx" />
+    <Content Include="Form\Login.aspx" />
+    <Content Include="Form\RolesWiseDaysRecord.aspx" />
+    <Content Include="Form\SignUp.aspx" />
+    <Content Include="Form\Suggestions_Status.aspx" />
+    <Content Include="Form\TeamDetail.aspx" />
+    <Content Include="Form\HODAdd.aspx" />
+    <Content Include="Form\ManagerList.aspx" />
+    <Content Include="Form\ManagerMail.aspx" />
+    <Content Include="Form\HOS.aspx" />
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="UI\assets\static\images\71oQvWs_.jpg" />
+    <Content Include="UI\assets\static\images\Icons\1.png" />
+    <Content Include="UI\assets\static\images\Icons\2.png" />
+    <Content Include="UI\assets\static\images\Icons\3-Copy.jpg" />
+    <Content Include="UI\assets\static\images\Icons\3.jpg" />
+    <Content Include="UI\assets\static\images\Icons\31.jpg" />
+    <Content Include="UI\assets\static\images\Icons\Add.jpg" />
+    <Content Include="UI\assets\static\images\Icons\Add1.jpg" />
+    <Content Include="UI\assets\static\images\download.jpg" />
+    <Content Include="UI\assets\static\images\Icons\download.png" />
+    <Content Include="UI\assets\static\images\Icons\Excel.png" />
+    <Content Include="UI\assets\static\images\Icons\Excel1.png" />
+    <Content Include="UI\assets\static\images\Icons\Excel2.jpg" />
+    <Content Include="UI\assets\static\images\Icons\folder_saved_search.ico" />
+    <Content Include="UI\assets\static\images\Icons\images.jpg" />
+    <Content Include="UI\assets\static\images\Icons\Pdf.ico" />
+    <Content Include="UI\assets\static\images\Icons\Print.ico" />
+    <Content Include="UI\assets\static\images\Icons\search.ico" />
+    <Content Include="UI\assets\static\images\Log1.jpg" />
+    <Content Include="UI\assets\static\images\o_Log.jpg" />
+    <Content Include="UI\assets\static\images\Login.jpg" />
+    <Content Include="UI\assets\static\images\logo1.png" />
+    <Content Include="UI\assets\static\images\PIMSlogo.png" />
+    <Content Include="UI\assets\static\images\Spin-1s-200px.gif" />
+    <Content Include="UI\assets\static\images\Spin2-1s-200px.gif" />
+    <Content Include="UI\BootStrapModel\main.8e72934e8341bd73118b.js" />
+    <Content Include="UI\BootStrapModel\polyfills.46532d96d3286697c138.js" />
+    <Content Include="UI\BootStrapModel\runtime.a5dd35324ddfd942bef1.js" />
+    <Content Include="UI\BootStrapModel\scripts.1557666c84f6d7fee38f.js" />
+    <Content Include="UI\BootStrapModel\styles.7433824a9cbda6a70303.css" />
+    <Content Include="UI\DataTable\DataTableScripts\Ajax\jszip.min.js" />
+    <Content Include="UI\DataTable\DataTableScripts\Ajax\pdfmake.min.js" />
+    <Content Include="UI\DataTable\DataTableScripts\Ajax\vfs_fonts.js" />
+    <Content Include="UI\DataTable\DataTableScripts\Button\buttons.flash.min.js" />
+    <Content Include="UI\DataTable\DataTableScripts\Button\buttons.html5.min.js" />
+    <Content Include="UI\DataTable\DataTableScripts\Button\buttons.print.min.js" />
+    <Content Include="UI\DataTable\DataTableScripts\Button\dataTables.buttons.min.js" />
+    <Content Include="UI\DataTable\DataTableScripts\JS\jquery.dataTables.min.js" />
+    <Content Include="UI\DataTable\jquery-1.8.2.min.js" />
+    <Content Include="UI\DataTable\jquery.dataTables.min.css" />
+    <Content Include="UI\DataTable\jquery.dataTables.min.js" />
+    <Content Include="UI\Font\a1ecc3b826d01251edddf29c3e4e1e97.woff" />
+    <Content Include="UI\Font\af7ae505a9eed503f8b8e6982036873e.woff2" />
+    <Content Include="UI\Font\KFOlCnqEu92Fr1MmEU9fBBc4.woff2" />
+    <Content Include="UI\Font\KFOlCnqEu92Fr1MmWUlfBBc4.woff2" />
+    <Content Include="UI\Font\KFOmCnqEu92Fr1Mu4mxK.woff2" />
+    <Content Include="MasterPage.Master" />
+    <Content Include="UI\GridViewDesign\css\main.css" />
+    <Content Include="UI\GridViewDesign\css\util.css" />
+    <Content Include="UI\GridViewDesign\fonts\font-awesome-4.7.0\Css\font-awesome.css" />
+    <Content Include="UI\GridViewDesign\fonts\font-awesome-4.7.0\Css\font-awesome.min.css" />
+    <Content Include="UI\GridViewDesign\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.svg" />
+    <Content Include="UI\GridViewDesign\fonts\Montserrat\OFL.txt" />
+    <Content Include="UI\GridViewDesign\images\Icons\favicon.ico" />
+    <Content Include="UI\GridViewDesign\js\main.js" />
+    <Content Include="UI\GridViewDesign\vendor\animate\animate.css" />
+    <Content Include="UI\GridViewDesign\vendor\bootstrap\Css\bootstrap-grid.css" />
+    <Content Include="UI\GridViewDesign\vendor\bootstrap\Css\bootstrap-grid.min.css" />
+    <Content Include="UI\GridViewDesign\vendor\bootstrap\Css\bootstrap-reboot.css" />
+    <Content Include="UI\GridViewDesign\vendor\bootstrap\Css\bootstrap-reboot.min.css" />
+    <Content Include="UI\GridViewDesign\vendor\bootstrap\Css\bootstrap.css" />
+    <Content Include="UI\GridViewDesign\vendor\bootstrap\Css\bootstrap.min.css" />
+    <Content Include="UI\GridViewDesign\vendor\bootstrap\JS\bootstrap.js" />
+    <Content Include="UI\GridViewDesign\vendor\bootstrap\JS\bootstrap.min.js" />
+    <Content Include="UI\GridViewDesign\vendor\bootstrap\JS\popper.js" />
+    <Content Include="UI\GridViewDesign\vendor\bootstrap\JS\popper.min.js" />
+    <Content Include="UI\GridViewDesign\vendor\bootstrap\JS\tooltip.js" />
+    <Content Include="UI\GridViewDesign\vendor\jquery\jquery-3.2.1.min.js" />
+    <Content Include="UI\GridViewDesign\vendor\perfect-scrollbar\perfect-scrollbar.css" />
+    <Content Include="UI\GridViewDesign\vendor\perfect-scrollbar\perfect-scrollbar.min.js" />
+    <Content Include="UI\GridViewDesign\vendor\select2\select2.css" />
+    <Content Include="UI\GridViewDesign\vendor\select2\select2.js" />
+    <Content Include="UI\GridViewDesign\vendor\select2\select2.min.css" />
+    <Content Include="UI\GridViewDesign\vendor\select2\select2.min.js" />
+    <Content Include="UI\Script\jquery-ui.js" />
+    <Content Include="UI\Script\jquery.filtertable.min.js" />
+    <Content Include="UI\Script\sweetalert2%409.js" />
+    <Content Include="UI\Style\bootstrap.min.css" />
+    <Content Include="UI\Style\bootstrap.min.js" />
+    <Content Include="UI\Style\canvasjs.min.js" />
+    <Content Include="UI\Style\Chart.min.css" />
+    <Content Include="UI\Style\Chart.min.js" />
+    <Content Include="UI\Style\jquery.dataTables.min.css" />
+    <Content Include="UI\Style\jqueryui.css" />
+    <Content Include="UI\Style\popper.min.js" />
+    <Content Include="UI\Style\sweetalert.min.js" />
+    <Content Include="UI\Style\sweetalert2.min.css" />
+    <Content Include="UI\webfonts\fa-brands-400.eot" />
+    <Content Include="UI\webfonts\fa-brands-400.ttf" />
+    <Content Include="UI\webfonts\fa-brands-400.woff" />
+    <Content Include="UI\webfonts\fa-brands-400.woff2" />
+    <Content Include="UI\webfonts\fa-regular-400.eot" />
+    <Content Include="UI\webfonts\fa-regular-400.ttf" />
+    <Content Include="UI\webfonts\fa-regular-400.woff" />
+    <Content Include="UI\webfonts\fa-regular-400.woff2" />
+    <Content Include="UI\webfonts\fa-solid-900.eot" />
+    <Content Include="UI\webfonts\fa-solid-900.ttf" />
+    <Content Include="UI\webfonts\fa-solid-900.woff" />
+    <Content Include="UI\webfonts\fa-solid-900.woff2" />
+    <Content Include="UI\GridViewDesign\fonts\OpenSans\OpenSans-Bold.ttf" />
+    <Content Include="UI\GridViewDesign\fonts\OpenSans\OpenSans-BoldItalic.ttf" />
+    <Content Include="UI\GridViewDesign\fonts\OpenSans\OpenSans-ExtraBold.ttf" />
+    <Content Include="UI\GridViewDesign\fonts\OpenSans\OpenSans-ExtraBoldItalic.ttf" />
+    <Content Include="UI\GridViewDesign\fonts\OpenSans\OpenSans-Italic.ttf" />
+    <Content Include="UI\GridViewDesign\fonts\OpenSans\OpenSans-Light.ttf" />
+    <Content Include="UI\GridViewDesign\fonts\OpenSans\OpenSans-LightItalic.ttf" />
+    <Content Include="UI\GridViewDesign\fonts\OpenSans\OpenSans-Regular.otf" />
+    <Content Include="UI\GridViewDesign\fonts\OpenSans\OpenSans-Regular.ttf" />
+    <Content Include="UI\GridViewDesign\fonts\OpenSans\OpenSans-SemiBold.ttf" />
+    <Content Include="UI\GridViewDesign\fonts\OpenSans\OpenSans-SemiBoldItalic.ttf" />
+    <Content Include="UI\GridViewDesign\fonts\Montserrat\Montserrat-Black.ttf" />
+    <Content Include="UI\GridViewDesign\fonts\Montserrat\Montserrat-BlackItalic.ttf" />
+    <Content Include="UI\GridViewDesign\fonts\Montserrat\Montserrat-Bold.ttf" />
+    <Content Include="UI\GridViewDesign\fonts\Montserrat\Montserrat-BoldItalic.ttf" />
+    <Content Include="UI\GridViewDesign\fonts\Montserrat\Montserrat-ExtraBold.ttf" />
+    <Content Include="UI\GridViewDesign\fonts\Montserrat\Montserrat-ExtraBoldItalic.ttf" />
+    <Content Include="UI\GridViewDesign\fonts\Montserrat\Montserrat-ExtraLight.ttf" />
+    <Content Include="UI\GridViewDesign\fonts\Montserrat\Montserrat-ExtraLightItalic.ttf" />
+    <Content Include="UI\GridViewDesign\fonts\Montserrat\Montserrat-Italic.ttf" />
+    <Content Include="UI\GridViewDesign\fonts\Montserrat\Montserrat-Light.ttf" />
+    <Content Include="UI\GridViewDesign\fonts\Montserrat\Montserrat-LightItalic.ttf" />
+    <Content Include="UI\GridViewDesign\fonts\Montserrat\Montserrat-Medium.ttf" />
+    <Content Include="UI\GridViewDesign\fonts\Montserrat\Montserrat-MediumItalic.ttf" />
+    <Content Include="UI\GridViewDesign\fonts\Montserrat\Montserrat-Regular.ttf" />
+    <Content Include="UI\GridViewDesign\fonts\Montserrat\Montserrat-SemiBold.ttf" />
+    <Content Include="UI\GridViewDesign\fonts\Montserrat\Montserrat-SemiBoldItalic.ttf" />
+    <Content Include="UI\GridViewDesign\fonts\Montserrat\Montserrat-Thin.ttf" />
+    <Content Include="UI\GridViewDesign\fonts\Montserrat\Montserrat-ThinItalic.ttf" />
+    <Content Include="UI\GridViewDesign\fonts\font-awesome-4.7.0\SCss\font-awesome.scss" />
+    <Content Include="UI\GridViewDesign\fonts\font-awesome-4.7.0\SCss\_animated.scss" />
+    <Content Include="UI\GridViewDesign\fonts\font-awesome-4.7.0\SCss\_bordered-pulled.scss" />
+    <Content Include="UI\GridViewDesign\fonts\font-awesome-4.7.0\SCss\_core.scss" />
+    <Content Include="UI\GridViewDesign\fonts\font-awesome-4.7.0\SCss\_fixed-width.scss" />
+    <Content Include="UI\GridViewDesign\fonts\font-awesome-4.7.0\SCss\_icons.scss" />
+    <Content Include="UI\GridViewDesign\fonts\font-awesome-4.7.0\SCss\_larger.scss" />
+    <Content Include="UI\GridViewDesign\fonts\font-awesome-4.7.0\SCss\_list.scss" />
+    <Content Include="UI\GridViewDesign\fonts\font-awesome-4.7.0\SCss\_mixins.scss" />
+    <Content Include="UI\GridViewDesign\fonts\font-awesome-4.7.0\SCss\_path.scss" />
+    <Content Include="UI\GridViewDesign\fonts\font-awesome-4.7.0\SCss\_rotated-flipped.scss" />
+    <Content Include="UI\GridViewDesign\fonts\font-awesome-4.7.0\SCss\_screen-reader.scss" />
+    <Content Include="UI\GridViewDesign\fonts\font-awesome-4.7.0\SCss\_stacked.scss" />
+    <Content Include="UI\GridViewDesign\fonts\font-awesome-4.7.0\SCss\_variables.scss" />
+    <Content Include="UI\GridViewDesign\fonts\font-awesome-4.7.0\Less\animated.less" />
+    <Content Include="UI\GridViewDesign\fonts\font-awesome-4.7.0\Less\bordered-pulled.less" />
+    <Content Include="UI\GridViewDesign\fonts\font-awesome-4.7.0\Less\core.less" />
+    <Content Include="UI\GridViewDesign\fonts\font-awesome-4.7.0\Less\fixed-width.less" />
+    <Content Include="UI\GridViewDesign\fonts\font-awesome-4.7.0\Less\font-awesome.less" />
+    <Content Include="UI\GridViewDesign\fonts\font-awesome-4.7.0\Less\icons.less" />
+    <Content Include="UI\GridViewDesign\fonts\font-awesome-4.7.0\Less\larger.less" />
+    <Content Include="UI\GridViewDesign\fonts\font-awesome-4.7.0\Less\list.less" />
+    <Content Include="UI\GridViewDesign\fonts\font-awesome-4.7.0\Less\mixins.less" />
+    <Content Include="UI\GridViewDesign\fonts\font-awesome-4.7.0\Less\path.less" />
+    <Content Include="UI\GridViewDesign\fonts\font-awesome-4.7.0\Less\rotated-flipped.less" />
+    <Content Include="UI\GridViewDesign\fonts\font-awesome-4.7.0\Less\screen-reader.less" />
+    <Content Include="UI\GridViewDesign\fonts\font-awesome-4.7.0\Less\stacked.less" />
+    <Content Include="UI\GridViewDesign\fonts\font-awesome-4.7.0\Less\variables.less" />
+    <Content Include="UI\GridViewDesign\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.eot" />
+    <Content Include="UI\GridViewDesign\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.ttf" />
+    <Content Include="UI\GridViewDesign\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.woff" />
+    <Content Include="UI\GridViewDesign\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.woff2" />
+    <Content Include="UI\GridViewDesign\fonts\font-awesome-4.7.0\fonts\FontAwesome.otf" />
+    <Content Include="UI\GridViewDesign\vendor\bootstrap\Css\bootstrap-grid.css.map" />
+    <Content Include="UI\GridViewDesign\vendor\bootstrap\Css\bootstrap-grid.min.css.map" />
+    <Content Include="UI\GridViewDesign\vendor\bootstrap\Css\bootstrap-reboot.css.map" />
+    <Content Include="UI\GridViewDesign\vendor\bootstrap\Css\bootstrap-reboot.min.css.map" />
+    <Content Include="UI\GridViewDesign\vendor\bootstrap\Css\bootstrap.css.map" />
+    <Content Include="UI\GridViewDesign\vendor\bootstrap\Css\bootstrap.min.css.map" />
+    <Content Include="Committee.Master" />
+    <Content Include="ManagerMaster.Master" />
+    <Content Include="Employeepage.Master" />
+    <Content Include="FinanacePage.Master" />
+    <Content Include="HOS.Master" />
+    <Content Include="Approval.Master" />
+    <Content Include="BeneficiaryApproval.Master" />
+    <None Include="Properties\PublishProfiles\PIMSv1.pubxml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Global.asax" />
+    <Content Include="scripts\ai.0.22.9-build00167.js" />
+    <Content Include="scripts\ai.0.22.9-build00167.min.js" />
+    <Content Include="UI\404.html" />
+    <Content Include="UI\500.html" />
+    <Content Include="UI\assets\static\images\404.png" />
+    <Content Include="UI\assets\static\images\500.png" />
+    <Content Include="UI\assets\static\images\bg.jpg" />
+    <Content Include="UI\assets\static\images\datatables\sort_asc.png" />
+    <Content Include="UI\assets\static\images\datatables\sort_asc_disabled.png" />
+    <Content Include="UI\assets\static\images\datatables\sort_both.png" />
+    <Content Include="UI\assets\static\images\datatables\sort_desc.png" />
+    <Content Include="UI\assets\static\images\datatables\sort_desc_disabled.png" />
+    <Content Include="UI\assets\static\images\logo.png" />
+    <Content Include="UI\assets\static\images\men\1.jpg" />
+    <Content Include="UI\assets\static\images\men\10.jpg" />
+    <Content Include="UI\assets\static\images\men\11.jpg" />
+    <Content Include="UI\assets\static\images\men\12.jpg" />
+    <Content Include="UI\assets\static\images\men\2.jpg" />
+    <Content Include="UI\assets\static\images\men\3.jpg" />
+    <Content Include="UI\assets\static\images\men\4.jpg" />
+    <Content Include="UI\basic-table.html" />
+    <Content Include="UI\calendar.html" />
+    <Content Include="UI\charts.html" />
+    <Content Include="UI\chat.html" />
+    <Content Include="UI\compose.html" />
+    <Content Include="UI\datatable.html" />
+    <Content Include="UI\email.html" />
+    <Content Include="UI\forms.html" />
+    <Content Include="UI\google-maps.html" />
+    <Content Include="UI\index.html" />
+    <Content Include="UI\Others\collect.gif" />
+    <Content Include="UI\Others\ga-audiences.gif" />
+    <Content Include="UI\pending.html" />
+    <Content Include="UI\rejected.html" />
+    <Content Include="UI\Script\pikaday.js" />
+    <Content Include="UI\Style\all.css" />
+    <Content Include="UI\Style\jquery.min.js" />
+    <Content Include="UI\Style\select2Search.css" />
+    <Content Include="UI\Script\analytics.js" />
+    <Content Include="UI\Script\AuthenticationService.js" />
+    <Content Include="UI\Script\bundle.js" />
+    <Content Include="UI\Script\common.js" />
+    <Content Include="UI\Script\controls.js" />
+    <Content Include="UI\Script\email-decode.min.js" />
+    <Content Include="UI\Script\f %281%29.txt" />
+    <Content Include="UI\Script\f.txt" />
+    <Content Include="UI\Script\jquery.min.js" />
+    <Content Include="UI\Script\js.js" />
+    <Content Include="UI\Script\jss.js" />
+    <Content Include="UI\Script\map.js" />
+    <Content Include="UI\Script\marker.js" />
+    <Content Include="UI\Script\mirage2.min.js" />
+    <Content Include="UI\Script\onion.js" />
+    <Content Include="UI\Script\QuotaService.js" />
+    <Content Include="UI\Script\rocket-loader.min.js" />
+    <Content Include="UI\Script\select2.min.js" />
+    <Content Include="UI\Script\stats.js" />
+    <Content Include="UI\Script\util.js" />
+    <Content Include="UI\Script\vendor.js" />
+    <Content Include="UI\Script\ViewportInfoService.js" />
+    <Content Include="UI\signin.html" />
+    <Content Include="UI\signup.html" />
+    <Content Include="UI\Style\css.css" />
+    <Content Include="UI\Style\fonts.css" />
+    <Content Include="UI\Style\select2.css" />
+    <Content Include="UI\Style\select2.min.css" />
+    <Content Include="UI\Style\style.css" />
+    <Content Include="UI\success.html" />
+    <Content Include="UI\ui.html" />
+    <Content Include="UI\vector-maps.html" />
+    <Content Include="UI\webfonts\fa-brands-400.svg" />
+    <Content Include="UI\webfonts\fa-regular-400.svg" />
+    <Content Include="UI\webfonts\fa-solid-900.svg" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AdminMaster.Master.cs">
+      <DependentUpon>AdminMaster.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminMaster.Master.designer.cs">
+      <DependentUpon>AdminMaster.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Approval.Master.cs">
+      <DependentUpon>Approval.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Approval.Master.designer.cs">
+      <DependentUpon>Approval.Master</DependentUpon>
+    </Compile>
+    <Compile Include="BeneficiaryApproval.Master.cs">
+      <DependentUpon>BeneficiaryApproval.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BeneficiaryApproval.Master.designer.cs">
+      <DependentUpon>BeneficiaryApproval.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Committee.Master.cs">
+      <DependentUpon>Committee.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Committee.Master.designer.cs">
+      <DependentUpon>Committee.Master</DependentUpon>
+    </Compile>
+    <Compile Include="DataTO\DataTO.cs" />
+    <Compile Include="DataTO\ValidationClass.cs" />
+    <Compile Include="Employeepage.Master.cs">
+      <DependentUpon>Employeepage.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Employeepage.Master.designer.cs">
+      <DependentUpon>Employeepage.Master</DependentUpon>
+    </Compile>
+    <Compile Include="FinanacePage.Master.cs">
+      <DependentUpon>FinanacePage.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FinanacePage.Master.designer.cs">
+      <DependentUpon>FinanacePage.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Form\BeneficiaryApproval.aspx.cs">
+      <DependentUpon>BeneficiaryApproval.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\BeneficiaryApproval.aspx.designer.cs">
+      <DependentUpon>BeneficiaryApproval.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Beneficiaryapprovalbulkprocess.aspx.cs">
+      <DependentUpon>Beneficiaryapprovalbulkprocess.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\Beneficiaryapprovalbulkprocess.aspx.designer.cs">
+      <DependentUpon>Beneficiaryapprovalbulkprocess.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\BeneficiaryApprovalMainDashboard.aspx.cs">
+      <DependentUpon>BeneficiaryApprovalMainDashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\BeneficiaryApprovalMainDashboard.aspx.designer.cs">
+      <DependentUpon>BeneficiaryApprovalMainDashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\BeneficiaryDashboard.aspx.cs">
+      <DependentUpon>BeneficiaryDashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\BeneficiaryDashboard.aspx.designer.cs">
+      <DependentUpon>BeneficiaryDashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\BeneficiaryMainDashboard.aspx.cs">
+      <DependentUpon>BeneficiaryMainDashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\BeneficiaryMainDashboard.aspx.designer.cs">
+      <DependentUpon>BeneficiaryMainDashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\DBMDashboard.aspx.cs">
+      <DependentUpon>DBMDashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\DBMDashboard.aspx.designer.cs">
+      <DependentUpon>DBMDashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\DBMRankInsert.aspx.cs">
+      <DependentUpon>DBMRankInsert.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\DBMRankInsert.aspx.designer.cs">
+      <DependentUpon>DBMRankInsert.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\DBMSent.aspx.cs">
+      <DependentUpon>DBMSent.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\DBMSent.aspx.designer.cs">
+      <DependentUpon>DBMSent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\DBM_Employee_Suggestion.aspx.cs">
+      <DependentUpon>DBM_Employee_Suggestion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\DBM_Employee_Suggestion.aspx.designer.cs">
+      <DependentUpon>DBM_Employee_Suggestion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\DBM_HR_Module.aspx.cs">
+      <DependentUpon>DBM_HR_Module.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\DBM_HR_Module.aspx.designer.cs">
+      <DependentUpon>DBM_HR_Module.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\DeptWiseRecord.aspx.cs">
+      <DependentUpon>DeptWiseRecord.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\DeptWiseRecord.aspx.designer.cs">
+      <DependentUpon>DeptWiseRecord.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\EmployeeDisable.aspx.cs">
+      <DependentUpon>EmployeeDisable.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\EmployeeDisable.aspx.designer.cs">
+      <DependentUpon>EmployeeDisable.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\EmployeeTask.aspx.cs">
+      <DependentUpon>EmployeeTask.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\EmployeeTask.aspx.designer.cs">
+      <DependentUpon>EmployeeTask.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\AdminDashboard.aspx.cs">
+      <DependentUpon>AdminDashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\AdminDashboard.aspx.designer.cs">
+      <DependentUpon>AdminDashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\AdminSend.aspx.cs">
+      <DependentUpon>AdminSend.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\AdminSend.aspx.designer.cs">
+      <DependentUpon>AdminSend.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\CommiteeEvalSend.aspx.cs">
+      <DependentUpon>CommiteeEvalSend.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\CommiteeEvalSend.aspx.designer.cs">
+      <DependentUpon>CommiteeEvalSend.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\CommitteeEvalDashboard.aspx.cs">
+      <DependentUpon>CommitteeEvalDashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\CommitteeEvalDashboard.aspx.designer.cs">
+      <DependentUpon>CommitteeEvalDashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Deptdashboardlink.aspx.cs">
+      <DependentUpon>Deptdashboardlink.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\Deptdashboardlink.aspx.designer.cs">
+      <DependentUpon>Deptdashboardlink.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\EmployeeAdd.aspx.cs">
+      <DependentUpon>EmployeeAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\EmployeeAdd.aspx.designer.cs">
+      <DependentUpon>EmployeeAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Employee_Full_Suggestion.aspx.cs">
+      <DependentUpon>Employee_Full_Suggestion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\Employee_Full_Suggestion.aspx.designer.cs">
+      <DependentUpon>Employee_Full_Suggestion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\FinanceDashboard.aspx.cs">
+      <DependentUpon>FinanceDashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\FinanceDashboard.aspx.designer.cs">
+      <DependentUpon>FinanceDashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\FinanceDetails.aspx.cs">
+      <DependentUpon>FinanceDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\FinanceDetails.aspx.designer.cs">
+      <DependentUpon>FinanceDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\FinanceExcel.aspx.cs">
+      <DependentUpon>FinanceExcel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\FinanceExcel.aspx.designer.cs">
+      <DependentUpon>FinanceExcel.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\FinanceImplDashboard.aspx.cs">
+      <DependentUpon>FinanceImplDashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\FinanceImplDashboard.aspx.designer.cs">
+      <DependentUpon>FinanceImplDashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\FinanceMainDashboard.aspx.cs">
+      <DependentUpon>FinanceMainDashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\FinanceMainDashboard.aspx.designer.cs">
+      <DependentUpon>FinanceMainDashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\HODMainDashboard.aspx.cs">
+      <DependentUpon>HODMainDashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\HODMainDashboard.aspx.designer.cs">
+      <DependentUpon>HODMainDashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\HOSAdd.aspx.cs">
+      <DependentUpon>HOSAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\HOSAdd.aspx.designer.cs">
+      <DependentUpon>HOSAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\HOSDashboard.aspx.cs">
+      <DependentUpon>HOSDashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\HOSDashboard.aspx.designer.cs">
+      <DependentUpon>HOSDashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\HOSMainDashboard.aspx.cs">
+      <DependentUpon>HOSMainDashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\HOSMainDashboard.aspx.designer.cs">
+      <DependentUpon>HOSMainDashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\HR_Module.aspx.cs">
+      <DependentUpon>HR_Module.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\HR_Module.aspx.designer.cs">
+      <DependentUpon>HR_Module.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\MailDashboard.aspx.cs">
+      <DependentUpon>MailDashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\MailDashboard.aspx.designer.cs">
+      <DependentUpon>MailDashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Main.aspx.cs">
+      <DependentUpon>Main.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\Main.aspx.designer.cs">
+      <DependentUpon>Main.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\CommitteeEvaluvation.aspx.cs">
+      <DependentUpon>CommitteeEvaluvation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\CommitteeEvaluvation.aspx.designer.cs">
+      <DependentUpon>CommitteeEvaluvation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\MainDashBoard.aspx.cs">
+      <DependentUpon>MainDashBoard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\MainDashBoard.aspx.designer.cs">
+      <DependentUpon>MainDashBoard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\New_Suggestion.aspx.cs">
+      <DependentUpon>New_Suggestion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\New_Suggestion.aspx.designer.cs">
+      <DependentUpon>New_Suggestion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\RolesWiseDaysRecord.aspx.cs">
+      <DependentUpon>RolesWiseDaysRecord.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\RolesWiseDaysRecord.aspx.designer.cs">
+      <DependentUpon>RolesWiseDaysRecord.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\SignUp.aspx.cs">
+      <DependentUpon>SignUp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\SignUp.aspx.designer.cs">
+      <DependentUpon>SignUp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Suggestions_Status.aspx.cs">
+      <DependentUpon>Suggestions_Status.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\Suggestions_Status.aspx.designer.cs">
+      <DependentUpon>Suggestions_Status.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\TeamDetail.aspx.cs">
+      <DependentUpon>TeamDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\TeamDetail.aspx.designer.cs">
+      <DependentUpon>TeamDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Form\HODAdd.aspx.cs">
+      <DependentUpon>HODAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\HODAdd.aspx.designer.cs">
+      <DependentUpon>HODAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\ManagerList.aspx.cs">
+      <DependentUpon>ManagerList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\ManagerList.aspx.designer.cs">
+      <DependentUpon>ManagerList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\ManagerMail.aspx.cs">
+      <DependentUpon>ManagerMail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\ManagerMail.aspx.designer.cs">
+      <DependentUpon>ManagerMail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\HOS.aspx.cs">
+      <DependentUpon>HOS.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\HOS.aspx.designer.cs">
+      <DependentUpon>HOS.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HOS.Master.cs">
+      <DependentUpon>HOS.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HOS.Master.designer.cs">
+      <DependentUpon>HOS.Master</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerMaster.Master.cs">
+      <DependentUpon>ManagerMaster.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManagerMaster.Master.designer.cs">
+      <DependentUpon>ManagerMaster.Master</DependentUpon>
+    </Compile>
+    <Compile Include="MasterPage.Master.cs">
+      <DependentUpon>MasterPage.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterPage.Master.designer.cs">
+      <DependentUpon>MasterPage.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DataBankManager.cs" />
+    <Compile Include="Models\Employee.cs" />
+    <Compile Include="Models\HOSModule.cs" />
+    <Compile Include="Models\Mailling.cs" />
+    <Compile Include="Models\Manager.cs" />
+    <Compile Include="Models\NewSuggestionModel.cs" />
+    <Compile Include="Models\RegistrationLogin.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="UI\assets\static\fonts\icons\" />
+    <Folder Include="UI\Image\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>15702</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:15702/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

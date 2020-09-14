@@ -1,0 +1,63 @@
+Create PROCEDURE [dbo].[SP_Committee_Send]
+	-- Add the parameters for the stored procedure here
+		@SEmail_ID int,
+		@IdeaId int,
+		@EFrom varchar(max),
+		@ETo varchar(50),
+		@FMail varchar(50),
+		@ToMail varchar(50),
+		@Date varchar(50),
+		@Subject varchar(50),
+		@Description varchar(Max),
+		@Remark1 varchar(50), 
+		@Remark2 varchar(50) 
+        
+           
+           
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+	
+	Insert into CommitteeEvalESend(SEmail_ID, IdeaId, EFrom, ETO, FMail, ToMail, Date, Subject, Description, Remark1, Remark2) 
+	values(@SEmail_ID, @IdeaId, @EFrom, @ETO, @FMail, @ToMail, @Date, @Subject, @Description, @Remark1, @Remark2)
+	--Selection statement to select the Record from HOfficialDetail Table, To chech the User is match are not
+	 
+	
+
+
+
+
+end
+
+
+
+
+
+Create PROCEDURE [dbo].[SP_CommitteeEvalInbox_Update_Response]
+	-- Add the parameters for the stored procedure here
+		 @CmEmailID int,
+		 @Type varchar(Max),
+		 @Dep varchar(max),
+		 @Des Varchar(Max)
+       
+           
+           
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+	
+	update CommitteeEvalEInbox set Type = @Type, Dep = @Dep, Des = @Des
+	where CmEmailID = @CmEmailID
+	--Selection statement to select the Record from HOfficialDetail Table, To chech the User is match are not
+	 
+	
+
+
+
+
+end
+

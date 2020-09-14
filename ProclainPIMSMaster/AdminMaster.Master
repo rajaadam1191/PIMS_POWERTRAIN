@@ -1,0 +1,470 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="AdminMaster.master.cs" Inherits="ProclainPIMSMaster.AdminMaster" %>
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Dashboard</title>
+    <style>
+        #loader {
+            transition: all .3s ease-in-out;
+            opacity: 1;
+            position: fixed;
+            height: 100vh;
+            width: 100%;
+            background: #fff;
+            z-index: 90000
+        }
+        
+        #loader.fadeOut {
+            opacity: 0;
+            visibility: hidden
+        }
+        
+        .spinner {
+            width: 40px;
+            height: 40px;
+            position: absolute;
+            top: calc(50% - 20px);
+            left: calc(50% - 20px);
+            background-color: #333;
+            border-radius: 100%;
+            -webkit-animation: sk-scaleout 1s infinite ease-in-out;
+            animation: sk-scaleout 1s infinite ease-in-out
+        }
+        
+        @-webkit-keyframes sk-scaleout {
+            0% {
+                -webkit-transform: scale(0)
+            }
+            100% {
+                -webkit-transform: scale(1);
+                opacity: 0
+            }
+        }
+        
+        @keyframes sk-scaleout {
+            0% {
+                -webkit-transform: scale(0);
+                transform: scale(0)
+            }
+            100% {
+                -webkit-transform: scale(1);
+                transform: scale(1);
+                opacity: 0
+            }
+        }
+
+
+   .page-titles 
+   {
+    padding: 0.9375rem 1.875rem;
+    background: #F3F3F9;
+    transition: all .2s ease;
+    }
+   .row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+   .bgc-grey-200
+    {
+    background-color:#e8eaef!important;
+}
+   .card {
+    margin-bottom: 30px;
+    border: 0px;
+
+    border-radius: 0.625rem;
+    box-shadow:13px 16px 28px -13px #beb7e0; 
+        /*6px 11px 41px -28px #a99de7;*/
+}
+   .card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    border-radius: 0.25rem;
+}
+        
+        .header {
+            background-color: #006a9c!important;
+        }
+        .header .header-container .nav-left > li > a, .header .header-container .nav-right > li > a {
+            color: #ffffff !important;
+        }
+        .c-grey-901
+        {
+            color: #ffffff !important;
+
+        }
+        .c-grey-902
+        {
+            color: #006a9c;
+
+        }
+
+        
+        .sidebar-menu li a 
+        {
+            color: #0b5680!important;
+        }
+        .sidebar-logo a .logo-text {
+    color: #006a9c!important;
+}
+        .container-fluid {
+            padding-right: 0px!important;
+            padding-left: 0px!important;
+        }
+    </style>
+    <link href="UI/Style/style.css" rel="stylesheet"/>
+    <script src="../UI/DataTable/jquery-1.8.2.min.js"></script>
+    <link href="UI/DataTable/jquery.dataTables.min.css" rel="stylesheet" />
+    <script src="../UI/DataTable/jquery.dataTables.min.js"></script>
+    <link href="Web-Fonts/css/all.css" rel="stylesheet" />
+    
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body class="app">
+    <form id="form1" runat="server">
+      
+    <div id="loader">
+        <div class="spinner"></div>
+    </div>
+    <script type="4b6964157013fbb985339f43-text/javascript">
+        window.addEventListener('load', () => {
+            const loader = document.getElementById('loader');
+            setTimeout(() => {
+                loader.classList.add('fadeOut');
+            }, 300);
+        });
+    </script>
+  
+    <div>
+        <!-- ====================
+                 #Left Sidebar 
+             ==================== -->
+        <div class="sidebar">
+            <div class="sidebar-inner">
+                <!-- ========================================
+                            ### $Sidebar Header ###
+                     ======================================== -->
+                <div class="sidebar-logo">
+                    <div class="peers ai-c fxw-nw">
+                        <div class="peer peer-greed">
+                            <a class="sidebar-link td-n" href="Main.aspx" class="td-n">
+                                <div class="peers ai-c fxw-nw">
+                                    <div class="peer">
+                                        <div class="logo">
+                                            <img src="../UI/assets/static/images/logo.png" alt="" style = "padding-left: 5px; padding-top: 10px; padding-top: 15px;padding-right: 10px;width: 248px"/>
+                                            
+                                        </div>
+                                    </div>
+                                    <div class="peer peer-greed">
+                                        <h5 class="lh-1 mB-0 c-grey-902 logo-text"><b></b></h5>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="peer">
+                            <div class="mobile-toggle sidebar-toggle">
+                                <a href="" class="td-n">
+                                    <i class="ti-arrow-circle-left"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+                <ul class="sidebar-menu scrollable pos-r">
+                      <li class="nav-item mT-30 active" id="DBMAdmin">
+                        <a class="sidebar-link" href="DBMDashboard.aspx" default>
+                            <span class="icon-holder">
+                                    <i style="color:grey" class="fa fa-delicious"></i>
+                                </span>
+                            <span class="title">DashBoard</span>
+                        </a>
+                    </li>
+                   
+                    
+                    <li class="nav-item" id="DBMDashboard">
+                        <a class="sidebar-link" href="AdminDashboard.aspx">
+                            <span class="icon-holder">
+                                    <i style="color:lightcoral" class="fa fa-newspaper-o"></i>
+                                </span>
+                            <span class="title">New Suggestions</span>
+                        </a>
+                    </li>
+                   
+                  <li class="nav-item" >
+                        <a class="sidebar-link" href="DBM_HR_Module.aspx">
+                            <span class="icon-holder">
+                                    <i style="color:lightblue" class="fa fa-inbox"></i>
+                                </span>
+                            <span class="title">HR_Dashboard</span>
+                        </a>
+                    </li>
+
+                     <li class="nav-item" id="DBASent">
+                        <a class="sidebar-link" href="DBMSent.aspx">
+                            <span class="icon-holder">
+                                    <i style="color:navajowhite" class="fa fa-reply-all"></i>
+                                </span>
+                            <span class="title">Sent</span>
+                        </a>
+                    </li>
+                     <li class="nav-item" id="TeamDash">
+                        <a class="sidebar-link" href="CommiteeEvalSend.aspx">
+                            <span class="icon-holder">
+                                    <i  style="color:gold" class="fa fa-server"></i>
+                                </span>
+                            <span class="title">Committee Response</span>
+                        </a>
+                    </li>
+                    <hr /> 
+                    <li class="nav-item" id="OldPost">
+                        <a class="sidebar-link" href="DBM_Employee_Suggestion.aspx">
+                            <span class="icon-holder">
+                                    <i style="color:dodgerblue" class="fa fa-file"></i>
+                                </span>
+                            <span class="title">Add Employee Post</span>
+                        </a>
+                    </li>
+                    <hr />
+                    <li class="nav-item" id="DBMHODAdd">
+                        <a class="sidebar-link" href="HODAdd.aspx">
+                            <span class="icon-holder">
+                                    <i style="color:orangered"  class="fa fa-id-badge"></i>
+                                </span>
+                            <span class="title"> Add Credential Employee </span>
+                        </a>
+                    </li>
+                    <li class="nav-item" id="DBMEmpAdd">
+                        <a class="sidebar-link" href="EmployeeAdd.aspx">
+                            <span class="icon-holder">
+                                    <i style="color:blueviolet" class="fa fa-id-card-o"></i>
+                                </span>
+                            <span class="title">Add Employee</span>
+                        </a>
+                    </li>
+                    <li class="nav-item" id="DBMComEval">
+                        <a class="sidebar-link" href="CommitteeEvaluvation.aspx">
+                            <span class="icon-holder">
+                                    <i style="color:darkseagreen"  class="fa fa-users"></i>
+                                </span>
+                            <span class="title">Committee Members</span>
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item" id="DBMMan">
+                        <a class="sidebar-link" href="ManagerList.aspx">
+                            <span class="icon-holder">
+                                    <i style="color:cornflowerblue"  class="fa fa-user"></i>
+                                </span>
+                            <span class="title">Managers</span>
+                        </a>
+                    </li>
+                    <hr />
+                    <li class="nav-item" id="DayWiseRecord">
+                        <a class="sidebar-link" href="RolesWiseDaysRecord.aspx">
+                            <span class="icon-holder">
+                                  <i style="color:#609;"  class="fa fa-info-circle"></i>
+                                </span>
+                            <span class="title">Roles Wise Idea Day Record </span>
+                        </a>
+                    </li>
+                    <li class="nav-item" id="DeptWiseRecord">
+                        <a class="sidebar-link" href="DeptWiseRecord.aspx">
+                            <span class="icon-holder">
+                                  <i style="color:#609;"  class="fa fa-info-circle"></i>
+                                </span>
+                            <span class="title">Department Wise Record </span>
+                        </a>
+                    </li>
+                      <li class="nav-item" id="Back">
+                        <a class="sidebar-link" href="Deptdashboardlink.aspx">
+                            <span class="icon-holder">
+                                  <i style="color:lightgreen"  class="fa fa-globe"></i>
+                                </span>
+                            <span class="title">Roles Based Login </span>
+                        </a>
+                    </li>
+                       
+                     
+                </ul>
+             
+            </div>
+        </div>
+       
+        <div class="page-container">
+           
+            <div class="header navbar">
+          <div class="header-container">
+            <ul class="nav-left">
+              <li>
+                <a id='sidebar-toggle' class="sidebar-toggle" href="javascript:void(0);">
+                  <i class="ti-menu"></i>
+                </a>
+              </li>
+
+                
+            </ul>
+            <ul class="nav-right">
+                <li class="dropdown">
+                <a href="" class="dropdown-toggle no-after peers fxw-nw ai-c lh-1" data-toggle="dropdown">
+                  <div class="peer mR-10">
+                    <img class="w-2r bdrs-50p" src="../UI/assets/static/images/PIMSlogo.png" alt="">
+                  </div>
+                  <div class="peer">
+                    <span id="EmpNamespam" runat="server" class="fsz-sm c-grey-901"></span>
+                  </div>
+                </a>
+                <ul class="dropdown-menu fsz-sm">
+                  
+                  <li role="separator" class="divider"></li>
+                  <li>
+                      <asp:LinkButton ID="Logout" runat="server" CssClass="d-b td-n pY-5 bgcH-grey-100 c-grey-700" OnClick="Logout_Click">
+                          <i class="ti-power-off mR-10"></i>Logout</asp:LinkButton>
+                 
+                  </li>
+                </ul>
+              </li>
+
+
+
+              <li class="notifications dropdown" style="visibility:hidden;">
+                <span class="counter bgc-red">3</span>
+                <a href="" class="dropdown-toggle no-after" data-toggle="dropdown">
+                  <i class="ti-bell"></i>
+                </a>
+
+                <ul class="dropdown-menu" style="visibility:hidden;max-height: 350px;overflow: auto;"   >
+                  <li class="pX-20 pY-15 bdB">
+                    <i class="ti-bell pR-10"></i>
+                    <span class="fsz-sm fw-600 c-grey-900">Notifications</span>
+                  </li>
+                  <li>
+                    <ul class="ovY-a pos-r scrollable lis-n p-0 m-0 fsz-sm" style="height:50%">
+                        <asp:Repeater ID="MailRepeater" runat="server" >
+                                   
+                                    <ItemTemplate>
+                                     
+                                           
+                                                     
+                                           <div class="ideadiv" style="padding-left: 10px;">
+                                              <%--onclick="ConformPsIdeaID(document.getElementsByName('lblImageNameTextBox').value)"--%>
+                                                         <asp:Label ID="lblImageName" CssClass="IdeaIdclass" runat="server" Text='<%#Bind("IdeaId")%>' ClientIDMode="Static" hidden></asp:Label>             
+                                            <div class="row">
+
+                                                <div class="col-sm-10">
+                                                   
+                                                    <asp:TextBox   ID="lblImageNameTextBox" name="lblImageNameTextBox" CssClass="IdeaIdclasstxt" runat="server" Text='<%#Bind("IdeaId")%>' hidden></asp:TextBox>
+                                                  
+                                                    
+                                                </div>
+                                                
+
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="col-sm-12 form-control" style="border:none!important;">
+                                                    <%# Eval("EmployeeName") %>
+                                                    <br />
+                                                    <%# Eval("Subject") %>
+                                                    <br />
+                                                    <%# Eval("DepName") %>
+                                                    <br />
+                                                    <hr />
+                                                </div>
+                                            </div>
+                                            <%--</asp:LinkButton>--%>
+                                        </div>
+
+                                    </ItemTemplate>
+
+                                </asp:Repeater>
+                      
+                      
+                      
+                    </ul>
+                  </li>
+                  <li class="pX-20 pY-15 ta-c bdT">
+                    <span>
+                      <a href="" class="c-grey-600 cH-blue fsz-sm td-n">View All Notifications <i class="ti-angle-right fsz-xs mL-10"></i></a>
+                    </span>
+                  </li>
+                </ul>
+              </li>
+            
+              
+            </ul>
+          </div>
+        </div>
+            <!-- =====================
+                  ### $Top bar End ### 
+                 ===================== -->
+            <div class="container-fluid bgc-grey-200" >
+             <main class="main-content bgc-grey-200">
+
+        
+             
+                 <div class="row page-titles mx-0" style="padding-bottom: 0px;padding-top: 10px;">
+                <div class="col p-md-0">
+                    </div>
+                     </div>
+                 <div class="row">
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-body">
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div></div></div></div>
+        
+        
+                 </main>
+                                
+                 
+            <!-- ========================================
+                       ### $App Screen Footer ### 
+                 ======================================== -->
+            <footer class="bdT ta-c p-30 lh-0 fsz-sm c-grey-600">
+                <span>
+                        Copyright © 2020 Designed by <a href="http://www.binary2quantum.com/" target="_blank" title="c">Binary2Quantum Techbase</a>
+                        . All rights reserved.
+                    </span>
+                <script src="../UI/Script/js.js" type="4b6964157013fbb985339f43-text/javascript"></script>
+                <script type="4b6964157013fbb985339f43-text/javascript">
+                   
+                </script>
+            </footer>
+        </div>
+            </div>
+        
+    </div>
+    
+    <script src="../UI/Script/analytics.js" type="4b6964157013fbb985339f43-text/javascript"></script>
+    <script type="4b6964157013fbb985339f43-text/javascript" src="../UI/Script/vendor.js"></script>
+    <script type="4b6964157013fbb985339f43-text/javascript" src="../UI/Script/bundle.js"></script>
+    <script src="../UI/Script/rocket-loader.min.js" data-cf-settings="4b6964157013fbb985339f43-|49" defer=""></script>
+
+ 
+     <script type="text/javascript">
+         $(document).ready(function () {
+
+
+         });
+         </script>
+    </form>
+
+
+</body>
+</html>

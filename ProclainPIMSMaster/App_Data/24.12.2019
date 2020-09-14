@@ -1,0 +1,213 @@
+USE [PIMS]
+GO
+/****** Object:  StoredProcedure [dbo].[SP_CommitteeEvalInbox_Select_Send_RepeaterView]    Script Date: 23-12-2019 09:07:05 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER PROCEDURE [dbo].[SP_CommitteeEvalInbox_Select_Send_RepeaterView]
+	-- Add the parameters for the stored procedure here
+		 
+           
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+	 
+	Select C.CmEmailID AS ID, 
+	(select HEmployeeName from HOfficialDetail where HEmployeeId = C.SenderID) AS SendFrom,
+	C.Subject, C.IDeaID  
+	
+	from CommitteeEvalEInbox C 
+	order by SL_No Desc 
+
+
+end
+
+
+
+
+USE [PIMS]
+GO
+/****** Object:  StoredProcedure [dbo].[SP_CommitteeEvalInbox_Update_Response]    Script Date: 23-12-2019 09:08:35 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER PROCEDURE [dbo].[SP_CommitteeEvalInbox_Update_Response]
+	-- Add the parameters for the stored procedure here
+		 @CmEmailID int,
+		 @Type varchar(Max),
+		 @Dep varchar(max),
+		 @Des Varchar(Max),
+		 @Ty Varchar(max)=null
+       
+           
+           
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+	
+	update CommitteeEvalEInbox set Type = @Type, Dep = @Dep, Des = @Des
+	where CmEmailID = @CmEmailID
+	--Selection statement to select the Record from HOfficialDetail Table, To chech the User is match are not
+	 set @Ty = (select IDeaID from CommitteeEvalEInbox where CmEmailID = @CmEmailID)
+	 if(@Type!='Accepted')
+	 Begin
+	 update CommitteeEvalEInbox set Remark2 = 'Rejected' where IDeaID = @Ty
+	 end
+	
+
+
+
+
+end
+
+
+
+
+
+USE [PIMS]
+GO
+/****** Object:  StoredProcedure [dbo].[SP_CommitteeEvalInbox_SelectUpdatePannel_MailSendID]    Script Date: 24-12-2019 08:12:33 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+ALTER PROCEDURE [dbo].[SP_CommitteeEvalInbox_SelectUpdatePannel_MailSendID]
+	-- Add the parameters for the stored procedure here
+		 @CmEmailID int
+           
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+	 
+	select DB.SenderMailID AS MailID, DB.Date AS FromDate, 
+	(select H.HEmployeeName from HOfficialDetail H where H.HEmployeeId = DB.SenderID) AS NewFrom,
+	DB.ReceiverID AS ToEmpID,
+	(select D.DepName from Department D where D.DepId = H.HDepartmentID) AS Department,
+	DB.ETo AS ToMail,
+	DB.Subject AS NewSubject,
+	DB.Description AS Content,
+	ES.IdeaId AS IDeaID, 
+	ED.EmployeeId AS IDeaEmpID, 
+	ED.EmployeeName AS IDeaEmpName,D.DepName AS EmpDepartment, 
+	DD.DesName AS EmpDesignation,
+	ES.Category AS SugCategory, ES.Benefits AS SugBenifits,
+	ES.Date AS SugDate, ES.Subject AS SugSubject, ES.Before AS SugBefore, 
+	ES.After AS SugAfter, ES.Status AS SugStatus,
+	DB.Type,DB.Dep,DB.Des, DB.SenderID
+	From 
+	
+	CommitteeEvalEInbox DB,
+	Department D, 
+	DesignationDetail DD,
+	EmployeeSuggestion ES,
+	HOfficialDetail H,
+	EmployeeDetail ED
+	where D.DepId = ED.DepartmentId and DD.DesId = ED.DesignationId and 
+	ED.EmployeeId = ES.IEmpId and ES.IdeaId = DB.IdeaId and 
+	H.HEmployeeId = DB.SenderID and DB.CmEmailID = @CmEmailID
+	order by DB.SL_No Desc 
+
+
+end
+
+
+
+USE [PIMS]
+GO
+/****** Object:  StoredProcedure [dbo].[SP_CommitteeEvalInbox_SelectUpdateProcess_MailSendID]    Script Date: 24-12-2019 08:12:53 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER PROCEDURE [dbo].[SP_CommitteeEvalInbox_SelectUpdateProcess_MailSendID]
+	-- Add the parameters for the stored procedure here
+		 @CmEmailID int
+           
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+	 
+	Select C.Type,C.Dep,C.Des,C.SenderID,H.HEmployeeName from CommitteeEvalEInbox C, HOfficialDetail H where H.HEmployeeId = C.SenderID and CmEmailID=@CmEmailID
+
+end
+
+
+
+
+USE [PIMS]
+GO
+/****** Object:  StoredProcedure [dbo].[SP_CommitteeEvalSend_SelectGridView_MailSendID]    Script Date: 24-12-2019 08:13:25 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+ALTER PROCEDURE [dbo].[SP_CommitteeEvalSend_SelectGridView_MailSendID]
+	-- Add the parameters for the stored procedure here
+		 
+           
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+	 
+	select ReceiverID, Date, 
+	(select H.HEmployeeName from HOfficialDetail H where H.HEmployeeId = ReceiverID) AS NewFrom,
+	IDeaID, Type, Dep,Des
+	From 
+	
+	CommitteeEvalEInbox
+	
+	
+	order by SL_No Desc 
+
+
+end
+
+
+
+
+USE [PIMS]
+GO
+/****** Object:  StoredProcedure [dbo].[SP_CommitteeEvalSend_SelectGridView_MailSendID_Search]    Script Date: 24-12-2019 08:13:45 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+ALTER PROCEDURE [dbo].[SP_CommitteeEvalSend_SelectGridView_MailSendID_Search]
+	-- Add the parameters for the stored procedure here
+		 @IdeaId int
+           
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+	 
+	select ReceiverID, Date, 
+	(select H.HEmployeeName from HOfficialDetail H where H.HEmployeeId = ReceiverID) AS NewFrom,
+	IDeaID, Type, Dep,Des
+	From 
+	
+	CommitteeEvalEInbox
+	
+	where 
+	IDeaID = @IdeaId
+	order by SL_No Desc 
+
+
+end
+
