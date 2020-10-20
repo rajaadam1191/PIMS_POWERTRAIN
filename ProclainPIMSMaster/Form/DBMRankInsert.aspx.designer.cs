@@ -31,13 +31,13 @@ namespace ProclainPIMSMaster.Form {
         protected global::System.Web.UI.WebControls.Button ceomsgupload;
         
         /// <summary>
-        /// EmpId control.
+        /// EmployeeId control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox EmpId;
+        protected global::System.Web.UI.WebControls.DropDownList EmployeeId;
         
         /// <summary>
         /// ImageFileUpload1 control.

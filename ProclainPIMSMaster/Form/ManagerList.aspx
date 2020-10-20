@@ -298,7 +298,10 @@
                     <label>Department</label>
                     </div>
                          <div class="col-sm-8">
-                    <asp:TextBox ID="DepartmentTextBox" CssClass="form-control bor" Width="100%" Enable="true" placeholder="Department Name" runat="server"></asp:TextBox>
+                    <%--<asp:TextBox ID="DepartmentTextBox" CssClass="form-control bor" Width="100%" Enable="true" placeholder="Department Name" runat="server"></asp:TextBox>--%>
+                        <asp:DropDownList ID="DepartmentTextBox" CssClass="form-control bor" Width="100%" Enable="true" runat="server">
+                        <asp:ListItem>--Select--</asp:ListItem>
+                        </asp:DropDownList>                   
                     </div>
                 </div>
                  <br />
@@ -455,7 +458,7 @@
                         console.log("test" + data.d.Department);
                         console.log("test" + data.d.Designation);
                         document.getElementById('<%= EmployeeTextBox.ClientID %>').value = data.d.empname;
-                        document.getElementById('<%= DepartmentTextBox.ClientID %>').value = data.d.Department;
+                       <%-- document.getElementById('<%= DepartmentTextBox.ClientID %>').innerText = data.d.Department;--%>
                         document.getElementById('<%= DesignationTextBox.ClientID %>').value = data.d.Designation;
                         }
                         else

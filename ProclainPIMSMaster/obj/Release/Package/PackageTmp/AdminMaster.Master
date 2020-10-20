@@ -238,6 +238,14 @@
                             <span class="title">Add Employee Post</span>
                         </a>
                     </li>
+                    <li class="nav-item" id="DBMIMG">
+                        <a class="sidebar-link" href="DBMRankInsert.aspx">
+                            <span class="icon-holder">
+                                    <i style="color:cornflowerblue" class="fa fa-window-restore"></i>
+                                </span>
+                            <span class="title">Add Main Dashboard</span>
+                        </a>
+                    </li>
                     <hr />
                     <li class="nav-item" id="DBMHODAdd">
                         <a class="sidebar-link" href="HODAdd.aspx">
@@ -279,6 +287,22 @@
                                   <i style="color:#609;"  class="fa fa-info-circle"></i>
                                 </span>
                             <span class="title">Roles Wise Idea Day Record </span>
+                        </a>
+                    </li>
+                    <li class="nav-item" id="IdeaWiseRecord">
+                        <a class="sidebar-link" href="IdeaTrackingHistory.aspx">
+                            <span class="icon-holder">
+                                  <i style="color:#609;"  class="fa fa-info-circle"></i>
+                                </span>
+                            <span class="title">Roles Wise Idea Record </span>
+                        </a>
+                    </li>
+                     <li class="nav-item" id="RoleWisecomment">
+                        <a class="sidebar-link" href="RolesComments.aspx">
+                            <span class="icon-holder">
+                                  <i style="color:#609;"  class="fa fa-info-circle"></i>
+                                </span>
+                            <span class="title">Roles Wise Idea Comments </span>
                         </a>
                     </li>
                     <li class="nav-item" id="DeptWiseRecord">

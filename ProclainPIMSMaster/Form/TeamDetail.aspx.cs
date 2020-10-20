@@ -42,7 +42,7 @@ namespace ProclainPIMSMaster.Form
 
                         SuggestionTableView();
 
-                        TeamHeadTextBox.Text = Session["UserName"].ToString();
+                        //TeamHeadTextBox.Text = Session["UserName"].ToString();
                     }
                 }
             }
@@ -151,71 +151,71 @@ namespace ProclainPIMSMaster.Form
             }
         }
 
-        protected void Submit_Click(object sender, EventArgs e)
-        {
+        //protected void Submit_Click(object sender, EventArgs e)
+        //{
 
-            Insert();
-            if (i == 1)
-            {
-                Clear();
-                SuggestionTableView();
-            }
-        }
-        #region Clear Record
-        public void Clear()
-        {
-            EmployeeIdTextBox.Text = null;
-            EmployeeTextBox.Text = "";
-            DepartmentTextBox.Text = "";
-            DesignationTextBox.Text = "";
+        //    Insert();
+        //    if (i == 1)
+        //    {
+        //        Clear();
+        //        SuggestionTableView();
+        //    }
+        //}
+        //#region Clear Record
+        //public void Clear()
+        //{
+        //    EmployeeIdTextBox.Text = null;
+        //    EmployeeTextBox.Text = "";
+        //    DepartmentTextBox.Text = "";
+        //    DesignationTextBox.Text = "";
             
 
 
 
-        }
-        #endregion
-        #region Insert Record
-        public void Insert()
-        {
+        //}
+        //#endregion
+        //#region Insert Record
+        //public void Insert()
+        //{
 
 
-            DataSet Ds = new DataSet();
-            try
-            {
-                if ((EmployeeIdTextBox.Text != "") && (EmployeeIdTextBox.Text != "System.Data.DataRowView"))
-                {
-                    COMEVALIdAutoGeneretion();
-                    MA.TeamID = CMID.ToString();
-                    MA.TeamName = Session["Designation"].ToString().TrimStart().TrimEnd() +" "+ "Team";
-                    MA.IEmpId = EmployeeIdTextBox.Text.ToString().TrimStart().TrimEnd();
-                    MA.IDepID = SIDepID.ToString().TrimStart().TrimEnd();
-                    MA.TeamHead = Session["UserId"].ToString().TrimStart().TrimEnd();
-                    MA.TeamCount = "1";
-                    MA.Remark1 = "I";
+        //    DataSet Ds = new DataSet();
+        //    try
+        //    {
+        //        if ((EmployeeIdTextBox.Text != "") && (EmployeeIdTextBox.Text != "System.Data.DataRowView"))
+        //        {
+        //            COMEVALIdAutoGeneretion();
+        //            MA.TeamID = CMID.ToString();
+        //            MA.TeamName = Session["Designation"].ToString().TrimStart().TrimEnd() +" "+ "Team";
+        //            MA.IEmpId = EmployeeIdTextBox.Text.ToString().TrimStart().TrimEnd();
+        //            MA.IDepID = SIDepID.ToString().TrimStart().TrimEnd();
+        //            MA.TeamHead = Session["UserId"].ToString().TrimStart().TrimEnd();
+        //            MA.TeamCount = "1";
+        //            MA.Remark1 = "I";
                     
 
-                    MA.TeamDetailInsert(MA);
+        //            MA.TeamDetailInsert(MA);
 
-                    string myscript = "alert ('Team Member is Added');";
-                    Page.ClientScript.RegisterClientScriptBlock(this.GetType(), "MyScript", myscript, true);
+        //            string myscript = "alert ('Team Member is Added');";
+        //            Page.ClientScript.RegisterClientScriptBlock(this.GetType(), "MyScript", myscript, true);
 
-                    //ClientScript.RegisterStartupScript(this.GetType(), "randomtext", "alertme('Your Suggestion Posted')", true);
-                    //ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Your Suggestion Posted')", true);
-                    i = 1;
-                }
-                else
-                {
-                    string myscript = "alert ('No Record Has Been Found');";
-                    Page.ClientScript.RegisterClientScriptBlock(this.GetType(), "MyScript", myscript, true);
+        //            //ClientScript.RegisterStartupScript(this.GetType(), "randomtext", "alertme('Your Suggestion Posted')", true);
+        //            //ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Your Suggestion Posted')", true);
+        //            i = 1;
+        //        }
+        //        else
+        //        {
+        //            string myscript = "alert ('No Record Has Been Found');";
+        //            Page.ClientScript.RegisterClientScriptBlock(this.GetType(), "MyScript", myscript, true);
 
-                }
+        //        }
 
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("Error Initializing Data Class." + Environment.NewLine + ex.Message);
-            }
-        }
-        #endregion
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        throw new Exception("Error Initializing Data Class." + Environment.NewLine + ex.Message);
+        //    }
+        //}
+        //#endregion
     }
 }

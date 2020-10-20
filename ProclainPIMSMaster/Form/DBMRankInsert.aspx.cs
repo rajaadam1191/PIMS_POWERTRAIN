@@ -24,6 +24,29 @@ namespace ProclainPIMSMaster.Form
         static string ImageName;
         protected void Page_Load(object sender, EventArgs e)
         {
+            EmpDetailView();
+        }
+
+        public void EmpDetailView()
+        {
+            try
+            {
+                
+                DataSet Ds = new DataSet();
+
+
+                Ds = Dm.EmpDetailView();
+
+                EmployeeId.DataSource = Ds.Tables[0];
+                EmployeeId.DataTextField = "EmployeeName";
+                EmployeeId.DataValueField = "EmployeeId";
+                EmployeeId.DataBind();
+
+            }
+            catch (Exception e1)
+            {
+
+            }
 
         }
 
@@ -46,7 +69,8 @@ namespace ProclainPIMSMaster.Form
         {
             try
             {
-                Dm.IEmpId = EmpId.Text.ToString();
+                // Dm.IEmpId = EmpId.Text.ToString();
+                Dm.IEmpId = EmployeeId.SelectedItem.Value.ToString();
                 if (ImageFileUpload1.HasFile)
                 {
                     extn = System.IO.Path.GetExtension(ImageFileUpload1.FileName);

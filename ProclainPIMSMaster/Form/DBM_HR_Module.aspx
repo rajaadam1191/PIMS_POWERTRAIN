@@ -319,13 +319,14 @@
                                 <%--<div class="row">
                                     <a data-toggle="modal" href="#myModal" class="form-control btn-primary"style="width:100%;text-align:center;">Get Report</a>
                                 </div>--%>
-                                 <div class="row"style="width:100%;">
+                                 <div class="row">
+                                     
                                    
                                     
                                     <div class="col-md-4">
                                         <div class="row">
                                         <div class="col-md-4">StartDate:</div>
-                                        <div class="col-md-8"><input type="text"  class="form-control" name="minemp" id="minemp"  />
+                                        <div class="col-md-8"><input type="text"  style ="border-style: solid !important;border-color: darkgrey !important;" class="form-control" name="minemp" id="minemp"  />
                                             <asp:Label ID="dtfromemp"  runat="server"  hidden></asp:Label>
                                         </div>
                                         </div>
@@ -334,7 +335,7 @@
                                     <div class="col-md-4">
                                         <div class="row">
                                         <div class="col-md-4">EndDate:</div>
-                                        <div class="col-md-8"><input type="text"  class="form-control" name="maxemp" id="maxemp"  />
+                                        <div class="col-md-8"><input type="text" style ="border-style: solid !important;border-color: darkgrey !important;" class="form-control" name="maxemp" id="maxemp"  />
                                             <asp:Label ID="dttoemp"  runat="server" hidden></asp:Label>
                                         </div>
                                         </div>
@@ -611,7 +612,7 @@
                                     <div class="col-md-4">
                                         <div class="row">
                                         <div class="col-md-4">StartDate:</div>
-                                        <div class="col-md-8"><input type="text"  class="form-control" name="minimp" id="minimp"  />
+                                        <div class="col-md-8"><input type="text" style ="border-style: solid !important;border-color: darkgrey !important;" class="form-control" name="minimp" id="minimp"  />
                                             <asp:Label ID="dtfromimp" Visible="false" runat="server"></asp:Label>
                                         </div>
                                         </div>
@@ -620,7 +621,7 @@
                                     <div class="col-md-4">
                                         <div class="row">
                                         <div class="col-md-4">EndDate:</div>
-                                        <div class="col-md-8"><input type="text"  class="form-control" name="maximp" id="maximp"  />
+                                        <div class="col-md-8"><input type="text" style ="border-style: solid !important;border-color: darkgrey !important;" class="form-control" name="maximp" id="maximp"  />
                                             <asp:Label ID="dttoimp" Visible="false" runat="server"></asp:Label>
                                         </div>
                                         </div>

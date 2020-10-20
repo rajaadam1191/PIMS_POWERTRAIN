@@ -383,7 +383,7 @@
          </script>
 
     <div class="row" style="background-color:#e3dee0">
-    <div class="col-lg-4 form-control" style="height: 371px;" >
+    <div class="col-lg-3 form-control" style="height: 371px;" >
          <div class="leftside no-gutters">
               
              <div class=" row">
@@ -435,7 +435,7 @@
              <div class="row" >
                   <div class="col-sm-12">
              
-                 <asp:Button ID="AddDetailsSubmit" CssClass="form-control btns btb-primary" Width="100%" style="color:white;font-size: initial;margin-right: 5px;" BorderColor ="DodgerBlue"  runat="server" Text="Confirm" OnClick="AddDetailsSubmit_Click"  />
+                 <asp:Button ID="AddDetailsSubmit" CssClass="form-control btns btb-primary" Width="100%" style="color:white;font-size: initial;margin-right: 5px;" BorderColor ="DodgerBlue"  runat="server" Text="Disable" OnClick="AddDetailsSubmit_Click"  />
               
                       </div>
                  <%--<div class="col-sm-6">--%>
@@ -444,7 +444,15 @@
                                 
                                 <%--<a href="SignUp.aspx" name="SignUp">Create Account</a></div>--%>
                         <%--</div>--%>
-      </div>
+            </div>
+                   <div class="row">
+                  <div class="col-sm-12">
+            
+                 <asp:Button ID="Enable" CssClass="form-control btns btb-primary" Width="100%" BorderColor ="DodgerBlue" style="color:white;font-size: initial;margin-right: 5px;"  runat="server" Text="Enable" OnClick="Enable_Click"  />
+                                
+                            </div>
+        
+                </div>   
                   
                      <div class="row">
                   <div class="col-sm-12">
@@ -453,7 +461,7 @@
                                 
                             </div>
         
-      </div>          
+                </div>          
                             
         
 
@@ -464,7 +472,7 @@
 
 
     
-        <div class=" col-lg-8 reps" >
+        <div class=" col-lg-9 reps" >
          <div class="rightside no-gutters">
              
              
@@ -491,6 +499,7 @@
                                     <asp:BoundField DataField="EmployeeName" HeaderText="Employee Name" />
                                     <asp:BoundField DataField="DepName" HeaderText="Department" />
                                     <asp:BoundField DataField="DesName" HeaderText="Designation" />
+                                    <asp:BoundField DataField="ComName" HeaderText="Company" />
                                     <asp:BoundField DataField="PhoneNo" HeaderText="Phone No" />
                                     <asp:BoundField DataField="Points" HeaderText="Points" />
                                     <%--<asp:BoundField DataField="Allowance" HeaderText="Allowance" />--%>

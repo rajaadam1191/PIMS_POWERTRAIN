@@ -172,7 +172,7 @@ namespace ProclainPIMSMaster.Form
                 EEC.UpLoad3 = DS.Tables[0].Rows[0].ItemArray[13].ToString();
                 EEC.upload3 = "../UI/Image/" + EEC.UpLoad3;
 
-                EEC.status = DS.Tables[0].Rows[0].ItemArray[14].ToString();
+                EEC.status = DS.Tables[0].Rows[0].ItemArray[10].ToString();
                 DS = M.DBMReplyCE(M);
                 chk = DS.Tables[0].Rows[0].ItemArray[0].ToString();
                 if (chk != "Empty")

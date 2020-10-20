@@ -85,7 +85,7 @@ namespace ProclainPIMSMaster.Form
                 //Session["UserId"]="PI-266";
                 if (Session["UserId"].ToString() == null || Session["UserId"].ToString() == "")
                 {
-                    Response.Redirect("Main.aspx");
+                    Response.Redirect("MainDashBoard.aspx");
                 }
                 else
                 {

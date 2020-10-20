@@ -443,6 +443,32 @@
 
              
               </div>
+              <br />
+        <div class="row">
+                
+                <div class="col-sm-12">
+                    <label>Company</label>
+                    </div>
+            </div>
+                <div class="row">
+                <div class ="col-sm-11">
+                    <asp:DropDownList ID="CompanyDDList" CssClass="js-example form-control bor" Width="100%"  runat="server" AutoPostBack="false" AppendDataBoundItems="True">  
+                     <asp:ListItem>--Select--</asp:ListItem>       
+                        
+                            
+                    </asp:DropDownList>
+
+                     
+                    
+                </div>
+            
+                 <div class="col-sm-1" style="padding-left: 0px!important;padding-right: 0px!important" >
+                    
+                       <%-- <asp:ImageButton ID="DepartmentDDListImageButton" data-toggle="modal" data-target="#myModalCompany" ImageUrl ="~/UI/assets/static/images/Icons/Add.jpg" runat="server" ImageAlign="TextTop" Height="45px" Width="40px" />--%>
+                       <img src="/PIMS/UI/assets/static/images/Icons/Add.jpg" data-toggle="modal" data-target="#myModalCompany" style="height:30px;width:30px;"/>
+                     <asp:TextBox ID="DDLComtextbox" CssClass="form-control" placeholder ="Department Name" Visible="false" runat="server"></asp:TextBox>
+                </div>
+               </div>
         <br />
              <div id="Error" class="row">
                 <div class="col-sm-12">
@@ -454,7 +480,7 @@
              <div class="row" >
                   <div class="col-sm-12">
              
-                 <asp:Button ID="AddDetailsSubmit" CssClass="form-control btns btb-primary" Width="100%" style="color:white;font-size: initial;margin-right: 5px;" BorderColor ="DodgerBlue"  runat="server" Text="Add Detail" OnClick="AddDetailsSubmit_Click"  />
+                 <asp:Button ID="AddDetailsSubmit" CssClass="form-control btns btb-primary" Width="100%" style="color:white;font-size: initial;margin-right: 5px;" BorderColor ="DodgerBlue"  runat="server" Text="Add Employee" OnClick="AddDetailsSubmit_Click"  />
               
                       </div>
                  <%--<div class="col-sm-6">--%>
@@ -471,7 +497,7 @@
         <div class="row">
                   <div class="col-sm-12">
             
-                 <asp:Button ID="UpdateButton" CssClass="form-control btns btb-primary" Width="100%" BorderColor ="DodgerBlue" style="color:white;font-size: initial;margin-right: 5px;"  runat="server" Text="Alter" OnClick="UpdateButton_Click"  />
+                 <asp:Button ID="TempEmpInsert" CssClass="form-control btns btn-primary" Width="100%" BorderColor ="DodgerBlue" style="color:white;font-size: initial;margin-right: 5px;"  runat="server" Text="Add Temporary Employee" OnClick="TempEmpInsert_Click"   />
                                 
                             </div>
               <%--<div class="col-sm-6">--%>
@@ -481,18 +507,16 @@
                         <%--</div>--%>
       </div>
 
-        <div class="row">
-                  <div class="col-sm-12">
+      <div class="row">
+           <div class="col-sm-12">
             
-                 <asp:Button ID="DisableButton" CssClass="form-control btns btb-primary" Width="100%" BorderColor ="DodgerBlue" style="color:white;font-size: initial;margin-right: 5px;"  runat="server" Text="Disable Employee" OnClick="DisableButton_Click"  />
-                                
-                            </div>
-              <%--<div class="col-sm-6">--%>
-                                
-                                <asp:Button ID="Button2" CssClass="form-control btns btb-primary" PostBackUrl="~/Form/New_Suggestion.aspx" Width="100%" Visible="false" BorderColor ="DodgerBlue"  runat="server" Text="Back" />
-                                <%--<a href="SignUp.aspx" name="SignUp">Create Account</a></div>--%>
-                        <%--</div>--%>
+                 
+                 <asp:Button ID="UpdateButton" CssClass="form-control btns btb-primary" Width="100%" BorderColor ="DodgerBlue" style="color:white;font-size: initial;margin-right: 5px;"  runat="server" Text="Alter" OnClick="UpdateButton_Click"  />  
+           </div>
+             
       </div>
+
+        
 
 
     </asp:Panel>
@@ -509,7 +533,16 @@
 
         <div class="container-table100 form-control" style="display: contents!important;">
             <div class="wrap">
-
+                <div class="row">
+                  <div class="col-md-4"></div>
+                    <div class="col-md-4"></div>
+                    <div class="col-md-4">
+            
+                 <asp:Button ID="DisableButton" CssClass="form-control btns btn-primary" Width="100%" BorderColor ="DodgerBlue" style="color:black; font-size: initial;margin-right: 5px;"  runat="server" Text="Authority Setting" OnClick="DisableButton_Click"  />
+                                
+                            </div>
+             
+      </div>
                 <div class="row">
                     <div class="col-md-12">
 
@@ -579,6 +612,33 @@
         </div>
         <div class="modal-footer">
          <asp:Button ID="DepartmentPopButton" CssClass="form-control btns" runat="server" Text="Add Department" OnClick="DepartmentPopButton_Click"/>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+       </div>
+
+
+    <div class="container"> 
+    
+ <div class="modal fade" id="myModalCompany" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+            <h4 class="modal-title"> New Company </h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          
+        </div>
+        <div class="modal-body">
+          <label>Enter Company Name</label>
+            <asp:TextBox ID="ComDDl" CssClass="form-control bor" placeholder ="Company Name" runat="server"></asp:TextBox>
+        </div>
+        <div class="modal-footer">
+         <asp:Button ID="DDLCompanyAdd" CssClass="form-control btns" runat="server" Text="Add Company" OnClick="DDLCompanyAdd_Click" />
         </div>
       </div>
       

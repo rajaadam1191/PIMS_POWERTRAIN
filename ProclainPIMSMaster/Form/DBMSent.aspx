@@ -410,16 +410,16 @@
                                       <a class="nav-link " id="acom" data-toggle="tab" href="#com">Committee &nbsp;<span id="count"   class="badge badge-pill badge-primary" runat="server">0</span></a>
                                     </li>
                                       <li class="nav-item">
-                                      <a class="nav-link" id="ahod" data-toggle="tab" href="#hod">HOD &nbsp;<span id="counthod"   class="badge badge-pill badge-primary" runat="server">0</span></a>
+                                      <a class="nav-link" id="ahod" data-toggle="tab" href="#hod">Manager &nbsp;<span id="counthod"   class="badge badge-pill badge-primary" runat="server">0</span></a>
                                     </li>
                                     <li class="nav-item">
                                       <a class="nav-link" id="aimp" data-toggle="tab" href="#imp">Implementation &nbsp;<span id="countimp"   class="badge badge-pill badge-primary" runat="server">0</span></a>
                                     </li>
                                        <li class="nav-item ">
-                                      <a class="nav-link " id="ahos" data-toggle="tab" href="#hos">HOS &nbsp;<span id="counthos"   class="badge badge-pill badge-primary" runat="server">0</span></a>
+                                      <a class="nav-link " id="ahos" data-toggle="tab" href="#hos">HOD &nbsp;<span id="counthos"   class="badge badge-pill badge-primary" runat="server">0</span></a>
                                     </li>
                                       <li class="nav-item">
-                                      <a class="nav-link" id="aben" data-toggle="tab" href="#ben">Beneficiary &nbsp;<span id="countben"   class="badge badge-pill badge-primary" runat="server">0</span></a>
+                                      <a class="nav-link" id="aben" data-toggle="tab" href="#ben">CODIR &nbsp;<span id="countben"   class="badge badge-pill badge-primary" runat="server">0</span></a>
                                     </li>
                                     <li class="nav-item" >
                                       <a class="nav-link" id="afin" data-toggle="tab" href="#fin">Finance &nbsp;<span id="countfin"   class="badge badge-pill badge-primary" runat="server">0</span></a>

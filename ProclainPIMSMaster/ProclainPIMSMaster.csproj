@@ -203,12 +203,14 @@
     <Content Include="Form\HOSDashboard.aspx" />
     <Content Include="Form\HOSMainDashboard.aspx" />
     <Content Include="Form\HR_Module.aspx" />
+    <Content Include="Form\IdeaTrackingHistory.aspx" />
     <Content Include="Form\MailDashboard.aspx" />
     <Content Include="Form\Main.aspx" />
     <Content Include="Form\CommitteeEvaluvation.aspx" />
-    <Content Include="Form\MainDashBoard.aspx" />
+    <Content Include="Form\MainDashboard.aspx" />
     <Content Include="Form\New_Suggestion.aspx" />
     <Content Include="Form\Login.aspx" />
+    <Content Include="Form\RolesComments.aspx" />
     <Content Include="Form\RolesWiseDaysRecord.aspx" />
     <Content Include="Form\SignUp.aspx" />
     <Content Include="Form\Suggestions_Status.aspx" />
@@ -242,6 +244,7 @@
     <Content Include="UI\assets\static\images\Icons\Print.ico" />
     <Content Include="UI\assets\static\images\Icons\search.ico" />
     <Content Include="UI\assets\static\images\Log1.jpg" />
+    <Content Include="UI\assets\static\images\mild.jpg" />
     <Content Include="UI\assets\static\images\o_Log.jpg" />
     <Content Include="UI\assets\static\images\Login.jpg" />
     <Content Include="UI\assets\static\images\logo1.png" />
@@ -310,6 +313,7 @@
     <Content Include="UI\Style\popper.min.js" />
     <Content Include="UI\Style\sweetalert.min.js" />
     <Content Include="UI\Style\sweetalert2.min.css" />
+    <Content Include="UI\Style\zingchart.min.js" />
     <Content Include="UI\webfonts\fa-brands-400.eot" />
     <Content Include="UI\webfonts\fa-brands-400.ttf" />
     <Content Include="UI\webfonts\fa-brands-400.woff" />
@@ -730,6 +734,13 @@
     <Compile Include="Form\HR_Module.aspx.designer.cs">
       <DependentUpon>HR_Module.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Form\IdeaTrackingHistory.aspx.cs">
+      <DependentUpon>IdeaTrackingHistory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\IdeaTrackingHistory.aspx.designer.cs">
+      <DependentUpon>IdeaTrackingHistory.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Form\MailDashboard.aspx.cs">
       <DependentUpon>MailDashboard.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -750,12 +761,12 @@
     <Compile Include="Form\CommitteeEvaluvation.aspx.designer.cs">
       <DependentUpon>CommitteeEvaluvation.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Form\MainDashBoard.aspx.cs">
-      <DependentUpon>MainDashBoard.aspx</DependentUpon>
+    <Compile Include="Form\MainDashboard.aspx.cs">
+      <DependentUpon>MainDashboard.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Form\MainDashBoard.aspx.designer.cs">
-      <DependentUpon>MainDashBoard.aspx</DependentUpon>
+    <Compile Include="Form\MainDashboard.aspx.designer.cs">
+      <DependentUpon>MainDashboard.aspx</DependentUpon>
     </Compile>
     <Compile Include="Form\New_Suggestion.aspx.cs">
       <DependentUpon>New_Suggestion.aspx</DependentUpon>
@@ -768,6 +779,13 @@
     </Compile>
     <Compile Include="Form\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\RolesComments.aspx.cs">
+      <DependentUpon>RolesComments.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\RolesComments.aspx.designer.cs">
+      <DependentUpon>RolesComments.aspx</DependentUpon>
     </Compile>
     <Compile Include="Form\RolesWiseDaysRecord.aspx.cs">
       <DependentUpon>RolesWiseDaysRecord.aspx</DependentUpon>

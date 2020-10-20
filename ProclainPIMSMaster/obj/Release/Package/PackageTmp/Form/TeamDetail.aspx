@@ -270,7 +270,7 @@
     
    
     <div class="row">
-    <div class="col-lg-4 form-control" >
+    <%--<div class="col-lg-4 form-control" >
          <div class="leftside no-gutters">
              <center><h4 class="fw-300 c-grey-902 mB-30">Team Detail
         
@@ -387,10 +387,10 @@
                   
              
                  
-              </div>--%>
-        </div>
+              </div>
+        </div>--%>
     
-    <div class=" col-lg-8 reps" >
+    <div class=" col-lg-12 reps" >
          <div class="rightside no-gutters">
              
              
@@ -479,7 +479,7 @@
         });
     </script>
 
-    <script>
+   <%-- <script>
         function tableInputKeyPress(e){
             // alert('Keypress called');
             e = e || window.event;
@@ -528,6 +528,6 @@
             }
 
         }
-    </script>
+    </script>--%>
 
 </asp:Content>

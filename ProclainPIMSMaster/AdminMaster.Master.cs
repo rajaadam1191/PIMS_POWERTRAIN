@@ -38,7 +38,7 @@ namespace ProclainPIMSMaster
             Session.Abandon();
             Session.Clear();
             Response.Cookies.Clear();
-            Response.Redirect("Main.aspx");
+            Response.Redirect("MainDashBoard.aspx");
         }
 
         public void loginload()

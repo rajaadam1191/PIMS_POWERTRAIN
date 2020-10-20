@@ -39,6 +39,7 @@ namespace ProclainPIMSMaster.Form
         int SIDepPopID=0;
         string DepID;
         string DesID;
+        string ComID;
         string points = "0";
         string Allowance = "0";
         string Remark1 = "0";
@@ -80,6 +81,7 @@ namespace ProclainPIMSMaster.Form
                     DepartmentNameView();
                     DesignationNameView();
                     DesignationPopUptNameView();
+                    CompanyNameView();
                     SuggestionTableView();
 
                     ProclainPIMSMaster.AdminMaster admaster = (ProclainPIMSMaster.AdminMaster)this.Master;
@@ -110,6 +112,21 @@ namespace ProclainPIMSMaster.Form
             }
            
         }
+        public void ComIdAutoGeneretion()
+        {
+            try
+            {
+                DataSet DS = new DataSet();
+                DS = E.CompanyIdAuto();
+                ComID = DS.Tables[0].Rows[0].ItemArray[0].ToString();
+            }
+            catch (Exception e1)
+            {
+
+            }
+
+        }
+        
 
         public void DesIdAutoGeneretion()
         {
@@ -148,6 +165,30 @@ namespace ProclainPIMSMaster.Form
                  
             }
           
+
+        }
+
+        public void CompanyNameView()
+        {
+            try
+            {
+                DataSet Ds = new DataSet();
+
+
+                Ds = NSM.CompanySelectAll();
+
+                CompanyDDList.DataSource = Ds.Tables[0];
+                CompanyDDList.DataTextField = "CompanyName";
+                CompanyDDList.DataValueField = "CompanyId";
+                CompanyDDList.DataBind();
+                //DepartmentDDList.Items.Insert(0, new ListItem("", ""));
+                //SIDepID = Convert.ToInt32(DepartmentDDList.SelectedValue);
+            }
+            catch (Exception e1)
+            {
+
+            }
+
 
         }
         public void DesignationNameView()
@@ -336,6 +377,22 @@ namespace ProclainPIMSMaster.Form
                 E.DepartmentName = DepDDLPopTextBox.Text.ToString().Trim();
                 E.DepartmentInsert(E);
                 ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('New Department Is Added')", true);
+            }
+            catch (Exception e1)
+            {
+                //throw new Exception("Error Initializing Data Class." + Environment.NewLine + ex.Message);
+            }
+        }
+
+        public void ComInsert()
+        {
+
+            try
+            {
+                E.CompanyId = ComID.ToString().Trim();
+                E.CompanyName = ComDDl.Text.ToString().Trim();
+                E.CompanyInsert(E);
+                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('New Comapany Is Added')", true);
             }
             catch (Exception e1)
             {
@@ -639,6 +696,85 @@ namespace ProclainPIMSMaster.Form
             {
                 throw new Exception("Error Initializing Data Class." + Environment.NewLine + ex.Message);
 
+
+            }
+        }
+
+        protected void TempEmpInsert_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                validation();
+                InsertTemp();
+                clear();
+
+                //Form.UnLoad();
+            }
+            catch (Exception e1)
+            {
+
+            }
+        }
+        public void InsertTemp()
+        {
+            DataSet Ds = new DataSet();
+            try
+            {
+                if (EmployeeIdTextBox.Text != "" && EmployeeIdTextBox.Text != "System.Data.DataRowView")
+                {
+                    E.EmployeeId = EmployeeIdTextBox.Text.ToString().TrimStart().TrimEnd();
+
+                    E.EmployeeName = EmployeeNameTextBox.Text.ToString().Trim();
+                    SIDepID = Convert.ToInt32(DepartmentDDList.SelectedValue);
+                    E.DepartmentId = SIDepID.ToString();
+                    SIDesID = Convert.ToInt32(DesignationDDList.SelectedValue);
+                    E.DesignationId = SIDesID.ToString().Trim();
+                    E.PhoneNo = PhoneNoTextBox.Text.ToString().Trim();
+                    E.Password = password.Text.ToString().Trim();
+                    E.Email = email.Text.ToString().Trim();
+                    E.Point = points.ToString().Trim();
+                    E.Allowance = Allowance.ToString().Trim();
+                    E.Remark1 = "D";
+                    E.Remark2 = CompanyDDList.Text.ToString().Trim();
+
+                    E.EmployeeInsert(E);
+                    string myscript = "alert ('Employee Detail is Added');";
+                    Page.ClientScript.RegisterClientScriptBlock(this.GetType(), "MyScript", myscript, true);
+                    Check = 1;
+                    Response.Redirect("EmployeeAdd.aspx");
+
+
+                }
+                else
+                {
+                    string myscript = "alert ('Check the Employee Detail');";
+                    Page.ClientScript.RegisterClientScriptBlock(this.GetType(), "MyScript", myscript, true);
+
+                }
+
+            }
+            catch (Exception e1)
+            {
+                // throw new Exception("Error Initializing Data Class." + Environment.NewLine + ex.Message);
+            }
+        }
+
+        protected void DDLCompanyAdd_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ComIdAutoGeneretion();
+
+                DepInsert();
+                //DepartmentDDList.DataSource = null;
+
+                //Check = 1;
+                clear();
+
+                //DepartmentNameView();
+            }
+            catch (Exception e1)
+            {
 
             }
         }

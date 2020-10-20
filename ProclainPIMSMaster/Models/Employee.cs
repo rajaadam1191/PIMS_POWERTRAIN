@@ -226,6 +226,19 @@ namespace ProclainPIMSMaster.Models
             get { return departmentname; }
             set { departmentname = value; }
         }
+        private string companyname;
+        public string CompanyName
+        {
+            get { return companyname; }
+            set { companyname = value; }
+        }
+        private string companyid;
+        public string CompanyId
+        {
+            get { return companyid; }
+            set { companyid = value; }
+        }
+
         private string designationname;
         public string DesignationName
         {
@@ -325,6 +338,25 @@ namespace ProclainPIMSMaster.Models
             SqlParameter OP1 = new SqlParameter("@type", type);
             Da.parameters.Add(OP1);
             Ds = Da.ExecuteDataset("DeptWiseRecord");
+            return Ds;
+
+        }
+
+        public DataSet IdeaHistoryTracking()
+        {
+            DataTO Da = new DataTO();
+            DataSet Ds = new DataSet();
+            
+            Ds = Da.ExecuteDataset("IdeaTrackingHistory");
+            return Ds;
+
+        }
+        public DataSet Rolescomment()
+        {
+            DataTO Da = new DataTO();
+            DataSet Ds = new DataSet();
+
+            Ds = Da.ExecuteDataset("RolesComment");
             return Ds;
 
         }
@@ -491,7 +523,7 @@ namespace ProclainPIMSMaster.Models
 
         }
 
-        #region Department, Designation ID Auto Generation 
+        #region Department, Designation, company ID Auto Generation 
         public DataSet DepartmentIdAuto()
         {
             DataTO Da = new DataTO();
@@ -500,6 +532,15 @@ namespace ProclainPIMSMaster.Models
             return Ds;
 
         }
+        public DataSet CompanyIdAuto()
+        {
+            DataTO Da = new DataTO();
+            DataSet Ds = new DataSet();
+            Ds = Da.ExecuteDataset("sp_Company_AutoGen_DepID");
+            return Ds;
+
+        }
+       
         public DataSet DesignationIdAuto()
         {
             DataTO Da = new DataTO();
@@ -575,6 +616,19 @@ namespace ProclainPIMSMaster.Models
 
         }
 
+        public void EmployeeEnable(Employee EM)
+        {
+
+            DataTO Da = new DataTO();
+            SqlParameter OP = new SqlParameter("@EmployeeId", EM.EmployeeId);
+            Da.parameters.Add(OP);
+
+
+            Da.ExecuteNonQuery("[SP_Employee_Insert_Enabled]");
+
+
+        }
+
 
         #region
         public void DepartmentInsert(Employee EM)
@@ -590,6 +644,20 @@ namespace ProclainPIMSMaster.Models
             }
 
             DA.ExecuteNonQuery("SP_Department_Insert");
+        }
+        public void CompanyInsert(Employee EM)
+        {
+            DataTO DA = new DataTO();
+            SqlParameter OP1 = new SqlParameter("@ComId", EM.CompanyId);
+            DA.parameters.Add(OP1);
+            SqlParameter OP2 = new SqlParameter("@ComName", EM.CompanyName);
+            DA.parameters.Add(OP2);
+            foreach (SqlParameter p in DA.parameters)
+            {
+                p.Direction = ParameterDirection.Input;
+            }
+
+            DA.ExecuteNonQuery("SP_Company_Insert");
         }
 
         public void DesignationInsert(Employee EM)

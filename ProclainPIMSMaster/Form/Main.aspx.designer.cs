@@ -7,13 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ProclainPIMSMaster.Form
-{
-
-
-    public partial class Main
-    {
-
+namespace ProclainPIMSMaster.Form {
+    
+    
+    public partial class Main {
+        
         /// <summary>
         /// spanNew control.
         /// </summary>
@@ -22,7 +20,7 @@ namespace ProclainPIMSMaster.Form
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl spanNew;
-
+        
         /// <summary>
         /// spanRejected control.
         /// </summary>
@@ -31,7 +29,7 @@ namespace ProclainPIMSMaster.Form
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl spanRejected;
-
+        
         /// <summary>
         /// spanApproved control.
         /// </summary>
@@ -40,7 +38,7 @@ namespace ProclainPIMSMaster.Form
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl spanApproved;
-
+        
         /// <summary>
         /// spanTotal control.
         /// </summary>
@@ -49,7 +47,7 @@ namespace ProclainPIMSMaster.Form
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl spanTotal;
-
+        
         /// <summary>
         /// SuggestionGridView control.
         /// </summary>

@@ -125,11 +125,11 @@
         <div class="peers ai-s fxw-nw h-100vh">
             <div class="" style="width:100%;height:100%;background-image:url(../UI/assets/static/images/Log1.jpg)">
                 <div class="pos-a Right-centerXY ">
-                    <div class="bgc-white bdrs-50p pos-r" style="width:120px;height:120px">
+                    <div class="bgc-white bdrs-50p pos-r" style="width:100%;height:100%">
                         <img class="pos-a centerXY" src="../UI/assets/static/images/logo1.png" alt=""/>
                     </div>
                 </div>
-                <div class="card " style="width:40%;height:40%;margin-left:30%;margin-top:15%;align-content:center;border-radius:10px;">
+                <div class="card" style="opacity:0.8; width:40%;height:40%;margin-left:30%;margin-top:10%;align-content:center;border-radius:10px;">
                       
                 
                    <div style="padding-left:15px;">
@@ -255,6 +255,10 @@
                          
                         <label class="text-normal text-dark">Enter Your Credentials</label>    
                         <asp:TextBox runat="server" ID="passforgot" CssClass="form-control" placeholder="credential password.."></asp:TextBox><br />
+                        
+                        <label class="text-normal text-dark">Enter Your Email-Id</label>    
+                        <asp:TextBox runat="server" ID="EmailId" CssClass="form-control" placeholder="Email-Id.."></asp:TextBox><br />
+
 
                         <asp:Button ID="UpdateButton" runat="server" CssClass="form-control apopbtn btn-primary" Text="Submit" OnClick="UpdateButton_Click" /><br />
                         
@@ -304,8 +308,8 @@
                 console.log('called')
                 document.getElementById('<%= Empidforgot.ClientID %>').value ="";
                 document.getElementById('<%= chgempidForgot.ClientID %>').value = "";
-                document.getElementById('<%= EmpIdOTP.ClientID %>').value = "";
-                document.getElementById('<%= chgempid.ClientID %>').value="";
+               <%-- document.getElementById('<%= EmpIdOTP.ClientID %>').value = "";
+                document.getElementById('<%= chgempid.ClientID %>').value="";--%>
                 console.log('end call')
             }
         </script>
@@ -321,17 +325,17 @@
 
                     </div>
                     <div class="modal-body" >
-                        <ul class="nav nav-tabs" >
+                        <%--<ul class="nav nav-tabs" >
                         <li class="nav-item" id="User" style="width:50%; font-size:100%;  padding-left:2%;">
-                            <a class="nav-link active" id="linkGenerate" data-toggle="tab" href="#new" style="font-weight:bold ;text-align:center;" onclick="clearTextbox()">Generate OTP  <%--&nbsp;<span id="count" class="badge badge-pill badge-primary" runat="server">0</span>--%></a>
+                            <a class="nav-link active" id="linkGenerate" data-toggle="tab" href="#new" style="font-weight:bold ;text-align:center;" onclick="clearTextbox()">Generate OTP  &nbsp;<span id="count" class="badge badge-pill badge-primary" runat="server">0</span></a>
 
                         </li>
                         <li class="nav-item" id="Implement" style="width:50%; font-size:100%;padding-right:2%; ">
-                            <a class="nav-link" data-toggle="tab" href="#assigned" style="font-weight:bold ;text-align:center;">Set New password <%--&nbsp;<span id="countass" class="badge badge-pill badge-primary" runat="server">0</span>--%></a>
+                            <a class="nav-link" data-toggle="tab" href="#assigned" style="font-weight:bold ;text-align:center;">Set New password <%--&nbsp;<span id="countass" class="badge badge-pill badge-primary" runat="server">0</span></a>
 
                         </li>
                   </ul>
-                <div class="tab-content">
+                        <div class="tab-content">
                     <div id="new" class="container tab-pane active">
                         
                         <label class="text-normal text-dark">Enter Your ID</label>    
@@ -344,7 +348,7 @@
                         <asp:TextBox runat="server" ID="chgnewpass" CssClass="form-control" placeholder="New password.." TextMode="Password"></asp:TextBox>
                         
                             <label class="text-normal text-dark">Enter Your Confirm New Password</label>    
-                        <asp:TextBox runat="server" ID="chgconpass" CssClass="form-control" placeholder="Confirm password.." TextMode="Password"></asp:TextBox>--%>
+                        <asp:TextBox runat="server" ID="chgconpass" CssClass="form-control" placeholder="Confirm password.." TextMode="Password"></asp:TextBox>
                             
                            <asp:Button ID="GenerateBeforeOTP" runat="server" CssClass="form-control apopbtn btn-primary" Text="Submit" OnClick="GenerateBeforeOTP_Click" /><br />
                         
@@ -368,7 +372,20 @@
                         
                         
                     </div>
-                    </div>
+                    </div>--%>
+                        <label class="text-normal text-dark">Enter Your ID</label>    
+                        <asp:TextBox runat="server" ID="EmpIdOTP" CssClass="form-control" placeholder="Employee Id.."></asp:TextBox>
+                         
+                        <label class="text-normal text-dark">Enter Your Old Password</label>    
+                        <asp:TextBox runat="server" ID="OldPassOTP" CssClass="form-control" placeholder="Old password.." TextMode="Password"></asp:TextBox><br />
+                        
+						<label class="text-normal text-dark">Enter Your New Password</label>    
+                        <asp:TextBox runat="server" ID="chgnewpass" CssClass="form-control" placeholder="New password.." TextMode="Password"></asp:TextBox>
+                        
+                        <label class="text-normal text-dark">Enter Your Confirm New Password</label>    
+                        <asp:TextBox runat="server" ID="chgconpass" CssClass="form-control" placeholder="Confirm password.." TextMode="Password"></asp:TextBox>
+						
+						<asp:Button ID="Changepassword" runat="server" CssClass="form-control apopbtn btn-primary" Text="Submit" OnClick="Changepassword_Click" /><br />
                     </div>
 
                     <div class="modal-footer">

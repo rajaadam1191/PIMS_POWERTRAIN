@@ -276,8 +276,8 @@ namespace ProclainPIMSMaster.Form
                   
 
                     E.EmployeeDisable(E);
-                    //string myscript = "alert ('Employee Detail is Disabled');";
-                    //Page.ClientScript.RegisterClientScriptBlock(this.GetType(), "MyScript", myscript, true);
+                   //string myscript = "alert ('Employee Detail is Disabled');";
+                   //Page.ClientScript.RegisterClientScriptBlock(this.GetType(), "MyScript", myscript, true);
                     ScriptManager.RegisterStartupScript(this, this.GetType(), "alert", "swal('Employee Detail is Disabled','','success')", true);
                     Check = 1;
                     Response.Redirect("EmployeeDisable.aspx");
@@ -541,6 +541,55 @@ namespace ProclainPIMSMaster.Form
         protected void BackButton_Click(object sender, EventArgs e)
         {
             Response.Redirect("EmployeeAdd.aspx");
+        }
+
+        protected void Enable_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                validation();
+                Enabledemployee();
+                clear();
+
+                //Form.UnLoad();
+            }
+            catch (Exception e1)
+            {
+
+            }
+        }
+        public void Enabledemployee()
+        {
+            DataSet Ds = new DataSet();
+            try
+            {
+                if (EmployeeIdTextBox.Text != "" && EmployeeIdTextBox.Text != "System.Data.DataRowView")
+                {
+                    E.EmployeeId = EmployeeIdTextBox.Text.ToString().TrimStart().TrimEnd();
+
+
+
+                    E.EmployeeEnable(E);
+                    //string myscript = "alert ('Employee Detail is Disabled');";
+                    //Page.ClientScript.RegisterClientScriptBlock(this.GetType(), "MyScript", myscript, true);
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "alert", "swal('Employee Detail is Enabled','','success')", true);
+                    Check = 1;
+                    Response.Redirect("EmployeeDisable.aspx");
+
+
+                }
+                else
+                {
+                    string myscript = "alert ('Check the Employee Detail');";
+                    Page.ClientScript.RegisterClientScriptBlock(this.GetType(), "MyScript", myscript, true);
+
+                }
+
+            }
+            catch (Exception e1)
+            {
+                // throw new Exception("Error Initializing Data Class." + Environment.NewLine + ex.Message);
+            }
         }
     }
 }

@@ -925,7 +925,7 @@ span.onclick = function() {
             $.ajax({
                 //   url: 'http://localhost:90/PIMS_emailPHP/email/send_mail.php',
                 //url: 'http://10.14.0.150:90/PIMS_emailPHP/email/send_mail.php',
-                url: 'http://localhost/WebEmail/api/Email/pimsEmail',
+                url: 'http://10.14.0.150/WebEmail/api/Email/pimsEmail',
                 type: 'POST',
                 cache: false,
                 contentType: 'application/json',

@@ -88,17 +88,19 @@ namespace ProclainPIMSMaster.Form
         protected void Changepassword_Click(object sender, EventArgs e)
         {
             changePassword();
-
+             
 
 
         }
+
+       
 
         public void changePassword()
         {
             try
             {
-                string Empid = chgempid.Text.ToString().Trim();
-                string OTPpass = chgoldpass.Text.ToString().Trim();
+                string Empid = EmpIdOTP.Text.ToString().Trim();
+                string OTPpass = OldPassOTP.Text.ToString().Trim();
                 string Newpass = chgnewpass.Text.ToString().Trim();
                 string Conpass = chgconpass.Text.ToString().Trim();
                 if (Newpass == Conpass)
@@ -115,7 +117,7 @@ namespace ProclainPIMSMaster.Form
                     else
                     {
                         //ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Enter Your Correct Old Password')", true);
-                        ScriptManager.RegisterStartupScript(this, this.GetType(), "alert", "swal('Enter Your Correct OTP Number','','info')", true);
+                        ScriptManager.RegisterStartupScript(this, this.GetType(), "alert", "swal('Enter Your Correct Old Password','','info')", true);
                     }
                 }
                 else
@@ -142,7 +144,8 @@ namespace ProclainPIMSMaster.Form
                  Ds = RL.ResetPassword(empid);
                 string forgot = Ds.Tables[0].Rows[0].ItemArray[0].ToString();
                 string empname= Ds.Tables[0].Rows[0].ItemArray[1].ToString();
-                string emaill= Ds.Tables[0].Rows[0].ItemArray[2].ToString();
+                string emaill1= Ds.Tables[0].Rows[0].ItemArray[2].ToString(); 
+                string emaill = EmailId.Text.ToString().Trim();
                 if (forgot == credential)
                 {
                     
@@ -281,45 +284,45 @@ namespace ProclainPIMSMaster.Form
                         }
                         else
                         {
-                            
-                            if (chk == "staff" && mailid == "jeyapandi.palani@poclain.com")
+                            if (Rmk != "D")
                             {
-                                RL.LogInsert(RL);
-                                Response.Redirect("AdminDashboard.aspx", false);
-                            }
-                            else if (chk == "staff" || chk == "com" && mailid != "jeyapandi.palani@poclain.com")
-                            {
-                                if (chk == "staff" && mailid != "jeyapandi.palani@poclain.com" && EM == "Rajesh")
+
+
+                                if (chk == "staff" && mailid == "jeyapandi.palani@poclain.com")
                                 {
                                     RL.LogInsert(RL);
-                                    Response.Redirect("FinanceDashboard.aspx?value=" + RL.HEmployeeID, false);
+                                    Response.Redirect("AdminDashboard.aspx", false);
+                                }
+                                else if (chk == "staff" || chk == "com" && mailid != "jeyapandi.palani@poclain.com")
+                                {
+                                    if (chk == "staff" && mailid != "jeyapandi.palani@poclain.com" && EM == "Rajesh")
+                                    {
+                                        RL.LogInsert(RL);
+                                        Response.Redirect("FinanceDashboard.aspx?value=" + RL.HEmployeeID, false);
+                                    }
+
+                                    else
+                                    {
+                                        //   RL.LogInsert(RL);
+                                        Response.Redirect("Deptdashboardlink.aspx?value=" + RL.HEmployeeID, false);
+                                    }
+
+
                                 }
 
                                 else
                                 {
-                                    //   RL.LogInsert(RL);
-                                    Response.Redirect("Deptdashboardlink.aspx?value=" + RL.HEmployeeID, false);
+                                    string i = "1";
+                                    Response.Redirect("default.aspx?value=" + RL.HEmployeeID, false);
+                              
                                 }
 
-
                             }
-
                             else
                             {
-                                string i = "1";
-                                if (Rmk != "D")
-                                {
-
-                                    Response.Redirect("default.aspx?value=" + RL.HEmployeeID, false);
-
-
-                                }
-                                else
-                                {
-                                    ScriptManager.RegisterStartupScript(this, this.GetType(), "alert", "swal('UnAuthorized User','','error')", true);
-                                }
+                                ScriptManager.RegisterStartupScript(this, this.GetType(), "alert", "swal('UnAuthorized User','','error')", true);
                             }
-                            
+
                         }
                     }
                     //ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('New Employee Record Is Added')", true);

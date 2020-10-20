@@ -63,7 +63,7 @@ namespace ProclainPIMSMaster
             catch (Exception)
             {
 
-                Response.Redirect("Main.aspx");
+                Response.Redirect("MainDashBoard.aspx");
             }
 
         }
@@ -71,7 +71,7 @@ namespace ProclainPIMSMaster
         protected void Logout_Click(object sender, EventArgs e)
         {
             Session.Clear();
-            Response.Redirect("Main.aspx");
+            Response.Redirect("MainDashBoard.aspx");
         }
     }
 }

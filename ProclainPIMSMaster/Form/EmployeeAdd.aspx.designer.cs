@@ -85,6 +85,24 @@ namespace ProclainPIMSMaster.Form {
         protected global::System.Web.UI.WebControls.TextBox password;
         
         /// <summary>
+        /// CompanyDDList control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList CompanyDDList;
+        
+        /// <summary>
+        /// DDLComtextbox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox DDLComtextbox;
+        
+        /// <summary>
         /// ErrorLabel control.
         /// </summary>
         /// <remarks>
@@ -121,13 +139,13 @@ namespace ProclainPIMSMaster.Form {
         protected global::System.Web.UI.WebControls.Button SearchsButton;
         
         /// <summary>
-        /// UpdateButton control.
+        /// TempEmpInsert control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button UpdateButton;
+        protected global::System.Web.UI.WebControls.Button TempEmpInsert;
         
         /// <summary>
         /// BackButton control.
@@ -139,6 +157,15 @@ namespace ProclainPIMSMaster.Form {
         protected global::System.Web.UI.WebControls.Button BackButton;
         
         /// <summary>
+        /// UpdateButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button UpdateButton;
+        
+        /// <summary>
         /// DisableButton control.
         /// </summary>
         /// <remarks>
@@ -146,15 +173,6 @@ namespace ProclainPIMSMaster.Form {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button DisableButton;
-        
-        /// <summary>
-        /// Button2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button2;
         
         /// <summary>
         /// SuggestionGridView control.
@@ -182,6 +200,24 @@ namespace ProclainPIMSMaster.Form {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button DepartmentPopButton;
+        
+        /// <summary>
+        /// ComDDl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox ComDDl;
+        
+        /// <summary>
+        /// DDLCompanyAdd control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button DDLCompanyAdd;
         
         /// <summary>
         /// DepartmentPopUPDDList control.

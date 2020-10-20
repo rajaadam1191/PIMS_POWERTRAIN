@@ -149,10 +149,17 @@ namespace ProclainPIMSMaster.Models
             Ds = Da.ExecuteDataset("sp_Department_Select_All");
             return Ds;
         }
-        
-        #endregion
 
-       
+        #endregion
+        public DataSet CompanySelectAll()
+        {
+            DataTO Da = new DataTO();
+            DataSet Ds = new DataSet();
+            Ds = Da.ExecuteDataset("[sp_Company_Select_All]");
+            return Ds;
+        }
+
+
 
 
         #region Select All Department Name

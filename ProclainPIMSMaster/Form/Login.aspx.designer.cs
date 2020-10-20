@@ -76,6 +76,15 @@ namespace ProclainPIMSMaster.Form {
         protected global::System.Web.UI.WebControls.TextBox passforgot;
         
         /// <summary>
+        /// EmailId control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox EmailId;
+        
+        /// <summary>
         /// UpdateButton control.
         /// </summary>
         /// <remarks>
@@ -146,33 +155,6 @@ namespace ProclainPIMSMaster.Form {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox OldPassOTP;
-        
-        /// <summary>
-        /// GenerateBeforeOTP control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button GenerateBeforeOTP;
-        
-        /// <summary>
-        /// chgempid control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox chgempid;
-        
-        /// <summary>
-        /// chgoldpass control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox chgoldpass;
         
         /// <summary>
         /// chgnewpass control.

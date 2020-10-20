@@ -221,15 +221,185 @@
                             <span class="title">Dashboard</span>
                         </a>
                     </li>
+
+
+
+
                     
-                    <li class="nav-item mT-30 active" id="DBMDashboard">
+                    <li class="nav-item mT-30 active" id="ADMINISTRATION">
                         <a class="sidebar-link" href="ManagerMail.aspx" >
                             <span class="icon-holder">
                                     <i style="color:lightblue" class="fa fa-inbox"></i>
                                 </span>
-                            <span class="title">Inbox</span>
+                            <span class="title">ADMINISTRATION</span>
                         </a>
                     </li>
+                    <li class="nav-item mT-30 active" id="AFTERMARKET">
+                        <a class="sidebar-link" href="ManagerMail.aspx" >
+                            <span class="icon-holder">
+                                    <i style="color:lightblue" class="fa fa-inbox"></i>
+                                </span>
+                            <span class="title">AFTERMARKET</span>
+                        </a>
+                    </li>
+                    <li class="nav-item mT-30 active" id="APPLICATION">
+                        <a class="sidebar-link" href="ManagerMail.aspx" >
+                            <span class="icon-holder">
+                                    <i style="color:lightblue" class="fa fa-inbox"></i>
+                                </span>
+                            <span class="title">APPLICATION ENGINEERING</span>
+                        </a>
+                    </li>
+                    <li class="nav-item mT-30 active" id="FINANCE">
+                        <a class="sidebar-link" href="ManagerMail.aspx" >
+                            <span class="icon-holder">
+                                    <i style="color:lightblue" class="fa fa-inbox"></i>
+                                </span>
+                            <span class="title">FINANCE</span>
+                        </a>
+                    </li>
+                    <li class="nav-item mT-30 active" id="HR">
+                        <a class="sidebar-link" href="ManagerMail.aspx" >
+                            <span class="icon-holder">
+                                    <i style="color:lightblue" class="fa fa-inbox"></i>
+                                </span>
+                            <span class="title">HR</span>
+                        </a>
+                    </li>
+                    <li class="nav-item mT-30 active" id="INNOVATION">
+                        <a class="sidebar-link" href="ManagerMail.aspx" >
+                            <span class="icon-holder">
+                                    <i style="color:lightblue" class="fa fa-inbox"></i>
+                                </span>
+                            <span class="title">INNOVATION</span>
+                        </a>
+                    </li>
+                    <li class="nav-item mT-30 active" id="IT">
+                        <a class="sidebar-link" href="ManagerMail.aspx" >
+                            <span class="icon-holder">
+                                    <i style="color:lightblue" class="fa fa-inbox"></i>
+                                </span>
+                            <span class="title">IT</span>
+                        </a>
+                    </li>
+                    <li class="nav-item mT-30 active" id="LOGISTIC">
+                        <a class="sidebar-link" href="ManagerMail.aspx" >
+                            <span class="icon-holder">
+                                    <i style="color:lightblue" class="fa fa-inbox"></i>
+                                </span>
+                            <span class="title">LOGISTIC</span>
+                        </a>
+                    </li>
+                    <li class="nav-item mT-30 active" id="MAINTENANCE">
+                        <a class="sidebar-link" href="ManagerMail.aspx" >
+                            <span class="icon-holder">
+                                    <i style="color:lightblue" class="fa fa-inbox"></i>
+                                </span>
+                            <span class="title">MAINTENANCE</span>
+                        </a>
+                    </li>
+                    <li class="nav-item mT-30 active" id="MANUFACTURING">
+                        <a class="sidebar-link" href="ManagerMail.aspx" >
+                            <span class="icon-holder">
+                                    <i style="color:lightblue" class="fa fa-inbox"></i>
+                                </span>
+                            <span class="title">MANUFACTURING ENGINEERING</span>
+                        </a>
+                    </li>
+                    <li class="nav-item mT-30 active" id="PLANT">
+                        <a class="sidebar-link" href="ManagerMail.aspx" >
+                            <span class="icon-holder">
+                                    <i style="color:lightblue" class="fa fa-inbox"></i>
+                                </span>
+                            <span class="title">PLANT MANAGEMENT</span>
+                        </a>
+                    </li>
+                    <li class="nav-item mT-30 active" id="PRODUCTION">
+                        <a class="sidebar-link" href="ManagerMail.aspx" >
+                            <span class="icon-holder">
+                                    <i style="color:lightblue" class="fa fa-inbox"></i>
+                                </span>
+                            <span class="title">PRODUCTION</span>
+                        </a>
+                    </li>
+                    <li class="nav-item mT-30 active" id="ABU">
+                        <a class="sidebar-link" href="ManagerMail.aspx" >
+                            <span class="icon-holder">
+                                    <i style="color:lightblue" class="fa fa-inbox"></i>
+                                </span>
+                            <span class="title">PRODUCTION ABU</span>
+                        </a>
+                    </li>
+                    <li class="nav-item mT-30 active" id="MBU">
+                        <a class="sidebar-link" href="ManagerMail.aspx" >
+                            <span class="icon-holder">
+                                    <i style="color:lightblue" class="fa fa-inbox"></i>
+                                </span>
+                            <span class="title">PRODUCTION MBU</span>
+                        </a>
+                    </li>
+                    <li class="nav-item mT-30 active" id="POWERTRAIN">
+                        <a class="sidebar-link" href="ManagerMail.aspx" >
+                            <span class="icon-holder">
+                                    <i style="color:lightblue" class="fa fa-inbox"></i>
+                                </span>
+                            <span class="title">PRODUCTION POWERTRAIN</span>
+                        </a>
+                    </li>
+                    <li class="nav-item mT-30 active" id="QUALITY">
+                        <a class="sidebar-link" href="ManagerMail.aspx" >
+                            <span class="icon-holder">
+                                    <i style="color:lightblue" class="fa fa-inbox"></i>
+                                </span>
+                            <span class="title">QUALITY</span>
+                        </a>
+                    </li>
+                    <li class="nav-item mT-30 active" id="SALES">
+                        <a class="sidebar-link" href="ManagerMail.aspx" >
+                            <span class="icon-holder">
+                                    <i style="color:lightblue" class="fa fa-inbox"></i>
+                                </span>
+                            <span class="title">SALES & SALES SUPPORT</span>
+                        </a>
+                    </li>
+                    <li class="nav-item mT-30 active" id="SOURCING">
+                        <a class="sidebar-link" href="ManagerMail.aspx" >
+                            <span class="icon-holder">
+                                    <i style="color:lightblue" class="fa fa-inbox"></i>
+                                </span>
+                            <span class="title">SOURCING</span>
+                        </a>
+                    </li>
+                    <li class="nav-item mT-30 active" id="GENERAL">
+                        <a class="sidebar-link" href="ManagerMail.aspx" >
+                            <span class="icon-holder">
+                                    <i style="color:lightblue" class="fa fa-inbox"></i>
+                                </span>
+                            <span class="title">GENERAL MANAGEMENT</span>
+                        </a>
+                    </li>
+                   
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
                     <li class="nav-item" id="DBMSend">
                         <a class="sidebar-link" href="TeamDetail.aspx">
                             <span class="icon-holder">

@@ -1115,6 +1115,46 @@ namespace ProclainPIMSMaster.Models
 
 
         }
+        public DataSet GetImage(string EmpId)
+        {
+            DataTO Da = new DataTO();
+            DataSet Ds = new DataSet();
+
+            SqlParameter OP2 = new SqlParameter("@EmpId", EmpId);
+            Da.parameters.Add(OP2);
+            Ds = Da.ExecuteDataset("[getImage]");
+
+            return Ds;
+
+
+        }
+
+        public DataSet Ranking1Year()
+        {
+            DataTO Da = new DataTO();
+            DataSet Ds = new DataSet();
+
+            //  SqlParameter OP2 = new SqlParameter("@SuggestionDep", empid);
+            //  Da.parameters.Add(OP2);
+            Ds = Da.ExecuteDataset("RankingYearWise");
+
+            return Ds;
+
+
+        }
+        public DataSet Ranking1Month()
+        {
+            DataTO Da = new DataTO();
+            DataSet Ds = new DataSet();
+
+            //  SqlParameter OP2 = new SqlParameter("@SuggestionDep", empid);
+            //  Da.parameters.Add(OP2);
+            Ds = Da.ExecuteDataset("Ranking1month");
+
+            return Ds;
+
+
+        }
 
         public DataSet Barchart_get_details()
         {
@@ -1123,7 +1163,7 @@ namespace ProclainPIMSMaster.Models
 
             //  SqlParameter OP2 = new SqlParameter("@SuggestionDep", empid);
             //  Da.parameters.Add(OP2);
-            Ds = Da.ExecuteDataset("DBMChart_getdetails_last3months");
+            Ds = Da.ExecuteDataset("[Graph3month]");
 
             return Ds;
 
@@ -1136,7 +1176,75 @@ namespace ProclainPIMSMaster.Models
 
             //  SqlParameter OP2 = new SqlParameter("@SuggestionDep", empid);
             //  Da.parameters.Add(OP2);
-            Ds = Da.ExecuteDataset("[DBMchart_get_YearReport]");
+            Ds = Da.ExecuteDataset("[GraphYearwise]");
+
+            return Ds;
+
+
+        }
+        //YearBarChart,YearDepartmentBarchart,YearMonthWiseBarChart,YearpPieChart
+        public DataSet YearBarChart()
+        {
+            DataTO Da = new DataTO();
+            DataSet Ds = new DataSet();
+
+            //  SqlParameter OP2 = new SqlParameter("@SuggestionDep", empid);
+            //  Da.parameters.Add(OP2);
+            Ds = Da.ExecuteDataset("[YearBarChart]");
+
+            return Ds;
+
+
+        }
+        public DataSet YearpPieChart()
+        {
+            DataTO Da = new DataTO();
+            DataSet Ds = new DataSet();
+
+            //  SqlParameter OP2 = new SqlParameter("@SuggestionDep", empid);
+            //  Da.parameters.Add(OP2);
+            Ds = Da.ExecuteDataset("[YearpPieChart]");
+
+            return Ds;
+
+
+        }
+
+        public DataSet YearDepartmentBarchart()
+        {
+            DataTO Da = new DataTO();
+            DataSet Ds = new DataSet();
+
+            //  SqlParameter OP2 = new SqlParameter("@SuggestionDep", empid);
+            //  Da.parameters.Add(OP2);
+            Ds = Da.ExecuteDataset("[YearDepartmentBarchart]");
+
+            return Ds;
+
+
+        }
+        public DataSet YearMonthWiseBarChart()
+        {
+            DataTO Da = new DataTO();
+            DataSet Ds = new DataSet();
+
+            //  SqlParameter OP2 = new SqlParameter("@SuggestionDep", empid);
+            //  Da.parameters.Add(OP2);
+            Ds = Da.ExecuteDataset("[YearMonthWiseBarChart]");
+
+            return Ds;
+
+
+        }
+
+        public DataSet EmpDetailView()
+        {
+            DataTO Da = new DataTO();
+            DataSet Ds = new DataSet();
+
+            //  SqlParameter OP2 = new SqlParameter("@SuggestionDep", empid);
+            //  Da.parameters.Add(OP2);
+            Ds = Da.ExecuteDataset("[EmployeeIdGet]");
 
             return Ds;
 

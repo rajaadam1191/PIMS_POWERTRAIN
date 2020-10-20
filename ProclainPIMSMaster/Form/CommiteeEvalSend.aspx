@@ -613,9 +613,9 @@
                                 <div class="form-group">
                                     <div class="peers">
                                         <label>To: </label>
-                                        <asp:TextBox ID="TOIMPTextBox" CssClass="form-control inp IMPToTextBoxClass" placeholder="To: " runat="server"></asp:TextBox>
+                                        <asp:TextBox ID="TOIMPTextBox" CssClass="form-control inp IMPToTextBoxClass" placeholder="To: " runat="server"   ></asp:TextBox>
                                         
-                                        <asp:TextBox ID="EmpIDIMPTextBox" CssClass="form-control inp IMPEmpIDTextBoxClass" placeholder="ID " runat="server" ></asp:TextBox>
+                                        <asp:TextBox ID="EmpIDIMPTextBox" CssClass="form-control inp IMPEmpIDTextBoxClass" placeholder="ID " runat="server" hidden></asp:TextBox>
                                         <asp:TextBox ID="DupEmpIDIMPTextBox" CssClass="form-control inp" placeholder="ID " runat="server" ClientIDMode="Static" Visible="false"></asp:TextBox>
                                     </div>
                                 </div>
@@ -699,7 +699,7 @@
             $.ajax({
                 //   url: 'http://localhost:90/PIMS_emailPHP/email/send_mail.php',
                 //url: 'http://10.14.0.150:90/PIMS_emailPHP/email/send_mail.php',
-                url: 'http://localhost/WebEmail/api/Email/pimsEmail',
+                url: 'http://10.14.0.150/WebEmail/api/Email/pimsEmail',
                 type: 'POST',
                 cache: false,
                 contentType: 'application/json',
@@ -737,7 +737,7 @@
 
              $("[id*=IMPDepaDLists]").change(function () {
                  console.log("mailtest1");
-                 var txts = $(this).children("option:selected").text().toString();
+                 var txts = $(this).children("option:selected").val().toString();
               console.log(txts);
                 console.log("Checking :" + txts);
                 if (txts != "--Select--") {
@@ -754,7 +754,7 @@
                         $(".IMPToTextBoxClass").val(txts);
                         console.log("TT:" + textboxs2 + 'textbox:' + txts);
 
-                            var ks = txts.toString();
+                        var ks = txts.toString();
                             var fs = "";
                             var feids = "";
                             $.ajax({

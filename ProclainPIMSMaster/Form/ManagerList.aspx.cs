@@ -25,6 +25,7 @@ namespace ProclainPIMSMaster.Form
 
     public partial class ManagerList : System.Web.UI.Page
     {
+        NewSuggestionModel NSM = new NewSuggestionModel();
         DataBankManager DBM = new DataBankManager();
         Manager M = new Manager();
         static string ManID;
@@ -45,6 +46,7 @@ namespace ProclainPIMSMaster.Form
                     if (!IsPostBack)
                     {
                         SuggestionTableView();
+                        DepartmentNameDDList();
 
                         ProclainPIMSMaster.AdminMaster admaster = (ProclainPIMSMaster.AdminMaster)this.Master;
                         admaster.ChangeTitle("Add Managers");
@@ -71,6 +73,23 @@ namespace ProclainPIMSMaster.Form
                  
             }
             
+        }
+        public void DepartmentNameDDList()
+        {
+            try
+            {
+                DataSet Ds = new DataSet();
+                Ds = NSM.DepartmentSelectAll();
+
+                DepartmentTextBox.DataSource = Ds.Tables[0];
+                DepartmentTextBox.DataTextField = "DepName";
+                DepartmentTextBox.DataValueField = "DepName";
+                DepartmentTextBox.DataBind();
+            }
+            catch (Exception e1)
+            {
+
+            }
         }
         protected void SuggestionGridView_RowDataBound(object sender, GridViewRowEventArgs e)
         {
@@ -229,6 +248,7 @@ namespace ProclainPIMSMaster.Form
                     string myscript = "alert ('Manager Detail Changed');";
                     Page.ClientScript.RegisterClientScriptBlock(this.GetType(), "MyScript", myscript, true);
                     SuggestionTableView();
+                    clear();
                     i = 1;
                 }
                 else
@@ -261,6 +281,7 @@ namespace ProclainPIMSMaster.Form
                     string myscript = "alert ('Manager Detail Deleted');";
                     Page.ClientScript.RegisterClientScriptBlock(this.GetType(), "MyScript", myscript, true);
                     SuggestionTableView();
+                    clear();
                     i = 1;
                 }
                 else

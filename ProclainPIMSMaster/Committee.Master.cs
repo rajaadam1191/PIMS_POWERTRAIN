@@ -34,7 +34,7 @@ namespace ProclainPIMSMaster
         protected void Logout_Click(object sender, EventArgs e)
         {
             Session.Clear();
-            Response.Redirect("Main.aspx");
+            Response.Redirect("MainDashBoard.aspx");
         }
 
         public void loginload()
