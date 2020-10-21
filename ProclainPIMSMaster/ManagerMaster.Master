@@ -226,157 +226,157 @@
 
 
                     
-                    <li class="nav-item mT-30 active" id="ADMINISTRATION">
-                        <a class="sidebar-link" href="ManagerMail.aspx" >
+                    <li class="nav-item mT-30 active" id="ADMINISTR" >
+                        <asp:linkbutton ID="ADMINISTRATION" runat="server" class="sidebar-link" OnClick="ADMINISTRATION_Click" visible="false">
                             <span class="icon-holder">
                                     <i style="color:lightblue" class="fa fa-inbox"></i>
                                 </span>
                             <span class="title">ADMINISTRATION</span>
-                        </a>
+                        </asp:linkbutton>
                     </li>
-                    <li class="nav-item mT-30 active" id="AFTERMARKET">
-                        <a class="sidebar-link" href="ManagerMail.aspx" >
+                    <li class="nav-item mT-30 active" id="AFTER" >
+                        <asp:linkbutton ID="AFTERMARKET" runat="server" class="sidebar-link" OnClick="AFTERMARKET_Click" visible="false">
                             <span class="icon-holder">
                                     <i style="color:lightblue" class="fa fa-inbox"></i>
                                 </span>
                             <span class="title">AFTERMARKET</span>
-                        </a>
+                        </asp:linkbutton>
                     </li>
-                    <li class="nav-item mT-30 active" id="APPLICATION">
-                        <a class="sidebar-link" href="ManagerMail.aspx" >
+                    <li class="nav-item mT-30 active" id="APPLI">
+                        <asp:linkbutton ID="APPLICATION" runat="server" class="sidebar-link" OnClick="APPLICATION_Click" visible="false" >
                             <span class="icon-holder">
                                     <i style="color:lightblue" class="fa fa-inbox"></i>
                                 </span>
                             <span class="title">APPLICATION ENGINEERING</span>
-                        </a>
+                        </asp:linkbutton>
                     </li>
-                    <li class="nav-item mT-30 active" id="FINANCE">
-                        <a class="sidebar-link" href="ManagerMail.aspx" >
+                    <li class="nav-item mT-30 active" id="FINAN">
+                        <asp:linkbutton ID="FINANCE" runat="server" class="sidebar-link" OnClick="FINANCE_Click" visible="false">
                             <span class="icon-holder">
                                     <i style="color:lightblue" class="fa fa-inbox"></i>
                                 </span>
                             <span class="title">FINANCE</span>
-                        </a>
+                        </asp:linkbutton>
                     </li>
-                    <li class="nav-item mT-30 active" id="HR">
-                        <a class="sidebar-link" href="ManagerMail.aspx" >
+                    <li class="nav-item mT-30 active" id="HR1">
+                        <asp:linkbutton ID="HR" runat="server" class="sidebar-link" OnClick="HR_Click" visible="false">
                             <span class="icon-holder">
                                     <i style="color:lightblue" class="fa fa-inbox"></i>
                                 </span>
                             <span class="title">HR</span>
-                        </a>
+                        </asp:linkbutton>
                     </li>
-                    <li class="nav-item mT-30 active" id="INNOVATION">
-                        <a class="sidebar-link" href="ManagerMail.aspx" >
+                    <li class="nav-item mT-30 active" id="INNOVA">
+                        <asp:linkbutton ID="INNOVATION" runat="server" class="sidebar-link" OnClick="INNOVATION_Click" visible="false">
                             <span class="icon-holder">
                                     <i style="color:lightblue" class="fa fa-inbox"></i>
                                 </span>
                             <span class="title">INNOVATION</span>
-                        </a>
+                        </asp:linkbutton>
                     </li>
-                    <li class="nav-item mT-30 active" id="IT">
-                        <a class="sidebar-link" href="ManagerMail.aspx" >
+                    <li class="nav-item mT-30 active" id="IT1">
+                        <asp:linkbutton ID="IT" runat="server" class="sidebar-link" OnClick="IT_Click" visible="false">
                             <span class="icon-holder">
                                     <i style="color:lightblue" class="fa fa-inbox"></i>
                                 </span>
                             <span class="title">IT</span>
-                        </a>
+                        </asp:linkbutton>
                     </li>
-                    <li class="nav-item mT-30 active" id="LOGISTIC">
-                        <a class="sidebar-link" href="ManagerMail.aspx" >
+                    <li class="nav-item mT-30 active" id="LOGIS">
+                        <asp:linkbutton ID="LOGISTIC" runat="server" class="sidebar-link" OnClick="LOGISTIC_Click" visible="false">
                             <span class="icon-holder">
                                     <i style="color:lightblue" class="fa fa-inbox"></i>
                                 </span>
                             <span class="title">LOGISTIC</span>
-                        </a>
+                        </asp:linkbutton>
                     </li>
-                    <li class="nav-item mT-30 active" id="MAINTENANCE">
-                        <a class="sidebar-link" href="ManagerMail.aspx" >
+                    <li class="nav-item mT-30 active" id="MAINTE">
+                        <asp:linkbutton ID="MAINTENANCE" runat="server" class="sidebar-link" OnClick="MAINTENANCE_Click" visible="false">
                             <span class="icon-holder">
                                     <i style="color:lightblue" class="fa fa-inbox"></i>
                                 </span>
                             <span class="title">MAINTENANCE</span>
-                        </a>
+                        </asp:linkbutton>
                     </li>
-                    <li class="nav-item mT-30 active" id="MANUFACTURING">
-                        <a class="sidebar-link" href="ManagerMail.aspx" >
+                    <li class="nav-item mT-30 active" id="MANUFAC">
+                        <asp:linkbutton ID="MANUFACTURING" runat="server" class="sidebar-link" OnClick="MANUFACTURING_Click" visible="false">
                             <span class="icon-holder">
                                     <i style="color:lightblue" class="fa fa-inbox"></i>
                                 </span>
                             <span class="title">MANUFACTURING ENGINEERING</span>
-                        </a>
+                        </asp:linkbutton>
                     </li>
-                    <li class="nav-item mT-30 active" id="PLANT">
-                        <a class="sidebar-link" href="ManagerMail.aspx" >
+                    <li class="nav-item mT-30 active" id="PLA">
+                        <asp:linkbutton ID="PLANT" runat="server" class="sidebar-link" OnClick="PLANT_Click" visible="false">
                             <span class="icon-holder">
                                     <i style="color:lightblue" class="fa fa-inbox"></i>
                                 </span>
                             <span class="title">PLANT MANAGEMENT</span>
-                        </a>
+                        </asp:linkbutton>
                     </li>
-                    <li class="nav-item mT-30 active" id="PRODUCTION">
-                        <a class="sidebar-link" href="ManagerMail.aspx" >
+                    <li class="nav-item mT-30 active" id="PRODU">
+                        <asp:linkbutton ID="PRODUCTION" runat="server" class="sidebar-link" OnClick="PRODUCTION_Click" visible="false">
                             <span class="icon-holder">
                                     <i style="color:lightblue" class="fa fa-inbox"></i>
                                 </span>
                             <span class="title">PRODUCTION</span>
-                        </a>
+                        </asp:linkbutton>
                     </li>
-                    <li class="nav-item mT-30 active" id="ABU">
-                        <a class="sidebar-link" href="ManagerMail.aspx" >
+                    <li class="nav-item mT-30 active" id="ABU1">
+                        <asp:linkbutton ID="ABU" runat="server" class="sidebar-link" OnClick="ABU_Click" visible="false">
                             <span class="icon-holder">
                                     <i style="color:lightblue" class="fa fa-inbox"></i>
                                 </span>
                             <span class="title">PRODUCTION ABU</span>
-                        </a>
+                        </asp:linkbutton>
                     </li>
-                    <li class="nav-item mT-30 active" id="MBU">
-                        <a class="sidebar-link" href="ManagerMail.aspx" >
+                    <li class="nav-item mT-30 active" id="MBU1">
+                        <asp:linkbutton ID="MBU" runat="server" class="sidebar-link" OnClick="MBU_Click" visible="false">
                             <span class="icon-holder">
                                     <i style="color:lightblue" class="fa fa-inbox"></i>
                                 </span>
                             <span class="title">PRODUCTION MBU</span>
-                        </a>
+                        </asp:linkbutton>
                     </li>
-                    <li class="nav-item mT-30 active" id="POWERTRAIN">
-                        <a class="sidebar-link" href="ManagerMail.aspx" >
+                    <li class="nav-item mT-30 active" id="POWERT">
+                        <asp:linkbutton ID="POWERTRAIN" runat="server" class="sidebar-link" OnClick="POWERTRAIN_Click" visible="false">
                             <span class="icon-holder">
                                     <i style="color:lightblue" class="fa fa-inbox"></i>
                                 </span>
                             <span class="title">PRODUCTION POWERTRAIN</span>
-                        </a>
+                        </asp:linkbutton>
                     </li>
-                    <li class="nav-item mT-30 active" id="QUALITY">
-                        <a class="sidebar-link" href="ManagerMail.aspx" >
+                    <li class="nav-item mT-30 active" id="QUAL">
+                        <asp:linkbutton ID="QUALITY" runat="server" class="sidebar-link" OnClick="QUALITY_Click" visible="false">
                             <span class="icon-holder">
                                     <i style="color:lightblue" class="fa fa-inbox"></i>
                                 </span>
                             <span class="title">QUALITY</span>
-                        </a>
+                        </asp:linkbutton>
                     </li>
-                    <li class="nav-item mT-30 active" id="SALES">
-                        <a class="sidebar-link" href="ManagerMail.aspx" >
+                    <li class="nav-item mT-30 active" id="SALE">
+                        <asp:linkbutton ID="SALES" runat="server" class="sidebar-link" OnClick="SALES_Click" visible="false">
                             <span class="icon-holder">
                                     <i style="color:lightblue" class="fa fa-inbox"></i>
                                 </span>
                             <span class="title">SALES & SALES SUPPORT</span>
-                        </a>
+                        </asp:linkbutton>
                     </li>
-                    <li class="nav-item mT-30 active" id="SOURCING">
-                        <a class="sidebar-link" href="ManagerMail.aspx" >
+                    <li class="nav-item mT-30 active" id="SOUR">
+                        <asp:linkbutton ID="SOURCING" runat="server" class="sidebar-link" OnClick="SOURCING_Click" visible="false">
                             <span class="icon-holder">
                                     <i style="color:lightblue" class="fa fa-inbox"></i>
                                 </span>
                             <span class="title">SOURCING</span>
-                        </a>
+                        </asp:linkbutton>
                     </li>
-                    <li class="nav-item mT-30 active" id="GENERAL">
-                        <a class="sidebar-link" href="ManagerMail.aspx" >
+                    <li class="nav-item mT-30 active" id="GEN">
+                        <asp:linkbutton ID="GENERAL" runat="server" class="sidebar-link" OnClick="GENERAL_Click" visible="false">
                             <span class="icon-holder">
                                     <i style="color:lightblue" class="fa fa-inbox"></i>
                                 </span>
                             <span class="title">GENERAL MANAGEMENT</span>
-                        </a>
+                        </asp:linkbutton>
                     </li>
                    
                     

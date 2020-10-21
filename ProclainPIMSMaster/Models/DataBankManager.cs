@@ -559,8 +559,8 @@ namespace ProclainPIMSMaster.Models
 
             SqlParameter OP5 = new SqlParameter("@Remark1", M.Remark1);
             Da.parameters.Add(OP5);
-            //SqlParameter OP6 = new SqlParameter("@Type", M.Type);
-            //Da.parameters.Add(OP);
+            SqlParameter OP6 = new SqlParameter("@Remark3", M.Remark3);
+            Da.parameters.Add(OP6);
 
 
             foreach (SqlParameter p in Da.parameters)

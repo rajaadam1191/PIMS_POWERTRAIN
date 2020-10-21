@@ -172,6 +172,12 @@ namespace ProclainPIMSMaster.Models
             get { return teamcount; }
             set { teamcount = value; }
         }
+        private string depid;
+        public string DepId
+        {
+            get { return depid; }
+            set { depid = value; }
+        }
 
         #endregion
 
@@ -310,6 +316,8 @@ namespace ProclainPIMSMaster.Models
             
             SqlParameter OP2 = new SqlParameter("@ReceiverID", M.IEmpId);
             Da.parameters.Add(OP2);
+            SqlParameter OP1 = new SqlParameter("@DepId", M.DepId);
+            Da.parameters.Add(OP1);
             Ds = Da.ExecuteDataset("Manager_mailview");
             return Ds;
 
@@ -322,6 +330,8 @@ namespace ProclainPIMSMaster.Models
 
             SqlParameter OP2 = new SqlParameter("@ReceiverID", M.IEmpId);
             Da.parameters.Add(OP2);
+            SqlParameter OP1 = new SqlParameter("@DepId", M.DepId);
+            Da.parameters.Add(OP1);
             Ds = Da.ExecuteDataset("Manager_mailview_assigned");
             return Ds;
 
@@ -334,6 +344,8 @@ namespace ProclainPIMSMaster.Models
 
             SqlParameter OP2 = new SqlParameter("@ReceiverID", M.IEmpId);
             Da.parameters.Add(OP2);
+            SqlParameter OP1 = new SqlParameter("@DepId", M.DepId);
+            Da.parameters.Add(OP1);
             Ds = Da.ExecuteDataset("Manager_mailview_complete");
             return Ds;
 
@@ -345,6 +357,8 @@ namespace ProclainPIMSMaster.Models
 
             SqlParameter OP2 = new SqlParameter("@ReceiverID", M.IEmpId);
             Da.parameters.Add(OP2);
+            SqlParameter OP1 = new SqlParameter("@DepId", M.DepId);
+            Da.parameters.Add(OP1);
             Ds = Da.ExecuteDataset("Manager_mailview_hold");
             return Ds;
 
@@ -357,6 +371,8 @@ namespace ProclainPIMSMaster.Models
 
             SqlParameter OP2 = new SqlParameter("@ReceiverID", M.IEmpId);
             Da.parameters.Add(OP2);
+            SqlParameter OP1 = new SqlParameter("@DepId", M.DepId);
+            Da.parameters.Add(OP1);
             Ds = Da.ExecuteDataset("[Manager_mailview_reject]");
             return Ds;
 

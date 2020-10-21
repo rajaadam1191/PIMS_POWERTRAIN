@@ -332,6 +332,7 @@ namespace ProclainPIMSMaster.Form
 
                     if (emp != "" && emp != "System.Data.DataRowView")
                     {
+                        
                         M.IEmpName = emp.ToString();
                         
                         DS = M.ManagerNameSelect(M);
@@ -436,6 +437,9 @@ namespace ProclainPIMSMaster.Form
                         DBM.Discription = ContectIMPTextBox.Text.TrimStart().TrimEnd().ToString();
                         DBM.Remark1 = "i";
                         DBM.Remark2 = "Manager";
+                        string st = IMPDepaDLists.Text.ToString();
+                        string[] res = st.Split(',');
+                        DBM.Remark3 = res[1];
 
 
                         DBM.ComInboxID = ComEvalInboxID.ToString();

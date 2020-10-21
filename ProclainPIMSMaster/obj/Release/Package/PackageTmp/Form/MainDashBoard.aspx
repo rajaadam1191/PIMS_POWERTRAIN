@@ -97,83 +97,160 @@
               
     }
 </style>
-   <%-- <style>
-.nav-tabs .nav-link {
-    color: gray;
-    border: 0;
-    border-bottom: 1px solid grey;
+ <style>
+  /* Make the image fully responsive */
+  .carousel-inner {
+    width: 100%;
+    height: 100%;
+  }
+  </style>
+  <style style="text/css">
+div.slide-up {
+  height:200px;
+  overflow:hidden;
+}
+div.slide-up p {
+  animation: 10s slide-up;
+  margin-top:0%;
 }
 
-.nav-tabs .nav-link:hover {
-    border: 0;
-    border-bottom: 1px solid grey;
+@keyframes slide-up {
+  from {
+    margin-top: 100%;
+    height: 300%; 
+  }
+
+  to {
+    margin-top: 0%;
+    height: 100%;
+  }
+}
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  height: 50px;
+  width: 50px;
+  
+  background-size: 100%, 100%;
+ 
+  background-image: none;
 }
 
-.nav-tabs .nav-link.active {
-    color: #000000;
-    border: 0;
-    border-radius: 0;
-    border-bottom: 2px solid blue;
+.carousel-control-next-icon:after
+{
+  content: '>';
+  font-size: 55px;
+  color: red;
 }
-</style>--%>
+
+.carousel-control-prev-icon:after {
+  content: '<';
+  font-size: 55px;
+  color: red;
+}
+.jumbotron{
+padding-top:0% !important;
+}
+</style>
+   
 </head>
-<body  >
-    <form id="form1" class="bgcolor" runat="server" >
-        <div class="container screenresposive" >
-            <div class="row" style="padding-top3px;">
-                    <div class="col-md-12 " >
-                       <marquee direction="left" onmouseover="this.stop()" onmouseout="this.start()"scrolldelay="100"   style="height: 100%; width: 100%; font-family:Calibri;">
-                                            <h4><strong><asp:Literal ID="lt1"  runat="server" ></asp:Literal></strong></h4></marquee>
-                      <%-- <table>
-                            <tr>
-                                <td>
-                                    
-                                        <marquee direction="left"  onmouseover="this.stop()" onmouseout="this.start()"scrolldelay="100" style="height: 100%; width: 100%;">
-                                            <asp:Literal ID="lt1" runat="server"></asp:Literal></marquee>
-                                    
-                                </td>
-                            </tr>
-
-                       </table>--%>
-                    </div>
-                </div>
+<body  class=" screenresposive">
+    <form id="form1"  runat="server" class="jumbotron" >
+        <div  >
+          
             
                  <div class="text-right" style="padding-right:2%;">
                     
                        <b> <asp:LinkButton runat="server" ID="GoSignIn"  OnClick="GoSignIn_Click">Go SignIn</asp:LinkButton></b>
                     
                 </div>
-				 <div class="row " >
-			
-						<div class="col-md-12 ">
-                             <div class=" bgcolor" style="width: 100%;height: 100%;">
+                <div class="row">
+                <div class="col-md-3">
+               <div class="leftside no-gutters">
+                    <div class="email-side-nav remain-height ov-h">
+               
+                        <div class="h-100 scrollable pos-r">
+                            <div class="layer w-100 fxg-1 " style="padding-left: 15px; cursor:pointer;">
+                               
 
-                                     <div class="row" style=" ">
-                                            <div id="dvTab" class="container mt-3" style="width:100%;height:100%;">
 
-                                              <ul class="nav nav-tabs nav-justified " role="tablist" >
-                                                    <li class="nav-item" id="User" style="width:50%; font-size:100%;  padding-left:2%; ">
-                                                        <a class="nav-link active" data-toggle="tab" href="#rank1" style="font-weight:bold ;text-align:center;border-color:black;border-radius:20px;" hidden="hidden">MONTHLY</a>
+                                <marquee direction="down" onmouseover="this.stop()" onmouseout="this.start()"scrolldelay="100"   style="height: 100%; width: 100%; font-family:Calibri;">
+                                            
+                                <asp:Repeater ID="MailRepeater" runat="server">
+                                  
+                                    <ItemTemplate>
+                                       
+                                            <div class="ideadiv" style="padding-left: 10px;">
+                                              <%--onclick="ConformPsIdeaID(document.getElementsByName('lblImageNameTextBox').value)"--%>
+                                                         <%--<asp:Label ID="lblImageName" CssClass="IdeaIdclass" runat="server" Text='<%#Bind("IdeaId")%>' ClientIDMode="Static" hidden></asp:Label>--%>             
+                                            <div class="row">
 
-                                                    </li>
-                                                    <li class="nav-item" id="Implement" style="width:50%; font-size:100%;padding-right:2%; ">
-                                                        <a class="nav-link" data-toggle="tab" href="#rank2" style="font-weight:bold ;text-align:center;border-color:black;border-radius:20px;" hidden="hidden">YEAR</a>
-
-                                                    </li>
-                                              </ul>
-                                                
-                                                
-             
-                                              <div class="tab-content">
+                                                <div class="col-sm-12">
+                                                    
+                                                    <asp:TextBox   ID="lblImageNameTextBox" name="lblImageNameTextBox" CssClass="IdeaIdclasstxt" runat="server" Text='<%#Bind("CEOMessage")%>' hidden></asp:TextBox>
                                                   
-                                                <div id="rank1" class="container tab-pane active">
-                                                    <div class="text-center" style="padding-right:2%;">
-                    
-                                                     <b><asp:Label runat="server" ID="Month" Style="font-weight:bolder;font-family:Algerian;font-size:x-large;">MONTH</asp:Label></b>
-                    
-                                                    </div>
+                                                    
+                                                    
+                                                </div>
+
                                                 
-                                                    <div class="row">
+                                                
+                                                
+
+                                            </div>
+                                            
+                                            <div class="row" style="margin-right: 1px;">
+                                            
+                                                <div id="viewdetail" class="col-sm-12 form-control "  style="border-top:none;border-left:none;border-right:none; border-bottom:none">
+                                                    
+                                                    <%# Eval("CEOMessage") %>
+                                                    <br />
+                                                   
+                                                    <br />
+                                                    <hr />
+                                                   
+                                                    
+                                                </div>
+                                                
+                                            </div>
+                                            
+                                                <hr />
+                                        </div>
+
+                                    </ItemTemplate>
+                                    
+                                </asp:Repeater>
+
+                                </marquee>
+
+
+                               
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+                <div class="col-md-9">
+                <div class="row">
+                 
+                <div class="col-md-12">
+                    <div id="demo" class="carousel slide" data-ride="carousel">
+
+                      <!-- Indicators -->
+                      <ul class="carousel-indicators">
+                        <li data-target="#demo" data-slide-to="0" class="active"></li>
+                        <li data-target="#demo" data-slide-to="1"></li>
+                        
+                      </ul>
+  
+                      <!-- The slideshow -->
+                      <div class="carousel-inner">
+                        <div class="carousel-item active">
+                        <div class="text-center" style="padding-right:2%;">
+                    
+                           <b><asp:Label runat="server" ID="Month" Style="font-weight:bolder;font-family:Algerian;font-size:x-large;">MONTH</asp:Label></b>
+                    
+                        </div>
+                                <div class="row">
                                                         <div class="col-md-4" >
 							                               <div class="card shadow p-3 mb-5 bg-white rounded cardbgcolor" style="border-radius:20px;"  >
 							                                  <div class="card-header"style="height:100%;width:100%;">
@@ -202,28 +279,7 @@
                                                                        </div>
 							                               
                                                             
-                                                              <%-- <div class="card-body" style="width:100%">
-                                                            <div class="row">
-                                                                <div class="col-md-8" style="width:100%;height:160px;">
-                                                                    <img src="../UI/Image/altImg.jpg" class="rounded-circle mx-auto d-block img-fluid"  runat="server" id="rank1img" />
-                                                                </div>
-                                                                <div class="col-md-4">
-                                                                    <h6><center>RANK-1</center></h6>
-                                                                    <div class="row">
-                                                                       <%--<div class="col-md-5"><b>ID:</b></div>
-                                                                       <div class="col-md-12"><asp:Label runat="server" ID="rank1Id" ></asp:Label></div>
-                                                                   </div>
-                                                                   <div class="row">
-                                                                      <%-- <div class="col-md-5"><b>Name:</b></div>
-                                                                       <div class="col-md-12"><asp:Label runat="server" ID="rank1Name" ></asp:Label></div>
-                                                                   </div>
-                                                                   <div class="row">
-                                                                       <%--<div class="col-md-5"><b>Idea:</b></div>
-                                                                       <div class="col-md-12"><asp:Label runat="server" ID="rank1count" ></asp:Label></div>
-                                                                   </div>
-                                                                </div>
-                                                            </div>
-                                                                   </div>--%>
+                                                            
 						                                    </div>
 							                            </div>
 							                             <div class="col-md-4" >
@@ -284,20 +340,15 @@
 							                               </div>
 						    
 							                            </div>
-			                            </div>			
-            	                                </div>
-    
-
-    
-
-                                                <div id="rank2" class="container tab-pane">
-                                                    <div class="text-center" style="padding-right:2%;">
+			                            </div>
+                        </div>
+                        <div class="carousel-item">
+                        <div class="text-center" style="padding-right:2%;">
                     
-                                                     <b> <asp:Label runat="server" ID="year" Style="font-weight:bolder;font-family:Algerian;font-size:x-large;">YEAR</asp:Label></b>
+                            <b> <asp:Label runat="server" ID="year" Style="font-weight:bolder;font-family:Algerian;font-size:x-large;">YEAR</asp:Label></b>
                     
-                                                    </div>
-                                                
-                                                    <div class="row">
+                        </div>
+                                 <div class="row">
                                                          <div class="col-md-4" >
 							                               <div class="card shadow p-3 mb-5 bg-white rounded cardbgcolor" style="border-radius:20px;">
 							                                  <div class="card-header" style="height:100%;width:100%;">
@@ -305,9 +356,7 @@
 								                              </div>
 								                              <div class="card-BODY" style="height:160px;width:100%;">
                                                                   <img src="../UI/Image/altImg.jpg" class="rounded-circle mx-auto d-block img-fluid" style="width: 62%;margin-left: 21%;height:100%;" runat="server" id="yearrank1img" />
-								                                   <%--<div id="imgAt2" style="display: none">
-                                                                          <img src="ContentPlaceHolder1_UpLoad2Tag" id="UpLoad2Tag" style="height: 100px; width: 100px;" runat="server" alt="NoAttachment" />
-                                                                   </div>--%>
+								                                  
                                        
 								                              </div>
                                                                <div class="card-footer" style="height:100%;width:100%;">
@@ -388,234 +437,259 @@
 							                               </div>
 						    
 							                            </div>
-			                            </div>				
-                                                 </div>
-    
-                                              </div>
-                                            </div>            
+			                            </div>
+                        </div>
+                        
+                      </div>
+  
+                      <!-- Left and right controls -->
+                      <a class="carousel-control-prev" href="#demo" data-slide="prev" style="color:black">
+                        <span class="carousel-control-prev-icon" ></span>
+                      </a>
+                      <a class="carousel-control-next" href="#demo" data-slide="next" style="color:black">
+                        <span class="carousel-control-next-icon" ></span>
+                      </a>
+                    </div>
+                </div>
+                </div>
+                <div class="row">
+                
+                <div class="col-md-12">
+                    <div id="demo1" class="carousel slide" data-ride="carousel">
 
-                                     </div>
+                      <!-- Indicators -->
+                      <ul class="carousel-indicators">
+                        <li data-target="#demo1" data-slide-to="0" class="active"></li>
+                        <li data-target="#demo1" data-slide-to="1"></li>
+                        <li data-target="#demo1" data-slide-to="2"></li>
+                      </ul>
+  
+                      <!-- The slideshow -->
+                      <div class="carousel-inner">
+                        <div class="carousel-item active">
+                             <div class="row">
+                                        <div class="col-md-6">
+                                   
+                                    <div class="card shadow p-3 mb-5 bg-white rounded cardbgcolor "  >				     
+                                            <div id="chartContainer1" class="bgcolor" style="height:300px;width:100%;"></div>
+							        </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                   
+                                    <div class="card shadow p-3 mb-5 bg-white rounded cardbgcolor "  >				     
+                                        <div id="chartContainer2" class="bgcolor" style="height:300px;width:100%;"></div>
+							        </div>
+                                        </div>
+                             </div>
+                        </div>
+                        <div class="carousel-item">
+                                   
+                                    <div class="card shadow p-3 mb-5 bg-white rounded cardbgcolor "  >				     
+                                        <div id="chartContainer3" class="bgcolor" style="height:300px;width:100%;"></div>
+							        </div>
+                        </div>
+                        <div class="carousel-item">
+                                    
+                                      				
+                                    <div class="card shadow p-3 mb-5 bg-white rounded cardbgcolor "  >				     
+                                        <div id="chartContainer4" class="bgcolor" style="height:300px;width:100%;"></div>
+							        </div>
+                        </div>
+                      </div>
+  
+                      <!-- Left and right controls -->
+                      <a class="carousel-control-prev" href="#demo1" data-slide="prev" style="color:black">
+                        <span class="carousel-control-prev-icon" ></span>
+                      </a>
+                      <a class="carousel-control-next" href="#demo1" data-slide="next" style="color:red">
+                        <span class="carousel-control-next-icon" style="color:black"></span>
+                      </a>
+                    </div>
+                </div>
+                </div>
 
-						 
-							         <div class="row" style="margin-right: 5%;margin-left:5%;">
-                                                        
-                                       <div id="chart" class="container mt-3">
-
-                                              <ul class="nav nav-tabs nav-justified " role="tablist" visible="false">
-                                                    <li class="nav-item" id="barpiechart" style="width:50%; font-size:100%;  padding-left:2%; ">
-                                                        <a class="nav-link active" data-toggle="tab" href="#chart1" style="font-weight:bold ;text-align:center;border-color:black;border-radius:20px;" hidden="hidden"></a>
-
-                                                    </li>
-                                                    <li class="nav-item" id="Departchart" style="width:50%; font-size:100%;padding-right:2%; ">
-                                                        <a class="nav-link" data-toggle="tab" href="#chart2" style="font-weight:bold ;text-align:center;border-color:black;border-radius:20px;"hidden="hidden"></a>
-
-                                                    </li>
-                                                  <li class="nav-item" id="Monthchart" style="width:50%; font-size:100%;padding-right:2%; ">
-                                                        <a class="nav-link" data-toggle="tab" href="#chart3" style="font-weight:bold ;text-align:center;border-color:black;border-radius:20px;"hidden="hidden"></a>
-
-                                                    </li>
-                                              </ul>
-                                                
-                                                
-             
-                                              <div class="tab-content">
-                                                <div id="chart1"   class="container tab-pane fade in active">
-                                                    <div class="row">
-                                                        <div class="col-md-6">
-                                                    <script >
+                </div>
+                </div>
+				
+                 <script >
                                       				    
-                                   		                function BarChartYear(oneyrbrsuggestionreceived, oneyrbraccepted, oneyrbrrejected) {
+                                   		function BarChartYear(oneyrbrsuggestionreceived, oneyrbraccepted, oneyrbrrejected) {
 
-                                   		                    console.log('method called ',oneyrbrsuggestionreceived, oneyrbraccepted, oneyrbrrejected);
+                                   		    console.log('method called ',oneyrbrsuggestionreceived, oneyrbraccepted, oneyrbrrejected);
                                    		                    
                                       				          
-                                                            var myConfig = {
-                                                                "graphset": [{
-                                                                "type": "bar",
-                                                                "background-color": "white",
-                                                                "title": {
-                                                                  "text": "Suggestions 2020",
-                                                                  "font-color": "#7E7E7E",
-                                                                  "backgroundColor": "none",
-                                                                  "font-size": "22px",
-                                                                  "alpha": 1,
-                                                                  "adjust-layout": true,
-                                                                },
-                                                                "plotarea": {
-                                                                  "margin": "dynamic"
-                                                                },
-                                                                "legend": {
-                                                                  "layout": "x3",
-                                                                  "overflow": "page",
-                                                                  "alpha": 0.05,
-                                                                  "shadow": false,
-                                                                  "align": "center",
-                                                                  "adjust-layout": true,
-                                                                  "marker": {
-                                                                    "type": "",
-                                                                    "border-color": "none",
-                                                                    "size": "10px"
-                                                                  },
-                                                                  "border-width": 0,
-                                                                  "maxItems": 3,
-                                                                  "toggle-action": "hide",
-                                                                  "pageOn": {
-                                                                    "backgroundColor": "#000",
-                                                                    "size": "10px",
-                                                                    "alpha": 0.65
-                                                                  },
-                                                                  "pageOff": {
-                                                                    "backgroundColor": "#7E7E7E",
-                                                                    "size": "10px",
-                                                                    "alpha": 0.65
-                                                                  },
-                                                                  "pageStatus": {
-                                                                    "color": "black"
-                                                                  }
-                                                                },
-                                                                "plot": {
-                                                                  "bars-space-left": 0.15,
-                                                                  "bars-space-right": 0.15,
-                                                                  "animation": {
-                                                                    "effect": "ANIMATION_SLIDE_BOTTOM",
-                                                                    "sequence": 0,
-                                                                    "speed": 800,
-                                                                    "delay": 800
-                                                                  }
-                                                                },
-                                                                "scale-y": {
-                                                                  "line-color": "#7E7E7E",
-                                                                  "item": {
-                                                                    "font-color": "#7e7e7e"
-                                                                  },
+                                            var myConfig = {
+                                                "graphset": [{
+                                                "type": "bar",
+                                                "background-color": "white",
+                                                "title": {
+                                                    "text": "Suggestions 2020",
+                                                    "font-color": "#7E7E7E",
+                                                    "backgroundColor": "none",
+                                                    "font-size": "22px",
+                                                    "alpha": 1,
+                                                    "adjust-layout": true,
+                                                },
+                                                "plotarea": {
+                                                    "margin": "dynamic"
+                                                },
+                                                "legend": {
+                                                    "layout": "x3",
+                                                    "overflow": "page",
+                                                    "alpha": 0.05,
+                                                    "shadow": false,
+                                                    "align": "center",
+                                                    "adjust-layout": true,
+                                                    "marker": {
+                                                    "type": "",
+                                                    "border-color": "none",
+                                                    "size": "10px"
+                                                    },
+                                                    "border-width": 0,
+                                                    "maxItems": 3,
+                                                    "toggle-action": "hide",
+                                                    "pageOn": {
+                                                    "backgroundColor": "#000",
+                                                    "size": "10px",
+                                                    "alpha": 0.65
+                                                    },
+                                                    "pageOff": {
+                                                    "backgroundColor": "#7E7E7E",
+                                                    "size": "10px",
+                                                    "alpha": 0.65
+                                                    },
+                                                    "pageStatus": {
+                                                    "color": "black"
+                                                    }
+                                                },
+                                                "plot": {
+                                                    "bars-space-left": 0.15,
+                                                    "bars-space-right": 0.15,
+                                                    "animation": {
+                                                    "effect": "ANIMATION_SLIDE_BOTTOM",
+                                                    "sequence": 0,
+                                                    "speed": 800,
+                                                    "delay": 800
+                                                    }
+                                                },
+                                                "scale-y": {
+                                                    "line-color": "#7E7E7E",
+                                                    "item": {
+                                                    "font-color": "#7e7e7e"
+                                                    },
                                                                   
-                                                                  "guide": {
-                                                                    "visible": true
-                                                                  },
-                                                                  "label": {
-                                                                    "text": "Suggestions",
-                                                                    "font-family": "arial",
-                                                                    "bold": true,
-                                                                    "font-size": "14px",
-                                                                    "font-color": "#7E7E7E",
-                                                                  },
-                                                                },
-                                                                "scaleX": {
-                                                                  "values": [
-                                                                    "Suggestion Received",
-                                                                    "Accepted",
-                                                                    "Rejected",
+                                                    "guide": {
+                                                    "visible": true
+                                                    },
+                                                    "label": {
+                                                    "text": "Suggestions",
+                                                    "font-family": "arial",
+                                                    "bold": true,
+                                                    "font-size": "14px",
+                                                    "font-color": "#7E7E7E",
+                                                    },
+                                                },
+                                                "scaleX": {
+                                                    "values": [
+                                                    "Suggestion Received",
+                                                    "Accepted",
+                                                    "Rejected",
            
 									
-                                                                  ],
-                                                                  "placement": "default",
-                                                                  "tick": {
-                                                                    "size": 58,
-                                                                    "placement": "cross"
-                                                                  },
-                                                                  "itemsOverlap": true,
-                                                                  "item": {
-                                                                    "offsetY": -55
-                                                                  }
-                                                                },
+                                                    ],
+                                                    "placement": "default",
+                                                    "tick": {
+                                                    "size": 58,
+                                                    "placement": "cross"
+                                                    },
+                                                    "itemsOverlap": true,
+                                                    "item": {
+                                                    "offsetY": -55
+                                                    }
+                                                },
         
-                                                                "tooltip": {
-                                                                  "visible": false
-                                                                },
-                                                                "crosshair-x": {
-                                                                  "line-width": "100%",
-                                                                  "alpha": 0.18,
-                                                                  "plot-label": {
-                                                                    "header-text": "%kv"
-                                                                  }
-                                                                },
-                                                                "series": [{
-                                                                    "values": [
-                                                                      parseInt(oneyrbrsuggestionreceived),
-                                                                      parseInt(oneyrbraccepted),
-                                                                       parseInt(oneyrbrrejected)
+                                                "tooltip": {
+                                                    "visible": false
+                                                },
+                                                "crosshair-x": {
+                                                    "line-width": "100%",
+                                                    "alpha": 0.18,
+                                                    "plot-label": {
+                                                    "header-text": "%kv"
+                                                    }
+                                                },
+                                                "series": [{
+                                                    "values": [
+                                                        parseInt(oneyrbrsuggestionreceived),
+                                                        parseInt(oneyrbraccepted),
+                                                        parseInt(oneyrbrrejected)
                 
 			  
-                                                                    ],
-                                                                    "alpha": 0.95,
-                                                                    "borderRadiusTopLeft": 7,
-                                                                    "background-color": "#8993c7",
-                                                                    "text": "",
-                                                                  },
+                                                    ],
+                                                    "alpha": 0.95,
+                                                    "borderRadiusTopLeft": 7,
+                                                    "background-color": "#8993c7",
+                                                    "text": "",
+                                                    },
          
 		  
           
-                                                                ]
-                                                              }]
-                                                            };
+                                                ]
+                                                }]
+                                            };
  
-                                                            zingchart.render({
-                                                                  id: 'chartContainer1',
-                                                                  data: myConfig,
-                                                                  height: '100%',
-                                                                  width: '100%'
-                                                                });
+                                            zingchart.render({
+                                                    id: 'chartContainer1',
+                                                    data: myConfig,
+                                                    height: '100%',
+                                                    width: '100%'
+                                                });
   
-                                      				    }
+                                      	}
                                       				    
-                                      				</script>
-                                                    <div class="card shadow p-3 mb-5 bg-white rounded cardbgcolor "  >				     
-                                                         <div id="chartContainer1" class="bgcolor" style="height:300px;width:100%;"></div>
-							                        </div>
-                                                        </div>
-                                                        <div class="col-md-6">
-                                                    <script >
-                                      				    function PieChartYear(oneyrpitotalsuggestion, oneyrpiimplemented, oneyrpiaccepted) {
-                                      				        //oneyrpiimplemented  oneyrpiaccepted  oneyrpitotalsuggestion
-                                      				        console.log('zing pie ', oneyrpiimplemented, oneyrpiaccepted, oneyrpitotalsuggestion);
-                                      				        var myConfig2 = {
-                                      				            "type": "ring3d",
-                                      				            "title": {
-                                      				                "text": "Suggestion vs Implementation"
-                                      				            },
-                                      				            plot: {
-                                      				                'offset-r': "10%" //provide percentage value
-                                      				            },
-                                      				            "series": [{
-                                      				                "values": [parseInt(oneyrpiimplemented)],
-                                      				                "text": "Implemented"
-                                      				            },
-                                                                  {
+                                    </script>
+
+                 <script >
+                                      	function PieChartYear(oneyrpitotalsuggestion, oneyrpiimplemented, oneyrpiaccepted) {
+                                      		//oneyrpiimplemented  oneyrpiaccepted  oneyrpitotalsuggestion
+                                      		console.log('zing pie ', oneyrpiimplemented, oneyrpiaccepted, oneyrpitotalsuggestion);
+                                      		var myConfig2 = {
+                                      			"type": "ring3d",
+                                      			"title": {
+                                      				"text": "Suggestion vs Implementation"
+                                      			},
+                                      			plot: {
+                                      				'offset-r': "10%" //provide percentage value
+                                      			},
+                                      			"series": [{
+                                      				"values": [parseInt(oneyrpiimplemented)],
+                                      				"text": "Implemented"
+                                      			},
+                                                    {
                                                                      
-                                                                      "values": [parseInt(oneyrpiaccepted)],
-                                      				                    "text": "Accepted"
-                                                                  },
-                                                                  {
+                                                        "values": [parseInt(oneyrpiaccepted)],
+                                      				    "text": "Accepted"
+                                                    },
+                                                    {
                                                                       
-                                                                      "values": [parseInt(oneyrpitotalsuggestion)],
-                                      				                    "text":"Total Suggestion"
-                                                                  },
+                                                        "values": [parseInt(oneyrpitotalsuggestion)],
+                                      				    "text":"Total Suggestion"
+                                                    },
                                                                   
-                                      				            ]
-                                      				        };
+                                      			]
+                                      		};
 
-                                      				        zingchart.render({
-                                      				            id: 'chartContainer2',
-                                      				            data: myConfig2,
-                                      				            height: "100%",
-                                      				            width: "100%"
-                                      				        });
-                                      				    }
+                                      		zingchart.render({
+                                      			id: 'chartContainer2',
+                                      			data: myConfig2,
+                                      			height: "100%",
+                                      			width: "100%"
+                                      		});
+                                      	}
                                       				    
-                                      				</script>
-                                                    <div class="card shadow p-3 mb-5 bg-white rounded cardbgcolor "  >				     
-                                                        <div id="chartContainer2" class="bgcolor" style="height:300px;width:100%;"></div>
-							                        </div>
-                                                        </div>
-                                                    </div>
-                                   		           
-            	                                </div>
-    
-
-    
-
-                                                <div id="chart2"  class="container tab-pane fade ">
-                                      			<script>
+                                    </script>	
+                                    
+                  <script>
                                       			    function BarChartYearDept(oneyrdeptdepname1, oneyrdepttotalimplement1, oneyrdeptimplemented1, oneyrdeptyettoimplement1, oneyrdeptdepname2, oneyrdepttotalimplement2, oneyrdeptimplemented2, oneyrdeptyettoimplement2, oneyrdeptdepname3, oneyrdepttotalimplement3, oneyrdeptimplemented3, oneyrdeptyettoimplement3, oneyrdeptdepname4, oneyrdepttotalimplement4, oneyrdeptimplemented4, oneyrdeptyettoimplement4, oneyrdeptdepname5, oneyrdepttotalimplement5, oneyrdeptimplemented5, oneyrdeptyettoimplement5, oneyrdeptdepname6, oneyrdepttotalimplement6, oneyrdeptimplemented6, oneyrdeptyettoimplement6, oneyrdeptdepname7, oneyrdepttotalimplement7, oneyrdeptimplemented7, oneyrdeptyettoimplement7, oneyrdeptdepname8, oneyrdepttotalimplement8, oneyrdeptimplemented8, oneyrdeptyettoimplement8, oneyrdeptdepname9, oneyrdepttotalimplement9, oneyrdeptimplemented9, oneyrdeptyettoimplement9, oneyrdeptdepname10, oneyrdepttotalimplement10, oneyrdeptimplemented10, oneyrdeptyettoimplement10, oneyrdeptdepname11, oneyrdepttotalimplement11, oneyrdeptimplemented11, oneyrdeptyettoimplement11, oneyrdeptdepname12, oneyrdepttotalimplement12, oneyrdeptimplemented12, oneyrdeptyettoimplement12, oneyrdeptdepname13, oneyrdepttotalimplement13, oneyrdeptimplemented13, oneyrdeptyettoimplement13, oneyrdeptdepname14, oneyrdepttotalimplement14, oneyrdeptimplemented14, oneyrdeptyettoimplement14, oneyrdeptdepname15, oneyrdepttotalimplement15, oneyrdeptimplemented15, oneyrdeptyettoimplement15, oneyrdeptdepname16, oneyrdepttotalimplement16, oneyrdeptimplemented16, oneyrdeptyettoimplement16, oneyrdeptdepname17, oneyrdepttotalimplement17, oneyrdeptimplemented17, oneyrdeptyettoimplement17, oneyrdeptdepname18, oneyrdepttotalimplement18, oneyrdeptimplemented18, oneyrdeptyettoimplement18, oneyrdeptdepname19, oneyrdepttotalimplement19, oneyrdeptimplemented19, oneyrdeptyettoimplement19) {
                                       			        var myConfig = {
                                       			            "graphset": [{
@@ -826,15 +900,9 @@
                                       			            width: '100%'
                                       			        });
                                       			    }
-                                                </script>
-                                                    <div class="card shadow p-3 mb-5 bg-white rounded cardbgcolor "  >				     
-                                                        <div id="chartContainer3" class="bgcolor" style="height:300px;width:100%;"></div>
-							                        </div>
-                                                    
-                                                </div>
-
-                                                  <div id="chart3"  class="container tab-pane fade">
-                                                      <script>
+                                                </script>	
+                                                
+                 <script>
                                                           function BarChartYearMonth(oneyrmntmonths1, oneyrmntreceived1, oneyrmntaccepted1, oneyrmntreject1, oneyrmnthold1, oneyrmntimplemented1, oneyrmntmonths2, oneyrmntreceived2, oneyrmntaccepted2, oneyrmntreject2, oneyrmnthold2, oneyrmntimplemented2, oneyrmntmonths3, oneyrmntreceived3, oneyrmntaccepted3, oneyrmntreject3, oneyrmnthold3, oneyrmntimplemented3, oneyrmntmonths4, oneyrmntreceived4, oneyrmntaccepted4, oneyrmntreject4, oneyrmnthold4, oneyrmntimplemented4, oneyrmntmonths5, oneyrmntreceived5, oneyrmntaccepted5, oneyrmntreject5, oneyrmnthold5, oneyrmntimplemented5, oneyrmntmonths6, oneyrmntreceived6, oneyrmntaccepted6, oneyrmntreject6, oneyrmnthold6, oneyrmntimplemented6, oneyrmntmonths7, oneyrmntreceived7, oneyrmntaccepted7, oneyrmntreject7, oneyrmnthold7, oneyrmntimplemented7, oneyrmntmonths8, oneyrmntreceived8, oneyrmntaccepted8, oneyrmntreject8, oneyrmnthold8, oneyrmntimplemented8, oneyrmntmonths9, oneyrmntreceived9, oneyrmntaccepted9, oneyrmntreject9, oneyrmnthold9, oneyrmntimplemented9, oneyrmntmonths10, oneyrmntreceived10, oneyrmntaccepted10, oneyrmntreject10, oneyrmnthold10, oneyrmntimplemented10, oneyrmntmonths11, oneyrmntreceived11, oneyrmntaccepted11, oneyrmntreject11, oneyrmnthold11, oneyrmntimplemented11, oneyrmntmonths12, oneyrmntreceived12, oneyrmntaccepted12, oneyrmntreject12, oneyrmnthold12, oneyrmntimplemented12) {
 
                                                               var myConfig = {
@@ -1063,11 +1131,116 @@
                                                                   width: '100%'
                                                               });
                                                           }
-                                                      </script>
-                                      				
-                                                    <div class="card shadow p-3 mb-5 bg-white rounded cardbgcolor "  >				     
-                                                        <div id="chartContainer4" class="bgcolor" style="height:300px;width:100%;"></div>
-							                        </div>
+                                                      </script>				
+           
+
+                 <script type="text/javascript">
+                                   
+                                    function bindgraphNew(oneyrbrsuggestionreceived,oneyrbraccepted,oneyrbrrejected,oneyrpitotalsuggestion,oneyrpiimplemented,oneyrpiaccepted,oneyrdeptdepname1,oneyrdepttotalimplement1,oneyrdeptimplemented1,oneyrdeptyettoimplement1,oneyrdeptdepname2,oneyrdepttotalimplement2,oneyrdeptimplemented2,oneyrdeptyettoimplement2,oneyrdeptdepname3,oneyrdepttotalimplement3,oneyrdeptimplemented3,oneyrdeptyettoimplement3,oneyrdeptdepname4,oneyrdepttotalimplement4,oneyrdeptimplemented4,oneyrdeptyettoimplement4,oneyrdeptdepname5,oneyrdepttotalimplement5,oneyrdeptimplemented5,oneyrdeptyettoimplement5,oneyrdeptdepname6,oneyrdepttotalimplement6,oneyrdeptimplemented6,oneyrdeptyettoimplement6,oneyrdeptdepname7,oneyrdepttotalimplement7,oneyrdeptimplemented7,oneyrdeptyettoimplement7,oneyrdeptdepname8,oneyrdepttotalimplement8,oneyrdeptimplemented8,oneyrdeptyettoimplement8,oneyrdeptdepname9,oneyrdepttotalimplement9,oneyrdeptimplemented9,oneyrdeptyettoimplement9,oneyrdeptdepname10,oneyrdepttotalimplement10,oneyrdeptimplemented10,oneyrdeptyettoimplement10,oneyrdeptdepname11,oneyrdepttotalimplement11,oneyrdeptimplemented11,oneyrdeptyettoimplement11,oneyrdeptdepname12,oneyrdepttotalimplement12,oneyrdeptimplemented12,oneyrdeptyettoimplement12,oneyrdeptdepname13,oneyrdepttotalimplement13,oneyrdeptimplemented13,oneyrdeptyettoimplement13,oneyrdeptdepname14,oneyrdepttotalimplement14,oneyrdeptimplemented14,oneyrdeptyettoimplement14,oneyrdeptdepname15,oneyrdepttotalimplement15,oneyrdeptimplemented15,oneyrdeptyettoimplement15,oneyrdeptdepname16,oneyrdepttotalimplement16,oneyrdeptimplemented16,oneyrdeptyettoimplement16,oneyrdeptdepname17,oneyrdepttotalimplement17,oneyrdeptimplemented17,oneyrdeptyettoimplement17,oneyrdeptdepname18,oneyrdepttotalimplement18,oneyrdeptimplemented18,oneyrdeptyettoimplement18,oneyrdeptdepname19,oneyrdepttotalimplement19,oneyrdeptimplemented19,oneyrdeptyettoimplement19,oneyrmntmonths1,oneyrmntreceived1,oneyrmntaccepted1,oneyrmntreject1,oneyrmnthold1,oneyrmntimplemented1,oneyrmntmonths2,oneyrmntreceived2,oneyrmntaccepted2,oneyrmntreject2,oneyrmnthold2,oneyrmntimplemented2,oneyrmntmonths3,oneyrmntreceived3,oneyrmntaccepted3,oneyrmntreject3,oneyrmnthold3,oneyrmntimplemented3,oneyrmntmonths4,oneyrmntreceived4,oneyrmntaccepted4,oneyrmntreject4,oneyrmnthold4,oneyrmntimplemented4,oneyrmntmonths5,oneyrmntreceived5,oneyrmntaccepted5,oneyrmntreject5,oneyrmnthold5,oneyrmntimplemented5,oneyrmntmonths6,oneyrmntreceived6,oneyrmntaccepted6,oneyrmntreject6,oneyrmnthold6,oneyrmntimplemented6,oneyrmntmonths7,oneyrmntreceived7,oneyrmntaccepted7,oneyrmntreject7,oneyrmnthold7,oneyrmntimplemented7,oneyrmntmonths8,oneyrmntreceived8,oneyrmntaccepted8,oneyrmntreject8,oneyrmnthold8,oneyrmntimplemented8,oneyrmntmonths9,oneyrmntreceived9,oneyrmntaccepted9,oneyrmntreject9,oneyrmnthold9,oneyrmntimplemented9,oneyrmntmonths10,oneyrmntreceived10,oneyrmntaccepted10,oneyrmntreject10,oneyrmnthold10,oneyrmntimplemented10,oneyrmntmonths11,oneyrmntreceived11,oneyrmntaccepted11,oneyrmntreject11,oneyrmnthold11,oneyrmntimplemented11,oneyrmntmonths12,oneyrmntreceived12,oneyrmntaccepted12,oneyrmntreject12,oneyrmnthold12,oneyrmntimplemented12 ) {
+                                        console.log(oneyrbrsuggestionreceived, oneyrbraccepted, oneyrbrrejected, oneyrpitotalsuggestion, oneyrpiimplemented, oneyrpiaccepted);
+                                        BarChartYear(oneyrbrsuggestionreceived, oneyrbraccepted, oneyrbrrejected);
+                                        PieChartYear(oneyrpitotalsuggestion, oneyrpiimplemented, oneyrpiaccepted);
+                                        BarChartYearDept(oneyrdeptdepname1, oneyrdepttotalimplement1, oneyrdeptimplemented1, oneyrdeptyettoimplement1, oneyrdeptdepname2, oneyrdepttotalimplement2, oneyrdeptimplemented2, oneyrdeptyettoimplement2, oneyrdeptdepname3, oneyrdepttotalimplement3, oneyrdeptimplemented3, oneyrdeptyettoimplement3, oneyrdeptdepname4, oneyrdepttotalimplement4, oneyrdeptimplemented4, oneyrdeptyettoimplement4, oneyrdeptdepname5, oneyrdepttotalimplement5, oneyrdeptimplemented5, oneyrdeptyettoimplement5, oneyrdeptdepname6, oneyrdepttotalimplement6, oneyrdeptimplemented6, oneyrdeptyettoimplement6, oneyrdeptdepname7, oneyrdepttotalimplement7, oneyrdeptimplemented7, oneyrdeptyettoimplement7, oneyrdeptdepname8, oneyrdepttotalimplement8, oneyrdeptimplemented8, oneyrdeptyettoimplement8, oneyrdeptdepname9, oneyrdepttotalimplement9, oneyrdeptimplemented9, oneyrdeptyettoimplement9, oneyrdeptdepname10, oneyrdepttotalimplement10, oneyrdeptimplemented10, oneyrdeptyettoimplement10, oneyrdeptdepname11, oneyrdepttotalimplement11, oneyrdeptimplemented11, oneyrdeptyettoimplement11, oneyrdeptdepname12, oneyrdepttotalimplement12, oneyrdeptimplemented12, oneyrdeptyettoimplement12, oneyrdeptdepname13, oneyrdepttotalimplement13, oneyrdeptimplemented13, oneyrdeptyettoimplement13, oneyrdeptdepname14, oneyrdepttotalimplement14, oneyrdeptimplemented14, oneyrdeptyettoimplement14, oneyrdeptdepname15, oneyrdepttotalimplement15, oneyrdeptimplemented15, oneyrdeptyettoimplement15, oneyrdeptdepname16, oneyrdepttotalimplement16, oneyrdeptimplemented16, oneyrdeptyettoimplement16, oneyrdeptdepname17, oneyrdepttotalimplement17, oneyrdeptimplemented17, oneyrdeptyettoimplement17, oneyrdeptdepname18, oneyrdepttotalimplement18, oneyrdeptimplemented18, oneyrdeptyettoimplement18, oneyrdeptdepname19, oneyrdepttotalimplement19, oneyrdeptimplemented19, oneyrdeptyettoimplement19);
+                                        BarChartYearMonth(oneyrmntmonths1, oneyrmntreceived1, oneyrmntaccepted1, oneyrmntreject1, oneyrmnthold1, oneyrmntimplemented1, oneyrmntmonths2, oneyrmntreceived2, oneyrmntaccepted2, oneyrmntreject2, oneyrmnthold2, oneyrmntimplemented2, oneyrmntmonths3, oneyrmntreceived3, oneyrmntaccepted3, oneyrmntreject3, oneyrmnthold3, oneyrmntimplemented3, oneyrmntmonths4, oneyrmntreceived4, oneyrmntaccepted4, oneyrmntreject4, oneyrmnthold4, oneyrmntimplemented4, oneyrmntmonths5, oneyrmntreceived5, oneyrmntaccepted5, oneyrmntreject5, oneyrmnthold5, oneyrmntimplemented5, oneyrmntmonths6, oneyrmntreceived6, oneyrmntaccepted6, oneyrmntreject6, oneyrmnthold6, oneyrmntimplemented6, oneyrmntmonths7, oneyrmntreceived7, oneyrmntaccepted7, oneyrmntreject7, oneyrmnthold7, oneyrmntimplemented7, oneyrmntmonths8, oneyrmntreceived8, oneyrmntaccepted8, oneyrmntreject8, oneyrmnthold8, oneyrmntimplemented8, oneyrmntmonths9, oneyrmntreceived9, oneyrmntaccepted9, oneyrmntreject9, oneyrmnthold9, oneyrmntimplemented9, oneyrmntmonths10, oneyrmntreceived10, oneyrmntaccepted10, oneyrmntreject10, oneyrmnthold10, oneyrmntimplemented10, oneyrmntmonths11, oneyrmntreceived11, oneyrmntaccepted11, oneyrmntreject11, oneyrmnthold11, oneyrmntimplemented11, oneyrmntmonths12, oneyrmntreceived12, oneyrmntaccepted12, oneyrmntreject12, oneyrmnthold12, oneyrmntimplemented12);
+                                    }
+
+
+                                    
+                            </script>
+               
+    
+        </div>
+        
+        
+        <%-- <div class="row " >
+			
+						<div class="col-md-12 ">
+                             <div class=" bgcolor" style="width: 100%;height: 100%;">--%>
+
+                                     <%--<div class="row" style=" ">
+                                            <div id="dvTab" class="container mt-3" style="width:100%;height:100%;">
+
+                                              <ul class="nav nav-tabs nav-justified " role="tablist" >
+                                                    <li class="nav-item" id="User" style="width:50%; font-size:100%;  padding-left:2%; ">
+                                                        <a class="nav-link active" data-toggle="tab" href="#rank1" style="font-weight:bold ;text-align:center;border-color:black;border-radius:20px;" hidden="hidden">MONTHLY</a>
+
+                                                    </li>
+                                                    <li class="nav-item" id="Implement" style="width:50%; font-size:100%;padding-right:2%; ">
+                                                        <a class="nav-link" data-toggle="tab" href="#rank2" style="font-weight:bold ;text-align:center;border-color:black;border-radius:20px;" hidden="hidden">YEAR</a>
+
+                                                    </li>
+                                              </ul>
+                                                
+                                                
+             
+                                              <div class="tab-content">
+                                                  
+                                                <div id="rank1" class="container tab-pane active">
+                                                    <div class="text-center" style="padding-right:2%;">
+                    
+                                                     <b><asp:Label runat="server" ID="Month" Style="font-weight:bolder;font-family:Algerian;font-size:x-large;">MONTH</asp:Label></b>
+                    
+                                                    </div>
+                                                
+                                                    			
+            	                                </div>
+    
+
+    
+
+                                                <div id="rank2" class="container tab-pane">
+                                                    <div class="text-center" style="padding-right:2%;">
+                    
+                                                     <b> <asp:Label runat="server" ID="year" Style="font-weight:bolder;font-family:Algerian;font-size:x-large;">YEAR</asp:Label></b>
+                    
+                                                    </div>
+                                                
+                                                   				
+                                                 </div>
+    
+                                              </div>
+                                            </div>            
+
+                                     </div>
+
+						 
+							         <div class="row" style="margin-right: 5%;margin-left:5%;">
+                                                        
+                                       <div id="chart" class="container mt-3">
+
+                                              <ul class="nav nav-tabs nav-justified " role="tablist" visible="false">
+                                                    <li class="nav-item" id="barpiechart" style="width:50%; font-size:100%;  padding-left:2%; ">
+                                                        <a class="nav-link active" data-toggle="tab" href="#chart1" style="font-weight:bold ;text-align:center;border-color:black;border-radius:20px;" hidden="hidden"></a>
+
+                                                    </li>
+                                                    <li class="nav-item" id="Departchart" style="width:50%; font-size:100%;padding-right:2%; ">
+                                                        <a class="nav-link" data-toggle="tab" href="#chart2" style="font-weight:bold ;text-align:center;border-color:black;border-radius:20px;"hidden="hidden"></a>
+
+                                                    </li>
+                                                  <li class="nav-item" id="Monthchart" style="width:50%; font-size:100%;padding-right:2%; ">
+                                                        <a class="nav-link" data-toggle="tab" href="#chart3" style="font-weight:bold ;text-align:center;border-color:black;border-radius:20px;"hidden="hidden"></a>
+
+                                                    </li>
+                                              </ul>
+                                                
+                                                
+             
+                                              <div class="tab-content">
+                                                <div id="chart1"   class="container tab-pane fade in active">
+                                                   
+                                   		           
+            	                                </div>
+    
+
+    
+
+                                                <div id="chart2"  class="container tab-pane fade ">
+                                      			
+                                                    
+                                                </div>
+
+                                                  <div id="chart3"  class="container tab-pane fade">
+                                                     
                                                     
                                                 </div>
     
@@ -1104,16 +1277,7 @@
 							 </div>
 	                     </div>						
 				</div>
-                
-						
-           
-               
-    
-        </div>
-        
-        
-
-        <script>
+        <%-- <script>
   var n=0
   var myVar=setInterval(function () {update_news()}, 5000);
 
@@ -1126,9 +1290,8 @@
     $('.nav-tabs a[href="#chart' + n + '"]').tab('show')
     $('.nav-tabs a[href="#rank' + n + '"]').tab('show')
   }
-  </script>
-
-<%-- <script>
+  </script>--%>
+        <%-- <script>
   var n=0
   var myVar=setInterval(function () {update_news()}, 1000);
 

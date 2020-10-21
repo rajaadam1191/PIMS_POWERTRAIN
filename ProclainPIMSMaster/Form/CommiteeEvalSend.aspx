@@ -737,7 +737,10 @@
 
              $("[id*=IMPDepaDLists]").change(function () {
                  console.log("mailtest1");
-                 var txts = $(this).children("option:selected").val().toString();
+                 var st=$(this).children("option:selected").val().toString();
+                 var res=st.split(',');
+                 var txts = res[0];
+                 
               console.log(txts);
                 console.log("Checking :" + txts);
                 if (txts != "--Select--") {

@@ -126,7 +126,7 @@ namespace ProclainPIMSMaster.Form
                 else
                 {
                     us1 = Session["UserId"].ToString();
-
+                    string depid = Session["ManDep"].ToString();
                     DataSet Ds = new DataSet();
                     RL.HEmployeeID = us1;
                     //Ds = RL.LoginUserDetail(RL);
@@ -135,6 +135,7 @@ namespace ProclainPIMSMaster.Form
                     //Ds = M.DepartmetnRepeterView(M);
                     //M.Suggestion = Ds.Tables[0].Rows[0].ItemArray[0].ToString();
                     M.IEmpId = us1.ToString();
+                    M.DepId = depid.ToString();
 
                     Ds = M.ManagerSelectRepeterView(M);
                     int c = Ds.Tables[0].Rows.Count;
