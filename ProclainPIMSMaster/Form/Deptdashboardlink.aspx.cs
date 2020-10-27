@@ -50,7 +50,7 @@ namespace ProclainPIMSMaster.Form
                     else
                         if (!IsPostBack)
                     {
-                        if (uid.ToString() != "pi-242")
+                        if (uid.ToString() != "pi-242" && uid.ToString() != "PI-242")
                         {
                             
                             Department_Wise_Enable_Func();

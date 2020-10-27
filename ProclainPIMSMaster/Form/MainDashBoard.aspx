@@ -470,13 +470,13 @@ padding-top:0% !important;
                              <div class="row">
                                         <div class="col-md-6">
                                    
-                                    <div class="card shadow p-3 mb-5 bg-white rounded cardbgcolor "  >				     
+                                    <div class="card shadow p-3 mb-5 bg-white rounded  "  >				     
                                             <div id="chartContainer1" class="bgcolor" style="height:300px;width:100%;"></div>
 							        </div>
                                         </div>
                                         <div class="col-md-6">
                                    
-                                    <div class="card shadow p-3 mb-5 bg-white rounded cardbgcolor "  >				     
+                                    <div class="card shadow p-3 mb-5 bg-white rounded  "  >				     
                                         <div id="chartContainer2" class="bgcolor" style="height:300px;width:100%;"></div>
 							        </div>
                                         </div>
@@ -484,14 +484,14 @@ padding-top:0% !important;
                         </div>
                         <div class="carousel-item">
                                    
-                                    <div class="card shadow p-3 mb-5 bg-white rounded cardbgcolor "  >				     
+                                    <div class="card shadow p-3 mb-5 bg-white rounded  "  >				     
                                         <div id="chartContainer3" class="bgcolor" style="height:300px;width:100%;"></div>
 							        </div>
                         </div>
                         <div class="carousel-item">
                                     
                                       				
-                                    <div class="card shadow p-3 mb-5 bg-white rounded cardbgcolor "  >				     
+                                    <div class="card shadow p-3 mb-5 bg-white rounded  "  >				     
                                         <div id="chartContainer4" class="bgcolor" style="height:300px;width:100%;"></div>
 							        </div>
                         </div>

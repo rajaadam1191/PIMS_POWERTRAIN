@@ -434,6 +434,8 @@ namespace ProclainPIMSMaster.Models
             DataSet Ds = new DataSet();
             SqlParameter OP1 = new SqlParameter("@TeamHID", M.TeamHead);
             Da.parameters.Add(OP1);
+            SqlParameter OP2 = new SqlParameter("@DepID", M.IDepID);
+            Da.parameters.Add(OP2);
 
             Ds = Da.ExecuteDataset("Get_DepIdFromTeamHID");
             return Ds;

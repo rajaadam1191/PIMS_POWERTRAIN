@@ -190,6 +190,8 @@ namespace ProclainPIMSMaster.Form
         {
             try
             {
+                string depid = Session["ManDep"].ToString();
+                MM.IDepID = depid.ToString();
                 MM.TeamHead = us1.ToString();
                 DataSet Ds = new DataSet();
 

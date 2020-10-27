@@ -195,17 +195,14 @@
                                     // The type of chart we want to create
                                     type: 'bar',
                                    
-                                    // The data for our dataset
+                                    
                                     data: {
                                         labels: ['commitee', 'Manager', 'Implementation', 'HOD', 'Beneficiary', 'finance'],
                                         datasets: [{
                                             label: 'Suggestions status',
-                                            //backgroundColor: 'rgb(255, 99, 132)',
-                                            //borderColor: 'rgb(255, 99, 132)',
-                                            //barPercentage: 2.5,
+                                           
                                                   barThickness: 30,
-                                                   //maxBarThickness: 8,
-                                                   //minBarLength: 2,
+                                                   
                                                    click: onclick,
                                                    legendMarkerColor: "grey",
                                                    legendText: "Departments",
@@ -215,8 +212,10 @@
                                         }]
                                     },
 
-                                    // Configuration options go here
-                                    options: {}
+                                   
+                                    options: {
+                                        onClick: handleClick
+                                    }
                                 });
 
                        
@@ -226,14 +225,21 @@
                             }
 
                          
-function onclick(tab) {
-    console.log(tab.dataPoint, tab, tab.dataPoints, tab.dataPoint.x, tab.dataPoint.y, tab.dataPoint.label);
+                            function handleClick(evt) {
+                                console.log("method called");
+                               
+                                var activeElement = chart.getElementAtEvent(evt);
+                                
+                                var settle =chart_config.data.datasets[activeElement[0]._datasetIndex].data[activeElement[0]._index];
+                                console.log(settle);
+
+                                console.log(array.data, array, array.data, array.data.x, array.data.y, array.data.label);
     //$('nav-tabs a[location.href="DBMSent.aspx/#' + e + '"]').tab('show');
    // response.redirect("Form/DBMSent.aspx/#'" + tab.dataPoint.y + "'");
     //
     var datas = [{ link: 'com', name: 'commitee' }, { link: 'hod', name: 'HOD' }, { link: 'imp', name: 'Implementation' }, { link: 'hos', name: 'HOS' }, { link: 'ben', name: 'Beneficiary' }, { link: 'fin', name: 'finance' }];
     var linkRedirect = '';
-    var clicked = tab.dataPoint.label;
+    var clicked = chart.dataPoint.label;
     for(var i=0;i<datas.length;i++)
     {
         console.log(datas[i].name, datas[i].link, clicked)

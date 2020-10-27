@@ -224,114 +224,133 @@ namespace ProclainPIMSMaster
 
         protected void ADMINISTRATION_Click(object sender, EventArgs e)
         {
+            Session["ManDep"] = null;
             Session["ManDep"] = "1";
             Response.Redirect("ManagerMail.aspx");
         }
 
         protected void AFTERMARKET_Click(object sender, EventArgs e)
         {
+            Session["ManDep"] = null;
             Session["ManDep"] = "2";
             Response.Redirect("ManagerMail.aspx");
         }
 
         protected void APPLICATION_Click(object sender, EventArgs e)
         {
+            Session["ManDep"] = null;
             Session["ManDep"] = "3";
             Response.Redirect("ManagerMail.aspx");
         }
 
         protected void FINANCE_Click(object sender, EventArgs e)
         {
+            Session["ManDep"] = null;
             Session["ManDep"] = "4";
             Response.Redirect("ManagerMail.aspx");
         }
 
         protected void HR_Click(object sender, EventArgs e)
         {
+            Session["ManDep"] = null;
             Session["ManDep"] = "5";
             Response.Redirect("ManagerMail.aspx");
         }
 
         protected void INNOVATION_Click(object sender, EventArgs e)
         {
+            Session["ManDep"] = null;
             Session["ManDep"] = "6";
             Response.Redirect("ManagerMail.aspx");
         }
 
         protected void IT_Click(object sender, EventArgs e)
         {
+            Session["ManDep"] = null;
             Session["ManDep"] = "7";
             Response.Redirect("ManagerMail.aspx");
         }
 
         protected void LOGISTIC_Click(object sender, EventArgs e)
         {
+            Session["ManDep"] = null;
             Session["ManDep"] = "8";
             Response.Redirect("ManagerMail.aspx");
         }
 
         protected void MAINTENANCE_Click(object sender, EventArgs e)
         {
+            Session["ManDep"] = null;
             Session["ManDep"] = "9";
             Response.Redirect("ManagerMail.aspx");
         }
 
         protected void MANUFACTURING_Click(object sender, EventArgs e)
         {
+            Session["ManDep"] = null;
             Session["ManDep"] = "10";
             Response.Redirect("ManagerMail.aspx");
         }
 
         protected void PLANT_Click(object sender, EventArgs e)
         {
+            Session["ManDep"] = null;
             Session["ManDep"] = "11";
             Response.Redirect("ManagerMail.aspx");
         }
 
         protected void PRODUCTION_Click(object sender, EventArgs e)
         {
+            Session["ManDep"] = null;
             Session["ManDep"] = "12";
             Response.Redirect("ManagerMail.aspx");
         }
 
         protected void ABU_Click(object sender, EventArgs e)
         {
+            Session["ManDep"] = null;
             Session["ManDep"] = "13";
             Response.Redirect("ManagerMail.aspx");
         }
 
         protected void MBU_Click(object sender, EventArgs e)
         {
+            Session["ManDep"] = null;
             Session["ManDep"] = "14";
             Response.Redirect("ManagerMail.aspx");
         }
 
         protected void POWERTRAIN_Click(object sender, EventArgs e)
         {
+            Session["ManDep"] = null;
             Session["ManDep"] = "15";
             Response.Redirect("ManagerMail.aspx");
         }
 
         protected void QUALITY_Click(object sender, EventArgs e)
         {
+            Session["ManDep"] = null;
             Session["ManDep"] = "16";
             Response.Redirect("ManagerMail.aspx");
         }
 
         protected void SALES_Click(object sender, EventArgs e)
         {
+            Session["ManDep"] = null;
             Session["ManDep"] = "17";
             Response.Redirect("ManagerMail.aspx");
         }
 
         protected void SOURCING_Click(object sender, EventArgs e)
         {
+            Session["ManDep"] = null;
             Session["ManDep"] = "18";
             Response.Redirect("ManagerMail.aspx");
         }
 
         protected void GENERAL_Click(object sender, EventArgs e)
         {
+            Session["ManDep"] = null;
             Session["ManDep"] = "19";
             Response.Redirect("ManagerMail.aspx");
         }
