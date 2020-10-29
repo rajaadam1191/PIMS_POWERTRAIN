@@ -410,6 +410,7 @@ namespace ProclainPIMSMaster.Form
 
                     if (emp != "" && emp != "System.Data.DataRowView")
                     {
+
                         M.IEmpName = emp.ToString();
 
                         DS = M.ManagerNameSelect(M);

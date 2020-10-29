@@ -314,7 +314,7 @@
                   <div class="col-sm-2">
                       <asp:FileUpload ID="ImageFileUpload1" CssClass="form-control" runat="server" /><br />
                       <asp:FileUpload ID="ImageFileUpload2" CssClass="form-control" runat="server" /><br />
-                 <asp:FileUpload ID="ImageFileUpload3" CssClass="form-control" runat="server" />
+                 <asp:FileUpload ID="ImageFileUpload3" CssClass="form-control" runat="server" hidden />
                  </div>
                  </div>
              </div>

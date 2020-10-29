@@ -399,7 +399,8 @@ namespace ProclainPIMSMaster.Models
 
             SqlParameter OP2 = new SqlParameter("@ReceiverID", M.IEmpId);
             Da.parameters.Add(OP2);
-            Ds = Da.ExecuteDataset("SP_DataBankManagerSend_Select_RepeaterView");
+            Ds = Da.ExecuteDataset("Adminsend");
+            //Ds = Da.ExecuteDataset("SP_DataBankManagerSend_Select_RepeaterView");
             return Ds;
 
         }

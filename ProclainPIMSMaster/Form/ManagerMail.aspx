@@ -1349,7 +1349,7 @@
                                     <div class="peers">
                                         <label>To: </label>
                                         <asp:TextBox ID="TOIMPTextBox" CssClass="form-control inp IMPToTextBoxClass" placeholder="To: " runat="server"></asp:TextBox>
-                                        <asp:TextBox ID="EmpIDIMPTextBox" CssClass="form-control inp IMPEmpIDTextBoxClass" placeholder="To: " runat="server"></asp:TextBox>
+                                        <asp:TextBox ID="EmpIDIMPTextBox" CssClass="form-control inp IMPEmpIDTextBoxClass" placeholder="To: " runat="server" hidden></asp:TextBox>
                                         <asp:TextBox ID="DupEmpIDIMPTextBox" CssClass="form-control inp EmpIDTextBoxClass" placeholder="ID " runat="server" hidden></asp:TextBox>
                                     </div>
                                 </div>
@@ -1755,22 +1755,24 @@ a.float:hover + div.label-container{
              $("[id*=IMPDepaDLists]").change(function () {
 
                  console.log("mailtest1");
-                 var txts = "" + $(this).children("option:selected").text().toString();
+                 var opt = $(this).children("option:selected").val().toString();
+                 var res = opt.split(',');
+                 var txts = res[0];
                 // alert(txts);
                 console.log("Checking :" + txts);
                 if (txts != "--Select--") {
                     
                     if (txts != "") {
                         var textboxs2 = $(".IMPToTextBoxClass").val().toString();
-                        if (textboxs2 == "") {
-                            var tts = textboxs2 + " " + txts;
-                        }
-                        else {
-                            console.log("Textbox" + txts);
-                            var tts = textboxs2 + ',' + " " + txts;
+                        //if (textboxs2 == "") {
+                        //    var tts = textboxs2 + " " + txts;
+                        //}
+                        //else {
+                        //    console.log("Textbox" + txts);
+                        //    var tts = textboxs2 + ',' + " " + txts;
                             
-                        }
-                       $(".IMPToTextBoxClass").val(tts);
+                        //}
+                        $(".IMPToTextBoxClass").val(txts);
                         console.log("TT:" + textboxs2 + 'textbox:' + txts);
 
                             var ks = txts.toString();

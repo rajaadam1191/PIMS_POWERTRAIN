@@ -61,7 +61,9 @@
             }
             .bckimg{
             background-image:url(../UI/assets/static/images/Log1.jpg);
-            background-repeat: repeat-y;
+            background-repeat: no-repeat;
+            background-size: cover;
+
             }
         </style>
     

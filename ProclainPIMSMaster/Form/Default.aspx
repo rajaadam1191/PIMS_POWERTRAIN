@@ -261,7 +261,7 @@
                                         <%--<img src="../UI/assets/static/images/Icons/Excel1.jpg" id="ExcelButton" class="btns" runat="server" style="background:none" onclick="ExcelButton_OnClick"/>--%>
                                         <%--<img src="../UI/assets/static/images/Icons/Pdf.ico" id="PdfButton" class="btns" runat="server" style="background:none;" onclick="PdfButton_OnClick"/>
                             <img src="../UI/assets/static/images/Icons/Print.ico" id="PrintButton" class="btns" runat="server" style="background:none;" onclick="PrintButton_OnClick"/>--%>
-                                        <img src="../UI/assets/static/images/Icons/folder_saved_search.ico" id="SearchButton" class="btns" data-toggle="modal" data-target="#myModalSrc" style="background: none; align: right;cursor:pointer" />
+                                        <img src="../UI/assets/static/images/Icons/folder_saved_search.ico" id="SearchButton" class="btns" data-toggle="modal" data-target="#myModalSrc" style="background: none; align: right;cursor:pointer" hidden="hidden" />
 
                                     </div>
                                 </div>
