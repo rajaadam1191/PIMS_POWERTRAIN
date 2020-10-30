@@ -1,12 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/BeneficiaryApproval.Master" AutoEventWireup="true" CodeBehind="Beneficiaryapprovalbulkprocess.aspx.cs" Inherits="ProclainPIMSMaster.Form.Beneficiaryapprovalbulkprocess" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <%-- <link href="../UI/Style/style.css" rel="stylesheet" />
-    <link href="../UI/Style/css.css" rel="stylesheet" />
-    <link href="../UI/Style/fonts.css" rel="stylesheet" />
-    <script src="../UI/Style/jquery.min.js"></script>   
-    <link href="../UI/Style/select2.min.css" rel="stylesheet" />     
-    <script src="../UI/Script/select2.min.js" type="text/javascript"></script>
-    <link href="../UI/DataTable/jquery.dataTables.min.css" rel="stylesheet" />--%>
+   
 
       <link href="../UI/Style/fonts.css" rel="stylesheet" />
     <link href="../UI/Style/css.css" rel="stylesheet" />
@@ -360,26 +354,7 @@
 
     </asp:GridView>
                                        
-                                <%--<asp:GridView ID="SuggestionGridView" CssClass="form-control noticedtemp" runat="server" Style="background-color: none!important; display: table; padding-left: 0px; padding-right: 0px; padding-top: 0px; padding-bottom: 0px; margin-bottom: 20px" BorderStyle="None" BorderWidth="1px" CellPadding="5" GridLines="Horizontal" CellSpacing="5" AutoGenerateColumns="false" OnRowDataBound="SuggestionGridView_RowDataBound" >
-                                <Columns>
-                                    <asp:BoundField DataField="S_No" HeaderText="S.No" />
-                                    <asp:BoundField DataField="IDeaID" HeaderText="IdeaID" />
-                                    <asp:BoundField DataField="Employee" HeaderText="Employee" />
-                                   <asp:BoundField DataField="DepName" HeaderText="Department" />
-                                    <asp:BoundField DataField="Date" HeaderText="Date" />
-                                    <%--<asp:BoundField DataField="Amount" HeaderText="Amount" />
-                                     <asp:TemplateField HeaderText="Amount">
-                                    <ItemTemplate>
-                                    <asp:TextBox runat="server" ID="grossamtemp" Text="<%#Bind('Amount')%>" CssClass="form-control clsTxtToCalculateemp" onkeypress="return isNumber(event)"></asp:TextBox>
-                                    </ItemTemplate>
-
-
-                                     </asp:TemplateField>
-                                    
-                          
-                                </Columns>
-
-                            </asp:GridView>--%>
+                                
                               </div>
                               <div class="row" style="width:100%">
                                       <div class="col-md-3">
@@ -474,32 +449,7 @@
                     $('#<%=grossempamt.ClientID %>').html(total.toFixed(2));
             });}
     </script>
-        <%--<script >
-        $(document).ready(function () {
-            $.fn.dataTable.ext.search.push(
-            function (settings, data, dataIndex) {
-                var min = $("[id*=minemp]").datepicker("getDate");
-                var max = $("[id*=maxemp]").datepicker("getDate");
-                var startDate = new Date(data[4]);
-                if (min == null && max == null) { return true; }
-                if (min == null && startDate <= max) { return true; }
-                if (max == null && startDate >= min) { return true; }
-                if (startDate <= max && startDate >= min) { return true; }
-                return false;
-            }
-            );
-
-
-            $("[id*=minemp]").datepicker({ onSelect: function () { table.draw(); }, changeMonth: true, changeYear: true });
-            $("[id*=maxemp]").datepicker({ onSelect: function () { table.draw(); }, changeMonth: true, changeYear: true });
-            var table = $('.noticedtemp');
-
-            // Event listener to the two range filtering inputs to redraw on input
-            $('#minemp, #maxemp').change(function () {
-                table.draw();
-            });
-        });
-    </script>--%>
+      
         </div>
 
 
@@ -598,22 +548,7 @@
                                         
 
 
-                            <%--<asp:GridView ID="SuggestionGridViewImp" CssClass="form-control noticedtimp" runat="server" Style="background-color: none!important; display: table; padding-left: 0px; padding-right: 0px; padding-top: 0px; padding-bottom: 0px; margin-bottom: 20px" BorderStyle="None" BorderWidth="1px" CellPadding="5" GridLines="Horizontal" CellSpacing="5" AutoGenerateColumns="false" OnRowDataBound="SuggestionGridView_RowDataBound" >
-                                <Columns>
-                                     <asp:BoundField DataField="S_No" HeaderText="S.No" />
-                                    <asp:BoundField DataField="IDeaID" HeaderText="IdeaID" />
-                                    <asp:BoundField DataField="IMPL_Members" HeaderText="Members" />
-                                   <asp:BoundField DataField="DepName" HeaderText="Department" />
-                                    <asp:BoundField DataField="Date" HeaderText="Date" />
-                                    <asp:BoundField DataField="BENGrade" HeaderText="Grade" />
-                                    <asp:BoundField DataField="Amount" HeaderText="Amount" />
-                                   
-                                    
-                                    
-                          
-                                </Columns>
-
-                            </asp:GridView>--%>
+                           
                         </div>
                         <div class="row" style="width:100%">
                             <div class="col-md-3">
@@ -626,42 +561,7 @@
                             </div>
                         </div>
                        
-                        <%-- <table id="tblEmployees" style="" class="">
                         
-                                    <tr>
-                                        <th>S.No</th>
-                                        <th>IdeaID</th>
-                                        <th>Employee</th>
-                                        <th>Department</th>
-                                        <th>Date</th>
-                                                    
-                                        <th>Amount</th>
-                                    </tr>
-                        
-                        
-                                               
-                                                
-                                        <tr>
-                                            <td>1</td>
-                                            <td>212</td>
-                                            <td>rajeeev</td>
-                                            <td>Logistics</td>
-                                            <td>10-07-2020</td>
-                                                        
-                                            <td>
-                                                <asp:TextBox ID="amt" runat="server"  >100</asp:TextBox>
-                                            </td>
-                                        </tr>
-                                                
-                       
-                            </table>
-
-                        <div class="row">
-                                        
-                            <div class="col-md-4"></div>
-                            <div class="col-md-4">Total cash</div>
-                            <div class="col-md-4"><asp:TextBox ID="totamt" runat="server">100</asp:TextBox></div>
-                        </div>--%>
                                   
                     </div>
                    <div class="row"style="width:100%">

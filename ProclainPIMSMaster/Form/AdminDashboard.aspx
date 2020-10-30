@@ -288,13 +288,12 @@
 
          
     </script>
- 
+    
      <link href="../UI/Style/all.css" rel="stylesheet" />
     <link href="../UI/Style/css.css" rel="stylesheet" />
     <link href="../UI/Style/fonts.css" rel="stylesheet" />
-   <script src="../UI/Style/jquery.min.js"></script>
+   
     <link href="../UI/Style/select2.min.css" rel="stylesheet" />
-    <script src="../UI/Script/select2.min.js" type="text/javascript"></script>
     
  <style>
 	
@@ -537,7 +536,7 @@
                                             </div>
                                             <div class="peer mR-20">
                                             </div>
-                                            <%--<div class="peer">--%>
+                                           
 
 
                                             <asp:ScriptManager ID="ScriptManager" runat="server"  />
@@ -552,7 +551,7 @@
                                                         <lable ID="SubjectTaglabel"  ></lable>
                                                         <mark class="form-control" id="SubjectTag"  style=" text-align:left; text-transform:uppercase; font-size: 30px; border: 0px solid; padding-bottom: 0px; padding-left: 0px; padding-right: 5px; padding-top: 2px;"></mark>
                                                         <h6 id="TimeTag" style="text-align:right;"></h6></div>
-                                                        <%--<lable id="formtaglable"></lable>--%>
+                                                        
                                                         <table id="viewtbl" align="center" class="table table-bordered" style="border-style:ridge;width:80%;"><!--visibility:hidden;-->
                                                         <div class="row" style="padding-left:15px;">
                                                             <div class="column">
@@ -678,21 +677,21 @@ var img2 = document.getElementById("ContentPlaceHolder1_UpLoad3Tag");
 var modalImg = document.getElementById("img01");
 var captionText = document.getElementById("caption");
 img.onclick = function () {
-    window.open("URL","_blank");{
+   
         modal.style.display = "block";
         modalImg.src = this.src;
-    };
+   
 }
 img1.onclick = function () {
     modal.style.display = "block";
     modalImg.src = this.src;
     
 }
-img2.onclick = function () {
-    modal.style.display = "block";
-    modalImg.src = this.src;
+//img2.onclick = function () {
+//    modal.style.display = "block";
+//    modalImg.src = this.src;
     
-}
+//}
 
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
@@ -748,20 +747,15 @@ span.onclick = function() {
                                             </asp:UpdatePanel>
                                              <script type="text/javascript">
                                                         $(document).ready(function () {
-                                                            // $(".ideadiv").click(function () {
+                                                           
                                                                  $("#viewtbl").hide();
-                                                             //});
+                                                             
                                                         });
 
                                                        
                                                  </script>
 
-                                            <%--<small>Nov, 02 2017</small>
-                                                        <h5 class="c-grey-900 mB-5">John Doe</h5>
-                                                        <span>
-                                                                To: <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="2b4e464a42476b4c464a424705484446">[email &#160;protected]</a>
-                                                            </span>--%>
-                                            <%--</div>--%>
+                                           
                                         </div>
 
                                     </div>
@@ -891,8 +885,7 @@ span.onclick = function() {
         function sendEmail()
         {
             $("#preloader").show();
-            //var x = document.getElementById("myModalComiteeEvaluation");
-            //x.close();
+            
              var someSession = '<%= Session["UserName"].ToString() %>';
              var empid= '<%= Session["UserId"].ToString() %>';
              var Designation= '<%= Session["Designation"].ToString() %>';
@@ -905,9 +898,7 @@ span.onclick = function() {
             formData.append("toAddress", toaddress.split(" ").join(""));
             formData.append("toName",  toName.split(" ").join(""));
             formData.append("toId", toId.split(" ").join(""));
-            //formData.append("toAddress",  document.getElementById('< % = mailidtext.ClientID %>').value); 
-           // formData.append("toName",document.getElementById('< % = EmpNameTextBox.ClientID %>').value);
-            //formData.append("toId", document.getElementById('< % = EmpIDTextBox.ClientID %>').value);
+           
             formData.append("subject", "Committee Evaluvation -"+document.getElementById('<% = subjecttext.ClientID %>').value);
             formData.append("ideaID", document.getElementById('<% = IdeaIDTextBox.ClientID %>').value);
             formData.append("content",document.getElementById('<% = ComposeTextBox.ClientID %>').value);
@@ -936,12 +927,12 @@ span.onclick = function() {
                            document.getElementById("<%=CommitteePopButton.ClientID %>").click();
                         console.log('button clicked');
                         
-                       //  document.getElementById("Submit").click();
+                      
                     },
                     error: function (err) {
                               document.getElementById("<%=CommitteePopButton.ClientID %>").click();
                         console.log('button clicked'); console.log('err',err);
-                       // document.getElementById("Submit").click();
+                       
                     }
                  });
             dataView();
@@ -1125,6 +1116,8 @@ span.onclick = function() {
            END OF MODALS COMMITEE EVALUATION
     --%>
     
+    <script src="../UI/Style/jquery.min.js"></script>
+    <script src="../UI/Script/select2.min.js" type="text/javascript"></script>
     <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/json2/20130526/json2.min.js"></script>
 
 

@@ -278,7 +278,7 @@
                      </div>
              
              <div class="col-sm-1">
-                 <img src="../UI/assets/static/images/Icons/search.ico" id="SearchButton" class="btn-hight" data-toggle="modal" data-target="#myModalSrc" style="align: right;cursor:pointer" />
+                 <%--<img src="../UI/assets/static/images/Icons/search.ico" id="SearchButton" class="btn-hight" data-toggle="modal" data-target="#myModalSrc" style="align: right;cursor:pointer" />--%>
              </div>
              </div>
 

@@ -1007,11 +1007,11 @@
                                                         modalImg.src = this.src;
 
                                                     }
-                                                    img2.onclick = function () {
-                                                        modal.style.display = "block";
-                                                        modalImg.src = this.src;
+                                                    //img2.onclick = function () {
+                                                    //    modal.style.display = "block";
+                                                    //    modalImg.src = this.src;
 
-                                                    }
+                                                    //}
 
                                                     // Get the <span> element that closes the modal
                                                     var span = document.getElementsByClassName("close")[0];
@@ -1581,35 +1581,8 @@ a.float:hover + div.label-container{
 
 
 
-            //$(this).closest('.ideadiv').find(".selectors").css({ "color": "#609;!important" });
-            //document.getElementById("selectors").style.color = '#609;';
-            //$(this).closest('.ideadiv').find("#selectors").css({ "color": "#609;!important" });
-            //if (selectors.style.color.toLowerCase() == '#0f9aee;')
-            //    selectors.style.color = '#609;';
-            //document.getElementById("selectors").onclick = function () {
-            //    document.getElementById("output").style.color = 'green';
-            //}
-            //var idofdiv = $(this).closest('.ideadiv');
-
-            //var abc = $(this).find("colorchange");
-            // alert(text);
-            //colorchange  .closest('.ideadiv')
-            //   $(this).css({ "background-color": "yellow", "color": "green" });
-
-            // abc.css({ "background-color": "yellow", "font-size": "200%", "color": "green!important" });
-            //    $(this).closest('.ideadiv').find(".selectors").css({ "background-color": "yellow", "color": "green!important" });
-
-            //   $(this).closest('.divcolorChanger').css("background-color", "yellow");
             console.log(idvalue);
-            //if (idvalue.style.color.toLowerCase() == '#1a0dab;')
-            //    idvalue.style.color = '#609;';
-            //$("[id*=colorchange]").click(function () {
-            //    if(colorchange.style.color.toLowerCase()=='#1a0dab;')
-            //        colorchange.style.color ='#609;';
-            //});
-
-
-            // do something with the text
+           
         });
 
 

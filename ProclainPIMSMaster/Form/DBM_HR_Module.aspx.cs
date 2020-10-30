@@ -13,6 +13,7 @@ using ProclainPIMSMaster.Models;
 using System.Web.Services;
 using ClosedXML.Excel;
 using System.Web.Script.Serialization;
+using System.Globalization;
 
 namespace ProclainPIMSMaster.Form
 {
@@ -287,8 +288,14 @@ namespace ProclainPIMSMaster.Form
                 if (startdate != null && startdate != "" && enddate != null && enddate != "")
                 {
                     DataSet Ds = new DataSet();
-                    E.Empstartdate = Request.Form["minemp"];
-                    E.Empenddate = Request.Form["maxemp"];
+
+
+                   
+                    DateTime getcurrentfrom = DateTime.ParseExact(Request.Form["minemp"], "MM/dd/yyyy", CultureInfo.InvariantCulture);
+                    
+                    DateTime getcurrentto = DateTime.ParseExact(Request.Form["maxemp"], "MM/dd/yyyy", CultureInfo.InvariantCulture);
+                    E.Empstartdate = getcurrentfrom.ToString("yyyy-MM-dd");
+                    E.Empenddate = getcurrentto.ToString("yyyy-MM-dd");
 
                     Ds = E.BeneficiaryBulkEmpgridviewFilterDBM(E);
 

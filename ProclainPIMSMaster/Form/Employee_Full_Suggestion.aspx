@@ -326,11 +326,11 @@
          modalImg.src = this.src;
 
      }
-     img2.onclick = function () {
-         modal.style.display = "block";
-         modalImg.src = this.src;
+     //img2.onclick = function () {
+     //    modal.style.display = "block";
+     //    modalImg.src = this.src;
 
-     }
+     //}
 
      // Get the <span> element that closes the modal
      var span = document.getElementsByClassName("close")[0];
