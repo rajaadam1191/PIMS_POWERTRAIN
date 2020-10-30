@@ -597,11 +597,11 @@ img1.onclick = function () {
     modalImg.src = this.src;
     
 }
-img2.onclick = function () {
-    modal.style.display = "block";
-    modalImg.src = this.src;
+//img2.onclick = function () {
+//    modal.style.display = "block";
+//    modalImg.src = this.src;
     
-}
+//}
 
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
@@ -777,10 +777,11 @@ span.onclick = function() {
                                 </div>
                                  <div class="form-group">
                                      <div class="row">
-                                         <div class="col-md-6"></div>
-                                         <div class="col-md-6">
+                                         <div class="col-md-2"></div>
+                                         <div class="col-md-8">
                                              <asp:FileUpload ID="ImageFileUpload3" CssClass="form-control" runat="server" />
                                          </div>
+                                         <div class="col-md-2"></div>
                                      </div>
                                      
                                  </div>

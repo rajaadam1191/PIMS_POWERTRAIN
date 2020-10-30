@@ -323,7 +323,7 @@
                  </main> 
             <footer class="bdT ta-c p-30 lh-0 fsz-sm c-grey-600">
                 <span>
-                        Copyright © 2020 Designed by <a href="http://www.binary2quantum.com/" target="_blank" title="c">Binary2Quantum Techbase</a>
+                        Copyright © <%= DateTime.Now.Year %> Designed by <a href="http://www.binary2quantum.com/" target="_blank" title="c">Binary2Quantum Techbase</a>
                         . All rights reserved.
                     </span>
                 <script src="../UI/Script/js.js" type="4b6964157013fbb985339f43-text/javascript"></script>

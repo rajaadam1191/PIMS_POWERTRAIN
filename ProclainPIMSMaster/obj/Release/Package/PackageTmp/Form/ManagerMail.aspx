@@ -1007,11 +1007,11 @@
                                                         modalImg.src = this.src;
 
                                                     }
-                                                    img2.onclick = function () {
-                                                        modal.style.display = "block";
-                                                        modalImg.src = this.src;
+                                                    //img2.onclick = function () {
+                                                    //    modal.style.display = "block";
+                                                    //    modalImg.src = this.src;
 
-                                                    }
+                                                    //}
 
                                                     // Get the <span> element that closes the modal
                                                     var span = document.getElementsByClassName("close")[0];
@@ -1349,7 +1349,7 @@
                                     <div class="peers">
                                         <label>To: </label>
                                         <asp:TextBox ID="TOIMPTextBox" CssClass="form-control inp IMPToTextBoxClass" placeholder="To: " runat="server"></asp:TextBox>
-                                        <asp:TextBox ID="EmpIDIMPTextBox" CssClass="form-control inp IMPEmpIDTextBoxClass" placeholder="To: " runat="server"></asp:TextBox>
+                                        <asp:TextBox ID="EmpIDIMPTextBox" CssClass="form-control inp IMPEmpIDTextBoxClass" placeholder="To: " runat="server" hidden></asp:TextBox>
                                         <asp:TextBox ID="DupEmpIDIMPTextBox" CssClass="form-control inp EmpIDTextBoxClass" placeholder="ID " runat="server" hidden></asp:TextBox>
                                     </div>
                                 </div>
@@ -1581,35 +1581,8 @@ a.float:hover + div.label-container{
 
 
 
-            //$(this).closest('.ideadiv').find(".selectors").css({ "color": "#609;!important" });
-            //document.getElementById("selectors").style.color = '#609;';
-            //$(this).closest('.ideadiv').find("#selectors").css({ "color": "#609;!important" });
-            //if (selectors.style.color.toLowerCase() == '#0f9aee;')
-            //    selectors.style.color = '#609;';
-            //document.getElementById("selectors").onclick = function () {
-            //    document.getElementById("output").style.color = 'green';
-            //}
-            //var idofdiv = $(this).closest('.ideadiv');
-
-            //var abc = $(this).find("colorchange");
-            // alert(text);
-            //colorchange  .closest('.ideadiv')
-            //   $(this).css({ "background-color": "yellow", "color": "green" });
-
-            // abc.css({ "background-color": "yellow", "font-size": "200%", "color": "green!important" });
-            //    $(this).closest('.ideadiv').find(".selectors").css({ "background-color": "yellow", "color": "green!important" });
-
-            //   $(this).closest('.divcolorChanger').css("background-color", "yellow");
             console.log(idvalue);
-            //if (idvalue.style.color.toLowerCase() == '#1a0dab;')
-            //    idvalue.style.color = '#609;';
-            //$("[id*=colorchange]").click(function () {
-            //    if(colorchange.style.color.toLowerCase()=='#1a0dab;')
-            //        colorchange.style.color ='#609;';
-            //});
-
-
-            // do something with the text
+           
         });
 
 
@@ -1755,22 +1728,24 @@ a.float:hover + div.label-container{
              $("[id*=IMPDepaDLists]").change(function () {
 
                  console.log("mailtest1");
-                 var txts = "" + $(this).children("option:selected").text().toString();
+                 var opt = $(this).children("option:selected").val().toString();
+                 var res = opt.split(',');
+                 var txts = res[0];
                 // alert(txts);
                 console.log("Checking :" + txts);
                 if (txts != "--Select--") {
                     
                     if (txts != "") {
                         var textboxs2 = $(".IMPToTextBoxClass").val().toString();
-                        if (textboxs2 == "") {
-                            var tts = textboxs2 + " " + txts;
-                        }
-                        else {
-                            console.log("Textbox" + txts);
-                            var tts = textboxs2 + ',' + " " + txts;
+                        //if (textboxs2 == "") {
+                        //    var tts = textboxs2 + " " + txts;
+                        //}
+                        //else {
+                        //    console.log("Textbox" + txts);
+                        //    var tts = textboxs2 + ',' + " " + txts;
                             
-                        }
-                       $(".IMPToTextBoxClass").val(tts);
+                        //}
+                        $(".IMPToTextBoxClass").val(txts);
                         console.log("TT:" + textboxs2 + 'textbox:' + txts);
 
                             var ks = txts.toString();

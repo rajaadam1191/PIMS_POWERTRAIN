@@ -476,14 +476,14 @@ padding-top:0% !important;
                     
                 </div>
                 <div class="row">
-                <div class="col-lg-3 form-control" style="padding-bottom: 50px;">
-               <div class="leftside no-gutters">
-                    <div class="email-side-nav remain-height ov-h">
+                <div class="col-lg-3 bg-light rounded-lg shadow " >
+               <div class="leftside no-gutters  h-100">
+                    <div class="email-side-nav remain-height ov-h h-100">
                
                         <div class="h-100 scrollable pos-r">
-                            <div class="layer w-100 fxg-1 " style="padding-left: 15px; cursor:pointer;">
+                            <div class="layer w-100 fxg-1 h-100" style="padding-left: 15px; cursor:pointer;">
                                
-                                <div class="peer fxw-nw bdB cur-p">
+                                <div class="peer fxw-nw bdB cur-p h-100">
 
                                 <marquee direction="down" onmouseover="this.stop()" onmouseout="this.start()"scrolldelay="100"   style="height: 100%; width: 100%; font-family:Calibri;">
                                             
@@ -763,11 +763,8 @@ padding-top:0% !important;
                       </a>
                     </div>
                 </div>
-                </div>
-                <div class="row">
-                
                 <div class="col-md-12">
-                    <div id="demo1" class="carousel slide" data-ride="carousel">
+                  <div id="demo1" class="carousel slide" data-ride="carousel">
 
                       <!-- Indicators -->
                       <ul class="carousel-indicators">
@@ -817,8 +814,10 @@ padding-top:0% !important;
                         <span class="carousel-control-next-icon" style="color:black"></span>
                       </a>
                     </div>
+             
                 </div>
                 </div>
+                
 
                 </div>
                 </div>

@@ -150,7 +150,319 @@ div.slide-up p {
 .jumbotron{
 padding-top:0% !important;
 }
+
 </style>
+<style>
+        .select2-container--default .select2-selection--single {
+            border: 0px solid #aaa !important;
+        }
+
+        .select2-selection__rendered {
+            padding: 6px 12px;
+            font-size: 14px !important;
+            font-size: .875rem !important;
+            line-height: 1.5 !important;
+            color: #495057 !important;
+            background-color: #fff !important;
+            background-clip: padding-box;
+            border: 1px solid #ced4da !important;
+            border-radius: .25rem !important;
+        }
+
+        .select2-container--default .select2-selection--single .select2-selection__clear {
+            display: none !important;
+            cursor: pointer !important;
+            float: right !important;
+            font-weight: bold !important;
+        }
+
+        c-grey-902 {
+            color: #0200a5;
+        }
+
+        body {
+            color: #0d196f !important;
+        }
+
+        .leftside .rightside {
+            height: 100vh;
+            width: 50%;
+        }
+
+        .list-group-item {
+            border: 1px solid rgba(0, 0, 0, 0) !important;
+        }
+
+        .linka {
+            color: #010101 !important;
+        }
+
+        .iconmenu {
+            margin-right: 0px;
+        }
+
+        .inp {
+            border: 1px solid #ced4da !important;
+            border-radius: .25rem !important;
+        }
+
+        .textalign {
+            text-align: justify;
+        }
+
+
+        .fnt {
+            font-size: 14px !important;
+            color: #72777a !important;
+            letter-spacing: .2px !important;
+        }
+
+        #ContentPlaceHolder1_UpLoad1Tag {
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        #ContentPlaceHolder1_UpLoad2Tag {
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        #ContentPlaceHolder1_UpLoad3Tag {
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        #ContentPlaceHolder1_UpLoad1Tag:hover {
+            opacity: 0.7;
+        }
+
+        /* The Modal (background) */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            padding-top: 100px; /* Location of the box */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgb(0,0,0); /* Fallback color */
+            background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+        }
+
+        #ContentPlaceHolder1_UpLoad2Tag:hover {
+            opacity: 0.7;
+        }
+
+        /* The Modal (background) */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            padding-top: 100px; /* Location of the box */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgb(0,0,0); /* Fallback color */
+            background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+        }
+
+        #ContentPlaceHolder1_UpLoad3Tag:hover {
+            opacity: 0.7;
+        }
+
+        /* The Modal (background) */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            padding-top: 100px; /* Location of the box */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgb(0,0,0); /* Fallback color */
+            background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+        }
+
+        /* Modal Content (image) */
+        .modal-content {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+        }
+
+        /* Caption of Modal Image */
+        #caption {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+            text-align: center;
+            color: #ccc;
+            padding: 10px 0;
+            height: 150px;
+        }
+
+        /* Add Animation */
+        .modal-content, #caption {
+            -webkit-animation-name: zoom;
+            -webkit-animation-duration: 0.6s;
+            animation-name: zoom;
+            animation-duration: 0.6s;
+        }
+
+        @-webkit-keyframes zoom {
+            from {
+                -webkit-transform: scale(0);
+            }
+
+            to {
+                -webkit-transform: scale(1);
+            }
+        }
+
+        @keyframes zoom {
+            from {
+                transform: scale(0);
+            }
+
+            to {
+                transform: scale(1);
+            }
+        }
+
+        /* The Close Button */
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+            .close:hover,
+            .close:focus {
+                color: #bbb;
+                text-decoration: none;
+                cursor: pointer;
+            }
+
+        /* 100% Image Width on Smaller Screens */
+        @media only screen and (max-width: 700px) {
+            .modal-content {
+                width: 100%;
+            }
+        }
+    </style>
+    <style>
+        .card-body {
+            display: contents !important;
+            padding: 0px;
+            background: !important;
+        }
+
+        .content-body .container-fluid {
+            padding: 15px 30px 0;
+        }
+
+        .container-fluid {
+            width: 100%;
+            padding-right: 15px;
+            padding-left: 15px;
+            margin-right: auto;
+            margin-left: auto;
+        }
+
+        .container-table100 {
+            background: linear-gradient(-68deg, #c4bac7, #eae6e6) !important;
+        }
+
+        .paginate_button.current:hover, .dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+            color: #fff !important;
+            background: #1e7ee0 !important;
+        }
+
+        table.dataTable tbody tr {
+            background-color: none !important;
+            background: linear-gradient(-68deg, #b4b1b5, #e0d9d9) !important;
+        }
+
+        .table100.ver6 table {
+            background-color: transparent !important;
+        }
+
+        .table100.ver6 {
+            background: linear-gradient(-68deg, #c4bac7, #eae6e6) !important;
+        }
+
+            .table100.ver6 td {
+                color: #232121;
+            }
+
+            .table100.ver6 th {
+                color: #000 !important;
+                background: linear-gradient(-68deg, #c4bac7, #eae6e6) !important;
+                /*background-color: lightgrey;*/
+            }
+
+        .m-b-110 {
+            margin-bottom: 50px !important;
+        }
+
+        .reps {
+            background: linear-gradient(-68deg, #c4bac7, #eae6e6) !important;
+        }
+
+        .btns {
+            background: linear-gradient(-68deg, #cec9cc, #bdbaba) !important;
+            width: 40px !important;
+            height: 40px !important;
+        }
+
+        .btn-hight {
+            width: 40px !important;
+            height: 40px !important;
+        }
+
+        .dataTables_wrapper .dataTables_filter input {
+            border: 1px solid rgba(0,0,0,.0625) !important;
+            border-bottom: #101010 !important;
+            border-bottom-color: black !important;
+            border-left: none !important;
+            border-right: none !important;
+            border-top: none !important;
+            border-bottom-style: double !important;
+        }
+
+        input {
+            background: none !important;
+        }
+
+        .bor {
+            border: 1px solid #ced4da !important;
+        }
+
+        .apopbtn {
+            background: linear-gradient(-68deg, #3618dc, #2b2f5d) !important;
+            margin: 10px;
+            color: #ffffff !important;
+        }
+
+        .fnt .mark, mark {
+            background-color: #f0f3f500 !important;
+        }
+    </style>
    
 </head>
 <body  class=" screenresposive">
@@ -164,14 +476,14 @@ padding-top:0% !important;
                     
                 </div>
                 <div class="row">
-                <div class="col-md-3">
-               <div class="leftside no-gutters">
-                    <div class="email-side-nav remain-height ov-h">
+                <div class="col-lg-3 bg-light rounded-lg shadow " >
+               <div class="leftside no-gutters  h-100">
+                    <div class="email-side-nav remain-height ov-h h-100">
                
                         <div class="h-100 scrollable pos-r">
-                            <div class="layer w-100 fxg-1 " style="padding-left: 15px; cursor:pointer;">
+                            <div class="layer w-100 fxg-1 h-100" style="padding-left: 15px; cursor:pointer;">
                                
-
+                                <div class="peer fxw-nw bdB cur-p h-100">
 
                                 <marquee direction="down" onmouseover="this.stop()" onmouseout="this.start()"scrolldelay="100"   style="height: 100%; width: 100%; font-family:Calibri;">
                                             
@@ -222,14 +534,14 @@ padding-top:0% !important;
 
                                 </marquee>
 
-
+                                </div>
                                
                             </div>
                         </div>
                     </div>
                 </div>
                 </div>
-                <div class="col-md-9">
+                <div class="col-lg-9">
                 <div class="row">
                  
                 <div class="col-md-12">
@@ -247,7 +559,7 @@ padding-top:0% !important;
                         <div class="carousel-item active">
                         <div class="text-center" style="padding-right:2%;">
                     
-                           <b><asp:Label runat="server" ID="Month" Style="font-weight:bolder;font-family:Algerian;font-size:x-large;">MONTH</asp:Label></b>
+                           <b><asp:Label runat="server" ID="Month" Style="font-weight:bolder;font-family:'Times New Roman', Times, serif;font-size:x-large;">MONTH</asp:Label></b>
                     
                         </div>
                                 <div class="row">
@@ -345,7 +657,7 @@ padding-top:0% !important;
                         <div class="carousel-item">
                         <div class="text-center" style="padding-right:2%;">
                     
-                            <b> <asp:Label runat="server" ID="year" Style="font-weight:bolder;font-family:Algerian;font-size:x-large;">YEAR</asp:Label></b>
+                            <b> <asp:Label runat="server" ID="year" Style="font-weight:bolder;font-family:'Times New Roman', Times, serif;font-size:x-large;">YEAR</asp:Label></b>
                     
                         </div>
                                  <div class="row">
@@ -451,11 +763,8 @@ padding-top:0% !important;
                       </a>
                     </div>
                 </div>
-                </div>
-                <div class="row">
-                
                 <div class="col-md-12">
-                    <div id="demo1" class="carousel slide" data-ride="carousel">
+                  <div id="demo1" class="carousel slide" data-ride="carousel">
 
                       <!-- Indicators -->
                       <ul class="carousel-indicators">
@@ -470,13 +779,13 @@ padding-top:0% !important;
                              <div class="row">
                                         <div class="col-md-6">
                                    
-                                    <div class="card shadow p-3 mb-5 bg-white rounded cardbgcolor "  >				     
+                                    <div class="card shadow p-3 mb-5 bg-white rounded  "  >				     
                                             <div id="chartContainer1" class="bgcolor" style="height:300px;width:100%;"></div>
 							        </div>
                                         </div>
                                         <div class="col-md-6">
                                    
-                                    <div class="card shadow p-3 mb-5 bg-white rounded cardbgcolor "  >				     
+                                    <div class="card shadow p-3 mb-5 bg-white rounded  "  >				     
                                         <div id="chartContainer2" class="bgcolor" style="height:300px;width:100%;"></div>
 							        </div>
                                         </div>
@@ -484,14 +793,14 @@ padding-top:0% !important;
                         </div>
                         <div class="carousel-item">
                                    
-                                    <div class="card shadow p-3 mb-5 bg-white rounded cardbgcolor "  >				     
+                                    <div class="card shadow p-3 mb-5 bg-white rounded  "  >				     
                                         <div id="chartContainer3" class="bgcolor" style="height:300px;width:100%;"></div>
 							        </div>
                         </div>
                         <div class="carousel-item">
                                     
                                       				
-                                    <div class="card shadow p-3 mb-5 bg-white rounded cardbgcolor "  >				     
+                                    <div class="card shadow p-3 mb-5 bg-white rounded  "  >				     
                                         <div id="chartContainer4" class="bgcolor" style="height:300px;width:100%;"></div>
 							        </div>
                         </div>
@@ -505,8 +814,10 @@ padding-top:0% !important;
                         <span class="carousel-control-next-icon" style="color:black"></span>
                       </a>
                     </div>
+             
                 </div>
                 </div>
+                
 
                 </div>
                 </div>

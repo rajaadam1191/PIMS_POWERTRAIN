@@ -326,11 +326,11 @@
          modalImg.src = this.src;
 
      }
-     img2.onclick = function () {
-         modal.style.display = "block";
-         modalImg.src = this.src;
+     //img2.onclick = function () {
+     //    modal.style.display = "block";
+     //    modalImg.src = this.src;
 
-     }
+     //}
 
      // Get the <span> element that closes the modal
      var span = document.getElementsByClassName("close")[0];
@@ -480,7 +480,7 @@
                                                                                          </div>
                                                                                 </div>
                                                                             </div>
-                                                                            <div class="col-md-4">
+                                                                            <div class="col-md-4" hidden="hidden">
                                                                                 <div class="row-md-6">
                                                                             <mark id="upl3Tag" class="fnt"></mark>
                                                                             </div>

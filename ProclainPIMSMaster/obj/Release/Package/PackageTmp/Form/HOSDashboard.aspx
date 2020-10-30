@@ -325,7 +325,7 @@
     </style>
    
      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-     <link href="../UI/Style/all.css" rel="stylesheet" />
+     
     <style>
 .table{background-color:#F2F3F5!important;}
 </style>
@@ -561,13 +561,7 @@
                                                                 <fieldset style="width: 100%;border: double!important;border-left:none!important;border-right:none!important">
                                                                     <mark id="ReplyTag" class="fnt" style="color:red"></mark>
                                                                     <br />
-                                                                   <%-- %> <asp:GridView ID = "gridImpleTeam" runat="server" AutoGenerateColumns = "false">
-                                                                        <Columns>
-                                                                            <asp:BoundField DataField = "sno" HeaderText = "S.No" />
-                                                                            <asp:BoundField DataField = "ReceiverId" HeaderText = "Emp.ID" />
-                                                                            <asp:BoundField DataField = "EmployeeName" HeaderText = "Emp.Name" />
-                                                                        </Columns>
-                                                                        </asp:GridView>--%>
+                                                                   
                                                                                                             
 <div id="TextBoxContainer" >
     <!--Textboxes will be added here -->

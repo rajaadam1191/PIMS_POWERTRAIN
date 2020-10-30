@@ -190,11 +190,11 @@
                                     <ItemTemplate>
                                                <div class="ideadiv" style="padding-left: 10px;">
                                               <%--onclick="ConformPsIdeaID(document.getElementsByName('lblImageNameTextBox').value)"--%>
-                                                         <asp:Label ID="lblImageName" CssClass="IdeaIdclass" runat="server" Text='<%#Bind("MailID")%>' ClientIDMode="Static" hidden></asp:Label>             
+                                                         <asp:Label ID="lblImageName" CssClass="IdeaIdclass" runat="server" Text='<%#Bind("IdeaId")%>' ClientIDMode="Static" hidden></asp:Label>             
                                             <div class="row">
 
                                                 <div class="col-sm-10">
-                                                  <asp:TextBox   ID="lblImageNameTextBox" name="lblImageNameTextBox" CssClass="IdeaIdclasstxt" runat="server" Text='<%#Bind("MailID")%>' hidden></asp:TextBox>
+                                                  <asp:TextBox   ID="lblImageNameTextBox" name="lblImageNameTextBox" CssClass="IdeaIdclasstxt" runat="server" Text='<%#Bind("IdeaId")%>' hidden></asp:TextBox>
                                                   
                                                     
                                                 </div>
@@ -204,12 +204,12 @@
 
                                             <div class="row">
                                                 <div class="col-sm-12 form-control" style="border:none!important;">
-                                                    <%# Eval("SenderName") %>
+                                                    <%# Eval("IdeaId") %>
                                                     <br />
-                                                    <%# Eval("NewSubject") %>
+                                                    <%# Eval("Subject") %>
                                                     <br />
-                                                    <%--<%# Eval("Content") %>
-                                                    <br />--%>
+                                                    <%# Eval("Type") %>
+                                                    <br />
                                                     <hr />
                                                 </div>
                                             </div>
@@ -331,7 +331,7 @@
                                                         <mark  id="SContent" class="fnt" style="color:red"></mark>
                                                             <br />
                                                         <div class="pear" style="padding-left:40px" >
-                                                        
+                                                        <mark  id="IdIdTag" class="fnt" style="font-size: 20px;"></mark><mark id="IdeaIdTag" style="font-size: 20px; border: 0px solid; padding-bottom: 0px; padding-left: 0px; padding-right: 5px; padding-top: 2px;"></mark>
                                                         <lable ID="SubjectTaglabel"  ></lable>
                                                         <mark class="form-control" id="SubjectTag" style="font-size: 20px; border: 0px solid; padding-bottom: 0px; padding-left: 0px; padding-right: 5px; padding-top: 2px;"></mark>
                                                         <h6 id="TimeTag"></h6>
@@ -348,7 +348,7 @@
                                                         <mark  id="CatTag" class="fnt"></mark><mark  id="CategoryTag"></mark>
                                                         <hr />
                                                         <div style="padding-left: 10px!important; padding-right: 20px!important; padding-top: 10px!important; padding-bottom: 10px!important">
-                                                        <mark  id="IdIdTag" class="fnt"></mark><mark id="IdeaIdTag" style="padding-left: 10px"></mark>
+                                                        
                                                         <asp:TextBox ID="CEideaidTextBox" CssClass="ideaidclass" runat="server" hidden></asp:TextBox>
                                                         <br />
                                                         <br />

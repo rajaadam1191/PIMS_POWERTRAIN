@@ -59,6 +59,12 @@
                     opacity: 0
                 }
             }
+            .bckimg{
+            background-image:url(../UI/assets/static/images/Log1.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+
+            }
         </style>
     
        <script type="43d20950b47f2197532fed15-text/javascript" src="../UI/Script/vendor.js"></script>
@@ -123,13 +129,13 @@
        
         <p id="Exam" style="color:cornflowerblue"></p>
         <div class="peers ai-s fxw-nw h-100vh">
-            <div class="" style="width:100%;height:100%;background-image:url(../UI/assets/static/images/Log1.jpg)">
+            <div class="bckimg" style="width:100%;height:100%; ">
                 <div class="pos-a Right-centerXY ">
                     <div class="bgc-white bdrs-50p pos-r" style="width:100%;height:100%">
-                        <img class="pos-a centerXY" src="../UI/assets/static/images/logo1.png" alt=""/>
+                        <img style="margin-top:35px;margin-left:30px;" class="pos-a centerXY" src="../UI/assets/static/images/logo1.png" alt=""/>
                     </div>
                 </div>
-                <div class="card" style="opacity:0.8; width:40%;height:40%;margin-left:30%;margin-top:10%;align-content:center;border-radius:10px;">
+                <div class="card" style="opacity:0.8; width:40%;height:40%;margin-left:30%;margin-top:12%;align-content:center;border-radius:10px;">
                       
                 
                    <div style="padding-left:15px;">
