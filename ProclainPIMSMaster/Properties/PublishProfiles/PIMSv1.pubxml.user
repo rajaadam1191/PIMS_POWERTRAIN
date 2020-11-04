@@ -100,7 +100,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/10/2019 18:30:08</publishTime>
     </File>
     <File Include="bin/ProclainPIMSMaster.dll">
-      <publishTime>10/30/2020 12:24:39</publishTime>
+      <publishTime>11/04/2020 11:31:57</publishTime>
     </File>
     <File Include="bin/roslyn/csc.exe">
       <publishTime>06/18/2015 20:19:46</publishTime>
@@ -190,7 +190,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/18/2020 12:01:46</publishTime>
     </File>
     <File Include="Form/DBMSent.aspx">
-      <publishTime>10/09/2020 15:32:13</publishTime>
+      <publishTime>11/03/2020 19:42:50</publishTime>
     </File>
     <File Include="Form/DBM_Employee_Suggestion.aspx">
       <publishTime>10/28/2020 11:04:30</publishTime>
@@ -256,7 +256,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/21/2020 13:21:49</publishTime>
     </File>
     <File Include="Form/IdeaTrackingHistory.aspx">
-      <publishTime>10/14/2020 11:02:23</publishTime>
+      <publishTime>11/03/2020 20:15:01</publishTime>
     </File>
     <File Include="Form/Login.aspx">
       <publishTime>10/28/2020 10:58:38</publishTime>
@@ -265,10 +265,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/19/2020 10:16:00</publishTime>
     </File>
     <File Include="Form/Main.aspx">
-      <publishTime>10/05/2020 10:43:16</publishTime>
+      <publishTime>11/03/2020 18:42:19</publishTime>
     </File>
     <File Include="Form/MainDashBoard.aspx">
-      <publishTime>10/30/2020 16:58:13</publishTime>
+      <publishTime>11/04/2020 11:28:11</publishTime>
     </File>
     <File Include="Form/ManagerList.aspx">
       <publishTime>10/20/2020 11:22:47</publishTime>
@@ -443,6 +443,15 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="UI/assets/static/images/PIMSlogo.png">
       <publishTime>12/24/2019 16:42:04</publishTime>
+    </File>
+    <File Include="UI/assets/static/images/pims_background.JPG">
+      <publishTime>11/04/2020 10:22:00</publishTime>
+    </File>
+    <File Include="UI/assets/static/images/poster.jpg">
+      <publishTime>11/03/2020 18:35:29</publishTime>
+    </File>
+    <File Include="UI/assets/static/images/poster.zip">
+      <publishTime>11/03/2020 18:33:46</publishTime>
     </File>
     <File Include="UI/assets/static/images/Spin-1s-200px.gif">
       <publishTime>05/14/2020 17:39:00</publishTime>
@@ -977,6 +986,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="UI/Style/sweetalert2.min.css">
       <publishTime>06/16/2020 15:23:58</publishTime>
+    </File>
+    <File Include="UI/Style/wow.min.js">
+      <publishTime>11/04/2020 10:40:20</publishTime>
     </File>
     <File Include="UI/Style/zingchart.min.js">
       <publishTime>10/01/2020 11:27:00</publishTime>

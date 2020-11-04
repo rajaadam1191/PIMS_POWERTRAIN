@@ -96,6 +96,12 @@
         }
               
     }
+    .bckimg {
+        background-image: url(../UI/assets/static/images/poster.JPG);
+        background-repeat: no-repeat;
+        background-size: cover;
+         /*background-position: center;*/
+    }
 </style>
  <style>
   /* Make the image fully responsive */
@@ -128,7 +134,7 @@ div.slide-up p {
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
   height: 50px;
-  width: 50px;
+  width: 50px!important;
   
   background-size: 100%, 100%;
  
@@ -138,14 +144,17 @@ div.slide-up p {
 .carousel-control-next-icon:after
 {
   content: '>';
-  font-size: 55px;
+  font-size: 50px;
   color: red;
+ 
 }
 
 .carousel-control-prev-icon:after {
   content: '<';
-  font-size: 55px;
+  font-size: 50px;
   color: red;
+  
+  
 }
 .jumbotron{
 padding-top:0% !important;
@@ -465,9 +474,9 @@ padding-top:0% !important;
     </style>
    
 </head>
-<body  class=" screenresposive">
-    <form id="form1"  runat="server" class="jumbotron" >
-        <div  >
+<body  class=" screenresposive" > 
+    <form id="form1"  runat="server" class="jumbotron bckimg">
+        <div class="wow fadeIn" data-wow-duration="10s" data-wow-delay=".10s" >
           
             
                  <div class="text-right" style="padding-right:2%;">
@@ -476,18 +485,18 @@ padding-top:0% !important;
                     
                 </div>
                 <div class="row">
-                <div class="col-lg-3 bg-light rounded-lg shadow " >
+                <div class="col-lg-3 bg-light rounded-lg shadow " style="margin-bottom:3%;margin-top:3%" >
                <div class="leftside no-gutters  h-100">
                     <div class="email-side-nav remain-height ov-h h-100">
                
                         <div class="h-100 scrollable pos-r">
-                            <div class="layer w-100 fxg-1 h-100" style="padding-left: 15px; cursor:pointer;">
+                            <div class="layer w-100 fxg-1 h-100 jumbotron" style="padding-left: 15px; cursor:pointer;">
                                
                                 <div class="peer fxw-nw bdB cur-p h-100">
 
                                 <marquee direction="down" onmouseover="this.stop()" onmouseout="this.start()"scrolldelay="100"   style="height: 100%; width: 100%; font-family:Calibri;">
                                             
-                                <asp:Repeater ID="MailRepeater" runat="server">
+                                <asp:Repeater ID="MailRepeater" runat="server" >
                                   
                                     <ItemTemplate>
                                        
@@ -543,7 +552,7 @@ padding-top:0% !important;
                 </div>
                 <div class="col-lg-9">
                 <div class="row">
-                 
+                
                 <div class="col-md-12">
                     <div id="demo" class="carousel slide" data-ride="carousel">
 
@@ -564,9 +573,9 @@ padding-top:0% !important;
                         </div>
                                 <div class="row">
                                                         <div class="col-md-4" >
-							                               <div class="card shadow p-3 mb-5 bg-white rounded cardbgcolor" style="border-radius:20px;"  >
+							                               <div class="card shadow p-3 mb-5 bg-white rounded " style="border-radius:20px;"  >
 							                                  <div class="card-header"style="height:100%;width:100%;">
-								                                  <h6><center>RANK-1</center></h6>
+								                                  <h6><center>FIRST</center></h6>
 								                              </div>
 								                              <div class="card-BODY" style="width:100%;height:160px;">
                                       
@@ -595,9 +604,9 @@ padding-top:0% !important;
 						                                    </div>
 							                            </div>
 							                             <div class="col-md-4" >
-							                             <div class="card shadow p-3 mb-5 bg-white rounded cardbgcolor" style="border-radius:20px;">
+							                             <div class="card shadow p-3 mb-5 bg-white rounded " style="border-radius:20px;">
 							                                   <div class="card-header"style="height:100%;width:100%;">
-								                                  <h6><center>RANK-2</center></h6>
+								                                  <h6><center>SECOND</center></h6>
 								                              </div>
 								                              <div class="card-BODY"style="width:100%;height:160px;">
                                                                   <img src="../UI/Image/altImg.jpg" class="rounded-circle mx-auto d-block img-fluid" style="width: 62%;margin-left: 21%;height:100%;" runat="server" id="rank2img"/>
@@ -624,9 +633,9 @@ padding-top:0% !important;
 						    
 							                            </div>
 							                             <div class="col-md-4" >
-							                             <div class="card shadow p-3 mb-5 bg-white rounded cardbgcolor" style="border-radius:20px;">
+							                             <div class="card shadow p-3 mb-5 bg-white rounded " style="border-radius:20px;">
 							                                   <div class="card-header"style="height:100%;width:100%;">
-								                                  <h6><center>RANK-3</center></h6>
+								                                  <h6><center>THIRD</center></h6>
 								                              </div>
 								                              <div class="card-BODY"style="width:100%;height:160px;">
                                                                   <img src="../UI/Image/altImg.jpg" class="rounded-circle mx-auto d-block img-fluid" style="width: 62%;margin-left: 21%;height:100%;" runat="server" id="rank3img"/>
@@ -662,9 +671,9 @@ padding-top:0% !important;
                         </div>
                                  <div class="row">
                                                          <div class="col-md-4" >
-							                               <div class="card shadow p-3 mb-5 bg-white rounded cardbgcolor" style="border-radius:20px;">
+							                               <div class="card shadow p-3 mb-5 bg-white rounded " style="border-radius:20px;">
 							                                  <div class="card-header" style="height:100%;width:100%;">
-								                                  <h6><center>RANK-1</center></h6>
+								                                  <h6><center>FIRST</center></h6>
 								                              </div>
 								                              <div class="card-BODY" style="height:160px;width:100%;">
                                                                   <img src="../UI/Image/altImg.jpg" class="rounded-circle mx-auto d-block img-fluid" style="width: 62%;margin-left: 21%;height:100%;" runat="server" id="yearrank1img" />
@@ -692,9 +701,9 @@ padding-top:0% !important;
 						    
 							                            </div>
 							                             <div class="col-md-4" >
-							                             <div class="card shadow p-3 mb-5 bg-white rounded cardbgcolor" style="border-radius:20px;">
+							                             <div class="card shadow p-3 mb-5 bg-white rounded " style="border-radius:20px;">
 							                                   <div class="card-header"style="height:100%;width:100%;">
-								                                  <h6><center>RANK-2</center></h6>
+								                                  <h6><center>SECOND</center></h6>
 								                              </div>
 								                              <div class="card-BODY"style="width:100%;height:160px;">
                                                                   <img src="../UI/Image/altImg.jpg" class="rounded-circle mx-auto d-block img-fluid" style="width: 62%;margin-left: 21%;height:100%;" runat="server" id="yearrank2img"/>
@@ -721,9 +730,9 @@ padding-top:0% !important;
 						    
 							                            </div>
 							                             <div class="col-md-4" >
-							                             <div class="card shadow p-3 mb-5 bg-white rounded cardbgcolor" style="border-radius:20px;">
+							                             <div class="card shadow p-3 mb-5 bg-white rounded " style="border-radius:20px;">
 							                                   <div class="card-header"style="width:100%;">
-								                                  <h6><center>RANK-3</center></h6>
+								                                  <h6><center>THIRD</center></h6>
 								                              </div>
 								                              <div class="card-BODY"style="width:100%;height:160px;">
                                                                   <img src="../UI/Image/altImg.jpg" class="rounded-circle mx-auto d-block img-fluid" style="width: 62%;margin-left: 21%;height:100%;" runat="server" id="yearrank3img"/>
@@ -827,79 +836,43 @@ padding-top:0% !important;
                                    		function BarChartYear(oneyrbrsuggestionreceived, oneyrbraccepted, oneyrbrrejected) {
 
                                    		    console.log('method called ',oneyrbrsuggestionreceived, oneyrbraccepted, oneyrbrrejected);
-                                   		                    
+                                   		    var totrec = [parseInt(oneyrbrsuggestionreceived)];
+                                   		    var accepted = [parseInt(oneyrbraccepted)];
+                                   		    var rejected = [parseInt(oneyrbrrejected)];
                                       				          
                                             var myConfig = {
                                                 "graphset": [{
-                                                "type": "bar",
+                                                    "globals": {
+                                                        "font-family": "Lato",
+                                                        "title": {
+                                                            "text": "Suggestions 2020",
+
+                                                            "backgroundColor": "none",
+                                                            "font-size": "22px",
+                                                            "alpha": 1,
+                                                            "adjust-layout": true,
+                                                        },
+                                                    },
+                                                "type": "bar3d",
                                                 "background-color": "white",
-                                                "title": {
-                                                    "text": "Suggestions 2020",
-                                                    "font-color": "#7E7E7E",
-                                                    "backgroundColor": "none",
-                                                    "font-size": "22px",
-                                                    "alpha": 1,
-                                                    "adjust-layout": true,
-                                                },
+                                                
                                                 "plotarea": {
                                                     "margin": "dynamic"
                                                 },
-                                                "legend": {
-                                                    "layout": "x3",
-                                                    "overflow": "page",
-                                                    "alpha": 0.05,
-                                                    "shadow": false,
-                                                    "align": "center",
-                                                    "adjust-layout": true,
-                                                    "marker": {
-                                                    "type": "",
-                                                    "border-color": "none",
-                                                    "size": "10px"
-                                                    },
-                                                    "border-width": 0,
-                                                    "maxItems": 3,
-                                                    "toggle-action": "hide",
-                                                    "pageOn": {
-                                                    "backgroundColor": "#000",
-                                                    "size": "10px",
-                                                    "alpha": 0.65
-                                                    },
-                                                    "pageOff": {
-                                                    "backgroundColor": "#7E7E7E",
-                                                    "size": "10px",
-                                                    "alpha": 0.65
-                                                    },
-                                                    "pageStatus": {
-                                                    "color": "black"
-                                                    }
-                                                },
+                                               
                                                 "plot": {
                                                     "bars-space-left": 0.15,
                                                     "bars-space-right": 0.15,
+                                                    "styles": ["#ff9966", "#3399ff", "#ff3300"],
                                                     "animation": {
                                                     "effect": "ANIMATION_SLIDE_BOTTOM",
                                                     "sequence": 0,
                                                     "speed": 800,
-                                                    "delay": 800
+                                                    "delay": 800,
+                                                    
                                                     }
                                                 },
-                                                "scale-y": {
-                                                    "line-color": "#7E7E7E",
-                                                    "item": {
-                                                    "font-color": "#7e7e7e"
-                                                    },
-                                                                  
-                                                    "guide": {
-                                                    "visible": true
-                                                    },
-                                                    "label": {
-                                                    "text": "Suggestions",
-                                                    "font-family": "arial",
-                                                    "bold": true,
-                                                    "font-size": "14px",
-                                                    "font-color": "#7E7E7E",
-                                                    },
-                                                },
+                                               
                                                 "scaleX": {
                                                     "values": [
                                                     "Suggestion Received",
@@ -910,8 +883,9 @@ padding-top:0% !important;
                                                     ],
                                                     "placement": "default",
                                                     "tick": {
-                                                    "size": 58,
-                                                    "placement": "cross"
+                                                        "size": 58,
+                                                        "placement": "cross",
+                                                        "alpha":0.3,
                                                     },
                                                     "itemsOverlap": true,
                                                     "item": {
@@ -920,7 +894,19 @@ padding-top:0% !important;
                                                 },
         
                                                 "tooltip": {
-                                                    "visible": false
+                                                    "shadow": true,
+                                                    "shadowColor": "#424242",
+                                                    "backgroundColor": "#212121 #424242",
+                                                    "callout": true,
+                                                    "calloutPosition": "bottom",
+                                                    "offsetY": -20,
+                                                    "placement": "node:top",
+                                                    "padding": 10,
+                                                    "fontSize": 15,
+                                                    "color": "#ffffff",
+                                                    "borderWidth": 1,
+                                                    "borderColor": "#000000",
+                                                    
                                                 },
                                                 "crosshair-x": {
                                                     "line-width": "100%",
@@ -937,15 +923,21 @@ padding-top:0% !important;
                 
 			  
                                                     ],
-                                                    "alpha": 0.95,
-                                                    "borderRadiusTopLeft": 7,
-                                                    "background-color": "#8993c7",
-                                                    "text": "",
-                                                    },
+                                                   
+                                                   
+                                                    "valueBox": [{
+                                                        "fontSize": 10,
+                                                        "fontWeight": 600,
+                                                        "offsetY": -8,
+                                                        "jsRule": "rule_series_123_valueBox_0()",
+                                                        
+                                                    }]
+                                                }]
+                                                
          
 		  
           
-                                                ]
+                                                
                                                 }]
                                             };
  
@@ -965,10 +957,14 @@ padding-top:0% !important;
                                       		//oneyrpiimplemented  oneyrpiaccepted  oneyrpitotalsuggestion
                                       		console.log('zing pie ', oneyrpiimplemented, oneyrpiaccepted, oneyrpitotalsuggestion);
                                       		var myConfig2 = {
+                                      		    "globals": {
+                                      		        "font-family": "Lato",
+                                      		        "title": {
+                                      		            "text": "Suggestion vs Implementation"
+                                      		        },
+                                      		    },
                                       			"type": "ring3d",
-                                      			"title": {
-                                      				"text": "Suggestion vs Implementation"
-                                      			},
+                                      			
                                       			plot: {
                                       				'offset-r': "10%" //provide percentage value
                                       			},
@@ -1004,16 +1000,25 @@ padding-top:0% !important;
                                       			    function BarChartYearDept(oneyrdeptdepname1, oneyrdepttotalimplement1, oneyrdeptimplemented1, oneyrdeptyettoimplement1, oneyrdeptdepname2, oneyrdepttotalimplement2, oneyrdeptimplemented2, oneyrdeptyettoimplement2, oneyrdeptdepname3, oneyrdepttotalimplement3, oneyrdeptimplemented3, oneyrdeptyettoimplement3, oneyrdeptdepname4, oneyrdepttotalimplement4, oneyrdeptimplemented4, oneyrdeptyettoimplement4, oneyrdeptdepname5, oneyrdepttotalimplement5, oneyrdeptimplemented5, oneyrdeptyettoimplement5, oneyrdeptdepname6, oneyrdepttotalimplement6, oneyrdeptimplemented6, oneyrdeptyettoimplement6, oneyrdeptdepname7, oneyrdepttotalimplement7, oneyrdeptimplemented7, oneyrdeptyettoimplement7, oneyrdeptdepname8, oneyrdepttotalimplement8, oneyrdeptimplemented8, oneyrdeptyettoimplement8, oneyrdeptdepname9, oneyrdepttotalimplement9, oneyrdeptimplemented9, oneyrdeptyettoimplement9, oneyrdeptdepname10, oneyrdepttotalimplement10, oneyrdeptimplemented10, oneyrdeptyettoimplement10, oneyrdeptdepname11, oneyrdepttotalimplement11, oneyrdeptimplemented11, oneyrdeptyettoimplement11, oneyrdeptdepname12, oneyrdepttotalimplement12, oneyrdeptimplemented12, oneyrdeptyettoimplement12, oneyrdeptdepname13, oneyrdepttotalimplement13, oneyrdeptimplemented13, oneyrdeptyettoimplement13, oneyrdeptdepname14, oneyrdepttotalimplement14, oneyrdeptimplemented14, oneyrdeptyettoimplement14, oneyrdeptdepname15, oneyrdepttotalimplement15, oneyrdeptimplemented15, oneyrdeptyettoimplement15, oneyrdeptdepname16, oneyrdepttotalimplement16, oneyrdeptimplemented16, oneyrdeptyettoimplement16, oneyrdeptdepname17, oneyrdepttotalimplement17, oneyrdeptimplemented17, oneyrdeptyettoimplement17, oneyrdeptdepname18, oneyrdepttotalimplement18, oneyrdeptimplemented18, oneyrdeptyettoimplement18, oneyrdeptdepname19, oneyrdepttotalimplement19, oneyrdeptimplemented19, oneyrdeptyettoimplement19) {
                                       			        var myConfig = {
                                       			            "graphset": [{
-                                      			                "type": "bar",
-                                      			                "background-color": "white",
-                                      			                "title": {
-                                      			                    "text": "Implementation by Dept Wise",
-                                      			                    "font-color": "#7E7E7E",
-                                      			                    "backgroundColor": "none",
-                                      			                    "font-size": "22px",
-                                      			                    "alpha": 1,
-                                      			                    "adjust-layout": true,
+                                      			                "globals": {
+                                      			                    "font-family": "Lato",
+                                      			                    "title": {
+                                      			                        "text": "Implementation by Dept Wise",
+
+                                      			                        "backgroundColor": "none",
+                                      			                        "font-size": "22px",
+                                      			                        "alpha": 1,
+                                      			                        "adjust-layout": true,
+                                      			                    },
                                       			                },
+                                      			                "type": "bar3d",
+                                      			                '3dAspect': {
+                                      			                    depth: 10,
+                                      			                    true3d: 0,
+                                      			                    yAngle: 10
+                                      			                },
+                                      			                "background-color": "white",
+                                      			                
                                       			                "plotarea": {
                                       			                    "margin": "dynamic"
                                       			                },
@@ -1075,35 +1080,37 @@ padding-top:0% !important;
                                       			                },
                                       			                "scaleX": {
                                       			                    "values": [
-                                                                      oneyrdeptdepname1,
-                                                                      oneyrdeptdepname2,
-                                                                      oneyrdeptdepname3,
-                                                                      oneyrdeptdepname4,
-                                                                      oneyrdeptdepname5,
-                                                                      oneyrdeptdepname6,
-                                                                      oneyrdeptdepname7,
-                                                                      oneyrdeptdepname8,
-                                                                      oneyrdeptdepname9,
-                                                                      oneyrdeptdepname10,
-                                                                      oneyrdeptdepname11,
-                                                                      oneyrdeptdepname12,
-                                                                      oneyrdeptdepname13,
-                                                                      oneyrdeptdepname14,
-                                                                      oneyrdeptdepname15,
-                                                                      oneyrdeptdepname16,
-                                                                      oneyrdeptdepname17,
-                                                                      oneyrdeptdepname18,
-                                                                      oneyrdeptdepname19
+                                                                      "ADMIN",
+                                                                      "AFTMRKT",
+                                                                      "APP.ENGG",
+                                                                      "FIN",
+                                                                      "HR",
+                                                                      "INNOV",
+                                                                      "IT",
+                                                                      "LOG",
+                                                                      "MAINT",
+                                                                      "MAN.ENGG",
+                                                                      "PLT.MGMT",
+                                                                      "PROD",
+                                                                      "ABU",
+                                                                      "MBU",
+                                                                      "P.TRAIN",
+                                                                      "QUA",
+                                                                      "SALE&SUPP",
+                                                                      "SOUR",
+                                                                      "GNRL.MGMT"
 
                                       			                    ],
-                                      			                    "placement": "default",
-                                      			                    "tick": {
-                                      			                        "size": 58,
-                                      			                        "placement": "cross"
+                                      			                    "guide": {
+                                      			                        visible: true
                                       			                    },
-                                      			                    "itemsOverlap": true,
+                                      			                    "placement": "default",
                                       			                    "item": {
-                                      			                        "offsetY": -55
+                                      			                        "offsetY": 5,
+                                      			                        "angle": 270
+                                      			                    },
+                                      			                    "tick": {
+                                      			                        "size": 2
                                       			                    }
                                       			                },
 
@@ -1119,85 +1126,103 @@ padding-top:0% !important;
                                       			                },
                                       			                "series": [{
                                       			                    "values": [
-                                                                      oneyrdepttotalimplement1,
-                                                                      oneyrdepttotalimplement2,
-                                                                      oneyrdepttotalimplement3,
-                                                                      oneyrdepttotalimplement4,
-                                                                      oneyrdepttotalimplement5,
-                                                                      oneyrdepttotalimplement6,
-                                                                      oneyrdepttotalimplement7,
-                                                                      oneyrdepttotalimplement8,
-                                                                      oneyrdepttotalimplement9,
-                                                                      oneyrdepttotalimplement10,
-                                                                      oneyrdepttotalimplement11,
-                                                                      oneyrdepttotalimplement12,
-                                                                      oneyrdepttotalimplement13,
-                                                                      oneyrdepttotalimplement14,
-                                                                      oneyrdepttotalimplement15,
-                                                                      oneyrdepttotalimplement16,
-                                                                      oneyrdepttotalimplement17,
-                                                                      oneyrdepttotalimplement18,
-                                                                      oneyrdepttotalimplement19
+                                                                     parseInt(oneyrdepttotalimplement1),
+                                                                      parseInt(oneyrdepttotalimplement2),
+                                                                      parseInt(oneyrdepttotalimplement3),
+                                                                      parseInt(oneyrdepttotalimplement4),
+                                                                      parseInt(oneyrdepttotalimplement5),
+                                                                      parseInt(oneyrdepttotalimplement6),
+                                                                      parseInt(oneyrdepttotalimplement7),
+                                                                      parseInt(oneyrdepttotalimplement8),
+                                                                      parseInt(oneyrdepttotalimplement9),
+                                                                      parseInt(oneyrdepttotalimplement10),
+                                                                      parseInt(oneyrdepttotalimplement11),
+                                                                      parseInt(oneyrdepttotalimplement12),
+                                                                      parseInt(oneyrdepttotalimplement13),
+                                                                      parseInt(oneyrdepttotalimplement14),
+                                                                      parseInt(oneyrdepttotalimplement15),
+                                                                      parseInt(oneyrdepttotalimplement16),
+                                                                      parseInt(oneyrdepttotalimplement17),
+                                                                      parseInt(oneyrdepttotalimplement18),
+                                                                      parseInt(oneyrdepttotalimplement19)
 
                                       			                    ],
                                       			                    "alpha": 0.95,
                                       			                    "borderRadiusTopLeft": 7,
-                                      			                    "background-color": "#8993c7",
+                                      			                    "background-color": "#ff9966",
                                       			                    "text": "Total Implement",
+                                      			                    "valueBox": [{
+                                      			                        "fontSize": 10,
+                                      			                        "fontWeight": 600,
+                                      			                        "offsetY": -8,
+                                      			                        "jsRule": "rule_series_123_valueBox_0()"
+                                      			                    }]
                                       			                },
                                                                   {
                                                                       "values": [
-                                                                        oneyrdeptimplemented1,
-                                                                        oneyrdeptimplemented2,
-                                                                        oneyrdeptimplemented3,
-                                                                        oneyrdeptimplemented4,
-                                                                        oneyrdeptimplemented5,
-                                                                        oneyrdeptimplemented6,
-                                                                        oneyrdeptimplemented7,
-                                                                        oneyrdeptimplemented8,
-                                                                        oneyrdeptimplemented9,
-                                                                        oneyrdeptimplemented10,
-                                                                        oneyrdeptimplemented11,
-                                                                        oneyrdeptimplemented12,
-                                                                        oneyrdeptimplemented13,
-                                                                        oneyrdeptimplemented14,
-                                                                        oneyrdeptimplemented15,
-                                                                        oneyrdeptimplemented16,
-                                                                        oneyrdeptimplemented17,
-                                                                        oneyrdeptimplemented18,
-                                                                        oneyrdeptimplemented19
+                                                                        parseInt(oneyrdeptimplemented1),
+                                                                        parseInt(oneyrdeptimplemented2),
+                                                                        parseInt(oneyrdeptimplemented3),
+                                                                        parseInt(oneyrdeptimplemented4),
+                                                                        parseInt(oneyrdeptimplemented5),
+                                                                        parseInt(oneyrdeptimplemented6),
+                                                                        parseInt(oneyrdeptimplemented7),
+                                                                        parseInt(oneyrdeptimplemented8),
+                                                                        parseInt(oneyrdeptimplemented9),
+                                                                        parseInt(oneyrdeptimplemented10),
+                                                                        parseInt(oneyrdeptimplemented11),
+                                                                        parseInt(oneyrdeptimplemented12),
+                                                                        parseInt(oneyrdeptimplemented13),
+                                                                        parseInt(oneyrdeptimplemented14),
+                                                                        parseInt(oneyrdeptimplemented15),
+                                                                        parseInt(oneyrdeptimplemented16),
+                                                                        parseInt(oneyrdeptimplemented17),
+                                                                        parseInt(oneyrdeptimplemented18),
+                                                                        parseInt(oneyrdeptimplemented19)
                                                                       ],
                                                                       "borderRadiusTopLeft": 7,
                                                                       "alpha": 0.95,
-                                                                      "background-color": "#fdb462",
-                                                                      "text": "Implemented"
+                                                                      "background-color": "#33cc33",
+                                                                      "text": "Implemented",
+                                                                      "valueBox": [{
+                                                                          "fontSize": 10,
+                                                                          "fontWeight": 600,
+                                                                          "offsetY": -8,
+                                                                          "jsRule": "rule_series_123_valueBox_0()"
+                                                                      }]
                                                                   },
                                                                   {
                                                                       "values": [
-                                                                        oneyrdeptyettoimplement1,
-                                                                        oneyrdeptyettoimplement2,
-                                                                        oneyrdeptyettoimplement3,
-                                                                        oneyrdeptyettoimplement4,
-                                                                        oneyrdeptyettoimplement5,
-                                                                        oneyrdeptyettoimplement6,
-                                                                        oneyrdeptyettoimplement7,
-                                                                        oneyrdeptyettoimplement8,
-                                                                        oneyrdeptyettoimplement9,
-                                                                        oneyrdeptyettoimplement10,
-                                                                        oneyrdeptyettoimplement11,
-                                                                        oneyrdeptyettoimplement12,
-                                                                        oneyrdeptyettoimplement13,
-                                                                        oneyrdeptyettoimplement14,
-                                                                        oneyrdeptyettoimplement15,
-                                                                        oneyrdeptyettoimplement16,
-                                                                        oneyrdeptyettoimplement17,
-                                                                        oneyrdeptyettoimplement18,
-                                                                        oneyrdeptyettoimplement19
+                                                                        parseInt(oneyrdeptyettoimplement1),
+                                                                        parseInt(oneyrdeptyettoimplement2),
+                                                                        parseInt(oneyrdeptyettoimplement3),
+                                                                        parseInt(oneyrdeptyettoimplement4),
+                                                                        parseInt(oneyrdeptyettoimplement5),
+                                                                        parseInt(oneyrdeptyettoimplement6),
+                                                                        parseInt(oneyrdeptyettoimplement7),
+                                                                        parseInt(oneyrdeptyettoimplement8),
+                                                                        parseInt(oneyrdeptyettoimplement9),
+                                                                        parseInt(oneyrdeptyettoimplement10),
+                                                                        parseInt(oneyrdeptyettoimplement11),
+                                                                        parseInt(oneyrdeptyettoimplement12),
+                                                                        parseInt(oneyrdeptyettoimplement13),
+                                                                        parseInt(oneyrdeptyettoimplement14),
+                                                                        parseInt(oneyrdeptyettoimplement15),
+                                                                        parseInt(oneyrdeptyettoimplement16),
+                                                                        parseInt(oneyrdeptyettoimplement17),
+                                                                        parseInt(oneyrdeptyettoimplement18),
+                                                                        parseInt(oneyrdeptyettoimplement19)
                                                                       ],
                                                                       "alpha": 0.95,
                                                                       "borderRadiusTopLeft": 7,
-                                                                      "background-color": "#8dd3c7",
-                                                                      "text": "Yet To Implement"
+                                                                      "background-color": "#ffff00",
+                                                                      "text": "Yet To Implement",
+                                                                      "valueBox": [{
+                                                                          "fontSize": 10,
+                                                                          "fontWeight": 600,
+                                                                          "offsetY": -8,
+                                                                          "jsRule": "rule_series_123_valueBox_0()"
+                                                                      }]
                                                                   },
 
                                       			                ]
@@ -1216,17 +1241,105 @@ padding-top:0% !important;
                  <script>
                                                           function BarChartYearMonth(oneyrmntmonths1, oneyrmntreceived1, oneyrmntaccepted1, oneyrmntreject1, oneyrmnthold1, oneyrmntimplemented1, oneyrmntmonths2, oneyrmntreceived2, oneyrmntaccepted2, oneyrmntreject2, oneyrmnthold2, oneyrmntimplemented2, oneyrmntmonths3, oneyrmntreceived3, oneyrmntaccepted3, oneyrmntreject3, oneyrmnthold3, oneyrmntimplemented3, oneyrmntmonths4, oneyrmntreceived4, oneyrmntaccepted4, oneyrmntreject4, oneyrmnthold4, oneyrmntimplemented4, oneyrmntmonths5, oneyrmntreceived5, oneyrmntaccepted5, oneyrmntreject5, oneyrmnthold5, oneyrmntimplemented5, oneyrmntmonths6, oneyrmntreceived6, oneyrmntaccepted6, oneyrmntreject6, oneyrmnthold6, oneyrmntimplemented6, oneyrmntmonths7, oneyrmntreceived7, oneyrmntaccepted7, oneyrmntreject7, oneyrmnthold7, oneyrmntimplemented7, oneyrmntmonths8, oneyrmntreceived8, oneyrmntaccepted8, oneyrmntreject8, oneyrmnthold8, oneyrmntimplemented8, oneyrmntmonths9, oneyrmntreceived9, oneyrmntaccepted9, oneyrmntreject9, oneyrmnthold9, oneyrmntimplemented9, oneyrmntmonths10, oneyrmntreceived10, oneyrmntaccepted10, oneyrmntreject10, oneyrmnthold10, oneyrmntimplemented10, oneyrmntmonths11, oneyrmntreceived11, oneyrmntaccepted11, oneyrmntreject11, oneyrmnthold11, oneyrmntimplemented11, oneyrmntmonths12, oneyrmntreceived12, oneyrmntaccepted12, oneyrmntreject12, oneyrmnthold12, oneyrmntimplemented12) {
 
-                                                              var myConfig = {
+                                                              var chartId = 'myChart';
+
+                                                             
+                                                              var dataHold = [
+                                                                               parseInt(oneyrmnthold1),
+                                                                               parseInt(oneyrmnthold2),
+                                                                               parseInt(oneyrmnthold3),
+                                                                               parseInt(oneyrmnthold4),
+                                                                               parseInt(oneyrmnthold5),
+                                                                               parseInt(oneyrmnthold6),
+                                                                               parseInt(oneyrmnthold7),
+                                                                               parseInt(oneyrmnthold8),
+                                                                               parseInt(oneyrmnthold9),
+                                                                               parseInt(oneyrmnthold10),
+                                                                               parseInt(oneyrmnthold11),
+                                                                               parseInt(oneyrmnthold12)
+
+                                                              ];
+                                                              var dataRecive = [
+                                                                          parseInt(oneyrmntreceived1),
+                                                                          parseInt(oneyrmntreceived2),
+                                                                          parseInt(oneyrmntreceived3),
+                                                                          parseInt(oneyrmntreceived4),
+                                                                          parseInt(oneyrmntreceived5),
+                                                                          parseInt(oneyrmntreceived6),
+                                                                          parseInt(oneyrmntreceived7),
+                                                                          parseInt(oneyrmntreceived8),
+                                                                          parseInt(oneyrmntreceived9),
+                                                                           parseInt(oneyrmntreceived10),
+                                                                          parseInt(oneyrmntreceived11),
+                                                                          parseInt(oneyrmntreceived12)
+
+
+                                                              ];
+                                                              var dataAcc = [
+                                                                          parseInt(oneyrmntaccepted1),
+                                                                          parseInt(oneyrmntaccepted2),
+                                                                          parseInt(oneyrmntaccepted3),
+                                                                          parseInt(oneyrmntaccepted4),
+                                                                          parseInt(oneyrmntaccepted5),
+                                                                          parseInt(oneyrmntaccepted6),
+                                                                          parseInt(oneyrmntaccepted7),
+                                                                          parseInt(oneyrmntaccepted8),
+                                                                          parseInt(oneyrmntaccepted9),
+                                                                          parseInt(oneyrmntaccepted10),
+                                                                          parseInt(oneyrmntaccepted11),
+                                                                          parseInt(oneyrmntaccepted12)
+
+                                                              ];
+                                                              var dataReject = [
+                                                                          parseInt(oneyrmntreject1),
+                                                                          parseInt(oneyrmntreject2),
+                                                                          parseInt(oneyrmntreject3),
+                                                                          parseInt(oneyrmntreject4),
+                                                                          parseInt(oneyrmntreject5),
+                                                                          parseInt(oneyrmntreject6),
+                                                                          parseInt(oneyrmntreject7),
+                                                                          parseInt(oneyrmntreject8),
+                                                                          parseInt(oneyrmntreject9),
+                                                                          parseInt(oneyrmntreject10),
+                                                                          parseInt(oneyrmntreject11),
+                                                                          parseInt(oneyrmntreject12)
+
+                                                              ];
+                                                              var dataImp = [
+                                                                         parseInt(oneyrmntimplemented1),
+                                                                         parseInt(oneyrmntimplemented2),
+                                                                         parseInt(oneyrmntimplemented3),
+                                                                         parseInt(oneyrmntimplemented4),
+                                                                         parseInt(oneyrmntimplemented5),
+                                                                         parseInt(oneyrmntimplemented6),
+                                                                         parseInt(oneyrmntimplemented7),
+                                                                         parseInt(oneyrmntimplemented8),
+                                                                         parseInt(oneyrmntimplemented9),
+                                                                         parseInt(oneyrmntimplemented10),
+                                                                         parseInt(oneyrmntimplemented11),
+                                                                         parseInt(oneyrmntimplemented12)
+
+                                                              ];
+                                                              console.log('myConfigBarChartYearMonth', dataRecive, dataAcc, dataReject, dataHold, dataImp);
+                                                              var myConfigBarChartYearMonth = {
                                                                   "graphset": [{
-                                                                      "type": "bar",
-                                                                      "background-color": "white",
-                                                                      "title": {
-                                                                          "text": "Suggestions 2020 Report",
-                                                                          "font-color": "#7E7E7E",
-                                                                          "backgroundColor": "none",
-                                                                          "font-size": "22px",
-                                                                          "alpha": 1,
-                                                                          "adjust-layout": true,
+                                                                      "globals": {
+                                                                          "font-family": "Lato",
+
+                                                                          "title": {
+                                                                              "text": "Suggestions 2020 Report",
+                                                                              
+                                                                              "backgroundColor": "none",
+                                                                              "font-size": "22px",
+                                                                              "alpha": 1,
+                                                                              "adjust-layout": true,
+                                                                          }
+                                                                      },
+                                                                      type: 'bar3d',
+                                                                      '3dAspect': {
+                                                                          depth: 10,
+                                                                          true3d: 0,
+                                                                          yAngle: 10
                                                                       },
                                                                       "plotarea": {
                                                                           "margin": "dynamic"
@@ -1259,185 +1372,113 @@ padding-top:0% !important;
                                                                           "pageStatus": {
                                                                               "color": "black"
                                                                           }
-                                                                      },
-                                                                      "plot": {
-                                                                          "bars-space-left": 0.15,
-                                                                          "bars-space-right": 0.15,
-                                                                          "animation": {
-                                                                              "effect": "ANIMATION_SLIDE_BOTTOM",
-                                                                              "sequence": 0,
-                                                                              "speed": 800,
-                                                                              "delay": 800
-                                                                          }
-                                                                      },
-                                                                      "scale-y": {
-                                                                          "line-color": "#7E7E7E",
-                                                                          "item": {
-                                                                              "font-color": "#7e7e7e"
-                                                                          },
-                                                                          
-                                                                          "guide": {
-                                                                              "visible": true
-                                                                          },
-                                                                          "label": {
-                                                                              "text": "Suggestions",
-                                                                              "font-family": "arial",
-                                                                              "bold": true,
-                                                                              "font-size": "14px",
-                                                                              "font-color": "#7E7E7E",
-                                                                          },
-                                                                      },
+                                                                      }
+                                                                    , "plot": {
+                                                                        "bars-space-left": 0.15,
+                                                                        "bars-space-right": 0.15,
+                                                                        "animation": {
+                                                                            "effect": "ANIMATION_SLIDE_BOTTOM",
+                                                                            "sequence": 0,
+                                                                            "speed": 800,
+                                                                            "delay": 800
+                                                                        }
+                                                                    },
                                                                       "scaleX": {
-                                                                          "values": [
-                                                                            oneyrmntmonths1,
-                                                                            oneyrmntmonths2,
-                                                                            oneyrmntmonths3,
-                                                                            oneyrmntmonths4,
-                                                                            oneyrmntmonths5,
-                                                                            oneyrmntmonths6,
-                                                                            oneyrmntmonths7,
-                                                                            oneyrmntmonths8,
-                                                                            oneyrmntmonths9,
-                                                                            oneyrmntmonths10,
-                                                                            oneyrmntmonths11,
-                                                                            oneyrmntmonths12
-
-                                                                          ],
-                                                                          "placement": "default",
-                                                                          "tick": {
-                                                                              "size": 58,
-                                                                              "placement": "cross"
+                                                                          "values": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                                                                          "guide": {
+                                                                              visible: true
                                                                           },
-                                                                          "itemsOverlap": true,
                                                                           "item": {
-                                                                              "offsetY": -55
+                                                                              "offsetY": 5,
+                                                                              "angle": 270
+                                                                          },
+                                                                          "tick": {
+                                                                              "size": 2
                                                                           }
                                                                       },
+
 
                                                                       "tooltip": {
-                                                                          "visible": false
+                                                                          "shadow": true,
+                                                                          "shadowColor": "#424242",
+                                                                          "backgroundColor": "#212121 #424242",
+                                                                          "callout": true,
+                                                                          "calloutPosition": "bottom",
+                                                                          "offsetY": -20,
+                                                                          "placement": "node:top",
+                                                                          "padding": 10,
+                                                                          "fontSize": 15,
+                                                                          "color": "#ffffff",
+                                                                          "borderWidth": 1,
+                                                                          "borderColor": "#000000",
+                                                                          
                                                                       },
                                                                       "crosshair-x": {
                                                                           "line-width": "100%",
-                                                                          "alpha": 0.18,
-                                                                          "plot-label": {
-                                                                              "header-text": "%kv"
-                                                                          }
+                                                                          "alpha": 0.4,
                                                                       },
-                                                                      "series": [{
-                                                                          "values": [
-                                                                            oneyrmntreceived1,
-                                                                            oneyrmntreceived2,
-                                                                            oneyrmntreceived3,
-                                                                            oneyrmntreceived4,
-                                                                            oneyrmntreceived5,
-                                                                            oneyrmntreceived6,
-                                                                            oneyrmntreceived7,
-                                                                            oneyrmntreceived8,
-                                                                            oneyrmntreceived9,
-                                                                            oneyrmntreceived10,
-                                                                            oneyrmntreceived11,
-                                                                            oneyrmntreceived12
-
-
-                                                                          ],
-                                                                          "alpha": 0.95,
-                                                                          "borderRadiusTopLeft": 7,
-                                                                          "background-color": "#8993c7",
+                                                                      "series": [
+                                                                      {
+                                                                          "values": dataRecive,
                                                                           "text": "Received",
+                                                                          "background-color": "#ff9966",
+                                                                          "valueBox": [{
+                                                                              "fontSize": 10,
+                                                                              "fontWeight": 600,
+                                                                              "offsetY": -8,
+                                                                              "jsRule": "rule_series_123_valueBox_0()"
+                                                                          }]
                                                                       },
-                                                                        {
-                                                                            "values": [
-                                                                              oneyrmntaccepted1,
-                                                                              oneyrmntaccepted2,
-                                                                              oneyrmntaccepted3,
-                                                                              oneyrmntaccepted4,
-                                                                              oneyrmntaccepted5,
-                                                                              oneyrmntaccepted6,
-                                                                              oneyrmntaccepted7,
-                                                                              oneyrmntaccepted8,
-                                                                              oneyrmntaccepted9,
-                                                                              oneyrmntaccepted10,
-                                                                              oneyrmntaccepted11,
-                                                                              oneyrmntaccepted12
-
-                                                                            ],
-                                                                            "borderRadiusTopLeft": 7,
-                                                                            "alpha": 0.95,
-                                                                            "background-color": "#fdb462",
-                                                                            "text": "Accepted"
-                                                                        },
-                                                                        {
-                                                                            "values": [
-                                                                              oneyrmntreject1,
-                                                                              oneyrmntreject2,
-                                                                              oneyrmntreject3,
-                                                                              oneyrmntreject4,
-                                                                              oneyrmntreject5,
-                                                                              oneyrmntreject6,
-                                                                              oneyrmntreject7,
-                                                                              oneyrmntreject8,
-                                                                              oneyrmntreject9,
-                                                                              oneyrmntreject10,
-                                                                              oneyrmntreject11,
-                                                                              oneyrmntreject12
-
-                                                                            ],
-                                                                            "alpha": 0.95,
-                                                                            "borderRadiusTopLeft": 7,
-                                                                            "background-color": "#8dd3c7",
-                                                                            "text": "Reject"
-                                                                        },
-                                                                        {
-                                                                            "values": [
-                                                                              oneyrmnthold1,
-                                                                              oneyrmnthold2,
-                                                                              oneyrmnthold3,
-                                                                              oneyrmnthold4,
-                                                                              oneyrmnthold5,
-                                                                              oneyrmnthold6,
-                                                                              oneyrmnthold7,
-                                                                              oneyrmnthold8,
-                                                                              oneyrmnthold9,
-                                                                              oneyrmnthold10,
-                                                                              oneyrmnthold11,
-                                                                              oneyrmnthold12
-
-                                                                            ],
-                                                                            "borderRadiusTopLeft": 7,
-                                                                            "alpha": 0.95,
-                                                                            "background-color": "#fb8072",
-                                                                            "text": "Hold"
-                                                                        },
-                                                                        {
-                                                                            "values": [
-                                                                              oneyrmntimplemented1,
-                                                                              oneyrmntimplemented2,
-                                                                              oneyrmntimplemented3,
-                                                                              oneyrmntimplemented4,
-                                                                              oneyrmntimplemented5,
-                                                                              oneyrmntimplemented6,
-                                                                              oneyrmntimplemented7,
-                                                                              oneyrmntimplemented8,
-                                                                              oneyrmntimplemented9,
-                                                                              oneyrmntimplemented10,
-                                                                              oneyrmntimplemented11,
-                                                                              oneyrmntimplemented12
-
-                                                                            ],
-                                                                            "borderRadiusTopLeft": 7,
-                                                                            "alpha": 0.95,
-                                                                            "background-color": "#80b1d3",
-                                                                            "text": "Implemented"
-                                                                        },
-
-                                                                      ]
+                                                                      {
+                                                                          "values": dataAcc,
+                                                                          "text": "Accepted",
+                                                                          "background-color": "#3399ff",
+                                                                          "valueBox": [{
+                                                                              "fontSize": 10,
+                                                                              "fontWeight": 600,
+                                                                              "offsetY": -8,
+                                                                              "jsRule": "rule_series_123_valueBox_0()"
+                                                                          }]
+                                                                      }, {
+                                                                          "values": dataReject,
+                                                                          "text": "Reject",
+                                                                          "background-color": "#ff3300",
+                                                                          "valueBox": [{
+                                                                              "fontSize": 10,
+                                                                              "fontWeight": 600,
+                                                                              "offsetY": -10,
+                                                                              "jsRule": "rule_series_123_valueBox_0()"
+                                                                          }]
+                                                                      }, {
+                                                                          "values": dataHold,
+                                                                          "text": "Hold",
+                                                                          "background-color": "#ff9933",
+                                                                          "valueBox": [{
+                                                                              "fontSize": 10,
+                                                                              "fontWeight": 600,
+                                                                              "offsetY": -8,
+                                                                              "jsRule": "rule_series_123_valueBox_0()"
+                                                                          }]
+                                                                      }, {
+                                                                          "values": dataImp,
+                                                                          "text": "Implemented",
+                                                                          "background-color": "#33cc33",
+                                                                          "valueBox": [{
+                                                                              "fontSize": 10,
+                                                                              "fontWeight": 600,
+                                                                              "offsetY": -8,
+                                                                              "jsRule": "rule_series_123_valueBox_0()"
+                                                                          }]
+                                                                      }]
                                                                   }]
                                                               };
 
+
+                                                              // RENDER CHART
+                                                              // -----------------------------
                                                               zingchart.render({
                                                                   id: 'chartContainer4',
-                                                                  data: myConfig,
+                                                                  data: myConfigBarChartYearMonth,
                                                                   height: '100%',
                                                                   width: '100%'
                                                               });
@@ -1453,172 +1494,25 @@ padding-top:0% !important;
                                         PieChartYear(oneyrpitotalsuggestion, oneyrpiimplemented, oneyrpiaccepted);
                                         BarChartYearDept(oneyrdeptdepname1, oneyrdepttotalimplement1, oneyrdeptimplemented1, oneyrdeptyettoimplement1, oneyrdeptdepname2, oneyrdepttotalimplement2, oneyrdeptimplemented2, oneyrdeptyettoimplement2, oneyrdeptdepname3, oneyrdepttotalimplement3, oneyrdeptimplemented3, oneyrdeptyettoimplement3, oneyrdeptdepname4, oneyrdepttotalimplement4, oneyrdeptimplemented4, oneyrdeptyettoimplement4, oneyrdeptdepname5, oneyrdepttotalimplement5, oneyrdeptimplemented5, oneyrdeptyettoimplement5, oneyrdeptdepname6, oneyrdepttotalimplement6, oneyrdeptimplemented6, oneyrdeptyettoimplement6, oneyrdeptdepname7, oneyrdepttotalimplement7, oneyrdeptimplemented7, oneyrdeptyettoimplement7, oneyrdeptdepname8, oneyrdepttotalimplement8, oneyrdeptimplemented8, oneyrdeptyettoimplement8, oneyrdeptdepname9, oneyrdepttotalimplement9, oneyrdeptimplemented9, oneyrdeptyettoimplement9, oneyrdeptdepname10, oneyrdepttotalimplement10, oneyrdeptimplemented10, oneyrdeptyettoimplement10, oneyrdeptdepname11, oneyrdepttotalimplement11, oneyrdeptimplemented11, oneyrdeptyettoimplement11, oneyrdeptdepname12, oneyrdepttotalimplement12, oneyrdeptimplemented12, oneyrdeptyettoimplement12, oneyrdeptdepname13, oneyrdepttotalimplement13, oneyrdeptimplemented13, oneyrdeptyettoimplement13, oneyrdeptdepname14, oneyrdepttotalimplement14, oneyrdeptimplemented14, oneyrdeptyettoimplement14, oneyrdeptdepname15, oneyrdepttotalimplement15, oneyrdeptimplemented15, oneyrdeptyettoimplement15, oneyrdeptdepname16, oneyrdepttotalimplement16, oneyrdeptimplemented16, oneyrdeptyettoimplement16, oneyrdeptdepname17, oneyrdepttotalimplement17, oneyrdeptimplemented17, oneyrdeptyettoimplement17, oneyrdeptdepname18, oneyrdepttotalimplement18, oneyrdeptimplemented18, oneyrdeptyettoimplement18, oneyrdeptdepname19, oneyrdepttotalimplement19, oneyrdeptimplemented19, oneyrdeptyettoimplement19);
                                         BarChartYearMonth(oneyrmntmonths1, oneyrmntreceived1, oneyrmntaccepted1, oneyrmntreject1, oneyrmnthold1, oneyrmntimplemented1, oneyrmntmonths2, oneyrmntreceived2, oneyrmntaccepted2, oneyrmntreject2, oneyrmnthold2, oneyrmntimplemented2, oneyrmntmonths3, oneyrmntreceived3, oneyrmntaccepted3, oneyrmntreject3, oneyrmnthold3, oneyrmntimplemented3, oneyrmntmonths4, oneyrmntreceived4, oneyrmntaccepted4, oneyrmntreject4, oneyrmnthold4, oneyrmntimplemented4, oneyrmntmonths5, oneyrmntreceived5, oneyrmntaccepted5, oneyrmntreject5, oneyrmnthold5, oneyrmntimplemented5, oneyrmntmonths6, oneyrmntreceived6, oneyrmntaccepted6, oneyrmntreject6, oneyrmnthold6, oneyrmntimplemented6, oneyrmntmonths7, oneyrmntreceived7, oneyrmntaccepted7, oneyrmntreject7, oneyrmnthold7, oneyrmntimplemented7, oneyrmntmonths8, oneyrmntreceived8, oneyrmntaccepted8, oneyrmntreject8, oneyrmnthold8, oneyrmntimplemented8, oneyrmntmonths9, oneyrmntreceived9, oneyrmntaccepted9, oneyrmntreject9, oneyrmnthold9, oneyrmntimplemented9, oneyrmntmonths10, oneyrmntreceived10, oneyrmntaccepted10, oneyrmntreject10, oneyrmnthold10, oneyrmntimplemented10, oneyrmntmonths11, oneyrmntreceived11, oneyrmntaccepted11, oneyrmntreject11, oneyrmnthold11, oneyrmntimplemented11, oneyrmntmonths12, oneyrmntreceived12, oneyrmntaccepted12, oneyrmntreject12, oneyrmnthold12, oneyrmntimplemented12);
+                                        console.log('barchartyearMonth', oneyrmntmonths1, oneyrmntreceived1, oneyrmntaccepted1, oneyrmntreject1, oneyrmnthold1, oneyrmntimplemented1, oneyrmntmonths2, oneyrmntreceived2, oneyrmntaccepted2, oneyrmntreject2, oneyrmnthold2, oneyrmntimplemented2, oneyrmntmonths3, oneyrmntreceived3, oneyrmntaccepted3, oneyrmntreject3, oneyrmnthold3, oneyrmntimplemented3, oneyrmntmonths4, oneyrmntreceived4, oneyrmntaccepted4, oneyrmntreject4, oneyrmnthold4, oneyrmntimplemented4, oneyrmntmonths5, oneyrmntreceived5, oneyrmntaccepted5, oneyrmntreject5, oneyrmnthold5, oneyrmntimplemented5, oneyrmntmonths6, oneyrmntreceived6, oneyrmntaccepted6, oneyrmntreject6, oneyrmnthold6, oneyrmntimplemented6, oneyrmntmonths7, oneyrmntreceived7, oneyrmntaccepted7, oneyrmntreject7, oneyrmnthold7, oneyrmntimplemented7, oneyrmntmonths8, oneyrmntreceived8, oneyrmntaccepted8, oneyrmntreject8, oneyrmnthold8, oneyrmntimplemented8, oneyrmntmonths9, oneyrmntreceived9, oneyrmntaccepted9, oneyrmntreject9, oneyrmnthold9, oneyrmntimplemented9, oneyrmntmonths10, oneyrmntreceived10, oneyrmntaccepted10, oneyrmntreject10, oneyrmnthold10, oneyrmntimplemented10, oneyrmntmonths11, oneyrmntreceived11, oneyrmntaccepted11, oneyrmntreject11, oneyrmnthold11, oneyrmntimplemented11, oneyrmntmonths12, oneyrmntreceived12, oneyrmntaccepted12, oneyrmntreject12, oneyrmnthold12, oneyrmntimplemented12)
                                     }
 
 
                                     
                             </script>
+                            
                
     
         </div>
         
         
-        <%-- <div class="row " >
-			
-						<div class="col-md-12 ">
-                             <div class=" bgcolor" style="width: 100%;height: 100%;">--%>
-
-                                     <%--<div class="row" style=" ">
-                                            <div id="dvTab" class="container mt-3" style="width:100%;height:100%;">
-
-                                              <ul class="nav nav-tabs nav-justified " role="tablist" >
-                                                    <li class="nav-item" id="User" style="width:50%; font-size:100%;  padding-left:2%; ">
-                                                        <a class="nav-link active" data-toggle="tab" href="#rank1" style="font-weight:bold ;text-align:center;border-color:black;border-radius:20px;" hidden="hidden">MONTHLY</a>
-
-                                                    </li>
-                                                    <li class="nav-item" id="Implement" style="width:50%; font-size:100%;padding-right:2%; ">
-                                                        <a class="nav-link" data-toggle="tab" href="#rank2" style="font-weight:bold ;text-align:center;border-color:black;border-radius:20px;" hidden="hidden">YEAR</a>
-
-                                                    </li>
-                                              </ul>
-                                                
-                                                
-             
-                                              <div class="tab-content">
-                                                  
-                                                <div id="rank1" class="container tab-pane active">
-                                                    <div class="text-center" style="padding-right:2%;">
-                    
-                                                     <b><asp:Label runat="server" ID="Month" Style="font-weight:bolder;font-family:Algerian;font-size:x-large;">MONTH</asp:Label></b>
-                    
-                                                    </div>
-                                                
-                                                    			
-            	                                </div>
-    
-
-    
-
-                                                <div id="rank2" class="container tab-pane">
-                                                    <div class="text-center" style="padding-right:2%;">
-                    
-                                                     <b> <asp:Label runat="server" ID="year" Style="font-weight:bolder;font-family:Algerian;font-size:x-large;">YEAR</asp:Label></b>
-                    
-                                                    </div>
-                                                
-                                                   				
-                                                 </div>
-    
-                                              </div>
-                                            </div>            
-
-                                     </div>
-
-						 
-							         <div class="row" style="margin-right: 5%;margin-left:5%;">
-                                                        
-                                       <div id="chart" class="container mt-3">
-
-                                              <ul class="nav nav-tabs nav-justified " role="tablist" visible="false">
-                                                    <li class="nav-item" id="barpiechart" style="width:50%; font-size:100%;  padding-left:2%; ">
-                                                        <a class="nav-link active" data-toggle="tab" href="#chart1" style="font-weight:bold ;text-align:center;border-color:black;border-radius:20px;" hidden="hidden"></a>
-
-                                                    </li>
-                                                    <li class="nav-item" id="Departchart" style="width:50%; font-size:100%;padding-right:2%; ">
-                                                        <a class="nav-link" data-toggle="tab" href="#chart2" style="font-weight:bold ;text-align:center;border-color:black;border-radius:20px;"hidden="hidden"></a>
-
-                                                    </li>
-                                                  <li class="nav-item" id="Monthchart" style="width:50%; font-size:100%;padding-right:2%; ">
-                                                        <a class="nav-link" data-toggle="tab" href="#chart3" style="font-weight:bold ;text-align:center;border-color:black;border-radius:20px;"hidden="hidden"></a>
-
-                                                    </li>
-                                              </ul>
-                                                
-                                                
-             
-                                              <div class="tab-content">
-                                                <div id="chart1"   class="container tab-pane fade in active">
-                                                   
-                                   		           
-            	                                </div>
-    
-
-    
-
-                                                <div id="chart2"  class="container tab-pane fade ">
-                                      			
-                                                    
-                                                </div>
-
-                                                  <div id="chart3"  class="container tab-pane fade">
-                                                     
-                                                    
-                                                </div>
-    
-                                              </div>
-                                            </div>     
-
-
-							                
-						    
-							                           
-                          
-							  
-                            
-                                <script type="text/javascript">
-                                   
-                                    function bindgraphNew(oneyrbrsuggestionreceived,oneyrbraccepted,oneyrbrrejected,oneyrpitotalsuggestion,oneyrpiimplemented,oneyrpiaccepted,oneyrdeptdepname1,oneyrdepttotalimplement1,oneyrdeptimplemented1,oneyrdeptyettoimplement1,oneyrdeptdepname2,oneyrdepttotalimplement2,oneyrdeptimplemented2,oneyrdeptyettoimplement2,oneyrdeptdepname3,oneyrdepttotalimplement3,oneyrdeptimplemented3,oneyrdeptyettoimplement3,oneyrdeptdepname4,oneyrdepttotalimplement4,oneyrdeptimplemented4,oneyrdeptyettoimplement4,oneyrdeptdepname5,oneyrdepttotalimplement5,oneyrdeptimplemented5,oneyrdeptyettoimplement5,oneyrdeptdepname6,oneyrdepttotalimplement6,oneyrdeptimplemented6,oneyrdeptyettoimplement6,oneyrdeptdepname7,oneyrdepttotalimplement7,oneyrdeptimplemented7,oneyrdeptyettoimplement7,oneyrdeptdepname8,oneyrdepttotalimplement8,oneyrdeptimplemented8,oneyrdeptyettoimplement8,oneyrdeptdepname9,oneyrdepttotalimplement9,oneyrdeptimplemented9,oneyrdeptyettoimplement9,oneyrdeptdepname10,oneyrdepttotalimplement10,oneyrdeptimplemented10,oneyrdeptyettoimplement10,oneyrdeptdepname11,oneyrdepttotalimplement11,oneyrdeptimplemented11,oneyrdeptyettoimplement11,oneyrdeptdepname12,oneyrdepttotalimplement12,oneyrdeptimplemented12,oneyrdeptyettoimplement12,oneyrdeptdepname13,oneyrdepttotalimplement13,oneyrdeptimplemented13,oneyrdeptyettoimplement13,oneyrdeptdepname14,oneyrdepttotalimplement14,oneyrdeptimplemented14,oneyrdeptyettoimplement14,oneyrdeptdepname15,oneyrdepttotalimplement15,oneyrdeptimplemented15,oneyrdeptyettoimplement15,oneyrdeptdepname16,oneyrdepttotalimplement16,oneyrdeptimplemented16,oneyrdeptyettoimplement16,oneyrdeptdepname17,oneyrdepttotalimplement17,oneyrdeptimplemented17,oneyrdeptyettoimplement17,oneyrdeptdepname18,oneyrdepttotalimplement18,oneyrdeptimplemented18,oneyrdeptyettoimplement18,oneyrdeptdepname19,oneyrdepttotalimplement19,oneyrdeptimplemented19,oneyrdeptyettoimplement19,oneyrmntmonths1,oneyrmntreceived1,oneyrmntaccepted1,oneyrmntreject1,oneyrmnthold1,oneyrmntimplemented1,oneyrmntmonths2,oneyrmntreceived2,oneyrmntaccepted2,oneyrmntreject2,oneyrmnthold2,oneyrmntimplemented2,oneyrmntmonths3,oneyrmntreceived3,oneyrmntaccepted3,oneyrmntreject3,oneyrmnthold3,oneyrmntimplemented3,oneyrmntmonths4,oneyrmntreceived4,oneyrmntaccepted4,oneyrmntreject4,oneyrmnthold4,oneyrmntimplemented4,oneyrmntmonths5,oneyrmntreceived5,oneyrmntaccepted5,oneyrmntreject5,oneyrmnthold5,oneyrmntimplemented5,oneyrmntmonths6,oneyrmntreceived6,oneyrmntaccepted6,oneyrmntreject6,oneyrmnthold6,oneyrmntimplemented6,oneyrmntmonths7,oneyrmntreceived7,oneyrmntaccepted7,oneyrmntreject7,oneyrmnthold7,oneyrmntimplemented7,oneyrmntmonths8,oneyrmntreceived8,oneyrmntaccepted8,oneyrmntreject8,oneyrmnthold8,oneyrmntimplemented8,oneyrmntmonths9,oneyrmntreceived9,oneyrmntaccepted9,oneyrmntreject9,oneyrmnthold9,oneyrmntimplemented9,oneyrmntmonths10,oneyrmntreceived10,oneyrmntaccepted10,oneyrmntreject10,oneyrmnthold10,oneyrmntimplemented10,oneyrmntmonths11,oneyrmntreceived11,oneyrmntaccepted11,oneyrmntreject11,oneyrmnthold11,oneyrmntimplemented11,oneyrmntmonths12,oneyrmntreceived12,oneyrmntaccepted12,oneyrmntreject12,oneyrmnthold12,oneyrmntimplemented12 ) {
-                                        console.log(oneyrbrsuggestionreceived, oneyrbraccepted, oneyrbrrejected, oneyrpitotalsuggestion, oneyrpiimplemented, oneyrpiaccepted);
-                                        BarChartYear(oneyrbrsuggestionreceived, oneyrbraccepted, oneyrbrrejected);
-                                        PieChartYear(oneyrpitotalsuggestion, oneyrpiimplemented, oneyrpiaccepted);
-                                        BarChartYearDept(oneyrdeptdepname1, oneyrdepttotalimplement1, oneyrdeptimplemented1, oneyrdeptyettoimplement1, oneyrdeptdepname2, oneyrdepttotalimplement2, oneyrdeptimplemented2, oneyrdeptyettoimplement2, oneyrdeptdepname3, oneyrdepttotalimplement3, oneyrdeptimplemented3, oneyrdeptyettoimplement3, oneyrdeptdepname4, oneyrdepttotalimplement4, oneyrdeptimplemented4, oneyrdeptyettoimplement4, oneyrdeptdepname5, oneyrdepttotalimplement5, oneyrdeptimplemented5, oneyrdeptyettoimplement5, oneyrdeptdepname6, oneyrdepttotalimplement6, oneyrdeptimplemented6, oneyrdeptyettoimplement6, oneyrdeptdepname7, oneyrdepttotalimplement7, oneyrdeptimplemented7, oneyrdeptyettoimplement7, oneyrdeptdepname8, oneyrdepttotalimplement8, oneyrdeptimplemented8, oneyrdeptyettoimplement8, oneyrdeptdepname9, oneyrdepttotalimplement9, oneyrdeptimplemented9, oneyrdeptyettoimplement9, oneyrdeptdepname10, oneyrdepttotalimplement10, oneyrdeptimplemented10, oneyrdeptyettoimplement10, oneyrdeptdepname11, oneyrdepttotalimplement11, oneyrdeptimplemented11, oneyrdeptyettoimplement11, oneyrdeptdepname12, oneyrdepttotalimplement12, oneyrdeptimplemented12, oneyrdeptyettoimplement12, oneyrdeptdepname13, oneyrdepttotalimplement13, oneyrdeptimplemented13, oneyrdeptyettoimplement13, oneyrdeptdepname14, oneyrdepttotalimplement14, oneyrdeptimplemented14, oneyrdeptyettoimplement14, oneyrdeptdepname15, oneyrdepttotalimplement15, oneyrdeptimplemented15, oneyrdeptyettoimplement15, oneyrdeptdepname16, oneyrdepttotalimplement16, oneyrdeptimplemented16, oneyrdeptyettoimplement16, oneyrdeptdepname17, oneyrdepttotalimplement17, oneyrdeptimplemented17, oneyrdeptyettoimplement17, oneyrdeptdepname18, oneyrdepttotalimplement18, oneyrdeptimplemented18, oneyrdeptyettoimplement18, oneyrdeptdepname19, oneyrdepttotalimplement19, oneyrdeptimplemented19, oneyrdeptyettoimplement19);
-                                        BarChartYearMonth(oneyrmntmonths1, oneyrmntreceived1, oneyrmntaccepted1, oneyrmntreject1, oneyrmnthold1, oneyrmntimplemented1, oneyrmntmonths2, oneyrmntreceived2, oneyrmntaccepted2, oneyrmntreject2, oneyrmnthold2, oneyrmntimplemented2, oneyrmntmonths3, oneyrmntreceived3, oneyrmntaccepted3, oneyrmntreject3, oneyrmnthold3, oneyrmntimplemented3, oneyrmntmonths4, oneyrmntreceived4, oneyrmntaccepted4, oneyrmntreject4, oneyrmnthold4, oneyrmntimplemented4, oneyrmntmonths5, oneyrmntreceived5, oneyrmntaccepted5, oneyrmntreject5, oneyrmnthold5, oneyrmntimplemented5, oneyrmntmonths6, oneyrmntreceived6, oneyrmntaccepted6, oneyrmntreject6, oneyrmnthold6, oneyrmntimplemented6, oneyrmntmonths7, oneyrmntreceived7, oneyrmntaccepted7, oneyrmntreject7, oneyrmnthold7, oneyrmntimplemented7, oneyrmntmonths8, oneyrmntreceived8, oneyrmntaccepted8, oneyrmntreject8, oneyrmnthold8, oneyrmntimplemented8, oneyrmntmonths9, oneyrmntreceived9, oneyrmntaccepted9, oneyrmntreject9, oneyrmnthold9, oneyrmntimplemented9, oneyrmntmonths10, oneyrmntreceived10, oneyrmntaccepted10, oneyrmntreject10, oneyrmnthold10, oneyrmntimplemented10, oneyrmntmonths11, oneyrmntreceived11, oneyrmntaccepted11, oneyrmntreject11, oneyrmnthold11, oneyrmntimplemented11, oneyrmntmonths12, oneyrmntreceived12, oneyrmntaccepted12, oneyrmntreject12, oneyrmnthold12, oneyrmntimplemented12);
-                                    }
-
-
-                                    
-                            </script>
-
-                            
-							                               
-						    
-							
-							</div>
-							                           
-							 </div>
-	                     </div>						
-				</div>
-        <%-- <script>
-  var n=0
-  var myVar=setInterval(function () {update_news()}, 5000);
-
-  function update_news() {
-    n = n+1
-    if (n==4) {
-       n=1
-    }
-    //$('#chart' + n).tab('show');
-    $('.nav-tabs a[href="#chart' + n + '"]').tab('show')
-    $('.nav-tabs a[href="#rank' + n + '"]').tab('show')
-  }
-  </script>--%>
-        <%-- <script>
-  var n=0
-  var myVar=setInterval(function () {update_news()}, 1000);
-
-  function update_news() {
-    n = n+1
-    if (n==3) {
-       n=1
-    }
-    //$('#chart' + n).tab('show');
-    $('.nav-tabs a[href="#rank' + n + '"]').tab('show')
-
-  }
-  </script>--%>
+       
        
             <script src="../UI/Style/zingchart.min.js"></script>            
-            
+        <script src="../UI/Style/wow.min.js"></script>
+                            <script>
+                                new WOW().init();
+                            </script>
     </form>
 </body>
 </html>

@@ -249,6 +249,8 @@
     <Content Include="UI\assets\static\images\Login.jpg" />
     <Content Include="UI\assets\static\images\logo1.png" />
     <Content Include="UI\assets\static\images\PIMSlogo.png" />
+    <Content Include="UI\assets\static\images\pims_background.JPG" />
+    <Content Include="UI\assets\static\images\poster.jpg" />
     <Content Include="UI\assets\static\images\Spin-1s-200px.gif" />
     <Content Include="UI\assets\static\images\Spin2-1s-200px.gif" />
     <Content Include="UI\BootStrapModel\main.8e72934e8341bd73118b.js" />
@@ -313,6 +315,7 @@
     <Content Include="UI\Style\popper.min.js" />
     <Content Include="UI\Style\sweetalert.min.js" />
     <Content Include="UI\Style\sweetalert2.min.css" />
+    <Content Include="UI\Style\wow.min.js" />
     <Content Include="UI\Style\zingchart.min.js" />
     <Content Include="UI\webfonts\fa-brands-400.eot" />
     <Content Include="UI\webfonts\fa-brands-400.ttf" />
@@ -402,6 +405,7 @@
     <Content Include="Approval.Master" />
     <Content Include="BeneficiaryApproval.Master" />
     <None Include="Properties\PublishProfiles\PIMSv1.pubxml" />
+    <Content Include="UI\assets\static\images\poster.zip" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

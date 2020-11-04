@@ -114,10 +114,12 @@
         table.dataTable tbody tr {
             background-color: none !important;
             background: linear-gradient(-68deg, #b4b1b5, #e0d9d9) !important;
+            overflow:scroll !important;
         }
 
         .table100.ver6 table {
             background-color: transparent !important;
+
         }
 
         .table100.ver6 {
@@ -252,6 +254,9 @@
                                 <Columns>
                                    
                                     <asp:BoundField DataField="ideaid" HeaderText="IDEAID" />
+                                    <asp:BoundField DataField="Employee" HeaderText="EMP" />
+                                    <asp:BoundField DataField="subject" HeaderText="SUB" />
+                                    <asp:BoundField DataField="date" HeaderText="DATE" />
                                     <asp:BoundField DataField="Committee" HeaderText="COMM" />
                                     <asp:BoundField DataField="Manager" HeaderText="MAN" />
                                     <asp:BoundField DataField="Implement_Members" HeaderText="IMPL_MEM" />

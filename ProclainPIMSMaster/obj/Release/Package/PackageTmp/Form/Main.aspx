@@ -71,7 +71,7 @@
                                 <div class="col-md-3 ">
                                     <div class="layers bd bgc-white p-20 cardin">
                                         <div class="layer w-100 mB-10">
-                                            <h6 class="lh-1">New Suggestion</h6>
+                                            <h6 class="lh-1">Total Suggestion</h6>
                                         </div>
                                         <div class="layer w-100">
                                             <div class="peers ai-sb fxw-nw">
@@ -96,7 +96,7 @@
                                 <div class="col-md-3 ">
                                     <div class="layers bd bgc-white p-20 cardin">
                                         <div class="layer w-100 mB-10">
-                                            <h6 class="lh-1">Suggestion Rejected</h6>
+                                            <h6 class="lh-1">Accepted</h6>
                                         </div>
                                         <div class="layer w-100">
                                             <div class="peers ai-sb fxw-nw">
@@ -121,7 +121,7 @@
                                 <div class="col-md-3">
                                     <div class="layers bd bgc-white p-20 cardin">
                                         <div class="layer w-100 mB-10">
-                                            <h6 class="lh-1">Approved Suggestion</h6>
+                                            <h6 class="lh-1">Rejected</h6>
                                         </div>
                                         <div class="layer w-100">
                                             <div class="peers ai-sb fxw-nw">
@@ -145,7 +145,7 @@
                                 <div class="col-md-3">
                                     <div class="layers bd bgc-white p-20 cardin">
                                         <div class="layer w-100 mB-10">
-                                            <h6 class="lh-1">Total Suggestion</h6>
+                                            <h6 class="lh-1">Implemented</h6>
                                         </div>
                                         <div class="layer w-100">
                                             <div class="peers ai-sb fxw-nw">
