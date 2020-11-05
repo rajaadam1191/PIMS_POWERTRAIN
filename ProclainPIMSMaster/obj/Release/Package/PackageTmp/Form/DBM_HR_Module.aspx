@@ -1,12 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AdminMaster.Master" AutoEventWireup="true" CodeBehind="DBM_HR_Module.aspx.cs" Inherits="ProclainPIMSMaster.Form.DBM_HR_Module" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <%-- <link href="../UI/Style/style.css" rel="stylesheet" />
-    <link href="../UI/Style/css.css" rel="stylesheet" />
-    <link href="../UI/Style/fonts.css" rel="stylesheet" />
-    <script src="../UI/Style/jquery.min.js"></script>   
-    <link href="../UI/Style/select2.min.css" rel="stylesheet" />     
-    <script src="../UI/Script/select2.min.js" type="text/javascript"></script>
-    <link href="../UI/DataTable/jquery.dataTables.min.css" rel="stylesheet" />--%>
+ 
 
       <link href="../UI/Style/fonts.css" rel="stylesheet" />
     <link href="../UI/Style/css.css" rel="stylesheet" />

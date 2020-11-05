@@ -223,6 +223,11 @@
         .fnt .mark, mark {
             background-color: #f0f3f500!important;
         }
+
+        #ModalViewFullDetails{
+        width:100%!important;
+        height:100%!important;
+        }
         
     </style>
     
@@ -315,15 +320,19 @@
                                             </div>
 
                                             <div class="row">
-                                                <div class="col-sm-12 form-control" style="border:none!important;">
+                                                <div class="col-sm-9 form-control" style="border:none!important;">
                                                     <%# Eval("SendFrom") %>
                                                     <br />
                                                      <%# Eval("Subject") %>
                                                     <br />
                                                     <%# Eval("IDeaID") %>
                                                     <br />
-                                                    <hr />
+                                                    
                                                 </div>
+                                                <div class="col-sm-3 form-control" style="border:none!important;">
+                                                <asp:ImageButton ID="Gridimgbtn" runat="server" ImageUrl="../UI/assets/static/images/Icons/2.png" style="background: none; align: right;width:25px; height:25px;cursor:pointer;"  ></asp:ImageButton>
+                                                </div>
+                                                <hr />
                                             </div>
                                           
                                         </div>
@@ -403,6 +412,7 @@
                                                     <br />
                                                     <hr />
                                                 </div>
+                                                
                                             </div>
                                           
                                         </div>
@@ -656,7 +666,234 @@
             </div>
         </div>
     </div>
-     
+      
+        <div class="modal fade" id="ModalViewFullDetails" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Idea Overview</h4>
+                        <button type="button" id="span" class="close" data-dismiss="modal">&times;</button>
+
+                    </div>
+                    <div class="modal-body">
+                        <div>
+                        <asp:ScriptManager ID="ScriptManager" runat="server"  />
+                         <asp:UpdatePanel ID="UpdatePanel1" 
+                                                UpdateMode="Conditional"
+                                                runat="server" >
+                                                <ContentTemplate>
+
+
+                                                    <div class="pear">
+                                                      <div align="center" >  
+                                                        <lable ID="SubjectTaglabel"  ></lable>
+                                                        <mark class="form-control" id="SubjectTag"  style=" text-align:left; text-transform:uppercase; font-size: 30px; border: 0px solid; padding-bottom: 0px; padding-left: 0px; padding-right: 5px; padding-top: 2px;"></mark>
+                                                        <h6 id="TimeTag" style="text-align:right;"></h6></div>
+                                                        
+                                                        <table id="viewtbl" align="center" class="table table-bordered" style="border-style:ridge;width:80%;"><!--visibility:hidden;-->
+                                                        <div class="row" style="padding-left:15px;">
+                                                            <div class="column">
+                                                                    <mark id="fromTag" class="fnt"></mark>
+                                                                 </div>
+                                                            <div class="column">
+                                                                    <mark id="EmployeeNameTag"></mark>
+                                                                </div>
+                                                         </div>
+                                                                
+                                                        <div class="row" style="padding-left:15px;">
+                                                              <div class="column">  
+                                                                    <mark id="EIDTag" class="fnt"></mark>
+                                                                 </div>
+                                                            <div class="column">
+                                                                    <mark id="EmployeeIDTag"></mark>
+                                                                </div>
+                                                        </div>
+                                                             
+                                                        <tr>
+                                                                <td>
+                                                                    <mark  id="DepTag" class="fnt"></mark>
+                                                                 </td>
+                                                                <td>
+                                                                    <mark id="DepartmentTag"></mark>
+                                                                </td>
+                                                        </tr>
+                                                        <tr>
+                                                                <td>
+                                                                    <mark  id="DesTag" class="fnt"></mark>
+                                                                 </td>
+                                                                <td>
+                                                                    <mark  id="DesignationTag"></mark>
+                                                                </td>
+                                                        </tr>
+                                                        
+
+                                                        
+                                                        <div align="center" style=" text-align:right;  padding-left: 10px!important; padding-right: 20px!important; padding-top: 10px!important; padding-bottom: 10px!important">
+                                                        <mark  id="IdIdTag" class="fnt"></mark><mark id="IdeaIdTag" style="padding-left: 10px"></mark>
+                                                        <asp:TextBox ID="CEideaidTextBox" CssClass="ideaidclass" runat="server" hidden></asp:TextBox>
+                                                        
+                                                        
+                                                                
+                                                                    <caption>
+                                                                        <mark  id="CatTag" class="fnt"></mark><br /><mark  id="CategoryTag"></mark>
+                                                                        <br />
+                                                                        <br />
+                                                                        <mark id="BefTag" class="fnt"></mark><br /><mark id="BeforeTag"></mark>
+                                                                        <br />
+                                                                        <br />
+                                                                        <mark id="AftTag" class="fnt"></mark><br /><mark id="AfterTag"></mark>
+                                                                        <br />
+                                                                        <br />
+                                                                        <mark id="BenTag" class="fnt"></mark><br /><mark id="BenefitsTag"></mark>
+                                                                        <br />
+                                                                        <br />
+                                                                        <div class="row">
+                                                                            <div class="col-md-4">
+                                                                                <div class="row-md-6">
+                                                                            <mark id="upl1Tag" class="fnt"></mark>
+                                                                                </div>
+                                                                                <div class="row-md-6">
+                                                                                <div id="imgAt1">
+                                                                                     <img src="ContentPlaceHolder1_UpLoad1Tag"  id="UpLoad1Tag" style="Height:100px; Width:100px;"  runat="server" alt="NoAttachment"/>
+                                                                                </div>
+                                                                                     <div id="fileAt1">
+                                                                                    <a href="#" id="attachement1" target="_blank" class="btn btn-info">Download Attachment 1</a>
+                                                                                      </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-md-4">
+                                                                                <div class="row-md-6">
+                                                                            <mark id="upl2Tag" class="fnt"></mark>
+                                                                                </div>
+                                                                                <div class="row-md-6">
+                                                                                     <div id="imgAt2">
+                                                                                <img src="ContentPlaceHolder1_UpLoad2Tag"  id="UpLoad2Tag" style="Height:100px; Width:100px;"  runat="server" alt="NoAttachment"/>
+                                                                                    </div>
+                                                                                     <div id="fileAt2">
+                                                                                      <a href="#" id="attachement2" target="_blank" class="btn btn-info">Download Attachment 2</a>
+                                                                                         </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-md-4">
+                                                                                <div class="row-md-6">
+                                                                            <mark id="upl3Tag" class="fnt"></mark>
+                                                                            </div>
+                                                                                <div class="row-md-6">
+                                                                                     <div id="imgAt3">
+                                                                                <%--<img src="ContentPlaceHolder1_UpLoad3Tag"  id="UpLoad3Tag" style="Height:100px; Width:100px;"  runat="server" alt="NoAttachment"/>--%>
+                                                                                    </div>
+                                                                                      <div id="fileAt3">
+                                                                                          <%--<a href="#" id="attachement3" target="_blank" class="btn btn-info">Download Attachment 3 </a>--%>
+                                                                                          </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div id="myModal" class="modal">
+                                                                                        <span class="close">&times;</span>
+                                                                                        <img class="modal-content" id="img01">
+                                                                                        <div id="caption"></div>
+                                                                                    </div>
+                                                                            </div>
+                                                            </caption>
+                                                        
+                                                        
+                                                            </div>
+                                                        <div class="peer">
+                                                            <a id="Image1"></a>
+                                                            
+                                                        </div>
+
+                                                    </table>
+                                                    </div>
+                                                    <%--<script>
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementById("ContentPlaceHolder1_UpLoad1Tag");
+var img1 = document.getElementById("ContentPlaceHolder1_UpLoad2Tag");
+var img2 = document.getElementById("ContentPlaceHolder1_UpLoad3Tag");
+var modalImg = document.getElementById("img01");
+var captionText = document.getElementById("caption");
+img.onclick = function () {
+   
+        modal.style.display = "block";
+        modalImg.src = this.src;
+   
+}
+img1.onclick = function () {
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    
+}
+//img2.onclick = function () {
+//    modal.style.display = "block";
+//    modalImg.src = this.src;
+    
+//}
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() { 
+  modal.style.display = "none";
+}
+</script>--%>
+                                                    <script>
+                                                        function imageAttachmenthandler(link,imageid,attachmentid,imagediv,attachmentdiv)
+                                                        {
+        
+                                                            console.log(link);
+                                                            var x = document.getElementById(imagediv);
+                                                            var y = document.getElementById(attachmentdiv);
+ 
+                                                            if (link != null && link != "../UI/Image/No File") {
+                                                                var data = link.split('.').pop();
+                                                                if (data == 'jpg') {
+                                                                    document.getElementById(imageid).src = link;
+                                                                    x.style.display = "block";
+
+                                                                    y.style.display = "none";
+                                                                }
+                                                                else if (data == 'png') {
+                                                                    document.getElementById(imageid).src = link;
+                                                                    x.style.display = "block";
+
+                                                                    y.style.display = "none";
+                                                                }
+                                                                else {
+                                                                    document.getElementById(attachmentid).href = link;
+                                                                    y.style.display = "block";
+
+                                                                    x.style.display = "none";
+
+                                                                }
+                                                            }
+                                                            else
+                                                            {
+                                                                document.getElementById(imageid).src = "../UI/assets/static/images/unpin.png";
+                                                                x.style.display = "block";
+
+                                                                y.style.display = "none";
+                                                            }
+                                                        }
+                                                    </script>
+
+                                                </ContentTemplate>
+
+                                                
+                                            </asp:UpdatePanel>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+      
       
   
     
@@ -777,7 +1014,7 @@
                                     document.getElementById('<%= DepartmentTextBox.ClientID %>').value = data.d.Department;
                                     document.getElementById('<%= DesignationTextBox.ClientID %>').value = data.d.Designation;
                             --%>
-                                 <%--var fxs = "";
+                                 var fxs = "";
                                     var fzs = "";
                                     fs = data.d.Email;
                                     feids = data.d.HEmployeeID;
@@ -792,7 +1029,7 @@
                                         fxs = zs + ',' + " " + fs;
                                         fzs = EIDs + ',' + "" + feids;
 
-                                    }--%>
+                                    }
                                     var fxs = data.d.Email;
                                     var fzs = data.d.HEmployeeID;
                                     $(".IMPmailidtextClass").val(fxs);
@@ -827,10 +1064,16 @@
                 });
             });
         </script>
+    <script src="../UI/Style/bootstrap.min.js"></script>
     <script>
 
         $('.ideadiv').click(function () {
-
+            console.log("callll");
+            
+            $("#ModalViewFullDetails").modal("show");
+            console.log("aftcallll");
+            
+           // viewModal();
             //var text = $(this).text();
             var IdeaID = $(this).closest('.ideadiv').find('.IdeaIdclasstxt').val();
             // console.log(text);
@@ -881,15 +1124,17 @@
                         $(".SubjectRepTextBoxClass").val(data.d.RSub);
                         $(".ConRepTextBoxClass").val(data.d.RCon);
                         
-
                         
-
                     },
                     error: function (err) {
                          console.log(err);
                        // tableInputKeyPress(e);
                     }
+
                 });
+                console.log("callupd");
+                FullView(IdeaID);
+                console.log("aftcallupd");
 
                 return false; //return true to submit, false to do nothing
             }
@@ -904,6 +1149,91 @@
         //    var lbIdeaID = $(".IdeaIdclasstxt").val();
         //}
     </script>
+     <script>
+                                     
+         function FullView(IdeaID)
+         {
+             console.log("ajsnwjd");
+             console.log(IdeaID);
+             console.log("jahbcb");
+             $.ajax({
+                 url: 'CommiteeEvalSend.aspx/GetDetail',
+                 method: 'post',
+                 contentType: "application/json; charset=utf-8",
+                 async: true,
+                 dataFilter: function (data) { return data; },
+                 data: '{idea:' + IdeaID + '}',
+                 dataType: "json",
+
+                 success: function (data) {
+                        
+                     console.log("test" + data.d.fromTag);
+                     //var myObj = JSON.parse(data.d.fromTag);
+                     //document.getElementById("fromTag").innerHTML = myObj;
+                     //console.log("Input checking " + $('#formtaglable').html("From :"));
+                     //console.log("Input checking " + $('#formtaglable').text("From :"));
+                     //console.log("Input checking " + document.getElementById("fromTag").innerHTML = "From : ");
+                     document.getElementById("fromTag").innerHTML = "From : ";
+                     document.getElementById("EIDTag").innerHTML = "Employee ID : ";
+                     document.getElementById("DepTag").innerHTML = "Department : ";
+                     document.getElementById("DesTag").innerHTML = "Designaton : ";
+                     document.getElementById("CatTag").innerHTML = "Category : ";
+                     document.getElementById("IdIdTag").innerHTML = "Idea ID : ";
+                     document.getElementById("BefTag").innerHTML = "Before : ";
+                     document.getElementById("AftTag").innerHTML = "After : ";
+                     document.getElementById("BenTag").innerHTML = "Benefits : ";
+                     document.getElementById("upl1Tag").innerHTML = "FileUpload1 : ";
+                     document.getElementById("upl2Tag").innerHTML = "FileUpload2 : ";
+                     //document.getElementById("upl3Tag").innerHTML = "FileUpload3 : ";
+                     document.getElementById("SubjectTag").innerHTML = data.d.subject;
+
+                     document.getElementById("EmployeeNameTag").innerHTML = data.d.empname;
+                     document.getElementById("EmployeeIDTag").innerHTML = data.d.empid;
+                     document.getElementById("DepartmentTag").innerHTML = data.d.Department;
+                     document.getElementById("DesignationTag").innerHTML = data.d.Designation;
+                     document.getElementById("TimeTag").innerHTML = data.d.Date;
+                     document.getElementById("CategoryTag").innerHTML = data.d.category;
+                     document.getElementById("IdeaIdTag").innerHTML = data.d.IdeaIdTag;
+                     document.getElementById("BeforeTag").innerHTML = data.d.Before;
+                     document.getElementById("AfterTag").innerHTML = data.d.After;
+                     document.getElementById("BenefitsTag").innerHTML = data.d.Benifit;
+                     //  document.getElementById("ContentPlaceHolder1_UpLoad1Tag").setAttribute("src", data.d.upload1);
+                     //   document.getElementById("ContentPlaceHolder1_UpLoad2Tag").setAttribute("src", data.d.upload2);
+                     //   document.getElementById("ContentPlaceHolder1_UpLoad3Tag").setAttribute("src", data.d.upload3);
+                     imageAttachmenthandler(data.d.upload1, 'ContentPlaceHolder1_UpLoad1Tag', 'attachement1', 'imgAt1', 'fileAt1');
+                     imageAttachmenthandler(data.d.upload2, 'ContentPlaceHolder1_UpLoad2Tag', 'attachement2', 'imgAt2', 'fileAt2');
+                     //imageAttachmenthandler(data.d.upload3, 'ContentPlaceHolder1_UpLoad3Tag', 'attachement3', 'imgAt3', 'fileAt3');
+                     $(".ideaidclass").val(data.d.IdeaIdTag);
+                     $(".IdeaIDClass").val(data.d.IdeaIdTag);
+                     $(".IMPIdeaIdClass").val(data.d.IdeaIdTag);
+                        
+                     $(".IdeaIDRepTextBoxClass").val(data.d.RIdeaID);
+                     $(".ToRepTextBoxClass").val(data.d.REmpName);
+                        
+                     $(".EmpIdRepTextBoxClass").val(data.d.REmpID);
+                     $(".MailIDRepTextBoxClass").val(data.d.RMail);
+                     $(".SubjectRepTextBoxClass").val(data.d.RSub);
+                     $(".ConRepTextBoxClass").val(data.d.RCon);
+                     // document.getElementById("").innerHTML = data.d.empname;
+                     $("#viewtbl").show();
+
+                        
+
+                 },
+                 error: function (err) {
+                     console.log(err);
+                     // tableInputKeyPress(e);
+                 }
+             });
+
+             return false; //return true to submit, false to do nothing
+         }
+
+
+
+        
+
+     </script>
 
     <%--<script>
 
@@ -1000,6 +1330,9 @@
         //    var lbIdeaID = $(".IdeaIdclasstxt").val();
         //}
     </script>--%>
+
+    
+
    
 
 
@@ -1019,7 +1352,7 @@
                                                          
                                                           document.getElementById("ImproButton").hidden = "hidden";
                                                           document.getElementById("ReplyButton").hidden = "hidden";
-                                                          
+                                                          document.getElementById("Gridimgbtn").hidden = "hidden";
 
 
                                                       })
@@ -1027,10 +1360,16 @@
                                                           
                                                           document.getElementById("ImproButton").hidden = "hidden";
                                                           document.getElementById("ReplyButton").hidden = "";
+                                                          document.getElementById("Gridimgbtn").hidden = "hidden";
                                                           
                                                       })
                                                       
                                                   })
+    </script>
+    <script>
+        span.onclick = function () {
+            modal.style.display = "none";
+        }
     </script>
 
 

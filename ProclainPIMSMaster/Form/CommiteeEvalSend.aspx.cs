@@ -431,7 +431,7 @@ namespace ProclainPIMSMaster.Form
                         DBM.TempMail = array1.ToString();
                         DBM.TempId = ds.ToString();
                         DBM.Date = System.DateTime.Now.ToString("yyyy-MM-dd").ToString().Trim();
-                        DBM.HEmployeeID = ena1[x].ToString().TrimStart().TrimEnd();
+                        DBM.HEmployeeID = EmpIDIMPTextBox.Text.ToString().TrimStart().TrimEnd();
                         DBM.Email = mail1[x].ToString().TrimStart().TrimEnd();
                         DBM.Subject = SubjectIMPTextBox.Text.TrimStart().TrimEnd().ToString();
                         DBM.Discription = ContectIMPTextBox.Text.TrimStart().TrimEnd().ToString();
@@ -517,6 +517,108 @@ namespace ProclainPIMSMaster.Form
             SubjectIMPTextBox.Text = "";
             ContectIMPTextBox.Text = "";
             IMPDepaDLists.SelectedIndex = 0;
+        }
+        [WebMethod ]
+        public static EmpEmailContent GetDetail(string idea)
+        {
+
+            EmpEmailContent EEC = new EmpEmailContent();
+            Mailling M = new Mailling();
+            DataSet DS = new DataSet();
+            RegistrationLogin RL = new RegistrationLogin();
+            try
+            {
+                int i = 0;
+
+                //RepeaterItem item = (sender as TextBox).Parent as RepeaterItem;
+                //index = int.Parse((item.FindControl("lblImageNameTextBox") as Label).Text);
+
+                M.IdeaId = idea.ToString();
+
+                DS = M.Repeatersearch(M);
+
+
+                EEC.fromTag = "From : ";
+                EEC.EIDTag = "Employee ID : ";
+                EEC.DepTag = "Department : ";
+                EEC.DesTag = "Designaton : ";
+                EEC.CatTag = "Category : ";
+                EEC.IdIdTag = "Idea ID: ";
+                EEC.BefTag = "Before : ";
+                EEC.AftTag = "After : ";
+                EEC.BenTag = "Benefits : ";
+                EEC.upl1Tag = "FileUpload1";
+                EEC.upl2Tag = "FileUpload2";
+                EEC.upl3Tag = "FileUpload3";
+                EEC.IdeaIdTag = idea.ToString();
+
+                EEC.empname = DS.Tables[0].Rows[0].ItemArray[1].ToString();
+                EEC.empid = DS.Tables[0].Rows[0].ItemArray[0].ToString();
+                EEC.Department = DS.Tables[0].Rows[0].ItemArray[2].ToString();
+                EEC.Designation = DS.Tables[0].Rows[0].ItemArray[3].ToString();
+                EEC.Date = DS.Tables[0].Rows[0].ItemArray[4].ToString();
+                EEC.category = DS.Tables[0].Rows[0].ItemArray[5].ToString();
+                EEC.subject = DS.Tables[0].Rows[0].ItemArray[6].ToString();
+                EEC.Before = DS.Tables[0].Rows[0].ItemArray[7].ToString();
+                EEC.After = DS.Tables[0].Rows[0].ItemArray[8].ToString();
+                EEC.Benifit = DS.Tables[0].Rows[0].ItemArray[9].ToString();
+                EEC.UpLoad1 = DS.Tables[0].Rows[0].ItemArray[11].ToString();
+                // EEC.upload1 = "/PIMS/UI/Image/" + EEC.UpLoad1;
+                EEC.upload1 = "../UI/Image/" + EEC.UpLoad1;
+                EEC.UpLoad2 = DS.Tables[0].Rows[0].ItemArray[12].ToString();
+                //EEC.upload2 = "/PIMS/UI/Image/" + EEC.UpLoad2;
+                EEC.upload2 = "../UI/Image/" + EEC.UpLoad2;
+                EEC.UpLoad3 = DS.Tables[0].Rows[0].ItemArray[13].ToString();
+                // EEC.upload3 = "/PIMS/UI/Image/" + EEC.UpLoad3;
+                EEC.upload3 = "../UI/Image/" + EEC.UpLoad3;
+                DS = M.DBMReplyCE(M);
+                string chk = DS.Tables[0].Rows[0].ItemArray[0].ToString();
+                if (chk != "Empty")
+                {
+                    EEC.RIdeaID = DS.Tables[0].Rows[0].ItemArray[0].ToString();
+                    EEC.REmpID = DS.Tables[0].Rows[0].ItemArray[1].ToString();
+                    EEC.RMail = DS.Tables[0].Rows[0].ItemArray[2].ToString();
+                    EEC.RSub = DS.Tables[0].Rows[0].ItemArray[3].ToString();
+                    EEC.RCon = DS.Tables[0].Rows[0].ItemArray[4].ToString();
+                    string[] breakMysentence = EEC.REmpID.Split(',');
+                    string[] ena1 = new string[breakMysentence.Length];
+                    string n = "";
+                    foreach (string data in breakMysentence)
+                    {
+
+                        ena1[i] = data;
+                        i = i + 1;
+                        RL.HEmployeeID = data.ToString().TrimStart().TrimEnd();
+                        DS = RL.LoginSearch(RL);
+                        if (n != "")
+                        {
+                            n = n + ", " + DS.Tables[0].Rows[0].ItemArray[1].ToString();
+                        }
+                        else
+                        {
+                            n = n + DS.Tables[0].Rows[0].ItemArray[1].ToString();
+                        }
+
+
+                    }
+                    EEC.REmpName = n;
+                }
+
+
+
+
+
+
+
+                return EEC;
+
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error Initializing Data Class." + Environment.NewLine + ex.Message);
+
+            }
         }
     }
 
