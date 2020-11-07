@@ -1026,7 +1026,7 @@
             FillModelData(IdeaID);
            
 
-    /*
+    
                 $.ajax({
                     url: 'FinanceDashboard.aspx/Checking',
                     method: 'post',
@@ -1047,9 +1047,9 @@
                         $(".ConRepTextBoxClass").val(data.d.RCon);
                         FillModelData(IdeaID);
 
-                   //     $(".IMPToTextBoxClass").val(data.d.REmpName);
-                   //     $(".IMPEmpIDTextBoxClass").val(data.d.REmpID);
-                   //     $(".IMPmailidtextClass").val(data.d.RMail);
+                        $(".IMPToTextBoxClass").val(data.d.REmpName);
+                        $(".IMPEmpIDTextBoxClass").val(data.d.REmpID);
+                        $(".IMPmailidtextClass").val(data.d.RMail);
 
                     },
                     error: function (err) {
@@ -1057,7 +1057,7 @@
                         tableInputKeyPress(e);
                     }
                 });
-                */
+                
                 return false; //return true to submit, false to do nothing
             }
             

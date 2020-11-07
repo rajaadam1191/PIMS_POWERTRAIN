@@ -362,24 +362,18 @@ namespace ProclainPIMSMaster.Form
             MailRepeater.DataSource = Ds.Tables[0];
             //MailRepeater.SelectMethod = "IdeaId";
             MailRepeater.DataBind();
-           
-             //int count = Ds.Tables[0].Rows.Count;
-            //string s1;
-            //s1 = "<table><tr><td>";
-            //for (int i = 0; i < Ds.Tables[0].Rows.Count; i++)
-            //{
-            //    s1 += Ds.Tables[0].Rows[i][0].ToString() + "..";
-            //    s1 += "</td><td>";
-            //    s1 += "</td><td>";
-            //    s1 += "</td><td>";
-            //    s1 += "</td><td>";
-            //    s1 += "</td><td>";
-            //    s1 += "</td><td>";
-            //    s1 += "</td><td>";
-            //}
 
-            //s1 += "</td></tr></table>";
-            //lt1.Text = s1.ToString();
+            Ds = Dm.MDMessageSelect();
+            MailRepeaterMD.DataSource = Ds.Tables[0];
+            //MailRepeater.SelectMethod = "IdeaId";
+            MailRepeaterMD.DataBind();
+
+            Ds = Dm.SloganSelect();
+            MailRepeaterSLO.DataSource = Ds.Tables[0];
+            //MailRepeater.SelectMethod = "IdeaId";
+            MailRepeaterSLO.DataBind();
+
+
 
 
 

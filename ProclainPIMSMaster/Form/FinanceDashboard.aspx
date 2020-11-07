@@ -1019,7 +1019,7 @@
             FillModelData(IdeaID);
            
 
-    /*
+    
                 $.ajax({
                     url: 'FinanceDashboard.aspx/Checking',
                     method: 'post',
@@ -1050,7 +1050,7 @@
                         tableInputKeyPress(e);
                     }
                 });
-                */
+                
                 return false; //return true to submit, false to do nothing
             }
             

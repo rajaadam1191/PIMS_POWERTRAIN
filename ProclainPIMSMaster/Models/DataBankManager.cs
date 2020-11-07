@@ -1080,7 +1080,28 @@ namespace ProclainPIMSMaster.Models
         {
             DataTO Da = new DataTO();
             DataSet Ds = new DataSet();
-            
+            SqlParameter OP001 = new SqlParameter("@type", "ceo");
+            Da.parameters.Add(OP001);
+
+            Ds = Da.ExecuteDataset("CeoMessageView");
+            return Ds;
+        }
+        public DataSet MDMessageSelect()
+        {
+            DataTO Da = new DataTO();
+            DataSet Ds = new DataSet();
+            SqlParameter OP001 = new SqlParameter("@type", "md");
+            Da.parameters.Add(OP001);
+
+            Ds = Da.ExecuteDataset("CeoMessageView");
+            return Ds;
+        }
+        public DataSet SloganSelect()
+        {
+            DataTO Da = new DataTO();
+            DataSet Ds = new DataSet();
+            SqlParameter OP001 = new SqlParameter("@type", "");
+            Da.parameters.Add(OP001);
 
             Ds = Da.ExecuteDataset("CeoMessageView");
             return Ds;
@@ -1091,7 +1112,35 @@ namespace ProclainPIMSMaster.Models
             DataTO Da = new DataTO();
             SqlParameter OP000 = new SqlParameter("@ceomsg", message);
             Da.parameters.Add(OP000);
-            
+            SqlParameter OP001 = new SqlParameter("@type", "ceo");
+            Da.parameters.Add(OP001);
+
+            Da.ExecuteNonQuery("CEOMessageInsert");
+
+
+        }
+        public void MDMessageInsert(string message)
+        {
+
+            DataTO Da = new DataTO();
+            SqlParameter OP000 = new SqlParameter("@ceomsg", message);
+            Da.parameters.Add(OP000);
+            SqlParameter OP001 = new SqlParameter("@type", "md");
+            Da.parameters.Add(OP001);
+
+            Da.ExecuteNonQuery("CEOMessageInsert");
+
+
+        }
+        public void SloganInsert(string message)
+        {
+
+            DataTO Da = new DataTO();
+            SqlParameter OP000 = new SqlParameter("@ceomsg", message);
+            Da.parameters.Add(OP000);
+            SqlParameter OP001 = new SqlParameter("@type", "");
+            Da.parameters.Add(OP001);
+
             Da.ExecuteNonQuery("CEOMessageInsert");
 
 

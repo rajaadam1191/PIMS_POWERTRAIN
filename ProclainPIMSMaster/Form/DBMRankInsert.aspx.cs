@@ -93,5 +93,36 @@ namespace ProclainPIMSMaster.Form
 
             }
         }
+
+        protected void MDmsgupload_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string Message = Ceomsg.Text.ToString();
+                Dm.MDMessageInsert(Message);
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "alert", "swal('Successfully Insert Your Message','','success')", true);
+                Ceomsg.Text = "";
+            }
+            catch (Exception e1)
+            {
+
+            }
+
+        }
+
+        protected void Sloganupload_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string Message = Ceomsg.Text.ToString();
+                Dm.SloganInsert(Message);
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "alert", "swal('Successfully Insert Your Message','','success')", true);
+                Ceomsg.Text = "";
+            }
+            catch (Exception e1)
+            {
+
+            }
+        }
     }
 }
