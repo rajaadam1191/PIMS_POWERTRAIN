@@ -416,6 +416,7 @@ namespace ProclainPIMSMaster.Form
             }
             catch (Exception e1)
             {
+                NSM.ExceptionInsert(e1.ToString());
                 //throw new Exception("Error Initializing Data Class." + Environment.NewLine + ex.Message);
             }
         }

@@ -315,8 +315,14 @@
                                                     </div>
                                                 </div>
                                                 <div class="row">
-                                                    <div class="col-md-12">
-                                                        <asp:Button ID="ceomsgupload" Text="Upload" runat="server" CssClass="btn btn-primary" OnClick="ceomsgupload_Click" />
+                                                    <div class="col-md-4">
+                                                        <asp:Button ID="ceomsgupload" Text="CeoMsgUpload" runat="server" CssClass="btn btn-primary" OnClick="ceomsgupload_Click" />
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                    <asp:Button ID="MDmsgupload" Text="MDMsgUpload" runat="server" CssClass="btn btn-primary" OnClick="MDmsgupload_Click"  />
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                    <asp:Button ID="Sloganupload" Text="SloganUpload" runat="server" CssClass="btn btn-primary" OnClick="Sloganupload_Click"  />
                                                     </div>
                                                 </div>
 

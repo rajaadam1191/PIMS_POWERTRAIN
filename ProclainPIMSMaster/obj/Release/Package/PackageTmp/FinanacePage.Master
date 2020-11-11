@@ -136,22 +136,7 @@
 </head>
 <body class="app">
     <form id="form1" runat="server">
-         <!-- @TOC -->
-    <!-- =================================================== -->
-    <!--
-      + @Page Loader
-      + @App Content
-          - #Left Sidebar
-              > $Sidebar Header
-              > $Sidebar Menu
-
-          - #Main
-              > $Topbar
-              > $App Screen Content
-    -->
-
-    <!-- @Page Loader -->
-    <!-- =================================================== -->
+      
     <div id="loader">
         <div class="spinner"></div>
     </div>
@@ -163,22 +148,12 @@
             }, 300);
         });
     </script>
-    <!-- =================================================== -->
-    <!-- @Page Loader End -->
-    <!-- =================================================== -->
-
-    <!-- =================================================== -->
-    <!--                    @App Content                     -->
-    <!-- =================================================== -->
+   
     <div>
-        <!-- ====================
-                 #Left Sidebar 
-             ==================== -->
+        
         <div class="sidebar">
             <div class="sidebar-inner">
-                <!-- ========================================
-                            ### $Sidebar Header ###
-                     ======================================== -->
+                
                 <div class="sidebar-logo">
                     <div class="peers ai-c fxw-nw">
                         <div class="peer peer-greed">
@@ -198,56 +173,14 @@
                         </div>
                         <div class="peer">
                             <div class="mobile-toggle sidebar-toggle">
-                                <a href="" class="td-n">
+                                <a href="#" class="td-n">
                                     <i class="ti-arrow-circle-left"></i>
                                 </a>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!-- ========================================
-                            ### $Sidebar Header End ###
-                     ======================================== -->
-                <!-- =======================
-                      ### $Sidebar Menu ###
-                     ======================= -->
-                 <%--<ul class="sidebar-menu scrollable pos-r">
-                    <li class="nav-item mT-30 active">
-                        <a class="sidebar-link" href="FinanceMainDashboard.aspx" default>
-                            <span class="icon-holder">
-                                    <i class="c-blue-500 ti-home"></i>
-                                </span>
-                            <span class="title">Dashboard</span>
-                        </a>
-                    </li>
-                    
-                    <li class="nav-item">
-                        <a class="sidebar-link" href="FinanceDashboard.aspx">
-                            <span class="icon-holder">
-                                    <i class="c-blue-500 ti-share"></i>
-                                </span>
-                            <span class="title">User_Inbox</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="sidebar-link" href="FinanceImplDashboard.aspx">
-                            <span class="icon-holder">
-                                    <i class="c-blue-500 ti-share"></i>
-                                </span>
-                            <span class="title">Implement_Inbox</span>
-                        </a>
-                    </li>
-                  
-               <!--      <li class="nav-item">
-                        <a class="sidebar-link" href="Suggestions_Status.aspx">
-                            <span class="icon-holder">
-                                   <i class="c-teal-500 ti-view-list-alt"></i>
-                                </span>
-                            <span class="title">Suggestions_Status</span>
-                        </a>
-                    </li>-->
-                    
-                </ul>--%> 
+               
                 <ul class="sidebar-menu scrollable pos-r"> 
                     <li class="nav-item mT-30 active" id="DBMMainDashboard">
                         <a class="sidebar-link" href="FinanceMainDashboard.aspx" default>
@@ -275,50 +208,16 @@
                         </a>
                     </li>
                   
-                     <%-- <li class="nav-item mT-30 active" id="DBMSend">
-                        <a class="sidebar-link" href="BeneficiaryApproval.aspx">
-                            <span class="icon-holder">
-                                   <i style="color:lightblue" class="fa fa-reply-all"></i>
-                                </span>
-                            <span class="title">PHPVT APPROVE</span>
-                        </a>
-                    </li>--%>
-                   
-                  <!--  <li class="nav-item" id="DBMSend">
-                        <a class="sidebar-link" href="BeneficiaryApproval.aspx">
-                            <span class="icon-holder">
-                                   <i style="color:navajowhite" class="fa fa-reply-all"></i>
-                                </span>
-                            <span class="title">PHPVT APPROVE</span>
-                        </a>
-                    </li>-->
-                    <%-- <hr />
-                      <li class="nav-item" id="Back">
-                        <a class="sidebar-link" href="Deptdashboardlink.aspx">
-                            <span class="icon-holder">
-                                    <i style="color:lightgreen"  class="fa fa-globe"></i>
-                                </span>
-                            <span class="title">Roles Based Login </span>
-                        </a>
-                    </li>--%>
+                    
                     
                   
                 </ul>
-                <!-- ===========================
-                      ### $Sidebar Menu End ###
-                     =========================== -->
+               
             </div>
         </div>
-        <!-- ====================
-              #Left Sidebar End
-             ==================== -->
-        <!-- =============================
-              #Page Heder - Body - Footer 
-             ============================= -->
+        
         <div class="page-container">
-            <!-- ====================
-                    ### $Topbar ### 
-                 ==================== -->
+            
             <div class="header navbar">
           <div class="header-container">
             <ul class="nav-left">
@@ -332,7 +231,7 @@
             </ul>
             <ul class="nav-right">
                  <li class="dropdown">
-                <a href="" class="dropdown-toggle no-after peers fxw-nw ai-c lh-1" data-toggle="dropdown">
+                <a href="#" class="dropdown-toggle no-after peers fxw-nw ai-c lh-1" data-toggle="dropdown">
                   <asp:Label text="WELCOME: " runat="server" ForeColor="#ffffff" style="font-family:'Times New Roman', Times, serif;padding-top:6px;font-size:13px;" />&nbsp;
                     <asp:Label ID="lblempname" runat="server" ForeColor="#ffffff" style="padding-right:50px;font-size:15px;padding-top:6px; font-family:'Times New Roman', Times, serif;text-transform:uppercase;" />
                 </a>

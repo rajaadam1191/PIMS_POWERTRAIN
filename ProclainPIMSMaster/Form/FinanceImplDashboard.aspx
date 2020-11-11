@@ -291,8 +291,8 @@
     }();
     </script>
      --%>
-     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-     <link href="../UI/Style/all.css" rel="stylesheet" />
+     <%--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+     --%><link href="../UI/Style/all.css" rel="stylesheet" />
 
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -848,7 +848,7 @@
             $.ajax({
                 //   url: 'http://localhost:90/PIMS_emailPHP/email/send_mail.php',
                 //url: 'http://10.14.0.150:90/PIMS_emailPHP/email/send_mail.php',
-                url: 'http://10.14.0.150/WebEmail/api/Email/pimsEmail',
+                url: 'http://10.14.0.40/WebEmail/api/Email/pimsEmail',
                 type: 'POST',
                 cache: false,
                 contentType: 'application/json',

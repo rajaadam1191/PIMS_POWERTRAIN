@@ -431,7 +431,7 @@ namespace ProclainPIMSMaster.Form
                         DBM.TempMail = array1.ToString();
                         DBM.TempId = ds.ToString();
                         DBM.Date = System.DateTime.Now.ToString("yyyy-MM-dd").ToString().Trim();
-                        DBM.HEmployeeID = EmpIDIMPTextBox.Text.ToString().TrimStart().TrimEnd();
+                        DBM.HEmployeeID = ena1[x].ToString().TrimStart().TrimEnd();
                         DBM.Email = mail1[x].ToString().TrimStart().TrimEnd();
                         DBM.Subject = SubjectIMPTextBox.Text.TrimStart().TrimEnd().ToString();
                         DBM.Discription = ContectIMPTextBox.Text.TrimStart().TrimEnd().ToString();

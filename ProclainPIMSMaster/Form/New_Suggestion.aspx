@@ -427,31 +427,7 @@
       </div>
     </div>
         </div>
-    <%--<div class="row">
-             <div class="col-sm-7">
-                    <label>Sugesstion To<small>(எந்த துறை)</small></label><br />
-                    <asp:DropDownList ID="SuggestiontoDepDDList" Cssclass="form-control js-example" Width="100%"  runat="server" AutoPostBack="false" AppendDataBoundItems="True">  
-                    <asp:ListItem>--Select--</asp:ListItem>    
-                    </asp:DropDownList>
-                
-                </div>
-                 <div class="col-sm-5">
-                    <label>Category<small>(வகை)</small></label><br />
-                    <asp:DropDownList ID="CategoryDropDownList" Cssclass="form-control js-example" Width="100%"  runat="server" AutoPostBack="false" AppendDataBoundItems="True">  
-                    <asp:ListItem>--Select--</asp:ListItem>    
-                    <asp:ListItem>Productivity</asp:ListItem>
-                    <asp:ListItem>Quality</asp:ListItem>
-                    <asp:ListItem>Cost</asp:ListItem>
-                    <asp:ListItem>Health & Safety</asp:ListItem>
-                    <asp:ListItem>Environment</asp:ListItem>
-                    <asp:ListItem>6S</asp:ListItem>
-                    </asp:DropDownList>
-                </div>
-                
-                  
-             
-                 
-              </div>--%>
+
 
     </div>
     <script src="../UI/Style/jquery.min.js"></script>

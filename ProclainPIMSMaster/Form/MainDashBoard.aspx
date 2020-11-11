@@ -23,7 +23,7 @@
        
     }
     body{
-        background-color:#006a9c!important;
+        
     }
     @media all and (max-width: 640px) {
 
@@ -471,6 +471,9 @@ padding-top:0% !important;
         .fnt .mark, mark {
             background-color: #f0f3f500!important;
         }
+        .mail{
+        height:30%!important;
+        }
     </style>
    
 </head>
@@ -488,14 +491,14 @@ padding-top:0% !important;
                 <div class="col-lg-3 bg-light rounded-lg shadow " style="" >
                
                <div class="row" >
-               <div class="col-md-12">
-               <div class="leftside no-gutters  ">
+               <div class="col-md-12 h-25 mail">
+               <div class="leftside no-gutters ">
                <div class="email-side-nav ">
                
                         <div class=" scrollable pos-r">
-                            <div class="layer  fxg-1 jumbotron" style="padding-left: 15px; cursor:pointer;">
+                            <div class="layer  fxg-1 jumbotron" style="padding-left: 15px; cursor:pointer;height: 250px!important;overflow:hidden;">
                                
-                                <div class="peer fxw-nw bdB cur-p ">
+                                <div class="peer fxw-nw bdB cur-p mail">
                                 
                                 <marquee direction="down" onmouseover="this.stop()" onmouseout="this.start()"scrolldelay="100"   style="font-family:Calibri;">
                                             
@@ -554,23 +557,23 @@ padding-top:0% !important;
                             </div>
                         </div>
                     </div>
-                    </div>
+               </div>
                </div>
                </div>
                <div class="row">
-               <div class="col-md-12">
-               <div class="leftside no-gutters  ">
+               <div class="col-md-12 h-25 mail">
+               <div class="leftside no-gutters ">
                <div class="email-side-nav  ">
                
                         <div class=" scrollable pos-r">
-                            <div class="layer w-100 fxg-1 jumbotron" style="padding-left: 15px; cursor:pointer;">
+                            <div class="layer w-100 fxg-1 jumbotron" style="padding-left: 15px; cursor:pointer;height: 250px!important;overflow:hidden;">
                                
-                                <div class="peer fxw-nw bdB cur-p ">
+                                <div class="peer fxw-nw bdB cur-p mail">
                                 
                                 
                                 <marquee direction="down" onmouseover="this.stop()" onmouseout="this.start()"scrolldelay="100"   style="height: 100%; width: 100%; font-family:Calibri;">
                                             
-                                <asp:Repeater ID="Repeater2" runat="server" >
+                                <asp:Repeater ID="MailRepeaterMD" runat="server" >
                                   
                                     <ItemTemplate>
                                        
@@ -625,23 +628,23 @@ padding-top:0% !important;
                             </div>
                         </div>
                     </div>
-                    </div>
+               </div>
                </div>
                </div>
                <div class="row">
-               <div class="col-md-12">
+               <div class="col-md-12 h-50 mail">
                <div class="leftside no-gutters  ">
                <div class="email-side-nav ">
                
                         <div class=" scrollable pos-r">
-                            <div class="layer w-100 fxg-1  jumbotron" style="padding-left: 15px; cursor:pointer;">
+                            <div class="layer w-100 fxg-1  jumbotron" style="padding-left: 15px; cursor:pointer;height: 250px!important;overflow:hidden;">
                                
-                                <div class="peer fxw-nw bdB cur-p ">
+                                <div class="peer fxw-nw bdB cur-p mail">
                                 
                                 
                                 <marquee direction="down" onmouseover="this.stop()" onmouseout="this.start()"scrolldelay="100"   style="height: 100%; width: 100%; font-family:Calibri;">
                                             
-                                <asp:Repeater ID="Repeater6" runat="server" >
+                                <asp:Repeater ID="MailRepeaterSLO" runat="server" >
                                   
                                     <ItemTemplate>
                                        
@@ -695,7 +698,7 @@ padding-top:0% !important;
                             </div>
                         </div>
                     </div>
-                    </div>
+               </div>
                </div>
                </div>
                     

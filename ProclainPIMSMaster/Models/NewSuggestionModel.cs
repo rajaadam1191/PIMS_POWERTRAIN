@@ -206,6 +206,16 @@ namespace ProclainPIMSMaster.Models
         }
         #endregion
 
+        public void ExceptionInsert(string exception)
+        {
+
+            DataTO Da = new DataTO();
+            SqlParameter OP = new SqlParameter("@Error", exception);
+            Da.parameters.Add(OP); 
+             Da.ExecuteNonQuery("ExceptionErrorInsert");
+        }
+
+
         #region Suggestion Insertion Process
         public void SuggestionInsert(NewSuggestionModel SM)
         {

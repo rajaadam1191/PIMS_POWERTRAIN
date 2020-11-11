@@ -126,6 +126,9 @@
     </style>
     <link href="UI/Style/style.css" rel="stylesheet"/>
     <script src="../UI/DataTable/jquery-1.8.2.min.js"></script>
+    
+    <script src="../UI/Style/popper.min.js"></script>
+    <script src="../UI/Style/bootstrap.min.js"></script>
     <link href="UI/DataTable/jquery.dataTables.min.css" rel="stylesheet" />
     <script src="../UI/DataTable/jquery.dataTables.min.js"></script>
     <link href="Web-Fonts/css/all.css" rel="stylesheet" />

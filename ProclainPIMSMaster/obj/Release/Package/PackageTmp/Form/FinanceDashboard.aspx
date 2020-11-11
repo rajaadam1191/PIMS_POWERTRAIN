@@ -291,8 +291,8 @@
     }();
     </script>
      --%>
-     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-     <link href="../UI/Style/all.css" rel="stylesheet" />
+    <%-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    --%> <link href="../UI/Style/all.css" rel="stylesheet" />
    
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -990,10 +990,7 @@
 
         $('.ideadiv').click(function () {
 
-            //var text = $(this).text();
             var IdeaID = $(this).closest('.ideadiv').find('.IdeaIdclasstxt').val();
-            // alert(text);
-            //alert(IdeaID);
            
             var key = 0;
             var t = "";
@@ -1002,16 +999,9 @@
             {
                 console.log("IDea ID: " + IdeaID);
 
-
-
-
-                 
-        
                 var table = $('.noticedt').DataTable();
-            // $('#btnSearch').click(function () {
             table.destroy();
             var tbl = $('.noticedt').DataTable({
-               // "oSearch": { "sSearch": IdeaID }
             });
             table.column(2).search(IdeaID).draw();
             $(".IMPIdeaIdClass").val(IdeaID);
@@ -1019,7 +1009,7 @@
             FillModelData(IdeaID);
            
 
-    /*
+    
                 $.ajax({
                     url: 'FinanceDashboard.aspx/Checking',
                     method: 'post',
@@ -1050,7 +1040,7 @@
                         tableInputKeyPress(e);
                     }
                 });
-                */
+                
                 return false; //return true to submit, false to do nothing
             }
             

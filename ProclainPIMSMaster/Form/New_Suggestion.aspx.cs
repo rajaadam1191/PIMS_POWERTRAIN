@@ -428,8 +428,9 @@ namespace ProclainPIMSMaster.Form
                 Response.Redirect("Default.aspx?value="+NSM.IEmpId,false);
                 
             }
-            catch(Exception )
+            catch(Exception e1 )
             {
+                NSM.ExceptionInsert(e1.ToString());
                 //throw new Exception("Error Initializing Data Class." + Environment.NewLine + ex.Message);
             }
         }

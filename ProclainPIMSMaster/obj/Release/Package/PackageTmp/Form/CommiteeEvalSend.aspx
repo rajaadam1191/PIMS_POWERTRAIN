@@ -567,18 +567,7 @@
 
 <!-- Full Height Modal Right -->
 
-    <%--
-           END OF MODALS COMMITEE EVALUATION
-    --%>
-
-
-
-
-   <%-- <div class="modal fade right" id="fullHeightModalRight" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-  aria-hidden="true">
-
-  <!-- Add class .modal-full-height and then add class .modal-right (or other classes from list above) to set a position to the modal -->
-  <div class="modal-dialog modal-full-height modal-right" role="document">--%>
+   
 
        <%--
            MODALS COMMITEE EVALUATION Rejection
@@ -806,41 +795,7 @@
 
                                                     </table>
                                                     </div>
-                                                    <%--<script>
-// Get the modal
-var modal = document.getElementById("myModal");
-
-// Get the image and insert it inside the modal - use its "alt" text as a caption
-var img = document.getElementById("ContentPlaceHolder1_UpLoad1Tag");
-var img1 = document.getElementById("ContentPlaceHolder1_UpLoad2Tag");
-var img2 = document.getElementById("ContentPlaceHolder1_UpLoad3Tag");
-var modalImg = document.getElementById("img01");
-var captionText = document.getElementById("caption");
-img.onclick = function () {
-   
-        modal.style.display = "block";
-        modalImg.src = this.src;
-   
-}
-img1.onclick = function () {
-    modal.style.display = "block";
-    modalImg.src = this.src;
-    
-}
-//img2.onclick = function () {
-//    modal.style.display = "block";
-//    modalImg.src = this.src;
-    
-//}
-
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
-
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() { 
-  modal.style.display = "none";
-}
-</script>--%>
+                                                   
                                                     <script>
                                                         function imageAttachmenthandler(link,imageid,attachmentid,imagediv,attachmentdiv)
                                                         {
@@ -897,7 +852,7 @@ span.onclick = function() {
       
   
     
-    <script src="../UI/Style/jquery.min.js"></script>
+    
     
       <script>
        $(document).ready(function () {
@@ -956,7 +911,8 @@ span.onclick = function() {
         }
     </script>
 
-
+    <script src="../UI/Style/jquery.min.js"></script>
+    
     <script src="../UI/DataTable/DataTableScripts/JS/jquery.dataTables.min.js" type="text/javascript"></script>
     <script src="../UI/DataTable/DataTableScripts/Button/dataTables.buttons.min.js"></script>
     <script src="../UI/DataTable/DataTableScripts/Button/buttons.flash.min.js"></script>
@@ -995,6 +951,7 @@ span.onclick = function() {
                         console.log("TT:" + textboxs2 + 'textbox:' + txts);
 
                         var ks = txts.toString();
+                        console.log(ks)
                             var fs = "";
                             var feids = "";
                             $.ajax({
@@ -1014,24 +971,10 @@ span.onclick = function() {
                                     document.getElementById('<%= DepartmentTextBox.ClientID %>').value = data.d.Department;
                                     document.getElementById('<%= DesignationTextBox.ClientID %>').value = data.d.Designation;
                             --%>
-                                 var fxs = "";
-                                    var fzs = "";
-                                    fs = data.d.Email;
-                                    feids = data.d.HEmployeeID;
-                                    var EIDs = $(".IMPEmpIDTextBoxClass").val().toString();
-                                    var zs = $(".IMPmailidtextClass").val().toString();
-                                    if (zs == "") {
-                                        fxs = zs + " " + fs;
-                                        fzs = EIDs + "" + feids;
-                                    }
-                                    else {
-                                        console.log("Textbox" + txts);
-                                        fxs = zs + ',' + " " + fs;
-                                        fzs = EIDs + ',' + "" + feids;
-
-                                    }
+                                
                                     var fxs = data.d.Email;
                                     var fzs = data.d.HEmployeeID;
+                                    console.log("test1"+fxs,"test2"+fzs)
                                     $(".IMPmailidtextClass").val(fxs);
                                     $(".IMPEmpIDTextBoxClass").val(fzs);
 
@@ -1175,8 +1118,8 @@ span.onclick = function() {
                      //console.log("Input checking " + document.getElementById("fromTag").innerHTML = "From : ");
                      document.getElementById("fromTag").innerHTML = "From : ";
                      document.getElementById("EIDTag").innerHTML = "Employee ID : ";
-                     document.getElementById("DepTag").innerHTML = "Department : ";
-                     document.getElementById("DesTag").innerHTML = "Designaton : ";
+                     document.getElementById("DepTag").innerHTML = "Department  ";
+                     document.getElementById("DesTag").innerHTML = "Designation  ";
                      document.getElementById("CatTag").innerHTML = "Category : ";
                      document.getElementById("IdIdTag").innerHTML = "Idea ID : ";
                      document.getElementById("BefTag").innerHTML = "Before : ";

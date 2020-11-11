@@ -48,14 +48,6 @@ namespace ProclainPIMSMaster.Form
                     if (!IsPostBack)
                     {
 
-                        /*
-                            NSDataPasser dp = new NSDataPasser();
-                            dp.sesid = Session["UserId"].ToString().TrimStart().TrimEnd();
-                            headerValues(dp.sesid);
-
-                       */
-
-
 
                         SuggestionTableView();
 
@@ -71,11 +63,7 @@ namespace ProclainPIMSMaster.Form
         }
         public void SuggestionTableView()
         {
-            /*  if (Request.QueryString["value"] != "null")
-              {
-                  empidd = Request.QueryString["value"].ToString();
-              }
-      */
+           
             try
             {
                 if (Session["UserId"].ToString().TrimStart().TrimEnd() != null)

@@ -23,7 +23,7 @@
        
     }
     body{
-        background-color:#006a9c!important;
+        
     }
     @media all and (max-width: 640px) {
 
@@ -469,7 +469,10 @@ padding-top:0% !important;
         }
 
         .fnt .mark, mark {
-            background-color: #f0f3f500 !important;
+            background-color: #f0f3f500!important;
+        }
+        .mail{
+        height:30%!important;
         }
     </style>
    
@@ -485,16 +488,19 @@ padding-top:0% !important;
                     
                 </div>
                 <div class="row">
-                <div class="col-lg-3 bg-light rounded-lg shadow " style="margin-bottom:3%;margin-top:3%" >
-               <div class="leftside no-gutters  h-100">
-                    <div class="email-side-nav remain-height ov-h h-100">
+                <div class="col-lg-3 bg-light rounded-lg shadow " style="" >
                
-                        <div class="h-100 scrollable pos-r">
-                            <div class="layer w-100 fxg-1 h-100 jumbotron" style="padding-left: 15px; cursor:pointer;">
+               <div class="row" >
+               <div class="col-md-12 h-25 mail">
+               <div class="leftside no-gutters ">
+               <div class="email-side-nav ">
+               
+                        <div class=" scrollable pos-r">
+                            <div class="layer  fxg-1 jumbotron" style="padding-left: 15px; cursor:pointer;height: 250px!important;overflow:hidden;">
                                
-                                <div class="peer fxw-nw bdB cur-p h-100">
-
-                                <marquee direction="down" onmouseover="this.stop()" onmouseout="this.start()"scrolldelay="100"   style="height: 100%; width: 100%; font-family:Calibri;">
+                                <div class="peer fxw-nw bdB cur-p mail">
+                                
+                                <marquee direction="down" onmouseover="this.stop()" onmouseout="this.start()"scrolldelay="100"   style="font-family:Calibri;">
                                             
                                 <asp:Repeater ID="MailRepeater" runat="server" >
                                   
@@ -542,14 +548,162 @@ padding-top:0% !important;
                                 </asp:Repeater>
 
                                 </marquee>
+                                
+                               
+                                
 
                                 </div>
                                
                             </div>
                         </div>
                     </div>
+               </div>
+               </div>
+               </div>
+               <div class="row">
+               <div class="col-md-12 h-25 mail">
+               <div class="leftside no-gutters ">
+               <div class="email-side-nav  ">
+               
+                        <div class=" scrollable pos-r">
+                            <div class="layer w-100 fxg-1 jumbotron" style="padding-left: 15px; cursor:pointer;height: 250px!important;overflow:hidden;">
+                               
+                                <div class="peer fxw-nw bdB cur-p mail">
+                                
+                                
+                                <marquee direction="down" onmouseover="this.stop()" onmouseout="this.start()"scrolldelay="100"   style="height: 100%; width: 100%; font-family:Calibri;">
+                                            
+                                <asp:Repeater ID="MailRepeaterMD" runat="server" >
+                                  
+                                    <ItemTemplate>
+                                       
+                                            <div class="ideadiv" style="padding-left: 10px;">
+                                              <%--onclick="ConformPsIdeaID(document.getElementsByName('lblImageNameTextBox').value)"--%>
+                                                         <%--<asp:Label ID="lblImageName" CssClass="IdeaIdclass" runat="server" Text='<%#Bind("IdeaId")%>' ClientIDMode="Static" hidden></asp:Label>--%>             
+                                            <div class="row">
+
+                                                <div class="col-sm-12">
+                                                    
+                                                    <asp:TextBox   ID="lblImageNameTextBox" name="lblImageNameTextBox" CssClass="IdeaIdclasstxt" runat="server" Text='<%#Bind("MDMessage")%>' hidden></asp:TextBox>
+                                                  
+                                                    
+                                                    
+                                                </div>
+
+                                                
+                                                
+                                                
+
+                                            </div>
+                                            
+                                            <div class="row" style="margin-right: 1px;">
+                                            
+                                                <div id="viewdetail" class="col-sm-12 form-control "  style="border-top:none;border-left:none;border-right:none; border-bottom:none">
+                                                    
+                                                    <%# Eval("MDMessage") %>
+                                                    <br />
+                                                   
+                                                    <br />
+                                                    <hr />
+                                                   
+                                                    
+                                                </div>
+                                                
+                                            </div>
+                                            
+                                                <hr />
+                                        </div>
+
+                                    </ItemTemplate>
+                                    
+                                </asp:Repeater>
+
+                                </marquee>
+                               
+                               
+                                
+
+                                </div>
+                               
+                            </div>
+                        </div>
+                    </div>
+               </div>
+               </div>
+               </div>
+               <div class="row">
+               <div class="col-md-12 h-50 mail">
+               <div class="leftside no-gutters  ">
+               <div class="email-side-nav ">
+               
+                        <div class=" scrollable pos-r">
+                            <div class="layer w-100 fxg-1  jumbotron" style="padding-left: 15px; cursor:pointer;height: 250px!important;overflow:hidden;">
+                               
+                                <div class="peer fxw-nw bdB cur-p mail">
+                                
+                                
+                                <marquee direction="down" onmouseover="this.stop()" onmouseout="this.start()"scrolldelay="100"   style="height: 100%; width: 100%; font-family:Calibri;">
+                                            
+                                <asp:Repeater ID="MailRepeaterSLO" runat="server" >
+                                  
+                                    <ItemTemplate>
+                                       
+                                            <div class="ideadiv" style="padding-left: 10px;">
+                                              <%--onclick="ConformPsIdeaID(document.getElementsByName('lblImageNameTextBox').value)"--%>
+                                                         <%--<asp:Label ID="lblImageName" CssClass="IdeaIdclass" runat="server" Text='<%#Bind("IdeaId")%>' ClientIDMode="Static" hidden></asp:Label>--%>             
+                                            <div class="row">
+
+                                                <div class="col-sm-12">
+                                                    
+                                                    <asp:TextBox   ID="lblImageNameTextBox" name="lblImageNameTextBox" CssClass="IdeaIdclasstxt" runat="server" Text='<%#Bind("Slogan")%>' hidden></asp:TextBox>
+                                                  
+                                                    
+                                                    
+                                                </div>
+
+                                                
+                                                
+                                                
+
+                                            </div>
+                                            
+                                            <div class="row" style="margin-right: 1px;">
+                                            
+                                                <div id="viewdetail" class="col-sm-12 form-control "  style="border-top:none;border-left:none;border-right:none; border-bottom:none">
+                                                    
+                                                    <%# Eval("Slogan") %>
+                                                    <br />
+                                                   
+                                                    <br />
+                                                    <hr />
+                                                   
+                                                    
+                                                </div>
+                                                
+                                            </div>
+                                            
+                                                <hr />
+                                        </div>
+
+                                    </ItemTemplate>
+                                    
+                                </asp:Repeater>
+
+                                </marquee>
+                               
+                                
+
+                                </div>
+                               
+                            </div>
+                        </div>
+                    </div>
+               </div>
+               </div>
+               </div>
+                    
                 </div>
-                </div>
+                
                 <div class="col-lg-9">
                 <div class="row">
                 
@@ -830,7 +984,7 @@ padding-top:0% !important;
 
                 </div>
                 </div>
-				
+	    </div>
                  <script >
                                       				    
                                    		function BarChartYear(oneyrbrsuggestionreceived, oneyrbraccepted, oneyrbrrejected) {
@@ -1503,7 +1657,7 @@ padding-top:0% !important;
                             
                
     
-        </div>
+        
         
         
        

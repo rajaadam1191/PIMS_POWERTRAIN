@@ -40,22 +40,22 @@ namespace ProclainPIMSMaster.Form {
         protected global::System.Web.UI.WebControls.Repeater MailRepeater;
         
         /// <summary>
-        /// Repeater2 control.
+        /// MailRepeaterMD control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater Repeater2;
+        protected global::System.Web.UI.WebControls.Repeater MailRepeaterMD;
         
         /// <summary>
-        /// Repeater6 control.
+        /// MailRepeaterSLO control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater Repeater6;
+        protected global::System.Web.UI.WebControls.Repeater MailRepeaterSLO;
         
         /// <summary>
         /// Month control.
