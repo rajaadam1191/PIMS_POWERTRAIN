@@ -198,8 +198,8 @@ namespace ProclainPIMSMaster.Form
        
         public void sendEmail()
         {
-            string apiUrl = "http://10.14.0.150/WebEmail/api/Email";   // located in IIS server
-            string apiUrlLocal = "http://10.14.0.150/WebEmail/api/Email";     // Running instance from Visual Studio
+            string apiUrl = "http://10.14.0.40/WebEmail/api/Email";   // located in IIS server
+            string apiUrlLocal = "http://10.14.0.40/WebEmail/api/Email";     // Running instance from Visual Studio
             object input = new
             {
                 toName = "rajesh",

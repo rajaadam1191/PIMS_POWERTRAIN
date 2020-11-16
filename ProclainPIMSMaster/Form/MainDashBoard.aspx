@@ -489,7 +489,7 @@ padding-top:0% !important;
                 </div>
                 <div class="row">
                 <div class="col-lg-3 bg-light rounded-lg shadow " style="" >
-               
+               <asp:Label runat="server" Text="CEO Message" style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif"></asp:Label>
                <div class="row" >
                <div class="col-md-12 h-25 mail">
                <div class="leftside no-gutters ">
@@ -560,6 +560,7 @@ padding-top:0% !important;
                </div>
                </div>
                </div>
+               <asp:Label runat="server" Text="MD Message" style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif"></asp:Label>
                <div class="row">
                <div class="col-md-12 h-25 mail">
                <div class="leftside no-gutters ">
@@ -631,6 +632,7 @@ padding-top:0% !important;
                </div>
                </div>
                </div>
+               <asp:Label runat="server" Text="Slogan" style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif"></asp:Label>
                <div class="row">
                <div class="col-md-12 h-50 mail">
                <div class="leftside no-gutters  ">
@@ -1165,7 +1167,7 @@ padding-top:0% !important;
                                       			                        "adjust-layout": true,
                                       			                    },
                                       			                },
-                                      			                "type": "bar3d",
+                                      			                "type": "bar",
                                       			                '3dAspect': {
                                       			                    depth: 10,
                                       			                    true3d: 0,
@@ -1489,7 +1491,7 @@ padding-top:0% !important;
                                                                               "adjust-layout": true,
                                                                           }
                                                                       },
-                                                                      type: 'bar3d',
+                                                                      type: 'bar',
                                                                       '3dAspect': {
                                                                           depth: 10,
                                                                           true3d: 0,

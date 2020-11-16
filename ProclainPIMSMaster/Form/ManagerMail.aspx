@@ -1158,7 +1158,7 @@
                                     <asp:RadioButtonList ID="ImpCheckRadioButtonList" runat="server" Style="margin-left: 20px; margin-top: 20px;" RepeatDirection="Vertical" RepeatColumns="3">
                                         <asp:ListItem class="fes" Value="feas">Feasible</asp:ListItem>
                                         <asp:ListItem Value="Notfeasible">Not Feasible</asp:ListItem>
-                                        <asp:ListItem Value="alreadyimpl">Already Implemented</asp:ListItem>
+                                       <%-- <asp:ListItem Value="alreadyimpl">Already Implemented</asp:ListItem>--%>
                                     </asp:RadioButtonList>
                                 </div>
                                 <div id="feasible">
@@ -1274,7 +1274,7 @@
             $.ajax({
                 //   url: 'http://localhost:90/PIMS_emailPHP/email/send_mail.php',
                 //url: 'http://10.14.0.150:90/PIMS_emailPHP/email/send_mail.php',
-                url: 'http://10.14.0.150/WebEmail/api/Email/pimsEmail',
+                url: 'http://10.14.0.40/WebEmail/api/Email/pimsEmail',
                 type: 'POST',
                 cache: false,
                 contentType: 'application/json',
@@ -1429,7 +1429,7 @@
             $.ajax({
                 //   url: 'http://localhost:90/PIMS_emailPHP/email/send_mail.php',
                 //url: 'http://10.14.0.150:90/PIMS_emailPHP/email/send_mail.php',
-                url: 'http://10.14.0.150/WebEmail/api/Email/pimsEmail',
+                url: 'http://10.14.0.40/WebEmail/api/Email/pimsEmail',
                 type: 'POST',
                 cache: false,
                 contentType: 'application/json',
