@@ -24,7 +24,11 @@ namespace ProclainPIMSMaster.Form
         static string ImageName;
         protected void Page_Load(object sender, EventArgs e)
         {
-            EmpDetailView();
+            if (!IsPostBack)
+            {
+                EmpDetailView();
+                Dropdownload();
+            }
         }
 
         public void EmpDetailView()
@@ -48,6 +52,58 @@ namespace ProclainPIMSMaster.Form
 
             }
 
+        }
+
+        public void Dropdownload() {
+        try {
+                string ceomsg = "ceo";
+                string mdmsg = "md";
+               string slogan = "slogan";
+                DataSet Ds = new DataSet();
+
+
+                Ds = Dm.ceomsgdet(ceomsg);
+                //ceodrop.DataSource = Ds.Tables[0];
+                //ceodrop.DataTextField = "CEOMessage";
+                //ceodrop.DataValueField = "CEOMessage";
+                //ceodrop.DataBind();
+
+                for (int d = 0; d < Ds.Tables[0].Rows.Count; d++)
+                {
+                    string data = Ds.Tables[0].Rows[d]["CEOMessage"].ToString();
+                    ceodrop.Items.Add(data);
+                }
+                
+                Ds = Dm.mdmsgdet(mdmsg);
+                //mddrop.DataSource = Ds.Tables[0];
+                //mddrop.DataTextField = "MDMessage";
+                //mddrop.DataValueField = "MDMessage";
+                //mddrop.DataBind();
+
+                for (int d = 0; d < Ds.Tables[0].Rows.Count; d++)
+                {
+                    string data = Ds.Tables[0].Rows[d]["MDMessage"].ToString();
+                    mddrop.Items.Add(data);
+                }
+
+                Ds = Dm.sloganmsgdet(slogan);
+                //slogandrop.DataSource = Ds.Tables[0];
+                //slogandrop.DataTextField = "Slogan";
+                //slogandrop.DataValueField = "Slogan";
+                //slogandrop.DataBind();
+
+                for (int d = 0; d < Ds.Tables[0].Rows.Count; d++)
+                {
+                    string data = Ds.Tables[0].Rows[d]["Slogan"].ToString();
+                    slogandrop.Items.Add(data);
+                }
+
+
+
+            }
+            catch (Exception e1) {
+
+        }
         }
 
         protected void ceomsgupload_Click(object sender, EventArgs e)
@@ -123,6 +179,32 @@ namespace ProclainPIMSMaster.Form
             {
 
             }
+        }
+
+        protected void ceobtn_Click(object sender, EventArgs e)
+        {
+            
+            string data = ceodrop.Text;
+            string type = "ceo";
+            Dm.Removedel(type, data);
+            Response.Redirect("DBMRankInsert.aspx");
+
+        }
+
+        protected void mdbtn_Click(object sender, EventArgs e)
+        {
+            string type = "md";
+            string msg = mddrop.Text;
+            Dm.Removedel(type, msg);
+            Response.Redirect("DBMRankInsert.aspx");
+        }
+
+        protected void sloganbtn_Click(object sender, EventArgs e)
+        {
+            string type = "slogan";
+            string msg = slogandrop.Text;
+            Dm.Removedel(type, msg);
+            Response.Redirect("DBMRankInsert.aspx");
         }
     }
 }

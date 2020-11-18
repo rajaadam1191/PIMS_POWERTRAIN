@@ -2962,6 +2962,7 @@ E:\Raja-30-07-20\Raja\PIMSNEW\PIMS-03-10-2020\ProclainPIMSMaster\bin\Microsoft.A
 E:\Raja-30-07-20\Raja\PIMSNEW\PIMS-03-10-2020\ProclainPIMSMaster\bin\Microsoft.AI.WindowsServer.dll
 E:\Raja-30-07-20\Raja\PIMSNEW\PIMS-03-10-2020\ProclainPIMSMaster\bin\Microsoft.ApplicationInsights.dll
 E:\Raja-30-07-20\Raja\PIMSNEW\PIMS-03-10-2020\ProclainPIMSMaster\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\Raja-30-07-20\Raja\PIMSNEW\PIMS-03-10-2020\ProclainPIMSMaster\bin\Newtonsoft.Json.dll
 E:\Raja-30-07-20\Raja\PIMSNEW\PIMS-03-10-2020\ProclainPIMSMaster\bin\System.IO.FileSystem.Primitives.dll
 E:\Raja-30-07-20\Raja\PIMSNEW\PIMS-03-10-2020\ProclainPIMSMaster\bin\System.IO.Packaging.dll
 E:\Raja-30-07-20\Raja\PIMSNEW\PIMS-03-10-2020\ProclainPIMSMaster\bin\BouncyCastle.Crypto.xml
@@ -2992,4 +2993,3 @@ E:\Raja-30-07-20\Raja\PIMSNEW\PIMS-03-10-2020\ProclainPIMSMaster\bin\Microsoft.C
 E:\Raja-30-07-20\Raja\PIMSNEW\PIMS-03-10-2020\ProclainPIMSMaster\obj\Debug\ProclainPIMSMaster.csprojResolveAssemblyReference.cache
 E:\Raja-30-07-20\Raja\PIMSNEW\PIMS-03-10-2020\ProclainPIMSMaster\obj\Debug\ProclainPIMSMaster.dll
 E:\Raja-30-07-20\Raja\PIMSNEW\PIMS-03-10-2020\ProclainPIMSMaster\obj\Debug\ProclainPIMSMaster.pdb
-E:\Raja-30-07-20\Raja\PIMSNEW\PIMS-03-10-2020\ProclainPIMSMaster\bin\Newtonsoft.Json.dll

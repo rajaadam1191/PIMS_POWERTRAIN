@@ -1299,6 +1299,60 @@ namespace ProclainPIMSMaster.Models
 
 
         }
+        public DataSet ceomsgdet(string ceo)
+        {
+            DataTO Da = new DataTO();
+            DataSet Ds = new DataSet();
+
+              SqlParameter OP2 = new SqlParameter("@message", ceo);
+              Da.parameters.Add(OP2);
+            Ds = Da.ExecuteDataset("[GetMessage]");
+
+            return Ds;
+
+
+        }
+        public DataSet mdmsgdet( string md)
+        {
+            DataTO Da = new DataTO();
+            DataSet Ds = new DataSet();
+
+              SqlParameter OP2 = new SqlParameter("@message", md);
+              Da.parameters.Add(OP2);
+            Ds = Da.ExecuteDataset("[GetMessage]");
+
+            return Ds;
+
+
+        }
+        public DataSet sloganmsgdet(string slogan)
+        {
+            DataTO Da = new DataTO();
+            DataSet Ds = new DataSet();
+
+              SqlParameter OP2 = new SqlParameter("@message", slogan);
+              Da.parameters.Add(OP2);
+            Ds = Da.ExecuteDataset("[GetMessage]");
+
+            return Ds;
+
+
+        }
+        
+        public void Removedel(string type,string msg)
+        {
+            DataTO Da = new DataTO();
+            
+            SqlParameter OP1 = new SqlParameter("@type", type);
+            Da.parameters.Add(OP1);
+            SqlParameter OP2 = new SqlParameter("@message", msg);
+            Da.parameters.Add(OP2);
+            
+            Da.ExecuteNonQuery("RemoveMessage");
+            
+
+
+        }
 
     }
 }

@@ -4,9 +4,9 @@
     <link href="../UI/Style/fonts.css" rel="stylesheet" />
     <link href="../UI/Style/css.css" rel="stylesheet" />
     <link href="../UI/Style/style.css" rel="stylesheet" />
-    <link href="../UI/Style/jqueryui.css" rel="stylesheet" />
+    <%--<link href="../UI/Style/jqueryui.css" rel="stylesheet" />
     <script src="../UI/Style/jquery.min.js"></script>
-    <script src="../UI/Script/jquery-ui.js"></script>
+    <script src="../UI/Script/jquery-ui.js"></script>--%>
     <script src="../UI/Script/select2.min.js" type="text/javascript"></script>
     <link href="../UI/Style/select2.min.css" rel="stylesheet" />
     <link href="../UI/DataTable/jquery.dataTables.min.css" rel="stylesheet" />
@@ -225,63 +225,14 @@
         .form-control {
             background-color: white !important;
         }
+        .modal{
+        width:100%!important;
+      
+
+        }
     </style>
 
-    <%--  <script>
-        $("[id*=DepartmentDDListEmp]").change(function () {
-            var table = $('.noticedtemp');
-            var txts = $(this).children("option:selected").text().toString();
-
-            //table.destroy();
-
-            table.column(3).search(txts).draw();
-        });
-        $("[id*=DepartmentDDListImp]").change(function () {
-            var table = $('.noticedtimp');
-            var txts = $(this).children("option:selected").text().toString();
-
-            //table.destroy();
-
-            table.column(3).search(txts).draw();
-        });
-    </script>
-    <script>
-        $(document).ready(function () {
-         
-              var date1 = $('#<%= dtfromemp.ClientID %>').text();
-                     var date2 = $('#<%= dttoemp.ClientID %>').text();
-
-                     console.log(date1,date2);
-                  /*   var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-                     var d = new Date(date1);
-                     var fromdate = d.getFullYear() + "-" +months[d.getMonth()] + "-" + d.getDate();
-
-                    var d2 = new Date(date2);
-                    var todate = d2.getFullYear() + "-" + months[d2.getMonth()] + "-" + d2.getDate();
-                    $('#minemp').val(fromdate);
-                    $('#maxemp').val(todate);
-                   */
-                     $("#minemp").datepicker();
-                     $("#maxemp").datepicker();
-                     $("#maximp").datepicker();
-                     $("#minimp").datepicker();
-
-                  
-                    
-                    
-            $('#<%= SuggestionGridViewEmp.ClientID %>').DataTable();
-        });
-
-        function mappselected()
-        {
-            $("#minemp").datepicker().datepicker("setDate", new Date(date1));
-            $("#maxemp").datepicker().datepicker("setDate", new Date(date2));
-
-
-            $("#maximp").datepicker().datepicker("setDate", new Date(date1));
-            $("#minimp").datepicker().datepicker("setDate", new Date(date2));
-        }
-    </script>--%>
+    
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="container mt-3" style="width: 100%; height: 100%;">
@@ -327,7 +278,13 @@
                                                 </div>
 
                                             </div>
-                                            <div class="col-md-3"></div>
+                                            <div class="col-md-3">
+                                                <div class="text-right" style="padding-right:2%;">
+                    
+                                                    <asp:LinkButton runat="server" ID="Remove" data-toggle="modal" data-target="#RemoveFunc" >Remove</asp:LinkButton>
+                    
+                                                </div>
+                                            </div>
                                         </div>
 
 
@@ -413,4 +370,122 @@
             </div>
         </div>
     </div>
+    <div class="modal fade" id="RemoveFunc" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Remove Message</h4>
+                        <button type="button" id="span" class="close" data-dismiss="modal">&times;</button>
+
+                    </div>
+                    <div class="modal-body">
+                       <ul class="nav nav-tabs">
+                            <li class="nav-item" id="CEO" style="width: 50%; font-size: 100%; padding-left: 2%;">
+                                <a class="nav-link active" data-toggle="tab" href="#ceomsgrem" style="font-weight: bold; text-align: center;">CEO Message </a>
+
+                            </li>
+                            <li class="nav-item" id="MD" style="width: 50%; font-size: 100%; padding-right: 2%;">
+                                <a class="nav-link" data-toggle="tab" href="#mdmsgrem" style="font-weight: bold; text-align: center;">MD Message</a>
+
+                            </li>
+                            <li class="nav-item" id="Slogan" style="width: 50%; font-size: 100%; padding-right: 2%;">
+                                <a class="nav-link" data-toggle="tab" href="#sloganrem" style="font-weight: bold; text-align: center;">Slogan</a>
+
+                            </li>
+                        </ul>
+
+                    <div class="tab-content">
+                        <div id="ceomsgrem" class="container tab-pane active">
+                        <div class="row">
+                        <div class="col-md-6">
+                        <asp:label runat="server" id="ceodroplbl" hidden></asp:label>
+                        <asp:DropDownList runat="server" Class="form-control" ID="ceodrop" onchange="ceoonchange()">
+
+                        </asp:DropDownList>
+                        </div>
+                        <div class="col-md-6">
+                        <asp:Button runat="server" ID="ceobtn" Class="btn btn-primary" text="Remove" OnClick="ceobtn_Click" />
+                        
+                        </div>
+                        </div>
+                        
+                        </div>
+                        <div id="mdmsgrem" class="container tab-pane ">
+                        <div class="row">
+                        <div class="col-md-6">
+                        <asp:label runat="server" id="mddroplbl" hidden></asp:label>
+                        <asp:DropDownList runat="server" Class="form-control" ID="mddrop" onchange="mdonchange()">
+
+                        </asp:DropDownList>
+                        
+                        </div>
+                        <div class="col-md-6">
+
+                        <asp:Button runat="server" ID="mdbtn" Class="btn btn-primary" text="Remove" OnClick="mdbtn_Click"/>
+                        
+                        </div>
+                        </div>
+                        </div>
+                        <div id="sloganrem" class="container tab-pane ">
+                        <div class="row">
+                        <div class="col-md-6">
+                        <asp:label runat="server" id="slogandroplbl" hidden></asp:label>
+                        <asp:DropDownList runat="server" Class="form-control" ID="slogandrop" onchange="sloganonchange()">
+
+                        </asp:DropDownList>
+                        
+                        </div>
+                        <div class="col-md-6">
+                        <asp:Button runat="server" ID="sloganbtn" Class="btn btn-primary" text="Remove" OnClick="sloganbtn_Click"/>
+                        
+                        </div>
+                        </div>
+                        </div>
+                    </div>
+                        </div>
+                    <div class="modal-footer">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            function ceoonchange() {
+
+                var value = document.getElementById("<%=ceodrop.ClientID%>");  
+               var getvalue = value.options[value.selectedIndex].value;  
+               var gettext = value.options[value.selectedIndex].text; 
+                
+               document.getElementById("<%=ceodroplbl.ClientID%>").value = getvalue;
+               console.log(getvalue, gettext);
+            }
+            function mdonchange() {
+
+                var value = document.getElementById("<%=mddrop.ClientID%>");  
+               var getvalue = value.options[value.selectedIndex].value;  
+               var gettext = value.options[value.selectedIndex].text; 
+                
+               document.getElementById("<%=mddroplbl.ClientID%>").value = getvalue;
+               console.log(getvalue, gettext);
+
+               
+            }
+            function sloganonchange() {
+
+                var value = document.getElementById("<%=slogandrop.ClientID%>");  
+               var getvalue = value.options[value.selectedIndex].value;  
+               var gettext = value.options[value.selectedIndex].text; 
+                
+               var slolbl = document.getElementById("<%=slogandroplbl.ClientID%>") = getvalue;
+               
+               console.log(getvalue, gettext);
+
+                
+            }
+        </script>
+
+
+       
 </asp:Content>
