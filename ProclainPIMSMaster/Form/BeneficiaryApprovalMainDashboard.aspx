@@ -252,101 +252,9 @@
             </div>
         </div>
         <div class="col-lg-6">
-              <script src="../UI/Style/canvasjs.min.js"></script>
-                        <script src="../UI/Style/Chart.min.js"></script>
-                        <link href="../UI/Style/Chart.min.css" rel="stylesheet" />
-                        
-                        <script type="text/javascript">
-
-                            $(document).ready(function () {
-                                $.ajax({
-                                    url: 'DBMDashboard.aspx/getReport',
-                                    method: 'POST',
-                                    contentType: "application/json; charset=utf-8",
-                                    async: true,
-                                    dataFilter: function (data) { return data; },
-
-                                    dataType: "json",
-
-                                    success: function (data) {
-                                        console.log(JSON.stringify(data.d))
-                                     
-                                        Barchart(data.d.Com, data.d.Hod, data.d.Imp, data.d.Hos, data.d.Ben, data.d.Fin);
-                                    },
-                                    error: function (err) {
-                                       console.log(err);
-                                        
-                                    }
-                                });
-                            });
-
-                            function Barchart(com, hod, imp, hos, ben, fin) {
-
-                                console.log(com, hod, imp, hos, ben, fin);
-                                var ctx = document.getElementById('myChart').getContext('2d');
-                                var chart = new Chart(ctx, {
-                                    // The type of chart we want to create
-                                    type: 'bar',
-                                   
-                                    // The data for our dataset
-                                    data: {
-                                        labels: ['commitee', 'Manager', 'Implementation', 'HOD', 'Beneficiary', 'finance'],
-                                        datasets: [{
-                                            label: 'Suggestions status',
-                                            //backgroundColor: 'rgb(255, 99, 132)',
-                                            //borderColor: 'rgb(255, 99, 132)',
-                                            //barPercentage: 2.5,
-                                                  barThickness: 30,
-                                                   //maxBarThickness: 8,
-                                                   //minBarLength: 2,
-                                                   click: onclick,
-                                                   legendMarkerColor: "grey",
-                                                   legendText: "Departments",
-                                                   showInLegend: true,
-                                                   data: [com, hod, imp, hos, ben, fin],
-                                                   backgroundColor: ["grey", "skyblue", "green", 'rgb(255, 99, 132)', "Yellow", "violet"],
-                                        }]
-                                    },
-
-                                    // Configuration options go here
-                                    options: {}
-                                });
-
-                       
-
-
-                               
-                            }
-
-                         
-function onclick(tab) {
-    console.log(tab.dataPoint, tab, tab.dataPoints, tab.dataPoint.x, tab.dataPoint.y, tab.dataPoint.label);
-    //$('nav-tabs a[location.href="DBMSent.aspx/#' + e + '"]').tab('show');
-   // response.redirect("Form/DBMSent.aspx/#'" + tab.dataPoint.y + "'");
-    //
-    var datas = [{ link: 'com', name: 'commitee' }, { link: 'hod', name: 'HOD' }, { link: 'imp', name: 'Implementation' }, { link: 'hos', name: 'HOS' }, { link: 'ben', name: 'Beneficiary' }, { link: 'fin', name: 'finance' }];
-    var linkRedirect = '';
-    var clicked = tab.dataPoint.label;
-    for(var i=0;i<datas.length;i++)
-    {
-        console.log(datas[i].name, datas[i].link, clicked)
-        if (datas[i].name == clicked)
-        {
-            linkRedirect = datas[i].link;
-            console.log('true')
-        }
-    }
-    
-    //window.location = "DBMSent.aspx?value=" + linkRedirect;
-    //location.href = "Form/DBMSent.aspx/#" + e.dataPoints.y + "";
- //   Page.ClientScript.RegisterStartupScript(GetType(), "redirect","window.location.href='DBMSent.aspx/#" + e + "'");
-}
-
-
-</script>
-                           <div id="chartContainer" style="height: 100%; width: 90%;">
-                               <canvas id="myChart" style="height: 100%; width: 90%;"></canvas>
-                           </div>
+              <div class="card shadow p-3 mb-5 bg-white rounded  "  >				     
+                                            <div id="chartContainer1" class="bgcolor" style="height:200px;width:100%;"></div>
+							        </div>
                         
   
         </div>              <!-- ====================
@@ -1149,6 +1057,135 @@ function onclick(tab) {
     <script src="../UI/DataTable/DataTableScripts/Ajax/vfs_fonts.js"></script>
     <script src="../UI/DataTable/DataTableScripts/Button/buttons.html5.min.js"></script>
     <script src="../UI/DataTable/DataTableScripts/Button/buttons.print.min.js"></script> 
+     <script type="text/javascript">
+                                      				    
+         function Barchart(com, hod, imp, hos, ben, fin){
+
+             console.log('method called ',com, hod, imp, hos, ben, fin);
+                                   		    var com = [parseInt(com)];
+                                   		    var hod = [parseInt(hod)];
+                                   		    var imp = [parseInt(imp)];
+                                   		    var hos = [parseInt(hos)];
+                                   		    var ben = [parseInt(ben)];
+                                   		    var fin = [parseInt(fin)];
+                                      				          
+                                            var myConfig = {
+                                                "graphset": [{
+                                                    "globals": {
+                                                        "font-family": "Lato",
+                                                        "title": {
+                                                            "text": "Suggestions status",
+
+                                                            "backgroundColor": "none",
+                                                            "font-size": "22px",
+                                                            "alpha": 1,
+                                                            "adjust-layout": true,
+                                                        },
+                                                    },
+                                                "type": "bar",
+                                                "background-color": "white",
+                                                
+                                                "plotarea": {
+                                                    "margin": "dynamic"
+                                                },
+                                               
+                                                "plot": {
+                                                    "bars-space-left": 0.30,
+                                                    "bars-space-right": 0.30,
+                                                    "styles": ["#ff9966", "#3399ff", "#ff3300", "#ff6699", "#33ccff", "#00ff00"],
+                                                    
+                                                    "animation": {
+                                                        "effect": "ANIMATION_SLIDE_BOTTOM",
+                                                        "sequence": 0,
+                                                        "speed": 800,
+                                                        "delay": 800,
+                                                        
+                                                    
+                                                    }
+                                                },
+                                               
+                                                "scaleX": {
+                                                    "values": [
+                                                    
+                                                    "commitee", "Manager", "Implementation", "HOD", "Beneficiary", "finance"
+           
+									
+                                                    ],
+                                                    "placement": "default",
+                                                    "tick": {
+                                                        "size": 58,
+                                                        "placement": "cross",
+                                                        "alpha":0.3,
+                                                    },
+                                                    "itemsOverlap": true,
+                                                    "item": {
+                                                    "offsetY": -55
+                                                    }
+                                                },
+        
+                                                "tooltip": {
+                                                    "shadow": true,
+                                                    "shadowColor": "#424242",
+                                                    "backgroundColor": "#212121 #424242",
+                                                    "callout": true,
+                                                    "calloutPosition": "bottom",
+                                                    "offsetY": -20,
+                                                    "placement": "node:top",
+                                                    "padding": 10,
+                                                    "fontSize": 15,
+                                                    "color": "#ffffff",
+                                                    "borderWidth": 1,
+                                                    "borderColor": "#000000",
+                                                    
+                                                },
+                                                "crosshair-x": {
+                                                    "line-width": "100%",
+                                                    "alpha": 0.18,
+                                                    "plot-label": {
+                                                    "header-text": "%kv"
+                                                    }
+                                                },
+                                                "series": [{
+                                                    "values": [
+                                                        parseInt(com),
+                                                        parseInt(hod),
+                                                        parseInt(imp),
+                                                        parseInt(hos),
+                                                        parseInt(ben),
+                                                        parseInt(fin)
+                                                         
+                
+			  
+                                                    ],
+                                                   
+                                                   
+                                                    "valueBox": [{
+                                                        "fontSize": 10,
+                                                        "fontWeight": 600,
+                                                        "offsetY": -8,
+                                                        "jsRule": "rule_series_123_valueBox_0()",
+                                                        
+                                                    }]
+                                                }]
+                                                
+         
+		  
+          
+                                                
+                                                }]
+                                            };
+ 
+                                            zingchart.render({
+                                                    id: 'chartContainer1',
+                                                    data: myConfig,
+                                                    height: '100%',
+                                                    width: '100%'
+                                                });
+  
+                                      	}
+                                      				    
+                                    </script>
+<script src="../UI/Style/zingchart.min.js"></script>
                 
             <!-- =============================================
                  ### $App Screen Content Child Content End ###

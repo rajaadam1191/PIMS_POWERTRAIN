@@ -260,6 +260,7 @@
                                     <asp:BoundField DataField="Category" HeaderText="CATE" />
                                     <asp:BoundField DataField="date" HeaderText="DATE" />
                                     <asp:BoundField DataField="Committee" HeaderText="COMM" />
+                                    <asp:BoundField DataField="Status" HeaderText="STATUS" />
                                     <asp:BoundField DataField="Manager" HeaderText="MAN" />
                                     <asp:BoundField DataField="Implement_Members" HeaderText="IMPL_MEM" />
                                     <asp:BoundField DataField="HOD" HeaderText="HOD" />
