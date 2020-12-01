@@ -377,6 +377,19 @@ namespace ProclainPIMSMaster.Models
             return Ds;
 
         }
+        public DataSet ManagerSelectRepeterViewotherdept(Mailling M)
+        {
+            DataTO Da = new DataTO();
+            DataSet Ds = new DataSet();
+
+            SqlParameter OP2 = new SqlParameter("@ReceiverID", M.IEmpId);
+            Da.parameters.Add(OP2);
+            SqlParameter OP1 = new SqlParameter("@DepId", M.DepId);
+            Da.parameters.Add(OP1);
+            Ds = Da.ExecuteDataset("[Manager_mailview_otherdept]");
+            return Ds;
+
+        }
         public DataSet Barchart_get_details()
         {
             DataTO Da = new DataTO();

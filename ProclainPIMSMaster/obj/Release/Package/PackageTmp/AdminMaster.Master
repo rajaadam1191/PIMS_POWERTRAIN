@@ -284,20 +284,20 @@
                         </a>
                     </li>
                     <hr />
-                    <li class="nav-item" id="DayWiseRecord">
+                    <%--<li class="nav-item" id="DayWiseRecord">
                         <a class="sidebar-link" href="RolesWiseDaysRecord.aspx">
                             <span class="icon-holder">
                                   <i style="color:#609;"  class="fa fa-info-circle"></i>
                                 </span>
                             <span class="title">Roles Wise Idea Day Record </span>
                         </a>
-                    </li>
+                    </li>--%>
                     <li class="nav-item" id="IdeaWiseRecord">
                         <a class="sidebar-link" href="IdeaTrackingHistory.aspx">
                             <span class="icon-holder">
                                   <i style="color:#609;"  class="fa fa-info-circle"></i>
                                 </span>
-                            <span class="title">Roles Wise Idea Record </span>
+                            <span class="title">Idea Details</span>
                         </a>
                     </li>
                      <li class="nav-item" id="RoleWisecomment">
@@ -313,7 +313,7 @@
                             <span class="icon-holder">
                                   <i style="color:#609;"  class="fa fa-info-circle"></i>
                                 </span>
-                            <span class="title">Department Wise Record </span>
+                            <span class="title">Department Details </span>
                         </a>
                     </li>
                       <li class="nav-item" id="Back">

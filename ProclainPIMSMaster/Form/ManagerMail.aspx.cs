@@ -165,12 +165,19 @@ namespace ProclainPIMSMaster.Form
                     //MailRepeater.SelectMethod = "IdeaId";
                     MailRepeaterhold.DataBind();
 
-                    Ds = M.ManagerSelectRepeterViewReject(M);
-                    int crej = Ds.Tables[0].Rows.Count;
-                    countrej.InnerHtml = crej.ToString();
-                    MailRepeaterreject.DataSource = Ds.Tables[0];
+                    //Ds = M.ManagerSelectRepeterViewReject(M);
+                    //int crej = Ds.Tables[0].Rows.Count;
+                    //countrej.InnerHtml = crej.ToString();
+                    //MailRepeaterreject.DataSource = Ds.Tables[0];
+                    ////MailRepeater.SelectMethod = "IdeaId";
+                    //MailRepeaterreject.DataBind();
+
+                    Ds = M.ManagerSelectRepeterViewotherdept(M);
+                    int cotr = Ds.Tables[0].Rows.Count;
+                    countotr.InnerHtml = cotr.ToString();
+                    MailRepeaterotherdept.DataSource = Ds.Tables[0];
                     //MailRepeater.SelectMethod = "IdeaId";
-                    MailRepeaterreject.DataBind();
+                    MailRepeaterotherdept.DataBind();
 
                     FromDateTextBox.Text = System.DateTime.Now.Date.ToString("dd-MM-yyyy");
                     ToDateTextBox.Text = System.DateTime.Now.Date.AddDays(30).ToString("dd-MM-yyyy");

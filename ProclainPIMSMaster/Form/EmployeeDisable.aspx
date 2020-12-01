@@ -501,7 +501,7 @@
                                     <asp:BoundField DataField="DesName" HeaderText="Designation" />
                                     <asp:BoundField DataField="ComName" HeaderText="Company" />
                                     <asp:BoundField DataField="PhoneNo" HeaderText="Phone No" />
-                                    <asp:BoundField DataField="Points" HeaderText="Points" />
+                                    <asp:BoundField DataField="crntstate" HeaderText="Status" />
                                     <%--<asp:BoundField DataField="Allowance" HeaderText="Allowance" />--%>
                                     
                                     

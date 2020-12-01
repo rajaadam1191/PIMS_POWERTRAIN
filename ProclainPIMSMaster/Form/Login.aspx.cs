@@ -106,7 +106,7 @@ namespace ProclainPIMSMaster.Form
                 if (Newpass == Conpass)
                 {
                     DataSet Ds = new DataSet();
-                    Ds = RL.Checkoldpassword(Empid);
+                    Ds = RL.CheckoldpasswordGetOTP(Empid);
                     string chkold = Ds.Tables[0].Rows[0].ItemArray[0].ToString();
                     if (chkold == OTPpass)
                     {
@@ -150,12 +150,17 @@ namespace ProclainPIMSMaster.Form
                 {
                     
                     Random R = new Random();
-                    int randomNum = R.Next();
+                    int split= R.Next();
+                    string str = split.ToString();
+                    string aftsplit= str.Substring(0,4);
+                    int randomNum = int.Parse(aftsplit);
                     RL.UpdateOTPRandom(empid, randomNum);
 
 
-                    string apiUrl = "http://10.14.0.150/WebEmail/api/Email";   // located in IIS server
-                    string apiUrlLocal = "http://10.14.0.150/EmailApi/api/Email";     // Running instance from Visual Studio
+                    //string apiUrl = "http://10.14.0.40/WebEmail/api/Email";   // located in IIS server
+                    //string apiUrlLocal = "http://10.14.0.40/WebEmail/api/Email";     // Running instance from Visual Studio
+                    string apiUrl = "http://localhost/WebEmail/api/Email";   // located in IIS server
+                    string apiUrlLocal = "http://localhost/WebEmail/api/Email";
                     object input = new
                     {
                         UserName = empname.ToString(),
@@ -380,8 +385,8 @@ namespace ProclainPIMSMaster.Form
                     int randomNum = R.Next();
                     RL.UpdateOTPRandom(Empid, randomNum);
 
-                    string apiUrl = "http://10.14.0.150/WebEmail/api/Email";   // located in IIS server
-                    string apiUrlLocal = "http://10.14.0.150/EmailApi/api/Email";     // Running instance from Visual Studio
+                    string apiUrl = "http://10.14.0.40/WebEmail/api/Email";   // located in IIS server
+                    string apiUrlLocal = "http://10.14.0.40/EmailApi/api/Email";     // Running instance from Visual Studio
                     object input = new
                     {
                         UserName = empname.ToString(),

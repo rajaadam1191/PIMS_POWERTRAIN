@@ -49,13 +49,13 @@ namespace ProclainPIMSMaster.Form {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl counthol;
         
         /// <summary>
-        /// countrej control.
+        /// countotr control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl countrej;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl countotr;
         
         /// <summary>
         /// MailRepeater control.
@@ -101,6 +101,15 @@ namespace ProclainPIMSMaster.Form {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Repeater MailRepeaterreject;
+        
+        /// <summary>
+        /// MailRepeaterotherdept control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater MailRepeaterotherdept;
         
         /// <summary>
         /// ScriptManager control.

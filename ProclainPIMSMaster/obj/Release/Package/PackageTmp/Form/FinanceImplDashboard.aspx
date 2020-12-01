@@ -1028,7 +1028,7 @@
 
     
                 $.ajax({
-                    url: 'FinanceDashboard.aspx/Checking',
+                    url: 'FinanceImplDashboard.aspx/Checking',
                     method: 'post',
                     contentType: "application/json; charset=utf-8",
                     async: true,

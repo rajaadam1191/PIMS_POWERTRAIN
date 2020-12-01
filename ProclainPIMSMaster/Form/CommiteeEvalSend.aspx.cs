@@ -571,39 +571,7 @@ namespace ProclainPIMSMaster.Form
                 EEC.UpLoad3 = DS.Tables[0].Rows[0].ItemArray[13].ToString();
                 // EEC.upload3 = "/PIMS/UI/Image/" + EEC.UpLoad3;
                 EEC.upload3 = "../UI/Image/" + EEC.UpLoad3;
-                DS = M.DBMReplyCE(M);
-                string chk = DS.Tables[0].Rows[0].ItemArray[0].ToString();
-                if (chk != "Empty")
-                {
-                    EEC.RIdeaID = DS.Tables[0].Rows[0].ItemArray[0].ToString();
-                    EEC.REmpID = DS.Tables[0].Rows[0].ItemArray[1].ToString();
-                    EEC.RMail = DS.Tables[0].Rows[0].ItemArray[2].ToString();
-                    EEC.RSub = DS.Tables[0].Rows[0].ItemArray[3].ToString();
-                    EEC.RCon = DS.Tables[0].Rows[0].ItemArray[4].ToString();
-                    string[] breakMysentence = EEC.REmpID.Split(',');
-                    string[] ena1 = new string[breakMysentence.Length];
-                    string n = "";
-                    foreach (string data in breakMysentence)
-                    {
-
-                        ena1[i] = data;
-                        i = i + 1;
-                        RL.HEmployeeID = data.ToString().TrimStart().TrimEnd();
-                        DS = RL.LoginSearch(RL);
-                        if (n != "")
-                        {
-                            n = n + ", " + DS.Tables[0].Rows[0].ItemArray[1].ToString();
-                        }
-                        else
-                        {
-                            n = n + DS.Tables[0].Rows[0].ItemArray[1].ToString();
-                        }
-
-
-                    }
-                    EEC.REmpName = n;
-                }
-
+                
 
 
 

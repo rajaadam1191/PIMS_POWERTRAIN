@@ -449,10 +449,13 @@
                                             <a class="nav-link" data-toggle="tab" href="#complete">Completed &nbsp;<span id="countcom" class="badge badge-pill badge-primary" runat="server">0</span></a>
                                         </li>
                                         <li class="nav-item" id="hidehold">
-                                            <a class="nav-link" data-toggle="tab" href="#hold">Hold &nbsp;<span id="counthol" class="badge badge-pill badge-primary" runat="server">0</span></a>
+                                            <a class="nav-link" data-toggle="tab" href="#hold">NotFeasible &nbsp;<span id="counthol" class="badge badge-pill badge-primary" runat="server">0</span></a>
                                         </li>
-                                        <li class="nav-item" id="hidereject">
+                                        <%--<li class="nav-item" id="hidereject">
                                             <a class="nav-link" data-toggle="tab" href="#reject">Reject &nbsp;<span id="countrej" class="badge badge-pill badge-primary" runat="server">0</span></a>
+                                        </li>--%>
+                                        <li class="nav-item" id="hideotherdept">
+                                            <a class="nav-link" data-toggle="tab" href="#otherdept">OtherDept &nbsp;<span id="countotr" class="badge badge-pill badge-primary" runat="server">0</span></a>
                                         </li>
 
 
@@ -710,6 +713,54 @@
 
                                             </asp:Repeater>
                                         </div>
+
+
+                                         <div id="otherdept" class="container tab-pane fade">
+                                            <asp:Repeater ID="MailRepeaterotherdept" runat="server" OnItemCommand="MailRepeater_ItemCommand">
+                                                <%-- OnItemCreated="MailRepeater_ItemCreated"  --%>
+                                                <ItemTemplate>
+                                                    
+                                                    <div class="ideadiv" style="padding-left: 10px;">
+                                                        
+                                                        <asp:Label ID="lblImageName" CssClass="IdeaIdclass" runat="server" Text='<%#Bind("IdeaId")%>' ClientIDMode="Static" hidden></asp:Label>
+                                                        <div class="row">
+
+                                                            <div class="col-sm-10">
+                                                                <asp:TextBox ID="lblImageNameTextBox" name="lblImageNameTextBox" CssClass="IdeaIdclasstxt" runat="server" Text='<%#Bind("IdeaId")%>' hidden></asp:TextBox>
+
+
+                                                            </div>
+
+
+                                                        </div>
+
+                                                        <div class="row" style="margin-right: 1px;">
+                                                            <div class="col-sm-9 form-control" style="border: none!important;">
+                                                                <%# Eval("EmployeeName") %>
+                                                                <br />
+                                                                <%# Eval("Subject") %>
+                                                                <br />
+                                                                <%# Eval("IDeaID") %>
+                                                                <br />
+
+                                                            </div>
+                                                            <div class="col-sm-3 form-control" style="border-top: none; border-left: none; border-right: none; border-bottom: none; align-content: center;">
+
+
+
+                                                                <br />
+
+                                                            </div>
+                                                        </div>
+                                                        <hr />
+
+                                                    </div>
+
+                                                </ItemTemplate>
+
+                                            </asp:Repeater>
+                                        </div>
+
 
 
                                     </div>

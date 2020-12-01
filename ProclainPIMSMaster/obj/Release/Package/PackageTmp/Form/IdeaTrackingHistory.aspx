@@ -255,9 +255,12 @@
                                    
                                     <asp:BoundField DataField="ideaid" HeaderText="IDEAID" />
                                     <asp:BoundField DataField="Employee" HeaderText="EMP" />
+                                    <asp:BoundField DataField="DepName" HeaderText="DEP" />
                                     <asp:BoundField DataField="subject" HeaderText="SUB" />
+                                    <asp:BoundField DataField="Category" HeaderText="CATE" />
                                     <asp:BoundField DataField="date" HeaderText="DATE" />
                                     <asp:BoundField DataField="Committee" HeaderText="COMM" />
+                                    <asp:BoundField DataField="Status" HeaderText="STATUS" />
                                     <asp:BoundField DataField="Manager" HeaderText="MAN" />
                                     <asp:BoundField DataField="Implement_Members" HeaderText="IMPL_MEM" />
                                     <asp:BoundField DataField="HOD" HeaderText="HOD" />
