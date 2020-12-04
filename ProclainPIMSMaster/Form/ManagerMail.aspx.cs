@@ -100,7 +100,7 @@ namespace ProclainPIMSMaster.Form
                         }
 
                         load();
-                        IMPDepartmentNameView();
+                       // IMPDepartmentNameView();
 
 
 
@@ -235,15 +235,19 @@ namespace ProclainPIMSMaster.Form
         {
             
             EmpEmailContents EECS = new EmpEmailContents();
-            Mailling M = new Mailling();
+            Mailling MM = new Mailling();
+            Manager M=new Manager();
             DataSet DS = new DataSet();
             try
             {
                 
                 
-                M.IdeaId = idea.ToString();
+                MM.IdeaId = idea.ToString();
+
+
                 
-                DS = M.Repeatersearch(M);
+               
+                DS = MM.Repeatersearch(MM);
 
 
                 EECS.fromTag = "From : ";
@@ -292,6 +296,9 @@ namespace ProclainPIMSMaster.Form
             
 
         }
+
+        
+
         public void DepIdAutoGeneretion()
         {
             DataSet DS = new DataSet();
@@ -456,28 +463,39 @@ namespace ProclainPIMSMaster.Form
 
 
         }
-
-        public void IMPDepartmentNameView()
+        [WebMethod]
+        public static List<ListItem> ManagerFilter(string idea)
         {
+            Manager M = new Manager();
+            List<ListItem> customers = new List<ListItem>();
             try
             {
+                
                 DataSet Ds = new DataSet();
+                M.IdeaId = idea.ToString();
 
+                Ds = M.ManagerDDlFilter(M);
+                for(int i=0;i<Ds.Tables[0].Rows.Count;i++)
+                {
+                    customers.Add(new ListItem
+                    {
+                        Value = Ds.Tables[0].Rows[i]["EmpId"].ToString(),
+                        Text = Ds.Tables[0].Rows[i]["Members"].ToString()
+                    });
+                }
+                
 
-                Ds = MM.ManagerDDl();
-
-                IMPDepaDLists.DataSource = Ds.Tables[0];
-                IMPDepaDLists.DataTextField = "Members";
-                IMPDepaDLists.DataValueField = "EmpId";
-                IMPDepaDLists.DataBind();
+               
             }
             catch (Exception e1)
             {
                  
             }
-          
 
+            return customers;
         }
+       
+       
 
 
         protected void OwnTeamPopButton_Click(object sender, EventArgs e)

@@ -114,6 +114,15 @@ namespace ProclainPIMSMaster.Form
                     {
 
                         load();
+                        DataTable dummy = new DataTable();
+                        dummy.Columns.Add("ReceiverID");
+                        dummy.Columns.Add("NewFrom");
+                        dummy.Columns.Add("IDeaID");
+                        dummy.Columns.Add("Type");
+                        
+                        dummy.Rows.Add();
+                        SuggestionGridView.DataSource = dummy;
+                        SuggestionGridView.DataBind();
                     }
                 }
             }
@@ -511,5 +520,32 @@ namespace ProclainPIMSMaster.Form
             Upinsert();
             Response.Redirect("CommitteeEvalDashboard.aspx",false);
         }
-    }
+        [WebMethod]
+        public static string GetDetail(string idea)
+        {
+
+            EmpEmailContent EEC = new EmpEmailContent();
+            Mailling M = new Mailling();
+            DataSet DS = new DataSet();
+            DataBankManager DBM = new DataBankManager();
+            RegistrationLogin RL = new RegistrationLogin();
+            try
+            {
+                int i = 0;
+
+                //RepeaterItem item = (sender as TextBox).Parent as RepeaterItem;
+                //index = int.Parse((item.FindControl("lblImageNameTextBox") as Label).Text);
+
+                M.IdeaId = idea.ToString();
+               
+                DS = DBM.CommitteeEvaluvationGridViewFilter(M);
+                
+            }
+            catch(Exception ex)
+            {
+                throw new Exception("Error Initializing Data Class." + Environment.NewLine + ex.Message);
+            }
+            return DS.GetXml();
+        }
+   }
 }

@@ -679,6 +679,16 @@ namespace ProclainPIMSMaster.Models
             return Ds;
 
         }
+        public DataSet CommitteeEvaluvationGridViewFilter(Mailling M)
+        {
+            DataTO Da = new DataTO();
+            DataSet Ds = new DataSet();
+            SqlParameter OP = new SqlParameter("@IdeaId",M.IdeaId);
+            Da.parameters.Add(OP);
+            Ds = Da.ExecuteDataset("SP_CommitteeEvalSend_SelectGridView_MailSendID_Filter");
+            return Ds;
+
+        }
 
         #endregion
 

@@ -415,6 +415,17 @@ namespace ProclainPIMSMaster.Models
             return Ds;
 
         }
+        public DataSet ManagerDDlFilter(Manager M)
+        {
+            DataTO Da = new DataTO();
+            DataSet Ds = new DataSet();
+            SqlParameter OP000 = new SqlParameter("@IdeaID", M.IdeaId);
+            Da.parameters.Add(OP000);
+            
+            Ds = Da.ExecuteDataset("[SP_ManagerDetail_Select_DDL_Filter]");
+            return Ds;
+
+        }
         public DataSet HOSDDl(Manager M)
         {
             DataTO Da = new DataTO();
