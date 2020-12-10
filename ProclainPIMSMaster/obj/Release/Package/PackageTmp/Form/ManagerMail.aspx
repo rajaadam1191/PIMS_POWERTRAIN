@@ -1709,7 +1709,7 @@ a.float:hover + div.label-container{
                         $("#viewtbl").show();
                         //$('#fromTag').html("From :");
                         //$('#SubjectTagLabel').html(data.d.subject);
-
+                        ManagerFilter(IdeaID);
 
                     },
                     error: function (err) {
@@ -1730,6 +1730,35 @@ a.float:hover + div.label-container{
                 
         //    var lbIdeaID = $(".IdeaIdclasstxt").val();
         //}
+    </script>
+    <script>
+        function ManagerFilter(IdeaID) {
+            
+            $.ajax({
+                url: 'ManagerMail.aspx/ManagerFilter',
+                method: 'post',
+                contentType: "application/json; charset=utf-8",
+                async: true,
+                dataFilter: function (data) { return data; },
+                data: '{idea:' + IdeaID + '}',
+                dataType: "json",
+
+                success: function (data) {
+                console.log(data,data.d)
+                    var ddlCustomers = $("[id*=IMPDepaDLists]");
+                    ddlCustomers.empty().append('<option selected="selected" value="0">Please select</option>');
+                    $.each(data.d, function () {
+                        ddlCustomers.append($("<option></option>").val(this['Value']).html(this['Text']));
+                    });
+                },
+                error: function (err) {
+                alert('Error : ' + data); console.log(err);
+                tableInputKeyPress(e);
+            }
+
+
+            });
+        }
     </script>
 
     <script>

@@ -291,9 +291,10 @@ namespace ProclainPIMSMaster.Form
                         {
                             if (Rmk != "D")
                             {
+                                
 
 
-                                if (chk == "staff" && mailid == "jeyapandi.palani@poclain.com")
+                                if (chk == "staff" && mailid == "jeyapandi.palani@poclain.com"|| chk == "staff" && mailid == "sivabalan.gunasekara@poclain.com")
                                 {
                                     RL.LogInsert(RL);
                                     Response.Redirect("AdminDashboard.aspx", false);

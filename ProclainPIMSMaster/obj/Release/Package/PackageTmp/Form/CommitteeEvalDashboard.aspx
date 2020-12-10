@@ -763,7 +763,52 @@ span.onclick = function() {
             </div>
         </div>
     </div>
+    <div class="modal fade" id="ModalViewFullDetails" role="dialog">
+            <div class="modal-dialog">
 
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Idea Overview</h4>
+                        <button type="button" id="span" class="close" data-dismiss="modal">&times;</button>
+
+                    </div>
+                    <div class="modal-body">
+                        <div>
+                         <div class="row">
+                    <div class="col-md-12">
+
+                        <div class="table100 ver6 m-b-110 table-responsive">
+                            <div class="form-control reps  " style="border: none!important;">
+                                <div class="row">
+                                    
+                                </div>
+                            </div>
+                            <asp:GridView ID="SuggestionGridView" CssClass="form-control noticedt" runat="server" Style="background-color: none!important; display: table; padding-left: 0px; padding-right: 0px; padding-top: 0px; padding-bottom: 0px; margin-bottom: 20px" BorderStyle="None" BorderWidth="1px" CellPadding="5" GridLines="Horizontal" CellSpacing="5" AutoGenerateColumns="false"  >
+                                <Columns>
+                                    
+                                    <asp:BoundField DataField="ReceiverID" HeaderText="Employee ID" />
+                                    <asp:BoundField DataField="NewFrom" HeaderText="Name" />
+                                    
+                                    <asp:BoundField DataField="IDeaID" HeaderText="IDea ID" />
+                                    <asp:BoundField DataField="Type" HeaderText="Status" />
+                                    
+                                    
+                                    
+                                </Columns>
+                              
+                            </asp:GridView>
+                        </div>
+                    </div>
+                </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+
+                    </div>
+                </div>
+            </div>
+        </div>
     <%--
            END OF MODALS COMMITEE EVALUATION
     --%>
@@ -776,7 +821,7 @@ span.onclick = function() {
 </div></div>
 </div>
       
-    <script src="../UI/Style/jquery.min.js"></script>
+    
       <script>
        $(document).ready(function () {
            $("#preloader").hide();
@@ -895,10 +940,13 @@ span.onclick = function() {
                 });
             });
         </script>
+        <script src="../UI/Style/bootstrap.min.js"></script>
     <script type ="text/javascript">
 
         $('.ideadiv').click(function () {
 
+           
+            $("#ModalViewFullDetails").modal("show");
             //var text = $(this).text();
             var IdeaID = $(this).closest('.ideadiv').find('.IdeaIdclasstxt').val();
             // alert(text);
@@ -1018,7 +1066,11 @@ span.onclick = function() {
                         tableInputKeyPress(e);
                     }
                 });
+                console.log("callupd");
 
+                FullView(IdeaID);
+                console.log(IdeaID);
+                console.log("aftcallupd");
                 return false; //return true to submit, false to do nothing
             }
 
@@ -1031,6 +1083,49 @@ span.onclick = function() {
                 
         //    var lbIdeaID = $(".IdeaIdclasstxt").val();
         //}
+    </script>
+    <script>
+                                     
+        function FullView(IdeaID) {
+            console.log("ajsnwjd");
+            console.log(IdeaID);
+            console.log("jahbcb");
+            $.ajax({
+                url: 'CommitteeEvalDashboard.aspx/GetDetail',
+                method: 'post',
+                contentType: "application/json; charset=utf-8",
+                async: true,
+                dataFilter: function (data) { return data; },
+                data: '{idea:' + IdeaID + '}',
+                dataType: "json",
+
+                success: function (data) {
+                    
+                    //Parse the XML and extract the records.
+                    var customers = $($.parseXML(data.d)).find("Table");
+
+                    //Reference GridView Table.
+                    var table = $("[id*=SuggestionGridView]");
+
+                    //Reference the Dummy Row.
+                    var row = table.find("tr:last-child").clone(true);
+
+                    //Remove the Dummy Row.
+                    $("tr", table).not($("tr:first-child", table)).remove();
+
+                    //Loop through the XML and add Rows to the Table.
+                    $.each(customers, function () {
+                        var customer = $(this);
+                        $("td", row).eq(0).html($(this).find("ReceiverID").text());
+                        $("td", row).eq(1).html($(this).find("NewFrom").text());
+                        $("td", row).eq(2).html($(this).find("IDeaID").text());
+                        $("td", row).eq(3).html($(this).find("Type").text());
+                        table.append(row);
+                        row = table.find("tr:last-child").clone(true);
+                    });
+                }
+            });
+        }
     </script>
     <script>
         $(document).ready(function () {

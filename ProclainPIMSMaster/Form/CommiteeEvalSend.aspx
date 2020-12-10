@@ -230,7 +230,7 @@
         }
         
     </style>
-    
+    <link href="../UI/Style/all.css" rel="stylesheet" />
    
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -911,9 +911,9 @@
         }
     </script>
 
-    <script src="../UI/Style/jquery.min.js"></script>
+<%--    <script src="../UI/Style/jquery.min.js"></script>--%>
     
-    <script src="../UI/DataTable/DataTableScripts/JS/jquery.dataTables.min.js" type="text/javascript"></script>
+   <script src="../UI/DataTable/DataTableScripts/JS/jquery.dataTables.min.js" type="text/javascript"></script>
     <script src="../UI/DataTable/DataTableScripts/Button/dataTables.buttons.min.js"></script>
     <script src="../UI/DataTable/DataTableScripts/Button/buttons.flash.min.js"></script>
     <script src="../UI/DataTable/DataTableScripts/Ajax/jszip.min.js"></script>
@@ -1036,11 +1036,11 @@
         
                 var table = $('.noticedt').DataTable();
             // $('#btnSearch').click(function () {
-            table.destroy();
-             var tbl = $('.noticedt').DataTable({
-                 // "oSearch": { "sSearch": IdeaID }
+            //table.destroy();
+             //var tbl = $('.noticedt').DataTable({
+             //    // "oSearch": { "sSearch": IdeaID }
                 
-             });
+             //});
 
              table.column(3).search(IdeaID).draw();
 
@@ -1309,11 +1309,11 @@
                                                       
                                                   })
     </script>
-    <script>
+    <%--<script>
         span.onclick = function () {
             modal.style.display = "none";
         }
-    </script>
+    </script>--%>
 
 
 </asp:Content>
