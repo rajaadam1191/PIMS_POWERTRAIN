@@ -46,7 +46,7 @@ namespace ProclainPIMSMaster.Form
         private void labelview()
         {
             try
-            {
+            {  
                 string name = Request.QueryString["EmployeeId"];
                 conn.Open();
                 string query = "Empfullsugview";

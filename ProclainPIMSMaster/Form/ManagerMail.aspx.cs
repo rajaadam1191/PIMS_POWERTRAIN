@@ -13,6 +13,9 @@ namespace ProclainPIMSMaster.Form
 
     public class EmpEmailContents
     {
+        public string DBM { get; set; }
+
+        public string DBMlbl { get; set; }
         public string empid { get; set; }
         public string empname { get; set; }
         public string Department { get; set; }
@@ -252,6 +255,7 @@ namespace ProclainPIMSMaster.Form
 
                 EECS.fromTag = "From : ";
                 EECS.EIDTag = "Employee ID : ";
+                EECS.DBMlbl = "DBM";
                 EECS.DepTag = "Department : ";
                 EECS.DesTag = "Designaton : ";
                 EECS.CatTag = "Category : ";
@@ -284,6 +288,7 @@ namespace ProclainPIMSMaster.Form
                 // EEC.upload3 = "/PIMS/UI/Image/" + EEC.UpLoad3;
                 EECS.upload3 = "../UI/Image/" + EECS.UpLoad3;
                 EECS.Description= DS.Tables[0].Rows[0].ItemArray[14].ToString();
+                EECS.DBM= DS.Tables[0].Rows[0].ItemArray[15].ToString();
                 return EECS;
 
 

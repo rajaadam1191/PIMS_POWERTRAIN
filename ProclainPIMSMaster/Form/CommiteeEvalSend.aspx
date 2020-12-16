@@ -231,7 +231,7 @@
         
     </style>
     <link href="../UI/Style/all.css" rel="stylesheet" />
-   
+   <script src="../UI/Style/jquery.min.js"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     
