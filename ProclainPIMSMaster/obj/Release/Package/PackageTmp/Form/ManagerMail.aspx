@@ -887,6 +887,14 @@
                                                                 <mark id="EmployeeIDTag"></mark>
                                                             </div>
                                                         </div>
+                                                        <div class="row" style="padding-left: 15px;font-weight:bold;">
+                                                            <div class="column">
+                                                                <mark id="DBMlblTag" class="fnt"></mark>
+                                                            </div>
+                                                            <div class="column">
+                                                                <mark id="DBMTag"></mark>
+                                                            </div>
+                                                        </div>
 
                                                         <tr>
                                                             <td>
@@ -1666,7 +1674,8 @@ a.float:hover + div.label-container{
                         console.log("test" + data.d.fromTag);
                         
                         document.getElementById("fromTag").innerHTML = "From : ";
-                        document.getElementById("EIDTag").innerHTML = "Employee ID : ";
+                        document.getElementById("EIDTag").innerHTML = "Employee ID : "; 
+                        document.getElementById("DBMlblTag").innerHTML = "FROM : ";
                         document.getElementById("DepTag").innerHTML = "Department : ";
                         document.getElementById("DesTag").innerHTML = "Designaton : ";
                         document.getElementById("CatTag").innerHTML = "Category : ";
@@ -1683,6 +1692,7 @@ a.float:hover + div.label-container{
 
                         document.getElementById("EmployeeNameTag").innerHTML = data.d.empname;
                         document.getElementById("EmployeeIDTag").innerHTML = data.d.empid;
+                        document.getElementById("DBMTag").innerHTML = data.d.DBM;
                         document.getElementById("DepartmentTag").innerHTML = data.d.Department;
                         document.getElementById("DesignationTag").innerHTML = data.d.Designation;
                         document.getElementById("TimeTag").innerHTML = data.d.Date;

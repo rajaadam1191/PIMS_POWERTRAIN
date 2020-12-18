@@ -1675,7 +1675,7 @@ a.float:hover + div.label-container{
                         
                         document.getElementById("fromTag").innerHTML = "From : ";
                         document.getElementById("EIDTag").innerHTML = "Employee ID : "; 
-                        document.getElementById("DBMlblTag").innerHTML = "DBM : ";
+                        document.getElementById("DBMlblTag").innerHTML = "FROM : ";
                         document.getElementById("DepTag").innerHTML = "Department : ";
                         document.getElementById("DesTag").innerHTML = "Designaton : ";
                         document.getElementById("CatTag").innerHTML = "Category : ";

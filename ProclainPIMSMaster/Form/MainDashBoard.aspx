@@ -479,8 +479,8 @@ padding-top:0% !important;
 </head>
 <body  class=" screenresposive" > 
     <form id="form1"  runat="server" class="jumbotron bckimg">
-        <div class="wow fadeIn" data-wow-duration="10s" data-wow-delay=".10s" >
-          
+        <%--<div class="wow fadeIn" data-wow-duration="10s" data-wow-delay=".10s" >
+          </div>--%>
             
                  <div class="text-right" style="padding-right:2%;">
                     
@@ -986,7 +986,7 @@ padding-top:0% !important;
 
                 </div>
                 </div>
-	    </div>
+	    
                  <script >
                                       				    
                                    		function BarChartYear(oneyrbrsuggestionreceived, oneyrbraccepted, oneyrbrrejected) {

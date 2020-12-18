@@ -250,7 +250,7 @@ namespace ProclainPIMSMaster.Form
 
                 
                
-                DS = MM.Repeatersearch(MM);
+                DS = MM.RepeatersearchCommitteeEval(MM);
 
 
                 EECS.fromTag = "From : ";

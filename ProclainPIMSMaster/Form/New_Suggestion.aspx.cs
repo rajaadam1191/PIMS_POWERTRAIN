@@ -45,7 +45,7 @@ namespace ProclainPIMSMaster.Form
         static string path;
         string giud = Guid.NewGuid().ToString();
         static string ImageName;
-        static string k = "";
+        
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -354,7 +354,7 @@ namespace ProclainPIMSMaster.Form
                 NSM.Date = System.DateTime.Now.ToString("yyyy-MM-dd").ToString().Trim();
                 NSM.Subject = SubjectTextBox.Text.ToString().TrimStart().TrimEnd();
                 NSM.Benefits = BenefitsTextBox.Text.ToString().TrimStart().TrimEnd();
-                
+                string k = "";
                 for (int i = 0; i < CategoryCheckBoxList.Items.Count; i++)
                 {
                     if (CategoryCheckBoxList.Items[i].Selected)

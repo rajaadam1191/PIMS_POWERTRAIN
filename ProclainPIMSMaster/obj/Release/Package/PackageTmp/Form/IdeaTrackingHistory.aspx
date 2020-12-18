@@ -259,8 +259,10 @@
                                     <asp:BoundField DataField="subject" HeaderText="SUB" />
                                     <asp:BoundField DataField="Category" HeaderText="CATE" />
                                     <asp:BoundField DataField="date" HeaderText="DATE" />
+                                    <asp:BoundField DataField="DBMCOM" HeaderText="DBM_COM" />
                                     <asp:BoundField DataField="Committee" HeaderText="COMM" />
                                     <asp:BoundField DataField="Status" HeaderText="STATUS" />
+                                    <asp:BoundField DataField="DBMMan" HeaderText="DBM_MAN" />
                                     <asp:BoundField DataField="Manager" HeaderText="MAN" />
                                     <asp:BoundField DataField="Implement_Members" HeaderText="IMPL_MEM" />
                                     <asp:BoundField DataField="HOD" HeaderText="HOD" />

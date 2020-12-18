@@ -444,7 +444,21 @@ namespace ProclainPIMSMaster.Models
             DataSet Ds = new DataSet();
             SqlParameter OP1 = new SqlParameter("@IdeaID", M.IdeaId);
             Da.parameters.Add(OP1);
-            Ds = Da.ExecuteDataset("SP_EmployeeSuggestion_Select_Mailing_IdeaID");
+            Ds = Da.ExecuteDataset("[SP_EmployeeSuggestion_Select_Mailing_IdeaID]");
+            return Ds;
+
+
+        }
+        public DataSet RepeatersearchCommitteeEval(Mailling M)
+        {
+
+
+
+            DataTO Da = new DataTO();
+            DataSet Ds = new DataSet();
+            SqlParameter OP1 = new SqlParameter("@IdeaID", M.IdeaId);
+            Da.parameters.Add(OP1);
+            Ds = Da.ExecuteDataset("[SP_EmployeeSuggestion_Select_Mailing_IdeaID_Committee]");
             return Ds;
 
 

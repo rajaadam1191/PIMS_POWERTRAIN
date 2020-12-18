@@ -155,7 +155,7 @@
 
             $('.noticedt').DataTable({
                 dom: 'flrtiBp',
-                scrollY:        '50vh',
+                scrollY:        '70vh',
                 scrollCollapse: true,
                 paging:         false,
                 buttons: [{
@@ -198,7 +198,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
    
-                    <div class="row gap-20 masonry pos-r">
+                    <div class="row gap-20 masonry pos-r ">
                         <div class="masonry-sizer col-md-6"></div>
                         <div class="masonry-item w-100">
                             <div class="row gap-20">
@@ -325,7 +325,7 @@
                                     <div class="table100 ver6 m-b-110 table-responsive">
                             
                             
-                            <asp:GridView ID="SuggestionGridView" CssClass="form-control noticedt reps " runat="server" Style="background-color: none!important; display: table; padding-left: 0px; padding-right: 0px; padding-top: 0px; padding-bottom: 0px; margin-bottom: 20px" BorderStyle="None" BorderWidth="1px" CellPadding="5" GridLines="Horizontal" CellSpacing="5" AutoGenerateColumns="false" OnRowDataBound="SuggestionGridView_RowDataBound">
+                            <asp:GridView ID="SuggestionGridView" CssClass="form-control noticedt reps" runat="server" Style=" width:100%;background-color: none!important; display: table; padding-left: 0px; padding-right: 0px; padding-top: 0px; padding-bottom: 0px; margin-bottom: 20px" BorderStyle="None" BorderWidth="1px" CellPadding="5" GridLines="Horizontal" CellSpacing="5" AutoGenerateColumns="false" OnRowDataBound="SuggestionGridView_RowDataBound">
                                 <Columns>
                                     <asp:BoundField DataField="sno" HeaderText="S.No" />
                                     <asp:BoundField DataField="EmployeeName" HeaderText="Employee ID-Name" />
