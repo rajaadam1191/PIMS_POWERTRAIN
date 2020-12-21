@@ -310,8 +310,10 @@
     <Content Include="UI\Style\canvasjs.min.js" />
     <Content Include="UI\Style\Chart.min.css" />
     <Content Include="UI\Style\Chart.min.js" />
+    <Content Include="UI\Style\jquery-3.2.1 min.js" />
     <Content Include="UI\Style\jquery.dataTables.min.css" />
     <Content Include="UI\Style\jqueryui.css" />
+    <Content Include="UI\Style\jquery_1.11.min.js" />
     <Content Include="UI\Style\popper.min.js" />
     <Content Include="UI\Style\sweetalert.min.js" />
     <Content Include="UI\Style\sweetalert2.min.css" />
