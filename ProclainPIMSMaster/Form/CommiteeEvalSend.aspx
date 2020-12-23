@@ -1036,9 +1036,9 @@
                  
         
                 var table = $('.noticedt').DataTable();
-           
+                //table.column(3).search('^\\s'+IdeaID+'\\s*$', true, false).draw();
 
-                table.column(3).search(IdeaID).draw();
+                table.column(3).search("^"+IdeaID+"$", true, false).draw();
                 var array = [];
                 table.column(4, { search: 'applied' }).data().each(function (value, index) {
                     array.push(value);

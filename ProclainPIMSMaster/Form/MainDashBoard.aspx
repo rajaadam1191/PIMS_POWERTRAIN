@@ -1009,7 +1009,7 @@ padding-top:0% !important;
                                                             "adjust-layout": true,
                                                         },
                                                     },
-                                                "type": "bar3d",
+                                                "type": "bar",
                                                 "background-color": "white",
                                                 
                                                 "plotarea": {
