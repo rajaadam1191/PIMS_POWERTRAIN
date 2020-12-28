@@ -760,7 +760,12 @@ namespace ProclainPIMSMaster.Models
             
             SqlParameter OP = new SqlParameter("@IdeaId", M.IdeaId);
             Da.parameters.Add(OP);
-            
+            SqlParameter OP1 = new SqlParameter("@EmpId", M.IEmpId);
+            Da.parameters.Add(OP1);
+            foreach (SqlParameter p in Da.parameters)
+            {
+                p.Direction = ParameterDirection.Input;
+            }
 
             Da.ExecuteNonQuery("sp_manager_send_mail_notFeasible");
 

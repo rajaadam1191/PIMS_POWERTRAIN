@@ -547,6 +547,7 @@ namespace ProclainPIMSMaster.Form
             try
             {
                 MM.IdeaId = IMPIdeaIdTextBox.Text.ToString();
+                MM.IEmpId = us1.ToString();
                 MM.ManagerEvaInsertNotfeasible(MM);
             }
             catch (Exception e1) { }
@@ -730,7 +731,9 @@ namespace ProclainPIMSMaster.Form
                     DBM.Discription = ContectIMPTextBox.Text.TrimStart().TrimEnd().ToString();
                     DBM.Remark1 = "i";
                     DBM.Remark2 = "Manager";
-
+                    //string st = IMPDepaDLists.SelectedItem.Value;
+                    //string[] res = st.Split(',');
+                    DBM.Remark3 = OthDepId.Text.ToString();
 
                     DBM.ComInboxID = this.ComEvalInboxAutoID();// ComEvalInboxID.ToString();
                     DBM.DBMEmail = Session["Email"].ToString();

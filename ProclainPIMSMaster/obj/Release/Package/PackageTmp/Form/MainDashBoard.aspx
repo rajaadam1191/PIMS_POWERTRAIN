@@ -479,8 +479,8 @@ padding-top:0% !important;
 </head>
 <body  class=" screenresposive" > 
     <form id="form1"  runat="server" class="jumbotron bckimg">
-        <div class="wow fadeIn" data-wow-duration="10s" data-wow-delay=".10s" >
-          
+        <%--<div class="wow fadeIn" data-wow-duration="10s" data-wow-delay=".10s" >
+          </div>--%>
             
                  <div class="text-right" style="padding-right:2%;">
                     
@@ -945,13 +945,13 @@ padding-top:0% !important;
                                         <div class="col-md-6">
                                    
                                     <div class="card shadow p-3 mb-5 bg-white rounded  "  >				     
-                                            <div id="chartContainer1" class="bgcolor" style="height:300px;width:100%;"></div>
+                                            <div id="chartContainer1" class="bgcolor" style="height:400px;width:100%;"></div>
 							        </div>
                                         </div>
                                         <div class="col-md-6">
                                    
                                     <div class="card shadow p-3 mb-5 bg-white rounded  "  >				     
-                                        <div id="chartContainer2" class="bgcolor" style="height:300px;width:100%;"></div>
+                                        <div id="chartContainer2" class="bgcolor" style="height:400px;width:100%;"></div>
 							        </div>
                                         </div>
                              </div>
@@ -959,14 +959,14 @@ padding-top:0% !important;
                         <div class="carousel-item">
                                    
                                     <div class="card shadow p-3 mb-5 bg-white rounded  "  >				     
-                                        <div id="chartContainer3" class="bgcolor" style="height:300px;width:100%;"></div>
+                                        <div id="chartContainer3" class="bgcolor" style="height:400px;width:100%;"></div>
 							        </div>
                         </div>
                         <div class="carousel-item">
                                     
                                       				
                                     <div class="card shadow p-3 mb-5 bg-white rounded  "  >				     
-                                        <div id="chartContainer4" class="bgcolor" style="height:300px;width:100%;"></div>
+                                        <div id="chartContainer4" class="bgcolor" style="height:400px;width:100%;"></div>
 							        </div>
                         </div>
                       </div>
@@ -986,7 +986,7 @@ padding-top:0% !important;
 
                 </div>
                 </div>
-	    </div>
+	    
                  <script >
                                       				    
                                    		function BarChartYear(oneyrbrsuggestionreceived, oneyrbraccepted, oneyrbrrejected) {
@@ -1009,7 +1009,12 @@ padding-top:0% !important;
                                                             "adjust-layout": true,
                                                         },
                                                     },
-                                                "type": "bar3d",
+                                                    "type": "bar",
+                                                    '3dAspect': {
+                                                        depth: 10,
+                                                        true3d: 0,
+                                                        yAngle: 10
+                                                    },
                                                 "background-color": "white",
                                                 
                                                 "plotarea": {
@@ -1371,7 +1376,7 @@ padding-top:0% !important;
                                                                       ],
                                                                       "alpha": 0.95,
                                                                       "borderRadiusTopLeft": 7,
-                                                                      "background-color": "#ffff00",
+                                                                      "background-color": "#cc9900",
                                                                       "text": "Yet To Implement",
                                                                       "valueBox": [{
                                                                           "fontSize": 10,

@@ -1039,21 +1039,7 @@
                 //table.column(3).search('^\\s'+IdeaID+'\\s*$', true, false).draw();
 
                 table.column(3).search("^"+IdeaID+"$", true, false).draw();
-                var array = [];
-                table.column(4, { search: 'applied' }).data().each(function (value, index) {
-                    array.push(value);
-                });
-                console.log("Dataaaaaaaa=", array);
                
-                for(var i=0;i<array.length;i++){
-                    if(array!="Accepted")
-                    {
-                        document.getElementById("ImproButton").hidden = "hidden";
-                    }
-                    else {
-                        document.getElementById("ImproButton").hidden = "";
-                    }
-                }
                 //if ($("[id*=tohodclick]") != click()) {
                 //}
                
@@ -1090,6 +1076,7 @@
                 });
                 console.log("callupd");
                 FullView(IdeaID);
+                EnableResponse();
                 console.log("aftcallupd");
 
                 return false; //return true to submit, false to do nothing
@@ -1104,6 +1091,36 @@
                 
         //    var lbIdeaID = $(".IdeaIdclasstxt").val();
         //}
+    </script>
+    <script>
+        function EnableResponse() {
+            var table = $('.noticedt').DataTable();
+            var array = [];
+            table.column(4, { search: 'applied' }).data().each(function (value, index) {
+                array.push(value);
+            });
+            console.log("Dataaaaaaaa=", array);
+
+            
+            let totLenght = array.length;
+            let filtered = []
+            for (var i = 0; i < array.length; i++) {
+                if (array[i]== "Accepted") {
+                    filtered.push(array[i])
+                }
+
+            }
+
+            if (filtered.length == totLenght) {
+                document.getElementById("ImproButton").hidden = "";
+            }
+            else {
+                document.getElementById("ImproButton").hidden = "hidden";
+            }
+
+
+
+        }
     </script>
      <script>
 

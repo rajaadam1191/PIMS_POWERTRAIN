@@ -602,8 +602,8 @@ namespace ProclainPIMSMaster.Models
 
             SqlParameter OP7 = new SqlParameter("@UserId", M.HEmployeeName);
             Da.parameters.Add(OP7);
-            //SqlParameter OP6 = new SqlParameter("@Type", M.Type);
-            //Da.parameters.Add(OP);
+            SqlParameter OP8 = new SqlParameter("@Remark3", M.Remark3);
+            Da.parameters.Add(OP8);
 
 
             foreach (SqlParameter p in Da.parameters)

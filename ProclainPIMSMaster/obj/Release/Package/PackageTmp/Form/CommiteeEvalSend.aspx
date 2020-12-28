@@ -231,7 +231,7 @@
         
     </style>
     <link href="../UI/Style/all.css" rel="stylesheet" />
-   <script src="../UI/Style/jquery.min.js"></script>
+  
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     
@@ -349,13 +349,13 @@
                                    
                                            
                                                            <%--<asp:LinkButton ID="RepeaterLinkButton" CssClass="list-group-item linka lbIdeaIdclass" runat="server" CommandName="Select" OnClientClick="return ConformPsIdeaID();" CommandArgument='<%# Eval("IdeaId") %>' >--%> 
-                                           <div class="ideadiv" style="padding-left: 10px;">
+                                           <div class="ideadivHOD" style="padding-left: 10px;">
                                               <%--onclick="ConformPsIdeaID(document.getElementsByName('lblImageNameTextBox').value)"--%>
                                                          <asp:Label ID="lblImageName" CssClass="IdeaIdclass" runat="server" Text='<%#Bind("IDeaID")%>' ClientIDMode="Static" hidden></asp:Label>             
                                             <div class="row">
 
                                                 <div class="col-sm-10">
-                                                 <asp:TextBox   ID="lblImageNameTextBox" name="lblImageNameTextBox" CssClass="IdeaIdclasstxt" runat="server" Text='<%#Bind("IDeaID")%>' hidden></asp:TextBox>
+                                                 <asp:TextBox   ID="lblImageNameTextBox" name="lblImageNameTextBox" CssClass="IdeaIdclasstxtHOD" runat="server" Text='<%#Bind("IDeaID")%>' hidden></asp:TextBox>
                                                   
                                                     
                                                 </div>
@@ -912,7 +912,8 @@
     </script>
 
 <%--    <script src="../UI/Style/jquery.min.js"></script>--%>
-    
+    <script src="../UI/Style/jquery.min.js"></script>
+    <script src="../UI/Style/bootstrap.min.js"></script>
    <script src="../UI/DataTable/DataTableScripts/JS/jquery.dataTables.min.js" type="text/javascript"></script>
     <script src="../UI/DataTable/DataTableScripts/Button/dataTables.buttons.min.js"></script>
     <script src="../UI/DataTable/DataTableScripts/Button/buttons.flash.min.js"></script>
@@ -1007,7 +1008,7 @@
                 });
             });
         </script>
-    <script src="../UI/Style/bootstrap.min.js"></script>
+         
     <script>
 
         $('.ideadiv').click(function () {
@@ -1035,6 +1036,119 @@
                  
         
                 var table = $('.noticedt').DataTable();
+                //table.column(3).search('^\\s'+IdeaID+'\\s*$', true, false).draw();
+
+                table.column(3).search("^"+IdeaID+"$", true, false).draw();
+               
+                //if ($("[id*=tohodclick]") != click()) {
+                //}
+               
+
+
+            $(".IMPIdeaIdClass").val(IdeaID);
+            $(".IdeaIDRepTextBoxClass").val(IdeaID);
+                $.ajax({
+                    url: 'CommiteeEvalSend.aspx/Checking',
+                    method: 'post',
+                    contentType: "application/json; charset=utf-8",
+                    async: true,
+                    dataFilter: function (data) { return data; },
+                    data: '{emp:' + JSON.stringify(IdeaID) + '}',
+                    dataType: "json",
+
+                    success: function (data) {
+                        
+                        $(".IdeaIDRepTextBoxClass").val(data.d.RIdeaID);
+                        $(".ToRepTextBoxClass").val(data.d.REmpName);
+
+                        $(".EmpIdRepTextBoxClass").val(data.d.REmpID);
+                        $(".MailIDRepTextBoxClass").val(data.d.RMail);
+                        $(".SubjectRepTextBoxClass").val(data.d.RSub);
+                        $(".ConRepTextBoxClass").val(data.d.RCon);
+                        
+                        
+                    },
+                    error: function (err) {
+                         console.log(err);
+                       // tableInputKeyPress(e);
+                    }
+
+                });
+                console.log("callupd");
+                FullView(IdeaID);
+                EnableResponse();
+                console.log("aftcallupd");
+
+                return false; //return true to submit, false to do nothing
+            }
+
+
+
+        });
+
+
+        //function ConformPsIdeaID() {
+                
+        //    var lbIdeaID = $(".IdeaIdclasstxt").val();
+        //}
+    </script>
+    <script>
+        function EnableResponse() {
+            var table = $('.noticedt').DataTable();
+            var array = [];
+            table.column(4, { search: 'applied' }).data().each(function (value, index) {
+                array.push(value);
+            });
+            console.log("Dataaaaaaaa=", array);
+
+            
+            let totLenght = array.length;
+            let filtered = []
+            for (var i = 0; i < array.length; i++) {
+                if (array[i]== "Accepted") {
+                    filtered.push(array[i])
+                }
+
+            }
+
+            if (filtered.length == totLenght) {
+                document.getElementById("ImproButton").hidden = "";
+            }
+            else {
+                document.getElementById("ImproButton").hidden = "hidden";
+            }
+
+
+
+        }
+    </script>
+     <script>
+
+        $('.ideadivHOD').click(function () {
+            console.log("callll");
+            
+            $("#ModalViewFullDetails").modal("show");
+            console.log("aftcallll");
+            
+           // viewModal();
+            //var text = $(this).text();
+            var IdeaID = $(this).closest('.ideadivHOD').find('.IdeaIdclasstxtHOD').val();
+            // console.log(text);
+            //console.log(IdeaID);
+           
+            var key = 0;
+            var t = "";
+            console.log("checkingHOD");
+            if (key == 0) //Enter
+            {
+                console.log("IDea ID: " + IdeaID);
+
+
+
+
+                 
+        
+                var table = $('.noticedt').DataTable();
             // $('#btnSearch').click(function () {
             //table.destroy();
              //var tbl = $('.noticedt').DataTable({
@@ -1042,8 +1156,10 @@
                 
              //});
 
-             table.column(3).search(IdeaID).draw();
-
+                table.column(3).search(IdeaID).draw();
+               
+                console.log("checkingHODAFTFLT");
+               
 
 
             $(".IMPIdeaIdClass").val(IdeaID);
@@ -1288,14 +1404,14 @@
                                                       $("[id*=acceptclick]").click(function () {
                                                          
                                                           document.getElementById("ImproButton").hidden = "";
-                                                          document.getElementById(" ReplyButton").hidden = "";
+                                                          document.getElementById("ReplyButton").hidden = "";
                                                           
                                                       })
                                                       $("[id*=tohodclick]").click(function () {
                                                          
                                                           document.getElementById("ImproButton").hidden = "hidden";
                                                           document.getElementById("ReplyButton").hidden = "hidden";
-                                                          document.getElementById("Gridimgbtn").hidden = "hidden";
+                                                          
 
 
                                                       })
@@ -1303,7 +1419,7 @@
                                                           
                                                           document.getElementById("ImproButton").hidden = "hidden";
                                                           document.getElementById("ReplyButton").hidden = "";
-                                                          document.getElementById("Gridimgbtn").hidden = "hidden";
+                                                          
                                                           
                                                       })
                                                       
