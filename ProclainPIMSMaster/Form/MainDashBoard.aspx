@@ -936,6 +936,7 @@ padding-top:0% !important;
                         <li data-target="#demo1" data-slide-to="0" class="active"></li>
                         <li data-target="#demo1" data-slide-to="1"></li>
                         <li data-target="#demo1" data-slide-to="2"></li>
+                        <li data-target="#demo1" data-slide-to="3"></li>
                       </ul>
   
                       <!-- The slideshow -->
@@ -967,6 +968,13 @@ padding-top:0% !important;
                                       				
                                     <div class="card shadow p-3 mb-5 bg-white rounded  "  >				     
                                         <div id="chartContainer4" class="bgcolor" style="height:400px;width:100%;"></div>
+							        </div>
+                        </div>
+                        <div class="carousel-item">
+                                    
+                                      				
+                                    <div class="card shadow p-3 mb-5 bg-white rounded  "  >				     
+                                        <div id="chartContainer5" class="bgcolor" style="height:400px;width:100%;"></div>
 							        </div>
                         </div>
                       </div>
@@ -1644,17 +1652,214 @@ padding-top:0% !important;
                                                                   width: '100%'
                                                               });
                                                           }
-                                                      </script>				
+                                                      </script>		
+                                                      
+                 <script>
+                     function BarChartYearWiseYearList(yrsuggestionreceived1, yraccepted1, yrreject1, yrsuggestionreceived2, yraccepted2, yrreject2, yrsuggestionreceived3, yraccepted3, yrreject3, yrsuggestionreceived4, yraccepted4, yrreject4, yrsuggestionreceived5, yraccepted5, yrreject5, yrsuggestionreceived6, yraccepted6, yrreject6, yrsuggestionreceived7, yraccepted7, yrreject7, yrsuggestionreceived8, yraccepted8, yrreject8, yrsuggestionreceived9, yraccepted9, yrreject9, yrsuggestionreceived10, yraccepted10, yrreject10) {
+
+                                                              var chartId = 'myChart';
+
+                                                             
+                                                              var yrsuggestionreceived = [
+                                                                               parseInt(yrsuggestionreceived1),
+                                                                               parseInt(yrsuggestionreceived2),
+                                                                               parseInt(yrsuggestionreceived3),
+                                                                               parseInt(yrsuggestionreceived4),
+                                                                               parseInt(yrsuggestionreceived5),
+                                                                               parseInt(yrsuggestionreceived6),
+                                                                               parseInt(yrsuggestionreceived7),
+                                                                               parseInt(yrsuggestionreceived8),
+                                                                               parseInt(yrsuggestionreceived9),
+                                                                               parseInt(yrsuggestionreceived10)
+                                                                               
+
+                                                              ];
+                                                              var yraccepted = [
+                                                                          parseInt(yraccepted1),
+                                                                          parseInt(yraccepted2),
+                                                                          parseInt(yraccepted3),
+                                                                          parseInt(yraccepted4),
+                                                                          parseInt(yraccepted5),
+                                                                          parseInt(yraccepted6),
+                                                                          parseInt(yraccepted7),
+                                                                          parseInt(yraccepted8),
+                                                                          parseInt(yraccepted9),
+                                                                           parseInt(yraccepted10)
+
+
+                                                              ];
+                                                              var yrreject = [
+                                                                          parseInt(yrreject1),
+                                                                          parseInt(yrreject2),
+                                                                          parseInt(yrreject3),
+                                                                          parseInt(yrreject4),
+                                                                          parseInt(yrreject5),
+                                                                          parseInt(yrreject6),
+                                                                          parseInt(yrreject7),
+                                                                          parseInt(yrreject8),
+                                                                          parseInt(yrreject9),
+                                                                          parseInt(yrreject10)
+
+                                                              ];
+                                                              
+                                                              console.log('myConfigBarChartYearWiseYearList', yrsuggestionreceived, yraccepted, yrreject);
+                                                              var myConfigBarChartYearWiseYearList = {
+                                                                  "graphset": [{
+                                                                      "globals": {
+                                                                          "font-family": "Lato",
+
+                                                                          "title": {
+                                                                              "text": "Suggestions Year Wise Report",
+                                                                              
+                                                                              "backgroundColor": "none",
+                                                                              "font-size": "22px",
+                                                                              "alpha": 1,
+                                                                              "adjust-layout": true,
+                                                                          }
+                                                                      },
+                                                                      type: 'bar',
+                                                                      '3dAspect': {
+                                                                          depth: 10,
+                                                                          true3d: 0,
+                                                                          yAngle: 10
+                                                                      },
+                                                                      "plotarea": {
+                                                                          "margin": "dynamic"
+                                                                      },
+                                                                      "legend": {
+                                                                          "layout": "x3",
+                                                                          "overflow": "page",
+                                                                          "alpha": 0.05,
+                                                                          "shadow": false,
+                                                                          "align": "center",
+                                                                          "adjust-layout": true,
+                                                                          "marker": {
+                                                                              "type": "circle",
+                                                                              "border-color": "none",
+                                                                              "size": "10px"
+                                                                          },
+                                                                          "border-width": 0,
+                                                                          "maxItems": 3,
+                                                                          "toggle-action": "hide",
+                                                                          "pageOn": {
+                                                                              "backgroundColor": "#000",
+                                                                              "size": "10px",
+                                                                              "alpha": 0.65
+                                                                          },
+                                                                          "pageOff": {
+                                                                              "backgroundColor": "#7E7E7E",
+                                                                              "size": "10px",
+                                                                              "alpha": 0.65
+                                                                          },
+                                                                          "pageStatus": {
+                                                                              "color": "black"
+                                                                          }
+                                                                      }
+                                                                    , "plot": {
+                                                                        "bars-space-left": 0.15,
+                                                                        "bars-space-right": 0.15,
+                                                                        "animation": {
+                                                                            "effect": "ANIMATION_SLIDE_BOTTOM",
+                                                                            "sequence": 0,
+                                                                            "speed": 800,
+                                                                            "delay": 800
+                                                                        }
+                                                                    },
+                                                                      "scaleX": {
+                                                                          "values": ["2020", "2021", "2022", "2023", "2024", "2025", "2026", "2027", "2028", "2029"],
+                                                                          "guide": {
+                                                                              visible: true
+                                                                          },
+                                                                          "item": {
+                                                                              "offsetY": 5,
+                                                                              "angle": 270
+                                                                          },
+                                                                          "tick": {
+                                                                              "size": 2
+                                                                          }
+                                                                      },
+
+
+                                                                      "tooltip": {
+                                                                          "shadow": true,
+                                                                          "shadowColor": "#424242",
+                                                                          "backgroundColor": "#212121 #424242",
+                                                                          "callout": true,
+                                                                          "calloutPosition": "bottom",
+                                                                          "offsetY": -20,
+                                                                          "placement": "node:top",
+                                                                          "padding": 10,
+                                                                          "fontSize": 15,
+                                                                          "color": "#ffffff",
+                                                                          "borderWidth": 1,
+                                                                          "borderColor": "#000000",
+                                                                          
+                                                                      },
+                                                                      "crosshair-x": {
+                                                                          "line-width": "100%",
+                                                                          "alpha": 0.4,
+                                                                      },
+                                                                      "series": [
+                                                                      {
+                                                                          "values": yrsuggestionreceived,
+                                                                          "text": "Received",
+                                                                          "background-color": "#ff9966",
+                                                                          "valueBox": [{
+                                                                              "fontSize": 10,
+                                                                              "fontWeight": 600,
+                                                                              "offsetY": -8,
+                                                                              "jsRule": "rule_series_123_valueBox_0()"
+                                                                          }]
+                                                                      },
+                                                                      {
+                                                                          "values": yraccepted,
+                                                                          "text": "Accepted",
+                                                                          "background-color": "#3399ff",
+                                                                          "valueBox": [{
+                                                                              "fontSize": 10,
+                                                                              "fontWeight": 600,
+                                                                              "offsetY": -8,
+                                                                              "jsRule": "rule_series_123_valueBox_0()"
+                                                                          }]
+                                                                      },
+                                                                      {
+                                                                          "values": yrreject,
+                                                                          "text": "Reject",
+                                                                          "background-color": "#ff3300",
+                                                                          "valueBox": [{
+                                                                              "fontSize": 10,
+                                                                              "fontWeight": 600,
+                                                                              "offsetY": -10,
+                                                                              "jsRule": "rule_series_123_valueBox_0()"
+                                                                          }]
+                                                                      }, 
+                                                                      
+                                                                      ]
+                                                                  }]
+                                                              };
+
+
+                                                              // RENDER CHART
+                                                              // -----------------------------
+                                                              zingchart.render({
+                                                                  id: 'chartContainer5',
+                                                                  data: myConfigBarChartYearWiseYearList,
+                                                                  height: '100%',
+                                                                  width: '100%'
+                                                              });
+                                                          }
+                                                      </script>		
            
 
                  <script type="text/javascript">
                                    
-                                    function bindgraphNew(oneyrbrsuggestionreceived,oneyrbraccepted,oneyrbrrejected,oneyrpitotalsuggestion,oneyrpiimplemented,oneyrpiaccepted,oneyrdeptdepname1,oneyrdepttotalimplement1,oneyrdeptimplemented1,oneyrdeptyettoimplement1,oneyrdeptdepname2,oneyrdepttotalimplement2,oneyrdeptimplemented2,oneyrdeptyettoimplement2,oneyrdeptdepname3,oneyrdepttotalimplement3,oneyrdeptimplemented3,oneyrdeptyettoimplement3,oneyrdeptdepname4,oneyrdepttotalimplement4,oneyrdeptimplemented4,oneyrdeptyettoimplement4,oneyrdeptdepname5,oneyrdepttotalimplement5,oneyrdeptimplemented5,oneyrdeptyettoimplement5,oneyrdeptdepname6,oneyrdepttotalimplement6,oneyrdeptimplemented6,oneyrdeptyettoimplement6,oneyrdeptdepname7,oneyrdepttotalimplement7,oneyrdeptimplemented7,oneyrdeptyettoimplement7,oneyrdeptdepname8,oneyrdepttotalimplement8,oneyrdeptimplemented8,oneyrdeptyettoimplement8,oneyrdeptdepname9,oneyrdepttotalimplement9,oneyrdeptimplemented9,oneyrdeptyettoimplement9,oneyrdeptdepname10,oneyrdepttotalimplement10,oneyrdeptimplemented10,oneyrdeptyettoimplement10,oneyrdeptdepname11,oneyrdepttotalimplement11,oneyrdeptimplemented11,oneyrdeptyettoimplement11,oneyrdeptdepname12,oneyrdepttotalimplement12,oneyrdeptimplemented12,oneyrdeptyettoimplement12,oneyrdeptdepname13,oneyrdepttotalimplement13,oneyrdeptimplemented13,oneyrdeptyettoimplement13,oneyrdeptdepname14,oneyrdepttotalimplement14,oneyrdeptimplemented14,oneyrdeptyettoimplement14,oneyrdeptdepname15,oneyrdepttotalimplement15,oneyrdeptimplemented15,oneyrdeptyettoimplement15,oneyrdeptdepname16,oneyrdepttotalimplement16,oneyrdeptimplemented16,oneyrdeptyettoimplement16,oneyrdeptdepname17,oneyrdepttotalimplement17,oneyrdeptimplemented17,oneyrdeptyettoimplement17,oneyrdeptdepname18,oneyrdepttotalimplement18,oneyrdeptimplemented18,oneyrdeptyettoimplement18,oneyrdeptdepname19,oneyrdepttotalimplement19,oneyrdeptimplemented19,oneyrdeptyettoimplement19,oneyrmntmonths1,oneyrmntreceived1,oneyrmntaccepted1,oneyrmntreject1,oneyrmnthold1,oneyrmntimplemented1,oneyrmntmonths2,oneyrmntreceived2,oneyrmntaccepted2,oneyrmntreject2,oneyrmnthold2,oneyrmntimplemented2,oneyrmntmonths3,oneyrmntreceived3,oneyrmntaccepted3,oneyrmntreject3,oneyrmnthold3,oneyrmntimplemented3,oneyrmntmonths4,oneyrmntreceived4,oneyrmntaccepted4,oneyrmntreject4,oneyrmnthold4,oneyrmntimplemented4,oneyrmntmonths5,oneyrmntreceived5,oneyrmntaccepted5,oneyrmntreject5,oneyrmnthold5,oneyrmntimplemented5,oneyrmntmonths6,oneyrmntreceived6,oneyrmntaccepted6,oneyrmntreject6,oneyrmnthold6,oneyrmntimplemented6,oneyrmntmonths7,oneyrmntreceived7,oneyrmntaccepted7,oneyrmntreject7,oneyrmnthold7,oneyrmntimplemented7,oneyrmntmonths8,oneyrmntreceived8,oneyrmntaccepted8,oneyrmntreject8,oneyrmnthold8,oneyrmntimplemented8,oneyrmntmonths9,oneyrmntreceived9,oneyrmntaccepted9,oneyrmntreject9,oneyrmnthold9,oneyrmntimplemented9,oneyrmntmonths10,oneyrmntreceived10,oneyrmntaccepted10,oneyrmntreject10,oneyrmnthold10,oneyrmntimplemented10,oneyrmntmonths11,oneyrmntreceived11,oneyrmntaccepted11,oneyrmntreject11,oneyrmnthold11,oneyrmntimplemented11,oneyrmntmonths12,oneyrmntreceived12,oneyrmntaccepted12,oneyrmntreject12,oneyrmnthold12,oneyrmntimplemented12 ) {
+                     function bindgraphNew(oneyrbrsuggestionreceived, oneyrbraccepted, oneyrbrrejected, oneyrpitotalsuggestion, oneyrpiimplemented, oneyrpiaccepted, oneyrdeptdepname1, oneyrdepttotalimplement1, oneyrdeptimplemented1, oneyrdeptyettoimplement1, oneyrdeptdepname2, oneyrdepttotalimplement2, oneyrdeptimplemented2, oneyrdeptyettoimplement2, oneyrdeptdepname3, oneyrdepttotalimplement3, oneyrdeptimplemented3, oneyrdeptyettoimplement3, oneyrdeptdepname4, oneyrdepttotalimplement4, oneyrdeptimplemented4, oneyrdeptyettoimplement4, oneyrdeptdepname5, oneyrdepttotalimplement5, oneyrdeptimplemented5, oneyrdeptyettoimplement5, oneyrdeptdepname6, oneyrdepttotalimplement6, oneyrdeptimplemented6, oneyrdeptyettoimplement6, oneyrdeptdepname7, oneyrdepttotalimplement7, oneyrdeptimplemented7, oneyrdeptyettoimplement7, oneyrdeptdepname8, oneyrdepttotalimplement8, oneyrdeptimplemented8, oneyrdeptyettoimplement8, oneyrdeptdepname9, oneyrdepttotalimplement9, oneyrdeptimplemented9, oneyrdeptyettoimplement9, oneyrdeptdepname10, oneyrdepttotalimplement10, oneyrdeptimplemented10, oneyrdeptyettoimplement10, oneyrdeptdepname11, oneyrdepttotalimplement11, oneyrdeptimplemented11, oneyrdeptyettoimplement11, oneyrdeptdepname12, oneyrdepttotalimplement12, oneyrdeptimplemented12, oneyrdeptyettoimplement12, oneyrdeptdepname13, oneyrdepttotalimplement13, oneyrdeptimplemented13, oneyrdeptyettoimplement13, oneyrdeptdepname14, oneyrdepttotalimplement14, oneyrdeptimplemented14, oneyrdeptyettoimplement14, oneyrdeptdepname15, oneyrdepttotalimplement15, oneyrdeptimplemented15, oneyrdeptyettoimplement15, oneyrdeptdepname16, oneyrdepttotalimplement16, oneyrdeptimplemented16, oneyrdeptyettoimplement16, oneyrdeptdepname17, oneyrdepttotalimplement17, oneyrdeptimplemented17, oneyrdeptyettoimplement17, oneyrdeptdepname18, oneyrdepttotalimplement18, oneyrdeptimplemented18, oneyrdeptyettoimplement18, oneyrdeptdepname19, oneyrdepttotalimplement19, oneyrdeptimplemented19, oneyrdeptyettoimplement19, oneyrmntmonths1, oneyrmntreceived1, oneyrmntaccepted1, oneyrmntreject1, oneyrmnthold1, oneyrmntimplemented1, oneyrmntmonths2, oneyrmntreceived2, oneyrmntaccepted2, oneyrmntreject2, oneyrmnthold2, oneyrmntimplemented2, oneyrmntmonths3, oneyrmntreceived3, oneyrmntaccepted3, oneyrmntreject3, oneyrmnthold3, oneyrmntimplemented3, oneyrmntmonths4, oneyrmntreceived4, oneyrmntaccepted4, oneyrmntreject4, oneyrmnthold4, oneyrmntimplemented4, oneyrmntmonths5, oneyrmntreceived5, oneyrmntaccepted5, oneyrmntreject5, oneyrmnthold5, oneyrmntimplemented5, oneyrmntmonths6, oneyrmntreceived6, oneyrmntaccepted6, oneyrmntreject6, oneyrmnthold6, oneyrmntimplemented6, oneyrmntmonths7, oneyrmntreceived7, oneyrmntaccepted7, oneyrmntreject7, oneyrmnthold7, oneyrmntimplemented7, oneyrmntmonths8, oneyrmntreceived8, oneyrmntaccepted8, oneyrmntreject8, oneyrmnthold8, oneyrmntimplemented8, oneyrmntmonths9, oneyrmntreceived9, oneyrmntaccepted9, oneyrmntreject9, oneyrmnthold9, oneyrmntimplemented9, oneyrmntmonths10, oneyrmntreceived10, oneyrmntaccepted10, oneyrmntreject10, oneyrmnthold10, oneyrmntimplemented10, oneyrmntmonths11, oneyrmntreceived11, oneyrmntaccepted11, oneyrmntreject11, oneyrmnthold11, oneyrmntimplemented11, oneyrmntmonths12, oneyrmntreceived12, oneyrmntaccepted12, oneyrmntreject12, oneyrmnthold12, oneyrmntimplemented12, yrsuggestionreceived1, yraccepted1, yrreject1, yrsuggestionreceived2, yraccepted2, yrreject2, yrsuggestionreceived3, yraccepted3, yrreject3, yrsuggestionreceived4, yraccepted4, yrreject4, yrsuggestionreceived5, yraccepted5, yrreject5, yrsuggestionreceived6, yraccepted6, yrreject6, yrsuggestionreceived7, yraccepted7, yrreject7, yrsuggestionreceived8, yraccepted8, yrreject8, yrsuggestionreceived9, yraccepted9, yrreject9, yrsuggestionreceived10, yraccepted10, yrreject10) {
                                         console.log(oneyrbrsuggestionreceived, oneyrbraccepted, oneyrbrrejected, oneyrpitotalsuggestion, oneyrpiimplemented, oneyrpiaccepted);
                                         BarChartYear(oneyrbrsuggestionreceived, oneyrbraccepted, oneyrbrrejected);
                                         PieChartYear(oneyrpitotalsuggestion, oneyrpiimplemented, oneyrpiaccepted);
                                         BarChartYearDept(oneyrdeptdepname1, oneyrdepttotalimplement1, oneyrdeptimplemented1, oneyrdeptyettoimplement1, oneyrdeptdepname2, oneyrdepttotalimplement2, oneyrdeptimplemented2, oneyrdeptyettoimplement2, oneyrdeptdepname3, oneyrdepttotalimplement3, oneyrdeptimplemented3, oneyrdeptyettoimplement3, oneyrdeptdepname4, oneyrdepttotalimplement4, oneyrdeptimplemented4, oneyrdeptyettoimplement4, oneyrdeptdepname5, oneyrdepttotalimplement5, oneyrdeptimplemented5, oneyrdeptyettoimplement5, oneyrdeptdepname6, oneyrdepttotalimplement6, oneyrdeptimplemented6, oneyrdeptyettoimplement6, oneyrdeptdepname7, oneyrdepttotalimplement7, oneyrdeptimplemented7, oneyrdeptyettoimplement7, oneyrdeptdepname8, oneyrdepttotalimplement8, oneyrdeptimplemented8, oneyrdeptyettoimplement8, oneyrdeptdepname9, oneyrdepttotalimplement9, oneyrdeptimplemented9, oneyrdeptyettoimplement9, oneyrdeptdepname10, oneyrdepttotalimplement10, oneyrdeptimplemented10, oneyrdeptyettoimplement10, oneyrdeptdepname11, oneyrdepttotalimplement11, oneyrdeptimplemented11, oneyrdeptyettoimplement11, oneyrdeptdepname12, oneyrdepttotalimplement12, oneyrdeptimplemented12, oneyrdeptyettoimplement12, oneyrdeptdepname13, oneyrdepttotalimplement13, oneyrdeptimplemented13, oneyrdeptyettoimplement13, oneyrdeptdepname14, oneyrdepttotalimplement14, oneyrdeptimplemented14, oneyrdeptyettoimplement14, oneyrdeptdepname15, oneyrdepttotalimplement15, oneyrdeptimplemented15, oneyrdeptyettoimplement15, oneyrdeptdepname16, oneyrdepttotalimplement16, oneyrdeptimplemented16, oneyrdeptyettoimplement16, oneyrdeptdepname17, oneyrdepttotalimplement17, oneyrdeptimplemented17, oneyrdeptyettoimplement17, oneyrdeptdepname18, oneyrdepttotalimplement18, oneyrdeptimplemented18, oneyrdeptyettoimplement18, oneyrdeptdepname19, oneyrdepttotalimplement19, oneyrdeptimplemented19, oneyrdeptyettoimplement19);
                                         BarChartYearMonth(oneyrmntmonths1, oneyrmntreceived1, oneyrmntaccepted1, oneyrmntreject1, oneyrmnthold1, oneyrmntimplemented1, oneyrmntmonths2, oneyrmntreceived2, oneyrmntaccepted2, oneyrmntreject2, oneyrmnthold2, oneyrmntimplemented2, oneyrmntmonths3, oneyrmntreceived3, oneyrmntaccepted3, oneyrmntreject3, oneyrmnthold3, oneyrmntimplemented3, oneyrmntmonths4, oneyrmntreceived4, oneyrmntaccepted4, oneyrmntreject4, oneyrmnthold4, oneyrmntimplemented4, oneyrmntmonths5, oneyrmntreceived5, oneyrmntaccepted5, oneyrmntreject5, oneyrmnthold5, oneyrmntimplemented5, oneyrmntmonths6, oneyrmntreceived6, oneyrmntaccepted6, oneyrmntreject6, oneyrmnthold6, oneyrmntimplemented6, oneyrmntmonths7, oneyrmntreceived7, oneyrmntaccepted7, oneyrmntreject7, oneyrmnthold7, oneyrmntimplemented7, oneyrmntmonths8, oneyrmntreceived8, oneyrmntaccepted8, oneyrmntreject8, oneyrmnthold8, oneyrmntimplemented8, oneyrmntmonths9, oneyrmntreceived9, oneyrmntaccepted9, oneyrmntreject9, oneyrmnthold9, oneyrmntimplemented9, oneyrmntmonths10, oneyrmntreceived10, oneyrmntaccepted10, oneyrmntreject10, oneyrmnthold10, oneyrmntimplemented10, oneyrmntmonths11, oneyrmntreceived11, oneyrmntaccepted11, oneyrmntreject11, oneyrmnthold11, oneyrmntimplemented11, oneyrmntmonths12, oneyrmntreceived12, oneyrmntaccepted12, oneyrmntreject12, oneyrmnthold12, oneyrmntimplemented12);
+                                        BarChartYearWiseYearList(yrsuggestionreceived1, yraccepted1, yrreject1, yrsuggestionreceived2, yraccepted2, yrreject2, yrsuggestionreceived3, yraccepted3, yrreject3, yrsuggestionreceived4, yraccepted4, yrreject4, yrsuggestionreceived5, yraccepted5, yrreject5, yrsuggestionreceived6, yraccepted6, yrreject6, yrsuggestionreceived7, yraccepted7,yrreject7,yrsuggestionreceived8, yraccepted8, yrreject8, yrsuggestionreceived9,yraccepted9,yrreject9,yrsuggestionreceived10,yraccepted10,yrreject10)
                                         console.log('barchartyearMonth', oneyrmntmonths1, oneyrmntreceived1, oneyrmntaccepted1, oneyrmntreject1, oneyrmnthold1, oneyrmntimplemented1, oneyrmntmonths2, oneyrmntreceived2, oneyrmntaccepted2, oneyrmntreject2, oneyrmnthold2, oneyrmntimplemented2, oneyrmntmonths3, oneyrmntreceived3, oneyrmntaccepted3, oneyrmntreject3, oneyrmnthold3, oneyrmntimplemented3, oneyrmntmonths4, oneyrmntreceived4, oneyrmntaccepted4, oneyrmntreject4, oneyrmnthold4, oneyrmntimplemented4, oneyrmntmonths5, oneyrmntreceived5, oneyrmntaccepted5, oneyrmntreject5, oneyrmnthold5, oneyrmntimplemented5, oneyrmntmonths6, oneyrmntreceived6, oneyrmntaccepted6, oneyrmntreject6, oneyrmnthold6, oneyrmntimplemented6, oneyrmntmonths7, oneyrmntreceived7, oneyrmntaccepted7, oneyrmntreject7, oneyrmnthold7, oneyrmntimplemented7, oneyrmntmonths8, oneyrmntreceived8, oneyrmntaccepted8, oneyrmntreject8, oneyrmnthold8, oneyrmntimplemented8, oneyrmntmonths9, oneyrmntreceived9, oneyrmntaccepted9, oneyrmntreject9, oneyrmnthold9, oneyrmntimplemented9, oneyrmntmonths10, oneyrmntreceived10, oneyrmntaccepted10, oneyrmntreject10, oneyrmnthold10, oneyrmntimplemented10, oneyrmntmonths11, oneyrmntreceived11, oneyrmntaccepted11, oneyrmntreject11, oneyrmnthold11, oneyrmntimplemented11, oneyrmntmonths12, oneyrmntreceived12, oneyrmntaccepted12, oneyrmntreject12, oneyrmnthold12, oneyrmntimplemented12)
                                     }
 

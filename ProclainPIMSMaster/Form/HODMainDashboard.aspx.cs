@@ -97,7 +97,7 @@ namespace ProclainPIMSMaster.Form
                 
             Ds = E.HODCountDashboard(E);
             spanNew.InnerHtml = Ds.Tables[0].Rows[0].ItemArray[0].ToString();
-            spanRejected.InnerHtml = Ds.Tables[0].Rows[0].ItemArray[1].ToString();
+            //spanRejected.InnerHtml = Ds.Tables[0].Rows[0].ItemArray[1].ToString();
             spanApproved.InnerHtml = Ds.Tables[0].Rows[0].ItemArray[2].ToString();
             spanTotal.InnerHtml = Ds.Tables[0].Rows[0].ItemArray[3].ToString();
 

@@ -1295,6 +1295,19 @@ namespace ProclainPIMSMaster.Models
 
 
         }
+        public DataSet YearWiseYearListBarChart()
+        {
+            DataTO Da = new DataTO();
+            DataSet Ds = new DataSet();
+
+            //  SqlParameter OP2 = new SqlParameter("@SuggestionDep", empid);
+            //  Da.parameters.Add(OP2);
+            Ds = Da.ExecuteDataset("[YearwiseDataYearList]");
+
+            return Ds;
+
+
+        }
 
         public DataSet EmpDetailView()
         {

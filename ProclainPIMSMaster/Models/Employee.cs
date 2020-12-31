@@ -818,6 +818,16 @@ namespace ProclainPIMSMaster.Models
 
 
         }
+        public DataSet GetExcelBar(string type)
+        {
+            DataTO Da = new DataTO();
+            DataSet Ds = new DataSet();
+            SqlParameter OP1 = new SqlParameter("@type", type);
+            Da.parameters.Add(OP1);
+            Ds = Da.ExecuteDataset("BarchartGetExcel");
+            return Ds;
+
+        }
 
     }
     public class GraphItems

@@ -1398,7 +1398,7 @@
 
                                         </asp:DropDownList>
 
-
+                                        <asp:TextBox ID="OthDepId" runat="server" hidden></asp:TextBox>
                                     </div>
                                 </div>
 
@@ -1821,6 +1821,10 @@ a.float:hover + div.label-container{
                  var opt = $(this).children("option:selected").val().toString();
                  var res = opt.split(',');
                  var txts = res[0];
+                 var depId = res[1];
+                 console.log("otherdepid", depId);
+                 //$('#OthDepId').val = depId.toString();
+                 document.getElementById('<%= OthDepId.ClientID %>').value = depId.toString();
                 // alert(txts);
                 console.log("Checking :" + txts);
                 if (txts != "--Select--") {

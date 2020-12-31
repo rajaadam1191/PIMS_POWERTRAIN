@@ -6,9 +6,11 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using System.Web;
+using System.Web.Services;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Xml;
+using ClosedXML.Excel;
 using ProclainPIMSMaster.Models;
 
 namespace ProclainPIMSMaster.Form
@@ -23,6 +25,7 @@ namespace ProclainPIMSMaster.Form
         int hos;
         int ben;
         int fin;
+        //public string retVal { get; set; }
         protected void Page_Load(object sender, EventArgs e)
     {
         try
@@ -127,7 +130,7 @@ namespace ProclainPIMSMaster.Form
     }
 
 
-        [System.Web.Services.WebMethod()]
+        [WebMethod()]
 
         public static GraphItems getReport()
         {
@@ -161,6 +164,12 @@ namespace ProclainPIMSMaster.Form
 
 
         }
-    }
+
+       
+        
+
+
+
+        }
    
 }

@@ -22,15 +22,6 @@ namespace ProclainPIMSMaster.Form {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl spanNew;
         
         /// <summary>
-        /// spanRejected control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl spanRejected;
-        
-        /// <summary>
         /// spanApproved control.
         /// </summary>
         /// <remarks>

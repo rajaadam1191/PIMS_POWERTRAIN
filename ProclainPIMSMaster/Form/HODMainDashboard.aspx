@@ -99,6 +99,7 @@
                                 <!-- ====================
                                         #Total Visits 
                                      ==================== -->
+                                     <div class="col-md-3"></div>
                                 <div class="col-md-6 ">
                                     <div class="layers bd bgc-white p-20 cardin">
                                         <div class="layer w-100 mB-10">
@@ -116,6 +117,7 @@
                                         </div>
                                     </div>
                                 </div>
+                                <div class="col-md-3"></div>
 
                                 <!-- =====================
                                         #Totall Visits End 
@@ -124,7 +126,7 @@
                                 <!-- ====================
                                       #Total Page Views 
                                      ==================== -->
-                                <div class="col-md-6 ">
+                               <%-- <div class="col-md-6 ">
                                     <div class="layers bd bgc-white p-20 cardin">
                                         <div class="layer w-100 mB-10">
                                             <h6 class="lh-1">Suggestion Rejected</h6>
@@ -140,7 +142,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                </div>--%>
                              </div>
                                 <!-- =======================
                                        #Total Page Views End 
@@ -501,6 +503,33 @@
                                                 
                                                 }]
                                             };
+                                            zingchart.bind(null, 'node_click', function (e) {
+                                                console.log(e);
+                                                if (e.scaletext === "commitee") {
+                                                    console.log("enterbar");
+                                                    committeExcel();
+                                                }
+                                                else if (e.scaletext === "Manager") {
+                                                    hodExcel();
+                                                }
+                                                else if (e.scaletext === "Implementation") {
+                                                    impExcel();
+                                                }
+                                                else if (e.scaletext === "HOD") {
+                                                    hosExcel();
+                                                }
+                                                else if (e.scaletext === "Beneficiary") {
+                                                    benExcel();
+                                                }
+                                                else if (e.scaletext === "finance") {
+                                                    finExcel();
+                                                }
+                                                else {
+                                                    alert('Please Click Bar In Chart');
+                                                }
+
+
+                                            });
  
                                             zingchart.render({
                                                     id: 'chartContainer1',
@@ -513,6 +542,48 @@
                                       				    
                                     </script>
 <script src="../UI/Style/zingchart.min.js"></script>
+<script>
+    function committeExcel() {
+       
+        var k = "com";
+        var url = "GetExcelBarChart.aspx?data=" + k;
+        console.log(k)
+        console.log("urlenter");
+        window.location.href = url;
+        console.log("urlexit");
 
+    }
+    function hodExcel() {
+        var k = "hod";
+        var url = "GetExcelBarChart.aspx?data=" + k;
+        window.location.href = url;
+        
+    }
+    function impExcel() {
+        var k = "imp";
+        var url = "GetExcelBarChart.aspx?data=" + k;
+        window.location.href = url;
+        
+    }
+    function hosExcel() {
+
+        var k = "hos";
+        var url = "GetExcelBarChart.aspx?data=" + k;
+        window.location.href = url;
+       
+    }
+    function benExcel() {
+        var k = "ben";
+        var url = "GetExcelBarChart.aspx?data=" + k;
+        window.location.href = url;
+       
+    }
+    function finExcel() {
+        var k = "fin";
+        var url = "GetExcelBarChart.aspx?data=" + k;
+        window.location.href = url;
+        
+    }
+</script>
 
 </asp:Content>

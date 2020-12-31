@@ -198,6 +198,7 @@
     <Content Include="Form\FinanceExcel.aspx" />
     <Content Include="Form\FinanceImplDashboard.aspx" />
     <Content Include="Form\FinanceMainDashboard.aspx" />
+    <Content Include="Form\GetExcelBarChart.aspx" />
     <Content Include="Form\HODMainDashboard.aspx" />
     <Content Include="Form\HOSAdd.aspx" />
     <Content Include="Form\HOSDashboard.aspx" />
@@ -706,6 +707,13 @@
     </Compile>
     <Compile Include="Form\FinanceMainDashboard.aspx.designer.cs">
       <DependentUpon>FinanceMainDashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\GetExcelBarChart.aspx.cs">
+      <DependentUpon>GetExcelBarChart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\GetExcelBarChart.aspx.designer.cs">
+      <DependentUpon>GetExcelBarChart.aspx</DependentUpon>
     </Compile>
     <Compile Include="Form\HODMainDashboard.aspx.cs">
       <DependentUpon>HODMainDashboard.aspx</DependentUpon>

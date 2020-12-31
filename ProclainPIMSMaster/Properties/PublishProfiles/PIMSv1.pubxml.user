@@ -6,7 +6,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <TimeStampOfAssociatedLegacyPublishXmlFile />
-    <_PublishTargetUrl>E:\adam\New _PIMS</_PublishTargetUrl>
+    <_PublishTargetUrl>E:\B2Q\pims\PIMS</_PublishTargetUrl>
   </PropertyGroup>
   <ItemGroup>
     <File Include="AdminMaster.Master">
@@ -100,7 +100,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/13/2016 23:06:14</publishTime>
     </File>
     <File Include="bin/ProclainPIMSMaster.dll">
-      <publishTime>12/24/2020 18:29:49</publishTime>
+      <publishTime>12/29/2020 10:28:10</publishTime>
     </File>
     <File Include="bin/roslyn/csc.exe">
       <publishTime>06/18/2015 20:19:46</publishTime>
@@ -274,7 +274,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/16/2020 12:53:58</publishTime>
     </File>
     <File Include="Form/ManagerMail.aspx">
-      <publishTime>12/16/2020 15:52:10</publishTime>
+      <publishTime>12/28/2020 11:14:08</publishTime>
     </File>
     <File Include="Form/New_Suggestion.aspx">
       <publishTime>11/16/2020 12:52:06</publishTime>
