@@ -9,6 +9,7 @@
     <link href="../UI/DataTable/jquery.dataTables.min.css" rel="stylesheet" />
     <script src="../UI/DataTable/DataTableScripts/JS/jquery.dataTables.min.js" type="text/javascript"></script>
     
+    <link href='//www.zingchart.com/css/zcDocs.css' rel='stylesheet' type='text/css'>
      <link rel="stylesheet" type="text/css" href="../UI/GridViewDesign/vendor/bootstrap/Css/bootstrap.min.css" />
     <!--===============================================================================================-->
 
@@ -485,16 +486,92 @@
                                                 
                                                 }]
                                             };
+                                            zingchart.bind(null, 'node_click', function (e) {
+                                                console.log(e);
+                                                if (e.scaletext === "commitee") {
+                                                    console.log("enterbar");
+                                                    committeExcel();
+                                                }
+                                                else if (e.scaletext === "Manager") {
+                                                    hodExcel();
+                                                }
+                                                else if (e.scaletext === "Implementation") {
+                                                    impExcel();
+                                                }
+                                                else if (e.scaletext === "HOD") {
+                                                    hosExcel();
+                                                }
+                                                else if (e.scaletext === "Beneficiary") {
+                                                    benExcel();
+                                                }
+                                                else if (e.scaletext === "finance") {
+                                                    finExcel();
+                                                }
+                                                else {
+                                                        alert('Please Click Bar In Chart');
+                                                    }
+
+                                                
+                                            });
  
                                             zingchart.render({
                                                     id: 'chartContainer1',
                                                     data: myConfig,
                                                     height: '100%',
                                                     width: '100%'
-                                                });
+                                            });
+                                            //zingchart.click = function (data) {
+                                            //    alert("Chart Clicked - ID: ");
+             //}
+                                            
+
   
                                       	}
                                       				    
                                     </script>
 <script src="../UI/Style/zingchart.min.js"></script> 
+
+<script>
+    function committeExcel() {
+       
+        var k = "com";
+        var url = "GetExcelBarChart.aspx?data=" + k;
+        console.log(k)
+        console.log("urlenter");
+        window.location.href = url;
+        console.log("urlexit");
+
+    }
+    function hodExcel() {
+        var k = "hod";
+        var url = "GetExcelBarChart.aspx?data=" + k;
+        window.location.href = url;
+        
+    }
+    function impExcel() {
+        var k = "imp";
+        var url = "GetExcelBarChart.aspx?data=" + k;
+        window.location.href = url;
+        
+    }
+    function hosExcel() {
+
+        var k = "hos";
+        var url = "GetExcelBarChart.aspx?data=" + k;
+        window.location.href = url;
+       
+    }
+    function benExcel() {
+        var k = "ben";
+        var url = "GetExcelBarChart.aspx?data=" + k;
+        window.location.href = url;
+       
+    }
+    function finExcel() {
+        var k = "fin";
+        var url = "GetExcelBarChart.aspx?data=" + k;
+        window.location.href = url;
+        
+    }
+</script>
 </asp:Content>
