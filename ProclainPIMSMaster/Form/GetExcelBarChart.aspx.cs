@@ -38,7 +38,8 @@ namespace ProclainPIMSMaster.Form
             try
             {
                 string data = Request.QueryString["data"];
-                if(data.ToString()=="com") {
+                
+                if (data.ToString()=="com") {
                     ComExcel(data);
                    
                 }
@@ -102,7 +103,7 @@ namespace ProclainPIMSMaster.Form
                         wb.SaveAs(MyMemoryStream);
                         MyMemoryStream.WriteTo(Response.OutputStream);
                         Response.Flush();
-                        //Response.End();
+                        Response.End();
                     }
 
 
@@ -145,7 +146,7 @@ namespace ProclainPIMSMaster.Form
                         wb.SaveAs(MyMemoryStream);
                         MyMemoryStream.WriteTo(Response.OutputStream);
                         Response.Flush();
-                       // Response.End();
+                       Response.End();
                     }
 
 
@@ -188,7 +189,7 @@ namespace ProclainPIMSMaster.Form
                         wb.SaveAs(MyMemoryStream);
                         MyMemoryStream.WriteTo(Response.OutputStream);
                         Response.Flush();
-                       // Response.End();
+                       Response.End();
                     }
 
 
@@ -231,7 +232,7 @@ namespace ProclainPIMSMaster.Form
                         wb.SaveAs(MyMemoryStream);
                         MyMemoryStream.WriteTo(Response.OutputStream);
                         Response.Flush();
-                       // Response.End();
+                       Response.End();
                     }
 
 
@@ -274,7 +275,7 @@ namespace ProclainPIMSMaster.Form
                         wb.SaveAs(MyMemoryStream);
                         MyMemoryStream.WriteTo(Response.OutputStream);
                         Response.Flush();
-                        //Response.End();
+                        Response.End();
                     }
 
 
@@ -317,7 +318,7 @@ namespace ProclainPIMSMaster.Form
                         wb.SaveAs(MyMemoryStream);
                         MyMemoryStream.WriteTo(Response.OutputStream);
                         Response.Flush();
-                        //Response.End();
+                        Response.End();
                     }
 
 

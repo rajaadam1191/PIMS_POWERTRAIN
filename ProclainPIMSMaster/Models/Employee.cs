@@ -828,6 +828,16 @@ namespace ProclainPIMSMaster.Models
             return Ds;
 
         }
+        public DataSet GetExcelYearBar(string year)
+        {
+            DataTO Da = new DataTO();
+            DataSet Ds = new DataSet();
+            SqlParameter OP1 = new SqlParameter("@year", year);
+            Da.parameters.Add(OP1);
+            Ds = Da.ExecuteDataset("YearWiseChartGetExcelDownload");
+            return Ds;
+
+        }
 
     }
     public class GraphItems
