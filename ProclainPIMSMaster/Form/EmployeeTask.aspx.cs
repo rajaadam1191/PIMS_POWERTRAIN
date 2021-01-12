@@ -261,13 +261,16 @@ namespace ProclainPIMSMaster.Form
 
                     if (ImageFileUpload3.HasFile)
                     {
-                        extn = System.IO.Path.GetExtension(ImageFileUpload3.FileName);
-                        // path = Server.MapPath("\\PIMS\\UI\\Image\\");
-                        path = Server.MapPath("..\\UI\\Image\\");
-                        ImageName = ImageFileUpload3.FileName;
-                        ImageFileUpload3.SaveAs(path + ImageName);
-                        etn = ImageName;
-                        //Label1.Text = path;
+                        if (ImageFileUpload3.PostedFile.ContentLength < 20728650)
+                        {
+                            extn = System.IO.Path.GetExtension(ImageFileUpload3.FileName);
+                            // path = Server.MapPath("\\PIMS\\UI\\Image\\");
+                            path = Server.MapPath("..\\UI\\Image\\");
+                            ImageName = ImageFileUpload3.FileName;
+                            ImageFileUpload3.SaveAs(path + ImageName);
+                            etn = ImageName;
+                            //Label1.Text = path;
+                        }
                     }
                     else
                     {

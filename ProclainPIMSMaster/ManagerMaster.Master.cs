@@ -127,7 +127,7 @@ namespace ProclainPIMSMaster
                     {
                         SOURCING.Visible = true;
                     }
-                    else if (data == "GENERAL MANAGEMENT")
+                    else if (data == "General Management")
                     {
                         GENERAL.Visible = true;
                     }

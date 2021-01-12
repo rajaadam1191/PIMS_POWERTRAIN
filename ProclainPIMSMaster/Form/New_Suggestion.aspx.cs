@@ -368,31 +368,37 @@ namespace ProclainPIMSMaster.Form
 
                 NSM.Before = BeforeTextBox.Text.ToString().TrimStart().TrimEnd();
                 NSM.After = AfterTextBox.Text.ToString().TrimStart().TrimEnd();
-                
-                    if (ImageFileUpload1.HasFile)
+
+                if (ImageFileUpload1.HasFile)
+                {
+                    if (ImageFileUpload1.PostedFile.ContentLength < 20728650)
                     {
                         extn = System.IO.Path.GetExtension(ImageFileUpload1.FileName);
                         //path = Server.MapPath("\\PIMS\\UI\\Image\\");
-                       path = Server.MapPath("..\\UI\\Image\\");
-                    ImageName = ImageFileUpload1.FileName;
+                        path = Server.MapPath("..\\UI\\Image\\");
+                        ImageName = ImageFileUpload1.FileName;
                         ImageFileUpload1.SaveAs(path + ImageName);
-                        etn =ImageName;
+                        etn = ImageName;
                         //Label1.Text = path;
                     }
-                    else
-                    {
-                        etn = "No File";
-                    }
+                }
+                else
+                {
+                    etn = "No File";
+                }
                 NSM.FileUpload1 = etn.ToString();
                 if (ImageFileUpload2.HasFile)
                 {
-                    extn = System.IO.Path.GetExtension(ImageFileUpload2.FileName);
-                   // path = Server.MapPath("\\PIMS\\UI\\Image\\");
-                    path = Server.MapPath("..\\UI\\Image\\");
-                    ImageName = ImageFileUpload2.FileName;
-                    ImageFileUpload2.SaveAs(path + ImageName);
-                    etn =ImageName;
-                    //Label1.Text = path;
+                    if (ImageFileUpload2.PostedFile.ContentLength < 20728650)
+                    {
+                        extn = System.IO.Path.GetExtension(ImageFileUpload2.FileName);
+                        // path = Server.MapPath("\\PIMS\\UI\\Image\\");
+                        path = Server.MapPath("..\\UI\\Image\\");
+                        ImageName = ImageFileUpload2.FileName;
+                        ImageFileUpload2.SaveAs(path + ImageName);
+                        etn = ImageName;
+                        //Label1.Text = path;
+                    }
                 }
                 else
                 {

@@ -207,6 +207,7 @@
     <Content Include="Form\HR_Module.aspx" />
     <Content Include="Form\IdeaTrackingHistory.aspx" />
     <Content Include="Form\MailDashboard.aspx" />
+    <Content Include="Form\MailTriggerAutomatic.aspx" />
     <Content Include="Form\Main.aspx" />
     <Content Include="Form\CommitteeEvaluvation.aspx" />
     <Content Include="Form\MainDashboard.aspx" />
@@ -769,6 +770,13 @@
     </Compile>
     <Compile Include="Form\MailDashboard.aspx.designer.cs">
       <DependentUpon>MailDashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\MailTriggerAutomatic.aspx.cs">
+      <DependentUpon>MailTriggerAutomatic.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\MailTriggerAutomatic.aspx.designer.cs">
+      <DependentUpon>MailTriggerAutomatic.aspx</DependentUpon>
     </Compile>
     <Compile Include="Form\Main.aspx.cs">
       <DependentUpon>Main.aspx</DependentUpon>

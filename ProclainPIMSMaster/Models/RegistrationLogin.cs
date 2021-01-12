@@ -178,6 +178,18 @@ namespace ProclainPIMSMaster.Models
 
         }
         #endregion
+        
+        public DataSet AutoMailTrigger(string Role)
+        {
+            DataTO Da = new DataTO();
+            DataSet Ds = new DataSet();
+            SqlParameter OP = new SqlParameter("@TempReceived", Role);
+            Da.parameters.Add(OP);
+            Ds = Da.ExecuteDataset("AutoMailTrigger");
+            return Ds;
+
+
+        }
 
         public DataSet ResetPassword(string empid)
         {

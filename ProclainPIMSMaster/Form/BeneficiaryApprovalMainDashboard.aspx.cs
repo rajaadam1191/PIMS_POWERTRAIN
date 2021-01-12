@@ -75,7 +75,9 @@ namespace ProclainPIMSMaster.Form
         NewSuggestionModel NSM = new NewSuggestionModel();
         Employee E = new Employee();
         static String us1;
+        int EMPDBM;
         int com;
+        int DBMHOD;
         int hod;
         int imp;
         int hos;
@@ -186,13 +188,15 @@ namespace ProclainPIMSMaster.Form
                     Mailling m = new Mailling();
                     DataSet Ds = new DataSet();
                     Ds = m.Barchart_get_details();
-                    com = int.Parse(Ds.Tables[0].Rows[0].ItemArray[0].ToString());
-                    hod = int.Parse(Ds.Tables[0].Rows[0].ItemArray[1].ToString());
-                    imp = int.Parse(Ds.Tables[0].Rows[0].ItemArray[2].ToString());
-                    hos = int.Parse(Ds.Tables[0].Rows[0].ItemArray[3].ToString());
-                    ben = int.Parse(Ds.Tables[0].Rows[0].ItemArray[4].ToString());
-                    fin = int.Parse(Ds.Tables[0].Rows[0].ItemArray[5].ToString());
-                    string script = "Barchart('" + com + "','" + hod + "','" + imp + "','" + hos + "','" + ben + "','" + fin + "'); ";
+                    EMPDBM = int.Parse(Ds.Tables[0].Rows[0].ItemArray[0].ToString());
+                    com = int.Parse(Ds.Tables[0].Rows[0].ItemArray[1].ToString());
+                    DBMHOD = int.Parse(Ds.Tables[0].Rows[0].ItemArray[2].ToString());
+                    hod = int.Parse(Ds.Tables[0].Rows[0].ItemArray[3].ToString());
+                    imp = int.Parse(Ds.Tables[0].Rows[0].ItemArray[4].ToString());
+                    hos = int.Parse(Ds.Tables[0].Rows[0].ItemArray[5].ToString());
+                    ben = int.Parse(Ds.Tables[0].Rows[0].ItemArray[6].ToString());
+                    fin = int.Parse(Ds.Tables[0].Rows[0].ItemArray[7].ToString());
+                    string script = "Barchart('" + EMPDBM + "','" + com + "','" + DBMHOD + "','" + hod + "','" + imp + "','" + hos + "','" + ben + "','" + fin + "'); ";
                     ClientScript.RegisterStartupScript(this.GetType(), "function", script, true);
 
                 }

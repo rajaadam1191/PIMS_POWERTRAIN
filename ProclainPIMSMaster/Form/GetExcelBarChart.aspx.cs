@@ -38,10 +38,19 @@ namespace ProclainPIMSMaster.Form
             try
             {
                 string data = Request.QueryString["data"];
-                
-                if (data.ToString()=="com") {
+                if (data.ToString() == "EMPDBM")
+                {
+                    EMPDBMExcel(data);
+
+                }
+                else if (data.ToString()=="com") {
                     ComExcel(data);
                    
+                }
+                else if (data.ToString() == "DBMMAN")
+                {
+                    DBMMANExcel(data);
+
                 }
                 else if (data.ToString() == "hod")
                 {
@@ -74,6 +83,49 @@ namespace ProclainPIMSMaster.Form
 
             }
         }
+        protected void EMPDBMExcel(string data)
+        {
+            DataSet Ds = new DataSet();
+            Employee E = new Employee();
+            try
+            {
+                string bar = data.ToString();
+                Ds = E.GetExcelBar(bar);
+                DataTable dt = Ds.Tables[0];
+                using (XLWorkbook wb = new XLWorkbook()) //dataset to excel but it need closedXML.dll
+                {
+                    var ws = wb.Worksheets.Add(dt, "PIMS");
+                    ws.Row(1).InsertRowsAbove(1);
+                    int count = dt.Columns.Count;
+                    int cc = count / 2;
+                    ws.Cell(1, cc).Value = "PIMS NEW SUGGESTIONS";
+                    ws.Cell(1, cc).Style.Font.Bold = true;
+                    ws.Cell(1, cc).Style.Font.FontSize = 25;
+                    ws.Cell(1, cc).Style.Font.FontName = "Calibri";
+                    Response.Clear();
+                    Response.Buffer = true;
+                    Response.Charset = "";
+                    Response.ContentType = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
+                    Response.AddHeader("content-disposition", "attachment;filename=PIMS-" + DateTime.Now.ToString("dd/MM/yyyy") + ".xlsx");
+                    using (MemoryStream MyMemoryStream = new MemoryStream())
+                    {
+                        wb.SaveAs(MyMemoryStream);
+                        MyMemoryStream.WriteTo(Response.OutputStream);
+                        Response.Flush();
+                        Response.End();
+                    }
+
+
+
+                }
+                string prevPage = String.Empty;
+                prevPage = Request.UrlReferrer.ToString();
+            }
+            catch (Exception e1)
+            {
+
+            }
+        }
         protected void ComExcel(string data)
         {
             DataSet Ds = new DataSet();
@@ -90,6 +142,49 @@ namespace ProclainPIMSMaster.Form
                     int count = dt.Columns.Count;
                     int cc = count / 2;
                     ws.Cell(1, cc).Value = "PIMS Committee";
+                    ws.Cell(1, cc).Style.Font.Bold = true;
+                    ws.Cell(1, cc).Style.Font.FontSize = 25;
+                    ws.Cell(1, cc).Style.Font.FontName = "Calibri";
+                    Response.Clear();
+                    Response.Buffer = true;
+                    Response.Charset = "";
+                    Response.ContentType = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
+                    Response.AddHeader("content-disposition", "attachment;filename=PIMS-" + DateTime.Now.ToString("dd/MM/yyyy") + ".xlsx");
+                    using (MemoryStream MyMemoryStream = new MemoryStream())
+                    {
+                        wb.SaveAs(MyMemoryStream);
+                        MyMemoryStream.WriteTo(Response.OutputStream);
+                        Response.Flush();
+                        Response.End();
+                    }
+
+
+
+                }
+                string prevPage = String.Empty;
+                prevPage = Request.UrlReferrer.ToString();
+            }
+            catch (Exception e1)
+            {
+
+            }
+        }
+        protected void DBMMANExcel(string data)
+        {
+            DataSet Ds = new DataSet();
+            Employee E = new Employee();
+            try
+            {
+                string bar = data.ToString();
+                Ds = E.GetExcelBar(bar);
+                DataTable dt = Ds.Tables[0];
+                using (XLWorkbook wb = new XLWorkbook()) //dataset to excel but it need closedXML.dll
+                {
+                    var ws = wb.Worksheets.Add(dt, "PIMS");
+                    ws.Row(1).InsertRowsAbove(1);
+                    int count = dt.Columns.Count;
+                    int cc = count / 2;
+                    ws.Cell(1, cc).Value = "PIMS Committee Response";
                     ws.Cell(1, cc).Style.Font.Bold = true;
                     ws.Cell(1, cc).Style.Font.FontSize = 25;
                     ws.Cell(1, cc).Style.Font.FontName = "Calibri";
