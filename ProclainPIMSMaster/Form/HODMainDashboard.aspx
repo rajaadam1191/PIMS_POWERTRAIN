@@ -11,6 +11,8 @@
     <link href="../UI/DataTable/jquery.dataTables.min.css" rel="stylesheet" />
     <script src="../UI/DataTable/DataTableScripts/JS/jquery.dataTables.min.js" type="text/javascript"></script>
     <script src="../UI/DataTable/DataTableScripts/Button/dataTables.buttons.min.js"></script>
+    <script src="../UI/Style/sweetalert.min.js"></script>
+    <link href="../UI/Style/sweetalert2.min.css" rel="stylesheet" />
 
     <style>
     div.cardin {
@@ -438,7 +440,7 @@
                                                 "scaleX": {
                                                     "values": [
                                                     
-                                                    "EMP_MAN","commitee","DBM_MAN", "Manager", "Implementation", "HOD", "Beneficiary", "finance"
+                                                    "Emp_Dbm", "Commitee", "Dbm_Man", "Manager", "Implementation", "HOD", "Beneficiary", "Finance"
            
 									
                                                     ],
@@ -509,38 +511,59 @@
                                             };
                                             zingchart.bind(null, 'node_click', function (e) {
                                                 console.log(e);
-                                                
-                                                if (e.scaletext === "EMP_MAN") {
-                                                    console.log("enterbar");
-                                                    EMPDBMExcel();
-                                                }
-                                            
-                                                else if (e.scaletext === "commitee") {
-                                                    console.log("enterbar");
-                                                    committeExcel();
-                                                }
-                                                else if (e.scaletext === "DBM_MAN") {
-                                                        console.log("enterbar");
-                                                        DBMMANExcel();
-                                                }
-                                                else if (e.scaletext === "Manager") {
-                                                    hodExcel();
-                                                }
-                                                else if (e.scaletext === "Implementation") {
-                                                    impExcel();
-                                                }
-                                                else if (e.scaletext === "HOD") {
-                                                    hosExcel();
-                                                }
-                                                else if (e.scaletext === "Beneficiary") {
-                                                    benExcel();
-                                                }
-                                                else if (e.scaletext === "finance") {
-                                                    finExcel();
-                                                }
-                                                else {
-                                                        alert('Please Click Bar In Chart');
+
+                                                swal({
+                                                    title: "Are you sure?",
+                                                    text: "You want able to download",
+                                                    icon: "warning",
+                                                    buttons: [
+                                                      'No, cancel it!',
+                                                      'Yes, I am sure!'
+                                                    ],
+                                                    dangerMode: false,
+                                                }).then(function (isConfirm) {
+                                                    if (isConfirm) {
+                                                        if (e.scaletext === "EMP_MAN") {
+                                                            console.log("enterbar");
+                                                            EMPDBMExcel();
+                                                        }
+
+                                                        else if (e.scaletext === "commitee") {
+                                                            console.log("enterbar");
+                                                            committeExcel();
+                                                        }
+                                                        else if (e.scaletext === "DBM_MAN") {
+                                                            console.log("enterbar");
+                                                            DBMMANExcel();
+                                                        }
+                                                        else if (e.scaletext === "Manager") {
+                                                            hodExcel();
+                                                        }
+                                                        else if (e.scaletext === "Implementation") {
+                                                            impExcel();
+                                                        }
+                                                        else if (e.scaletext === "HOD") {
+                                                            hosExcel();
+                                                        }
+                                                        else if (e.scaletext === "Beneficiary") {
+                                                            benExcel();
+                                                        }
+                                                        else if (e.scaletext === "finance") {
+                                                            finExcel();
+                                                        }
+                                                        else {
+                                                            alert('Please Click Bar In Chart');
+                                                        }
+                                                    } else {
+                                                        swal("Cancelled", "Your file is safe", "error");
                                                     }
+                                                })
+
+
+
+
+                                                
+                                                
 
                                                 
                                             });

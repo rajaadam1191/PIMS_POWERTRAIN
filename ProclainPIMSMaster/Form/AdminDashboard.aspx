@@ -844,15 +844,15 @@ span.onclick = function() {
                                 <div class="form-group">
                                     <div class="peers">
                                         <label>To: </label>
-                                        <asp:TextBox ID="ToTextBox" CssClass="form-control ToTextBoxClass" placeholder="To: " runat="server"></asp:TextBox>
+                                        <asp:TextBox ID="ToTextBox" ReadOnly="True" CssClass="form-control ToTextBoxClass" placeholder="To: " runat="server"></asp:TextBox>
                                         <asp:TextBox ID="EmpDepTextBox"  CssClass="form-control EmpDepTextBoxClass" placeholder="To: " runat="server" hidden></asp:TextBox>
-                                        <asp:TextBox ID="EmpNameTextBox"  CssClass="form-control EmpNameTextBoxClass" placeholder="To: " runat="server"></asp:TextBox>
-                                        <asp:TextBox ID="EmpIDTextBox"  CssClass="form-control EmpIDTextBoxClass" placeholder="ID " runat="server"></asp:TextBox>
+                                        <asp:TextBox ID="EmpNameTextBox" ReadOnly="True" CssClass="form-control EmpNameTextBoxClass" placeholder="To: " runat="server"></asp:TextBox>
+                                        <asp:TextBox ID="EmpIDTextBox" ReadOnly="True" CssClass="form-control EmpIDTextBoxClass" placeholder="ID " runat="server"></asp:TextBox>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label>Mail ID: </label>
-                                    <asp:TextBox ID="mailidtext"  CssClass="form-control mailidtextClass" placeholder="Mail ID"  runat="server"></asp:TextBox>
+                                    <asp:TextBox ID="mailidtext" ReadOnly="True" CssClass="form-control mailidtextClass" placeholder="Mail ID"  runat="server"></asp:TextBox>
                                     <%--<input id="mailidtext" type="text" class="form-control mailidtextClass" placeholder="Mail ID" />--%>
                                 </div>
                                 <div class="form-group">

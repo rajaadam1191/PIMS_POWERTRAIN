@@ -369,12 +369,14 @@
     <script src="../UI/DataTable/DataTableScripts/Button/buttons.html5.min.js"></script>
     <script src="../UI/DataTable/DataTableScripts/Button/buttons.print.min.js"></script> 
     
-     <script type="text/javascript">
+<script type="text/javascript">
                                       				    
-         function Barchart(com, hod, imp, hos, ben, fin){
+         function Barchart(EMPDBM,com,DBMHOD, hod, imp, hos, ben, fin) {
 
-             console.log('method called ',com, hod, imp, hos, ben, fin);
-                                   		    var com = [parseInt(com)];
+             console.log('method called ', EMPDBM, com, DBMHOD, hod, imp, hos, ben, fin);
+                                            var EMPDBM = [parseInt(EMPDBM)];
+                                            var com = [parseInt(com)];
+                                            var DBMHOD = [parseInt(DBMHOD)];
                                    		    var hod = [parseInt(hod)];
                                    		    var imp = [parseInt(imp)];
                                    		    var hos = [parseInt(hos)];
@@ -404,7 +406,7 @@
                                                 "plot": {
                                                     "bars-space-left": 0.40,
                                                     "bars-space-right": 0.40,
-                                                    "styles": ["#ff9966", "#3399ff", "#ff3300", "#ff6699", "#33ccff", "#00ff00"],
+                                                    "styles": ["#9966ff", "#ff9966", "#9966ff", "#3399ff", "#ff3300", "#ff6699", "#33ccff", "#00ff00"],
                                                     
                                                     "animation": {
                                                         "effect": "ANIMATION_SLIDE_BOTTOM",
@@ -419,7 +421,7 @@
                                                 "scaleX": {
                                                     "values": [
                                                     
-                                                    "commitee", "Manager", "Implementation", "HOD", "Beneficiary", "finance"
+                                                    "EMP_MAN","commitee","DBM_MAN", "Manager", "Implementation", "HOD", "Beneficiary", "finance"
            
 									
                                                     ],
@@ -459,7 +461,9 @@
                                                 },
                                                 "series": [{
                                                     "values": [
+                                                        parseInt(EMPDBM),
                                                         parseInt(com),
+                                                        parseInt(DBMHOD),
                                                         parseInt(hod),
                                                         parseInt(imp),
                                                         parseInt(hos),
@@ -488,9 +492,19 @@
                                             };
                                             zingchart.bind(null, 'node_click', function (e) {
                                                 console.log(e);
-                                                if (e.scaletext === "commitee") {
+                                                
+                                                if (e.scaletext === "EMP_MAN") {
+                                                    console.log("enterbar");
+                                                    EMPDBMExcel();
+                                                }
+                                            
+                                                else if (e.scaletext === "commitee") {
                                                     console.log("enterbar");
                                                     committeExcel();
+                                                }
+                                                else if (e.scaletext === "DBM_MAN") {
+                                                        console.log("enterbar");
+                                                        DBMMANExcel();
                                                 }
                                                 else if (e.scaletext === "Manager") {
                                                     hodExcel();
@@ -530,11 +544,30 @@
                                       				    
                                     </script>
 <script src="../UI/Style/zingchart.min.js"></script> 
-
 <script>
+    function EMPDBMExcel() {
+
+        var k = "EMPDBM";
+        var url = "GetExcelBarChart.aspx?data=" + k;
+        console.log(k)
+        console.log("urlenter");
+        window.location.href = url;
+        console.log("urlexit");
+
+    }
     function committeExcel() {
        
         var k = "com";
+        var url = "GetExcelBarChart.aspx?data=" + k;
+        console.log(k)
+        console.log("urlenter");
+        window.location.href = url;
+        console.log("urlexit");
+
+    }
+    function DBMMANExcel() {
+
+        var k = "DBMMAN";
         var url = "GetExcelBarChart.aspx?data=" + k;
         console.log(k)
         console.log("urlenter");

@@ -289,7 +289,7 @@ namespace ProclainPIMSMaster.Form
                 EEC.BenTag = "Benefits : ";
                 EEC.upl1Tag = "FileUpload1";
                 EEC.upl2Tag = "FileUpload2";
-                EEC.upl3Tag = "FileUpload3";
+                //EEC.upl3Tag = "FileUpload3";
                 EEC.IdeaIdTag = idea.ToString();
 
                 EEC.empname = DS.Tables[0].Rows[0].ItemArray[1].ToString();

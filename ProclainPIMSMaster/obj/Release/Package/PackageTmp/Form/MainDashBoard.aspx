@@ -136,7 +136,7 @@ div.slide-up p {
   height: 50px;
   width: 50px!important;
   
-  background-size: 100%, 100%;
+  background-size: 30%, 30%;
  
   background-image: none;
 }
@@ -146,6 +146,7 @@ div.slide-up p {
   content: '>';
   font-size: 50px;
   color: red;
+  padding-right:0px!important;
  
 }
 
@@ -153,6 +154,7 @@ div.slide-up p {
   content: '<';
   font-size: 50px;
   color: red;
+  padding-left:0px!important;
   
   
 }
@@ -487,8 +489,8 @@ padding-top:0% !important;
                        <b> <asp:LinkButton runat="server" ID="GoSignIn"  OnClick="GoSignIn_Click">Go SignIn</asp:LinkButton></b>
                     
                 </div>
-                <div class="row">
-                <div class="col-lg-3 bg-light rounded-lg shadow " style="" >
+                <div class="row " style="height:100%;width:100%;">
+                <div class="col-md-3  " style="height:100%;width:100%;" >
                <asp:Label runat="server" Text="CEO Message" style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif"></asp:Label>
                <div class="row" >
                <div class="col-md-12 h-25 mail">
@@ -500,7 +502,7 @@ padding-top:0% !important;
                                
                                 <div class="peer fxw-nw bdB cur-p mail">
                                 
-                                <marquee direction="down" onmouseover="this.stop()" onmouseout="this.start()"scrolldelay="100"   style="font-family:Calibri;">
+                                <marquee direction="down" onmouseover="this.stop()" onmouseout="this.start()"scrolldelay="100"   style="font-family:Calibri;width:100%;height:300px;">
                                             
                                 <asp:Repeater ID="MailRepeater" runat="server" >
                                   
@@ -572,7 +574,7 @@ padding-top:0% !important;
                                 <div class="peer fxw-nw bdB cur-p mail">
                                 
                                 
-                                <marquee direction="down" onmouseover="this.stop()" onmouseout="this.start()"scrolldelay="100"   style="height: 100%; width: 100%; font-family:Calibri;">
+                                <marquee direction="down" onmouseover="this.stop()" onmouseout="this.start()"scrolldelay="100"   style="height: 300px; width: 100%; font-family:Calibri;">
                                             
                                 <asp:Repeater ID="MailRepeaterMD" runat="server" >
                                   
@@ -644,7 +646,7 @@ padding-top:0% !important;
                                 <div class="peer fxw-nw bdB cur-p mail">
                                 
                                 
-                                <marquee direction="down" onmouseover="this.stop()" onmouseout="this.start()"scrolldelay="100"   style="height: 100%; width: 100%; font-family:Calibri;">
+                                <marquee direction="down" onmouseover="this.stop()" onmouseout="this.start()"scrolldelay="100"   style="height: 300px; width: 100%; font-family:Calibri;">
                                             
                                 <asp:Repeater ID="MailRepeaterSLO" runat="server" >
                                   
@@ -705,11 +707,11 @@ padding-top:0% !important;
                </div>
                     
                 </div>
+                <%--bg-light rounded-lg shadow--%>
+                <div class="col-md-9 " style="height:100%;width:100%;">
                 
-                <div class="col-lg-9">
-                <div class="row">
                 
-                <div class="col-md-12">
+                <div class="col-md-12" style="height:100%;width:100%;">
                     <div id="demo" class="carousel slide" data-ride="carousel">
 
                       <!-- Indicators -->
@@ -928,15 +930,15 @@ padding-top:0% !important;
                       </a>
                     </div>
                 </div>
-                <div class="col-md-12">
+                <div class="col-md-12" style="height:100%;width:100%;">
                   <div id="demo1" class="carousel slide" data-ride="carousel">
 
                       <!-- Indicators -->
                       <ul class="carousel-indicators">
-                        <li data-target="#demo1" data-slide-to="0" class="active"></li>
-                        <li data-target="#demo1" data-slide-to="1"></li>
-                        <li data-target="#demo1" data-slide-to="2"></li>
-                        <li data-target="#demo1" data-slide-to="3"></li>
+                        <li data-target="#demo1" data-slide-to="0" class="active" style="background-color:#b45858;"></li>
+                        <li data-target="#demo1" data-slide-to="1" style="background-color:#b45858;"></li>
+                        <li data-target="#demo1" data-slide-to="2" style="background-color:#b45858;"></li>
+                        <li data-target="#demo1" data-slide-to="3" style="background-color:#b45858;"></li>
                       </ul>
   
                       <!-- The slideshow -->
@@ -980,16 +982,16 @@ padding-top:0% !important;
                       </div>
   
                       <!-- Left and right controls -->
-                      <a class="carousel-control-prev" href="#demo1" data-slide="prev" style="color:black">
+                      <%--<a class="carousel-control-prev" href="#demo1" data-slide="prev" style="color:black;padding-left:0px!important">
                         <span class="carousel-control-prev-icon" ></span>
                       </a>
-                      <a class="carousel-control-next" href="#demo1" data-slide="next" style="color:red">
-                        <span class="carousel-control-next-icon" style="color:black"></span>
-                      </a>
+                      <a class="carousel-control-next" href="#demo1" data-slide="next" style="color:red;padding-right:0px!important">
+                        <span class="carousel-control-next-icon" ></span>
+                      </a>--%>
                     </div>
              
                 </div>
-                </div>
+                
                 
 
                 </div>
@@ -997,7 +999,7 @@ padding-top:0% !important;
 	    
                  <script >
                                       				    
-                                   		function BarChartYear(oneyrbrsuggestionreceived, oneyrbraccepted, oneyrbrrejected) {
+                      function BarChartYear(oneyrbrsuggestionreceived, oneyrbraccepted, oneyrbrrejected) {
 
                                    		    console.log('method called ',oneyrbrsuggestionreceived, oneyrbraccepted, oneyrbrrejected);
                                    		    var totrec = [parseInt(oneyrbrsuggestionreceived)];
@@ -1009,7 +1011,7 @@ padding-top:0% !important;
                                                     "globals": {
                                                         "font-family": "Lato",
                                                         "title": {
-                                                            "text": "Suggestions 2020",
+                                                            "text": "Suggestions 2021",
 
                                                             "backgroundColor": "none",
                                                             "font-size": "22px",
@@ -1119,10 +1121,10 @@ padding-top:0% !important;
   
                                       	}
                                       				    
-                                    </script>
+                 </script>
 
                  <script >
-                                      	function PieChartYear(oneyrpitotalsuggestion, oneyrpiimplemented, oneyrpiaccepted) {
+                      function PieChartYear(oneyrpitotalsuggestion, oneyrpiimplemented, oneyrpiaccepted) {
                                       		//oneyrpiimplemented  oneyrpiaccepted  oneyrpitotalsuggestion
                                       		console.log('zing pie ', oneyrpiimplemented, oneyrpiaccepted, oneyrpitotalsuggestion);
                                       		var myConfig2 = {
@@ -1134,9 +1136,11 @@ padding-top:0% !important;
                                       		    },
                                       			"type": "ring3d",
                                       			
-                                      			plot: {
-                                      				'offset-r': "10%" //provide percentage value
-                                      			},
+                                      			//"plot": {
+                                      			//    'offset-r': "10%" //provide percentage value
+
+                                      			//},
+
                                       			"series": [{
                                       				"values": [parseInt(oneyrpiimplemented)],
                                       				"text": "Implemented"
@@ -1163,10 +1167,10 @@ padding-top:0% !important;
                                       		});
                                       	}
                                       				    
-                                    </script>	
+                 </script>	
                                     
-                  <script>
-                                      			    function BarChartYearDept(oneyrdeptdepname1, oneyrdepttotalimplement1, oneyrdeptimplemented1, oneyrdeptyettoimplement1, oneyrdeptdepname2, oneyrdepttotalimplement2, oneyrdeptimplemented2, oneyrdeptyettoimplement2, oneyrdeptdepname3, oneyrdepttotalimplement3, oneyrdeptimplemented3, oneyrdeptyettoimplement3, oneyrdeptdepname4, oneyrdepttotalimplement4, oneyrdeptimplemented4, oneyrdeptyettoimplement4, oneyrdeptdepname5, oneyrdepttotalimplement5, oneyrdeptimplemented5, oneyrdeptyettoimplement5, oneyrdeptdepname6, oneyrdepttotalimplement6, oneyrdeptimplemented6, oneyrdeptyettoimplement6, oneyrdeptdepname7, oneyrdepttotalimplement7, oneyrdeptimplemented7, oneyrdeptyettoimplement7, oneyrdeptdepname8, oneyrdepttotalimplement8, oneyrdeptimplemented8, oneyrdeptyettoimplement8, oneyrdeptdepname9, oneyrdepttotalimplement9, oneyrdeptimplemented9, oneyrdeptyettoimplement9, oneyrdeptdepname10, oneyrdepttotalimplement10, oneyrdeptimplemented10, oneyrdeptyettoimplement10, oneyrdeptdepname11, oneyrdepttotalimplement11, oneyrdeptimplemented11, oneyrdeptyettoimplement11, oneyrdeptdepname12, oneyrdepttotalimplement12, oneyrdeptimplemented12, oneyrdeptyettoimplement12, oneyrdeptdepname13, oneyrdepttotalimplement13, oneyrdeptimplemented13, oneyrdeptyettoimplement13, oneyrdeptdepname14, oneyrdepttotalimplement14, oneyrdeptimplemented14, oneyrdeptyettoimplement14, oneyrdeptdepname15, oneyrdepttotalimplement15, oneyrdeptimplemented15, oneyrdeptyettoimplement15, oneyrdeptdepname16, oneyrdepttotalimplement16, oneyrdeptimplemented16, oneyrdeptyettoimplement16, oneyrdeptdepname17, oneyrdepttotalimplement17, oneyrdeptimplemented17, oneyrdeptyettoimplement17, oneyrdeptdepname18, oneyrdepttotalimplement18, oneyrdeptimplemented18, oneyrdeptyettoimplement18, oneyrdeptdepname19, oneyrdepttotalimplement19, oneyrdeptimplemented19, oneyrdeptyettoimplement19) {
+                 <script>
+                      function BarChartYearDept(oneyrdeptdepname1, oneyrdepttotalimplement1, oneyrdeptimplemented1, oneyrdeptyettoimplement1, oneyrdeptdepname2, oneyrdepttotalimplement2, oneyrdeptimplemented2, oneyrdeptyettoimplement2, oneyrdeptdepname3, oneyrdepttotalimplement3, oneyrdeptimplemented3, oneyrdeptyettoimplement3, oneyrdeptdepname4, oneyrdepttotalimplement4, oneyrdeptimplemented4, oneyrdeptyettoimplement4, oneyrdeptdepname5, oneyrdepttotalimplement5, oneyrdeptimplemented5, oneyrdeptyettoimplement5, oneyrdeptdepname6, oneyrdepttotalimplement6, oneyrdeptimplemented6, oneyrdeptyettoimplement6, oneyrdeptdepname7, oneyrdepttotalimplement7, oneyrdeptimplemented7, oneyrdeptyettoimplement7, oneyrdeptdepname8, oneyrdepttotalimplement8, oneyrdeptimplemented8, oneyrdeptyettoimplement8, oneyrdeptdepname9, oneyrdepttotalimplement9, oneyrdeptimplemented9, oneyrdeptyettoimplement9, oneyrdeptdepname10, oneyrdepttotalimplement10, oneyrdeptimplemented10, oneyrdeptyettoimplement10, oneyrdeptdepname11, oneyrdepttotalimplement11, oneyrdeptimplemented11, oneyrdeptyettoimplement11, oneyrdeptdepname12, oneyrdepttotalimplement12, oneyrdeptimplemented12, oneyrdeptyettoimplement12, oneyrdeptdepname13, oneyrdepttotalimplement13, oneyrdeptimplemented13, oneyrdeptyettoimplement13, oneyrdeptdepname14, oneyrdepttotalimplement14, oneyrdeptimplemented14, oneyrdeptyettoimplement14, oneyrdeptdepname15, oneyrdepttotalimplement15, oneyrdeptimplemented15, oneyrdeptyettoimplement15, oneyrdeptdepname16, oneyrdepttotalimplement16, oneyrdeptimplemented16, oneyrdeptyettoimplement16, oneyrdeptdepname17, oneyrdepttotalimplement17, oneyrdeptimplemented17, oneyrdeptyettoimplement17, oneyrdeptdepname18, oneyrdepttotalimplement18, oneyrdeptimplemented18, oneyrdeptyettoimplement18, oneyrdeptdepname19, oneyrdepttotalimplement19, oneyrdeptimplemented19, oneyrdeptyettoimplement19) {
                                       			        var myConfig = {
                                       			            "graphset": [{
                                       			                "globals": {
@@ -1405,10 +1409,10 @@ padding-top:0% !important;
                                       			            width: '100%'
                                       			        });
                                       			    }
-                                                </script>	
+                 </script>	
                                                 
                  <script>
-                                                          function BarChartYearMonth(oneyrmntmonths1, oneyrmntreceived1, oneyrmntaccepted1, oneyrmntreject1, oneyrmnthold1, oneyrmntimplemented1, oneyrmntmonths2, oneyrmntreceived2, oneyrmntaccepted2, oneyrmntreject2, oneyrmnthold2, oneyrmntimplemented2, oneyrmntmonths3, oneyrmntreceived3, oneyrmntaccepted3, oneyrmntreject3, oneyrmnthold3, oneyrmntimplemented3, oneyrmntmonths4, oneyrmntreceived4, oneyrmntaccepted4, oneyrmntreject4, oneyrmnthold4, oneyrmntimplemented4, oneyrmntmonths5, oneyrmntreceived5, oneyrmntaccepted5, oneyrmntreject5, oneyrmnthold5, oneyrmntimplemented5, oneyrmntmonths6, oneyrmntreceived6, oneyrmntaccepted6, oneyrmntreject6, oneyrmnthold6, oneyrmntimplemented6, oneyrmntmonths7, oneyrmntreceived7, oneyrmntaccepted7, oneyrmntreject7, oneyrmnthold7, oneyrmntimplemented7, oneyrmntmonths8, oneyrmntreceived8, oneyrmntaccepted8, oneyrmntreject8, oneyrmnthold8, oneyrmntimplemented8, oneyrmntmonths9, oneyrmntreceived9, oneyrmntaccepted9, oneyrmntreject9, oneyrmnthold9, oneyrmntimplemented9, oneyrmntmonths10, oneyrmntreceived10, oneyrmntaccepted10, oneyrmntreject10, oneyrmnthold10, oneyrmntimplemented10, oneyrmntmonths11, oneyrmntreceived11, oneyrmntaccepted11, oneyrmntreject11, oneyrmnthold11, oneyrmntimplemented11, oneyrmntmonths12, oneyrmntreceived12, oneyrmntaccepted12, oneyrmntreject12, oneyrmnthold12, oneyrmntimplemented12) {
+                      function BarChartYearMonth(oneyrmntmonths1, oneyrmntreceived1, oneyrmntaccepted1, oneyrmntreject1, oneyrmnthold1, oneyrmntimplemented1, oneyrmntmonths2, oneyrmntreceived2, oneyrmntaccepted2, oneyrmntreject2, oneyrmnthold2, oneyrmntimplemented2, oneyrmntmonths3, oneyrmntreceived3, oneyrmntaccepted3, oneyrmntreject3, oneyrmnthold3, oneyrmntimplemented3, oneyrmntmonths4, oneyrmntreceived4, oneyrmntaccepted4, oneyrmntreject4, oneyrmnthold4, oneyrmntimplemented4, oneyrmntmonths5, oneyrmntreceived5, oneyrmntaccepted5, oneyrmntreject5, oneyrmnthold5, oneyrmntimplemented5, oneyrmntmonths6, oneyrmntreceived6, oneyrmntaccepted6, oneyrmntreject6, oneyrmnthold6, oneyrmntimplemented6, oneyrmntmonths7, oneyrmntreceived7, oneyrmntaccepted7, oneyrmntreject7, oneyrmnthold7, oneyrmntimplemented7, oneyrmntmonths8, oneyrmntreceived8, oneyrmntaccepted8, oneyrmntreject8, oneyrmnthold8, oneyrmntimplemented8, oneyrmntmonths9, oneyrmntreceived9, oneyrmntaccepted9, oneyrmntreject9, oneyrmnthold9, oneyrmntimplemented9, oneyrmntmonths10, oneyrmntreceived10, oneyrmntaccepted10, oneyrmntreject10, oneyrmnthold10, oneyrmntimplemented10, oneyrmntmonths11, oneyrmntreceived11, oneyrmntaccepted11, oneyrmntreject11, oneyrmnthold11, oneyrmntimplemented11, oneyrmntmonths12, oneyrmntreceived12, oneyrmntaccepted12, oneyrmntreject12, oneyrmnthold12, oneyrmntimplemented12) {
 
                                                               var chartId = 'myChart';
 
@@ -1496,7 +1500,7 @@ padding-top:0% !important;
                                                                           "font-family": "Lato",
 
                                                                           "title": {
-                                                                              "text": "Suggestions 2020 Report",
+                                                                              "text": "Suggestions 2021 Report",
                                                                               
                                                                               "backgroundColor": "none",
                                                                               "font-size": "22px",
@@ -1652,10 +1656,10 @@ padding-top:0% !important;
                                                                   width: '100%'
                                                               });
                                                           }
-                                                      </script>		
+                 </script>		
                                                       
                  <script>
-                     function BarChartYearWiseYearList(yrsuggestionreceived1, yraccepted1, yrreject1, yrsuggestionreceived2, yraccepted2, yrreject2, yrsuggestionreceived3, yraccepted3, yrreject3, yrsuggestionreceived4, yraccepted4, yrreject4, yrsuggestionreceived5, yraccepted5, yrreject5, yrsuggestionreceived6, yraccepted6, yrreject6, yrsuggestionreceived7, yraccepted7, yrreject7, yrsuggestionreceived8, yraccepted8, yrreject8, yrsuggestionreceived9, yraccepted9, yrreject9, yrsuggestionreceived10, yraccepted10, yrreject10) {
+                     function BarChartYearWiseYearList(yrsuggestionreceived1, yraccepted1, yrreject1, yrimplement1, yrhold1, yrsuggestionreceived2, yraccepted2, yrreject2, yrimplement2, yrhold2, yrsuggestionreceived3, yraccepted3, yrreject3, yrimplement3, yrhold3, yrsuggestionreceived4, yraccepted4, yrreject4, yrimplement4, yrhold4, yrsuggestionreceived5, yraccepted5, yrreject5, yrimplement5, yrhold5, yrsuggestionreceived6, yraccepted6, yrreject6, yrimplement6, yrhold6, yrsuggestionreceived7, yraccepted7, yrreject7, yrimplement7, yrhold7, yrsuggestionreceived8, yraccepted8, yrreject8, yrimplement8, yrhold8, yrsuggestionreceived9, yraccepted9, yrreject9, yrimplement9, yrhold9, yrsuggestionreceived10, yraccepted10, yrreject10, yrimplement10, yrhold10) {
 
                                                               var chartId = 'myChart';
 
@@ -1700,7 +1704,33 @@ padding-top:0% !important;
                                                                           parseInt(yrreject9),
                                                                           parseInt(yrreject10)
 
-                                                              ];
+                                                              ]; 
+                                                                var yrimplement = [
+                                                                          parseInt(yrimplement1),
+                                                                          parseInt(yrimplement2),
+                                                                          parseInt(yrimplement3),
+                                                                          parseInt(yrimplement4),
+                                                                          parseInt(yrimplement5),
+                                                                          parseInt(yrimplement6),
+                                                                          parseInt(yrimplement7),
+                                                                          parseInt(yrimplement8),
+                                                                          parseInt(yrimplement9),
+                                                                          parseInt(yrimplement10)
+
+                                                                ];
+                                                              var yrhold = [
+                                                                        parseInt(yrhold1),
+                                                                        parseInt(yrhold2),
+                                                                        parseInt(yrhold3),
+                                                                        parseInt(yrhold4),
+                                                                        parseInt(yrhold5),
+                                                                        parseInt(yrhold6),
+                                                                        parseInt(yrhold7),
+                                                                        parseInt(yrhold8),
+                                                                        parseInt(yrhold9),
+                                                                        parseInt(yrhold10)
+
+                                                              ]; 
                                                               
                                                               console.log('myConfigBarChartYearWiseYearList', yrsuggestionreceived, yraccepted, yrreject);
                                                               var myConfigBarChartYearWiseYearList = {
@@ -1832,11 +1862,72 @@ padding-top:0% !important;
                                                                               "offsetY": -10,
                                                                               "jsRule": "rule_series_123_valueBox_0()"
                                                                           }]
-                                                                      }, 
-                                                                      
+                                                                      },  
+                                                                      {
+                                                                          "values": yrimplement,
+                                                                      "text": "Implement",
+                                                                      "background-color": "#33cc33",
+                                                                      "valueBox": [{
+                                                                          "fontSize": 10,
+                                                                          "fontWeight": 600,
+                                                                          "offsetY": -10,
+                                                                          "jsRule": "rule_series_123_valueBox_0()"
+                                                                      }]
+                                                                      },
+                                                                      {
+                                                                          "values": yrhold,
+                                                                          "text": "Hold",
+                                                                          "background-color": "#ff9933",
+                                                                          "valueBox": [{
+                                                                              "fontSize": 10,
+                                                                              "fontWeight": 600,
+                                                                              "offsetY": -10,
+                                                                              "jsRule": "rule_series_123_valueBox_0()"
+                                                                          }]
+                                                                      },      
+
                                                                       ]
                                                                   }]
                                                               };
+                                                              zingchart.bind(null, 'node_click', function (e) {
+                                                                  console.log(e);
+                                                                  if (e.scaletext === "2020") {
+                                                                      console.log("enterbar");
+                                                                      year1();
+                                                                  }
+                                                                  else if (e.scaletext === "2021") {
+                                                                      year2();
+                                                                  }
+                                                                  else if (e.scaletext === "2022") {
+                                                                      year3();
+                                                                  }
+                                                                  else if (e.scaletext === "2023") {
+                                                                      year4();
+                                                                  }
+                                                                  else if (e.scaletext === "2024") {
+                                                                      year5();
+                                                                  }
+                                                                  else if (e.scaletext === "2025") {
+                                                                      year6();
+                                                                  }
+                                                                  else if (e.scaletext === "2026") {
+                                                                      year7();
+                                                                  }
+                                                                  else if (e.scaletext === "2027") {
+                                                                      year8();
+                                                                  }
+                                                                  else if (e.scaletext === "2028") {
+                                                                      year9();
+                                                                  }
+                                                                  else if (e.scaletext === "2029") {
+                                                                      year10();
+                                                                  }
+                                                                  else {
+                                                                      alert('Please Click Year In Chart');
+                                                                  }
+
+
+                                                              });
 
 
                                                               // RENDER CHART
@@ -1853,28 +1944,94 @@ padding-top:0% !important;
 
                  <script type="text/javascript">
                                    
-                     function bindgraphNew(oneyrbrsuggestionreceived, oneyrbraccepted, oneyrbrrejected, oneyrpitotalsuggestion, oneyrpiimplemented, oneyrpiaccepted, oneyrdeptdepname1, oneyrdepttotalimplement1, oneyrdeptimplemented1, oneyrdeptyettoimplement1, oneyrdeptdepname2, oneyrdepttotalimplement2, oneyrdeptimplemented2, oneyrdeptyettoimplement2, oneyrdeptdepname3, oneyrdepttotalimplement3, oneyrdeptimplemented3, oneyrdeptyettoimplement3, oneyrdeptdepname4, oneyrdepttotalimplement4, oneyrdeptimplemented4, oneyrdeptyettoimplement4, oneyrdeptdepname5, oneyrdepttotalimplement5, oneyrdeptimplemented5, oneyrdeptyettoimplement5, oneyrdeptdepname6, oneyrdepttotalimplement6, oneyrdeptimplemented6, oneyrdeptyettoimplement6, oneyrdeptdepname7, oneyrdepttotalimplement7, oneyrdeptimplemented7, oneyrdeptyettoimplement7, oneyrdeptdepname8, oneyrdepttotalimplement8, oneyrdeptimplemented8, oneyrdeptyettoimplement8, oneyrdeptdepname9, oneyrdepttotalimplement9, oneyrdeptimplemented9, oneyrdeptyettoimplement9, oneyrdeptdepname10, oneyrdepttotalimplement10, oneyrdeptimplemented10, oneyrdeptyettoimplement10, oneyrdeptdepname11, oneyrdepttotalimplement11, oneyrdeptimplemented11, oneyrdeptyettoimplement11, oneyrdeptdepname12, oneyrdepttotalimplement12, oneyrdeptimplemented12, oneyrdeptyettoimplement12, oneyrdeptdepname13, oneyrdepttotalimplement13, oneyrdeptimplemented13, oneyrdeptyettoimplement13, oneyrdeptdepname14, oneyrdepttotalimplement14, oneyrdeptimplemented14, oneyrdeptyettoimplement14, oneyrdeptdepname15, oneyrdepttotalimplement15, oneyrdeptimplemented15, oneyrdeptyettoimplement15, oneyrdeptdepname16, oneyrdepttotalimplement16, oneyrdeptimplemented16, oneyrdeptyettoimplement16, oneyrdeptdepname17, oneyrdepttotalimplement17, oneyrdeptimplemented17, oneyrdeptyettoimplement17, oneyrdeptdepname18, oneyrdepttotalimplement18, oneyrdeptimplemented18, oneyrdeptyettoimplement18, oneyrdeptdepname19, oneyrdepttotalimplement19, oneyrdeptimplemented19, oneyrdeptyettoimplement19, oneyrmntmonths1, oneyrmntreceived1, oneyrmntaccepted1, oneyrmntreject1, oneyrmnthold1, oneyrmntimplemented1, oneyrmntmonths2, oneyrmntreceived2, oneyrmntaccepted2, oneyrmntreject2, oneyrmnthold2, oneyrmntimplemented2, oneyrmntmonths3, oneyrmntreceived3, oneyrmntaccepted3, oneyrmntreject3, oneyrmnthold3, oneyrmntimplemented3, oneyrmntmonths4, oneyrmntreceived4, oneyrmntaccepted4, oneyrmntreject4, oneyrmnthold4, oneyrmntimplemented4, oneyrmntmonths5, oneyrmntreceived5, oneyrmntaccepted5, oneyrmntreject5, oneyrmnthold5, oneyrmntimplemented5, oneyrmntmonths6, oneyrmntreceived6, oneyrmntaccepted6, oneyrmntreject6, oneyrmnthold6, oneyrmntimplemented6, oneyrmntmonths7, oneyrmntreceived7, oneyrmntaccepted7, oneyrmntreject7, oneyrmnthold7, oneyrmntimplemented7, oneyrmntmonths8, oneyrmntreceived8, oneyrmntaccepted8, oneyrmntreject8, oneyrmnthold8, oneyrmntimplemented8, oneyrmntmonths9, oneyrmntreceived9, oneyrmntaccepted9, oneyrmntreject9, oneyrmnthold9, oneyrmntimplemented9, oneyrmntmonths10, oneyrmntreceived10, oneyrmntaccepted10, oneyrmntreject10, oneyrmnthold10, oneyrmntimplemented10, oneyrmntmonths11, oneyrmntreceived11, oneyrmntaccepted11, oneyrmntreject11, oneyrmnthold11, oneyrmntimplemented11, oneyrmntmonths12, oneyrmntreceived12, oneyrmntaccepted12, oneyrmntreject12, oneyrmnthold12, oneyrmntimplemented12, yrsuggestionreceived1, yraccepted1, yrreject1, yrsuggestionreceived2, yraccepted2, yrreject2, yrsuggestionreceived3, yraccepted3, yrreject3, yrsuggestionreceived4, yraccepted4, yrreject4, yrsuggestionreceived5, yraccepted5, yrreject5, yrsuggestionreceived6, yraccepted6, yrreject6, yrsuggestionreceived7, yraccepted7, yrreject7, yrsuggestionreceived8, yraccepted8, yrreject8, yrsuggestionreceived9, yraccepted9, yrreject9, yrsuggestionreceived10, yraccepted10, yrreject10) {
+                     function bindgraphNew(oneyrbrsuggestionreceived, oneyrbraccepted, oneyrbrrejected, oneyrpitotalsuggestion, oneyrpiimplemented, oneyrpiaccepted, oneyrdeptdepname1, oneyrdepttotalimplement1, oneyrdeptimplemented1, oneyrdeptyettoimplement1, oneyrdeptdepname2, oneyrdepttotalimplement2, oneyrdeptimplemented2, oneyrdeptyettoimplement2, oneyrdeptdepname3, oneyrdepttotalimplement3, oneyrdeptimplemented3, oneyrdeptyettoimplement3, oneyrdeptdepname4, oneyrdepttotalimplement4, oneyrdeptimplemented4, oneyrdeptyettoimplement4, oneyrdeptdepname5, oneyrdepttotalimplement5, oneyrdeptimplemented5, oneyrdeptyettoimplement5, oneyrdeptdepname6, oneyrdepttotalimplement6, oneyrdeptimplemented6, oneyrdeptyettoimplement6, oneyrdeptdepname7, oneyrdepttotalimplement7, oneyrdeptimplemented7, oneyrdeptyettoimplement7, oneyrdeptdepname8, oneyrdepttotalimplement8, oneyrdeptimplemented8, oneyrdeptyettoimplement8, oneyrdeptdepname9, oneyrdepttotalimplement9, oneyrdeptimplemented9, oneyrdeptyettoimplement9, oneyrdeptdepname10, oneyrdepttotalimplement10, oneyrdeptimplemented10, oneyrdeptyettoimplement10, oneyrdeptdepname11, oneyrdepttotalimplement11, oneyrdeptimplemented11, oneyrdeptyettoimplement11, oneyrdeptdepname12, oneyrdepttotalimplement12, oneyrdeptimplemented12, oneyrdeptyettoimplement12, oneyrdeptdepname13, oneyrdepttotalimplement13, oneyrdeptimplemented13, oneyrdeptyettoimplement13, oneyrdeptdepname14, oneyrdepttotalimplement14, oneyrdeptimplemented14, oneyrdeptyettoimplement14, oneyrdeptdepname15, oneyrdepttotalimplement15, oneyrdeptimplemented15, oneyrdeptyettoimplement15, oneyrdeptdepname16, oneyrdepttotalimplement16, oneyrdeptimplemented16, oneyrdeptyettoimplement16, oneyrdeptdepname17, oneyrdepttotalimplement17, oneyrdeptimplemented17, oneyrdeptyettoimplement17, oneyrdeptdepname18, oneyrdepttotalimplement18, oneyrdeptimplemented18, oneyrdeptyettoimplement18, oneyrdeptdepname19, oneyrdepttotalimplement19, oneyrdeptimplemented19, oneyrdeptyettoimplement19, oneyrmntmonths1, oneyrmntreceived1, oneyrmntaccepted1, oneyrmntreject1, oneyrmnthold1, oneyrmntimplemented1, oneyrmntmonths2, oneyrmntreceived2, oneyrmntaccepted2, oneyrmntreject2, oneyrmnthold2, oneyrmntimplemented2, oneyrmntmonths3, oneyrmntreceived3, oneyrmntaccepted3, oneyrmntreject3, oneyrmnthold3, oneyrmntimplemented3, oneyrmntmonths4, oneyrmntreceived4, oneyrmntaccepted4, oneyrmntreject4, oneyrmnthold4, oneyrmntimplemented4, oneyrmntmonths5, oneyrmntreceived5, oneyrmntaccepted5, oneyrmntreject5, oneyrmnthold5, oneyrmntimplemented5, oneyrmntmonths6, oneyrmntreceived6, oneyrmntaccepted6, oneyrmntreject6, oneyrmnthold6, oneyrmntimplemented6, oneyrmntmonths7, oneyrmntreceived7, oneyrmntaccepted7, oneyrmntreject7, oneyrmnthold7, oneyrmntimplemented7, oneyrmntmonths8, oneyrmntreceived8, oneyrmntaccepted8, oneyrmntreject8, oneyrmnthold8, oneyrmntimplemented8, oneyrmntmonths9, oneyrmntreceived9, oneyrmntaccepted9, oneyrmntreject9, oneyrmnthold9, oneyrmntimplemented9, oneyrmntmonths10, oneyrmntreceived10, oneyrmntaccepted10, oneyrmntreject10, oneyrmnthold10, oneyrmntimplemented10, oneyrmntmonths11, oneyrmntreceived11, oneyrmntaccepted11, oneyrmntreject11, oneyrmnthold11, oneyrmntimplemented11, oneyrmntmonths12, oneyrmntreceived12, oneyrmntaccepted12, oneyrmntreject12, oneyrmnthold12, oneyrmntimplemented12, yrsuggestionreceived1, yraccepted1, yrreject1, yrimplement1, yrhold1, yrsuggestionreceived2, yraccepted2, yrreject2, yrimplement2, yrhold2, yrsuggestionreceived3, yraccepted3, yrreject3, yrimplement3, yrhold3, yrsuggestionreceived4, yraccepted4, yrreject4, yrimplement4, yrhold4, yrsuggestionreceived5, yraccepted5, yrreject5, yrimplement5, yrhold5, yrsuggestionreceived6, yraccepted6, yrreject6, yrimplement6, yrhold6, yrsuggestionreceived7, yraccepted7, yrreject7, yrimplement7, yrhold7, yrsuggestionreceived8, yraccepted8, yrreject8, yrimplement8, yrhold8, yrsuggestionreceived9, yraccepted9, yrreject9, yrimplement9, yrhold9, yrsuggestionreceived10, yraccepted10, yrreject10, yrimplement10, yrhold10) {
                                         console.log(oneyrbrsuggestionreceived, oneyrbraccepted, oneyrbrrejected, oneyrpitotalsuggestion, oneyrpiimplemented, oneyrpiaccepted);
                                         BarChartYear(oneyrbrsuggestionreceived, oneyrbraccepted, oneyrbrrejected);
                                         PieChartYear(oneyrpitotalsuggestion, oneyrpiimplemented, oneyrpiaccepted);
                                         BarChartYearDept(oneyrdeptdepname1, oneyrdepttotalimplement1, oneyrdeptimplemented1, oneyrdeptyettoimplement1, oneyrdeptdepname2, oneyrdepttotalimplement2, oneyrdeptimplemented2, oneyrdeptyettoimplement2, oneyrdeptdepname3, oneyrdepttotalimplement3, oneyrdeptimplemented3, oneyrdeptyettoimplement3, oneyrdeptdepname4, oneyrdepttotalimplement4, oneyrdeptimplemented4, oneyrdeptyettoimplement4, oneyrdeptdepname5, oneyrdepttotalimplement5, oneyrdeptimplemented5, oneyrdeptyettoimplement5, oneyrdeptdepname6, oneyrdepttotalimplement6, oneyrdeptimplemented6, oneyrdeptyettoimplement6, oneyrdeptdepname7, oneyrdepttotalimplement7, oneyrdeptimplemented7, oneyrdeptyettoimplement7, oneyrdeptdepname8, oneyrdepttotalimplement8, oneyrdeptimplemented8, oneyrdeptyettoimplement8, oneyrdeptdepname9, oneyrdepttotalimplement9, oneyrdeptimplemented9, oneyrdeptyettoimplement9, oneyrdeptdepname10, oneyrdepttotalimplement10, oneyrdeptimplemented10, oneyrdeptyettoimplement10, oneyrdeptdepname11, oneyrdepttotalimplement11, oneyrdeptimplemented11, oneyrdeptyettoimplement11, oneyrdeptdepname12, oneyrdepttotalimplement12, oneyrdeptimplemented12, oneyrdeptyettoimplement12, oneyrdeptdepname13, oneyrdepttotalimplement13, oneyrdeptimplemented13, oneyrdeptyettoimplement13, oneyrdeptdepname14, oneyrdepttotalimplement14, oneyrdeptimplemented14, oneyrdeptyettoimplement14, oneyrdeptdepname15, oneyrdepttotalimplement15, oneyrdeptimplemented15, oneyrdeptyettoimplement15, oneyrdeptdepname16, oneyrdepttotalimplement16, oneyrdeptimplemented16, oneyrdeptyettoimplement16, oneyrdeptdepname17, oneyrdepttotalimplement17, oneyrdeptimplemented17, oneyrdeptyettoimplement17, oneyrdeptdepname18, oneyrdepttotalimplement18, oneyrdeptimplemented18, oneyrdeptyettoimplement18, oneyrdeptdepname19, oneyrdepttotalimplement19, oneyrdeptimplemented19, oneyrdeptyettoimplement19);
                                         BarChartYearMonth(oneyrmntmonths1, oneyrmntreceived1, oneyrmntaccepted1, oneyrmntreject1, oneyrmnthold1, oneyrmntimplemented1, oneyrmntmonths2, oneyrmntreceived2, oneyrmntaccepted2, oneyrmntreject2, oneyrmnthold2, oneyrmntimplemented2, oneyrmntmonths3, oneyrmntreceived3, oneyrmntaccepted3, oneyrmntreject3, oneyrmnthold3, oneyrmntimplemented3, oneyrmntmonths4, oneyrmntreceived4, oneyrmntaccepted4, oneyrmntreject4, oneyrmnthold4, oneyrmntimplemented4, oneyrmntmonths5, oneyrmntreceived5, oneyrmntaccepted5, oneyrmntreject5, oneyrmnthold5, oneyrmntimplemented5, oneyrmntmonths6, oneyrmntreceived6, oneyrmntaccepted6, oneyrmntreject6, oneyrmnthold6, oneyrmntimplemented6, oneyrmntmonths7, oneyrmntreceived7, oneyrmntaccepted7, oneyrmntreject7, oneyrmnthold7, oneyrmntimplemented7, oneyrmntmonths8, oneyrmntreceived8, oneyrmntaccepted8, oneyrmntreject8, oneyrmnthold8, oneyrmntimplemented8, oneyrmntmonths9, oneyrmntreceived9, oneyrmntaccepted9, oneyrmntreject9, oneyrmnthold9, oneyrmntimplemented9, oneyrmntmonths10, oneyrmntreceived10, oneyrmntaccepted10, oneyrmntreject10, oneyrmnthold10, oneyrmntimplemented10, oneyrmntmonths11, oneyrmntreceived11, oneyrmntaccepted11, oneyrmntreject11, oneyrmnthold11, oneyrmntimplemented11, oneyrmntmonths12, oneyrmntreceived12, oneyrmntaccepted12, oneyrmntreject12, oneyrmnthold12, oneyrmntimplemented12);
-                                        BarChartYearWiseYearList(yrsuggestionreceived1, yraccepted1, yrreject1, yrsuggestionreceived2, yraccepted2, yrreject2, yrsuggestionreceived3, yraccepted3, yrreject3, yrsuggestionreceived4, yraccepted4, yrreject4, yrsuggestionreceived5, yraccepted5, yrreject5, yrsuggestionreceived6, yraccepted6, yrreject6, yrsuggestionreceived7, yraccepted7,yrreject7,yrsuggestionreceived8, yraccepted8, yrreject8, yrsuggestionreceived9,yraccepted9,yrreject9,yrsuggestionreceived10,yraccepted10,yrreject10)
+                                        BarChartYearWiseYearList(yrsuggestionreceived1, yraccepted1, yrreject1, yrimplement1, yrhold1, yrsuggestionreceived2, yraccepted2, yrreject2, yrimplement2, yrhold2, yrsuggestionreceived3, yraccepted3, yrreject3, yrimplement3, yrhold3, yrsuggestionreceived4, yraccepted4, yrreject4, yrimplement4, yrhold4, yrsuggestionreceived5, yraccepted5, yrreject5, yrimplement5, yrhold5, yrsuggestionreceived6, yraccepted6, yrreject6, yrimplement6, yrhold6, yrsuggestionreceived7, yraccepted7, yrreject7, yrimplement7, yrhold7, yrsuggestionreceived8, yraccepted8, yrreject8, yrimplement8, yrhold8, yrsuggestionreceived9, yraccepted9, yrreject9, yrimplement9, yrhold9, yrsuggestionreceived10, yraccepted10, yrreject10, yrimplement10, yrhold10)
                                         console.log('barchartyearMonth', oneyrmntmonths1, oneyrmntreceived1, oneyrmntaccepted1, oneyrmntreject1, oneyrmnthold1, oneyrmntimplemented1, oneyrmntmonths2, oneyrmntreceived2, oneyrmntaccepted2, oneyrmntreject2, oneyrmnthold2, oneyrmntimplemented2, oneyrmntmonths3, oneyrmntreceived3, oneyrmntaccepted3, oneyrmntreject3, oneyrmnthold3, oneyrmntimplemented3, oneyrmntmonths4, oneyrmntreceived4, oneyrmntaccepted4, oneyrmntreject4, oneyrmnthold4, oneyrmntimplemented4, oneyrmntmonths5, oneyrmntreceived5, oneyrmntaccepted5, oneyrmntreject5, oneyrmnthold5, oneyrmntimplemented5, oneyrmntmonths6, oneyrmntreceived6, oneyrmntaccepted6, oneyrmntreject6, oneyrmnthold6, oneyrmntimplemented6, oneyrmntmonths7, oneyrmntreceived7, oneyrmntaccepted7, oneyrmntreject7, oneyrmnthold7, oneyrmntimplemented7, oneyrmntmonths8, oneyrmntreceived8, oneyrmntaccepted8, oneyrmntreject8, oneyrmnthold8, oneyrmntimplemented8, oneyrmntmonths9, oneyrmntreceived9, oneyrmntaccepted9, oneyrmntreject9, oneyrmnthold9, oneyrmntimplemented9, oneyrmntmonths10, oneyrmntreceived10, oneyrmntaccepted10, oneyrmntreject10, oneyrmnthold10, oneyrmntimplemented10, oneyrmntmonths11, oneyrmntreceived11, oneyrmntaccepted11, oneyrmntreject11, oneyrmnthold11, oneyrmntimplemented11, oneyrmntmonths12, oneyrmntreceived12, oneyrmntaccepted12, oneyrmntreject12, oneyrmnthold12, oneyrmntimplemented12)
                                     }
 
 
                                     
                             </script>
-                            
-               
     
-        
-        
-        
+            <script src="../UI/Style/zingchart.min.js"></script>  
+            
+<script>
+    function year1() {
        
+        var k = "year20";
+        var url = "GetExcelYearBarChart.aspx?data=" + k;
+        console.log(k)
+        console.log("urlenter");
+        window.location.href = url;
+        console.log("urlexit");
+
+    }
+    function year2() {
+        var k = "year21";
+        var url = "GetExcelYearBarChart.aspx?data=" + k;
+        window.location.href = url;
+        
+    }
+    function year3() {
+        var k = "year22";
+        var url = "GetExcelYearBarChart.aspx?data=" + k;
+        window.location.href = url;
+        
+    }
+    function year4() {
+
+        var k = "year23";
+        var url = "GetExcelYearBarChart.aspx?data=" + k;
+        window.location.href = url;
        
-            <script src="../UI/Style/zingchart.min.js"></script>            
+    }
+    function year5() {
+        var k = "year24";
+        var url = "GetExcelYearBarChart.aspx?data=" + k;
+        window.location.href = url;
+       
+    }
+    function year6() {
+        var k = "year25";
+        var url = "GetExcelYearBarChart.aspx?data=" + k;
+        window.location.href = url;
+        
+    }
+    function year7() {
+        var k = "year26";
+        var url = "GetExcelYearBarChart.aspx?data=" + k;
+        window.location.href = url;
+
+    }
+    function year8() {
+
+        var k = "year27";
+        var url = "GetExcelYearBarChart.aspx?data=" + k;
+        window.location.href = url;
+
+    }
+    function year9() {
+        var k = "year28";
+        var url = "GetExcelYearBarChart.aspx?data=" + k;
+        window.location.href = url;
+
+    }
+    function year10() {
+        var k = "year29";
+        var url = "GetExcelYearBarChart.aspx?data=" + k;
+        window.location.href = url;
+
+    }
+</script>
+            
+            
+            
+                      
         <script src="../UI/Style/wow.min.js"></script>
                             <script>
                                 new WOW().init();
