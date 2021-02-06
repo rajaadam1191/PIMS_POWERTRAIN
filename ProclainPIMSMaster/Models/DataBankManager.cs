@@ -614,6 +614,37 @@ namespace ProclainPIMSMaster.Models
             Da.ExecuteNonQuery("sp_manager_send_mail_OtherDepartment");
 
         }
+        public void ManagerEvaInsert_DBM(DataBankManager M)
+        {
+
+
+            DataTO Da = new DataTO();
+            
+            SqlParameter OP = new SqlParameter("@IdeaId", M.IdeaId);
+            Da.parameters.Add(OP);
+            SqlParameter OP7 = new SqlParameter("@UserId", M.HEmployeeName);
+            Da.parameters.Add(OP7);
+            
+            SqlParameter OP11 = new SqlParameter("@From", M.DBMEmail);
+            Da.parameters.Add(OP11);
+            
+            SqlParameter OP0 = new SqlParameter("@Date", M.Date);
+            Da.parameters.Add(OP0);
+            SqlParameter OP3 = new SqlParameter("@Subject", M.Subject);
+            Da.parameters.Add(OP3);
+            SqlParameter OP4 = new SqlParameter("@EmailContent", M.Discription);
+            Da.parameters.Add(OP4);
+
+            SqlParameter OP5 = new SqlParameter("@Remark1", M.Remark1);
+            Da.parameters.Add(OP5);
+            foreach (SqlParameter p in Da.parameters)
+            {
+                p.Direction = ParameterDirection.Input;
+            }
+
+            Da.ExecuteNonQuery("[sp_manager_send_mail_DBM]");
+
+        }
 
         #endregion
         public void HosInboxInsert(DataBankManager M)
@@ -997,6 +1028,19 @@ namespace ProclainPIMSMaster.Models
             DataSet Ds = new DataSet();
 
             Ds = Da.ExecuteDataset("SP_CommitteeEvalInbox_Select_Send_RepeaterView_reject");
+            return Ds;
+
+
+        }
+        public DataSet ComtEvalRepViewSendFromManager()
+        {
+
+
+
+            DataTO Da = new DataTO();
+            DataSet Ds = new DataSet();
+
+            Ds = Da.ExecuteDataset("[SP_CommitteeEvalInbox_Select_Send_RepeaterView_FrmDBM]");
             return Ds;
 
 

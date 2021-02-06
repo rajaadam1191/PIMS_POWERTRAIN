@@ -21,6 +21,7 @@ namespace ProclainPIMSMaster.Form
         public string Employee { get; set; }
         public string Days { get; set; }
         public string Email { get; set; }
+        public string IdeaCount { get; set; }
         public string Rolename { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -65,8 +66,9 @@ namespace ProclainPIMSMaster.Form
                 for(int x=0;x<Ds.Tables[0].Rows.Count;x++)
                 {
                     Employee = Ds.Tables[0].Rows[x].ItemArray[0].ToString();
-                    Days = Ds.Tables[0].Rows[x].ItemArray[1].ToString();
+                    IdeaCount = Ds.Tables[0].Rows[x].ItemArray[1].ToString();
                     Email = Ds.Tables[0].Rows[x].ItemArray[2].ToString();
+                    Days = Ds.Tables[0].Rows[x].ItemArray[3].ToString();
                     //string apiUrl = "http://10.14.0.40/WebEmail/api/Email";   // located in IIS server
                     //string apiUrlLocal = "http://10.14.0.40/WebEmail/api/Email";     // Running instance from Visual Studio
                     string apiUrl = "http://localhost/WebEmail/api/Email";   // located in IIS server
@@ -76,6 +78,7 @@ namespace ProclainPIMSMaster.Form
                         Employee = Employee.ToString(),
                         Days = Days,
                         AutoEmail = Email.ToString(),
+                        Ideacount=IdeaCount.ToString(),
                         RoleName = Rolename.ToString(),
                         Message = "Kindly Response The suggestions",
                         process = "Alert Mail"

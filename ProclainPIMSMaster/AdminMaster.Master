@@ -301,14 +301,14 @@
                             <span class="title">Idea Details</span>
                         </a>
                     </li>
-                     <li class="nav-item" id="RoleWisecomment">
+                     <%--<li class="nav-item" id="RoleWisecomment">
                         <a class="sidebar-link" href="RolesComments.aspx">
                             <span class="icon-holder">
                                   <i style="color:#609;"  class="fa fa-info-circle"></i>
                                 </span>
                             <span class="title">Roles Wise Idea Comments </span>
                         </a>
-                    </li>
+                    </li>--%>
                     <li class="nav-item" id="DeptWiseRecord">
                         <a class="sidebar-link" href="DeptWiseRecord.aspx">
                             <span class="icon-holder">

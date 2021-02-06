@@ -86,6 +86,12 @@ namespace ProclainPIMSMaster.Models
             get { return admin; }
             set { admin = value; }
         }
+        private string plantName;
+        public string PlantName
+        {
+            get { return plantName; }
+            set { plantName = value; }
+        }
         #endregion
 
         #region Golbal Variable Declaration

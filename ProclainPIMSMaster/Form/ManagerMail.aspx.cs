@@ -834,5 +834,58 @@ namespace ProclainPIMSMaster.Form
                 //throw new Exception("Error Initializing Data Class." + Environment.NewLine + ex.Message);
             }
         }
+
+        protected void DBMButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ManagerSentToDBM();
+                Response.Redirect("ManagerMail.aspx");
+            }
+            catch (Exception e1)
+            {
+            }
+        }
+        public void ManagerSentToDBM()
+        {
+            DataSet Ds = new DataSet();
+            try
+            {
+                
+
+                    // ComEvalInboxIDAutoGeneration();
+
+
+                    
+                    DBM.IdeaId = DBMIdeaid.Text.ToString();
+                    DBM.HEmployeeName = us1.ToString();
+                    DBM.DBMEmail = Session["Email"].ToString();
+                
+                    DBM.Date = System.DateTime.Now.ToString("yyyy-MM-dd").ToString().Trim();
+                    
+                    DBM.Subject = DBMSubject.Text.TrimStart().TrimEnd().ToString();
+                    DBM.Discription = DBMRemark.Text.TrimStart().TrimEnd().ToString();
+                    DBM.Remark1 = "i";
+                    
+                    
+                    DBM.ManagerEvaInsert_DBM(DBM);
+
+
+
+                
+               
+                string myscript = "alert ('Mail Send DBM');";
+                Page.ClientScript.RegisterClientScriptBlock(this.GetType(), "MyScript", myscript, true);
+
+                z = 1;
+
+               
+            }
+            catch (Exception e1)
+            {
+
+                throw new Exception("Error Initializing Data Class." + Environment.NewLine + e1.Message);
+            }
+        }
     }
 }

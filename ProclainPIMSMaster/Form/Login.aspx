@@ -135,7 +135,7 @@
                         <img style="margin-top:35px;margin-left:30px;" class="pos-a centerXY" src="../UI/assets/static/images/logo1.png" alt=""/>
                     </div>
                 </div>
-                <div class="card" style="opacity:0.8; width:40%;height:40%;margin-left:30%;margin-top:12%;align-content:center;border-radius:10px;">
+                <div class="card" style="opacity:0.8; width:40%;height:50%;margin-left:30%;margin-top:12%;align-content:center;border-radius:10px;">
                       
                 
                    <div style="padding-left:15px;">
@@ -153,16 +153,29 @@
                             <div class="col-md-12">
                         <asp:TextBox ID="PasswordTextBox"  Cssclass="form-control" placeholder="Type Your Password Here..." runat="server" style="border-radius:20px;margin-right:20%;" TextMode="Password"></asp:TextBox></div>
                         </div>
-                        
+
+                       <br />
                     
-                   <br />
+                        <div class="row" style="width:100%">
+                            <%--<div class="col-md-6" ><label class="text-normal text-dark">Password</label></div>--%>
+                            <div class="col-md-12">
+                                            <asp:DropDownList ID="AccessDepartment" CssClass="form-control " runat="server" AutoPostBack="false" AppendDataBoundItems="True" style="border-radius:20px;margin-right:20%;">
+                                                <asp:ListItem>--Select--</asp:ListItem>
+                                                <asp:ListItem Value="prod">PHPVT</asp:ListItem>
+                                                <asp:ListItem Value="ptrain">POWERTRAIN</asp:ListItem>
+
+                                            </asp:DropDownList>
+                        </div>
+                        </div>
+                    
+                   
                     <br />
                   <hr />
                             <div class="row" style="width:100%">
                             <div class="col-md-12" >
                                 
 
-                                <asp:Button ID="SignInButton" CssClass="form-control apopbtn btn-primary" runat="server" style="border-radius:20px;" Text="SignIn" BorderColor="DodgerBlue" OnClick="SignUpButton_Click" />
+                                <asp:Button ID="SignInButton" CssClass="form-control apopbtn btn-primary" runat="server" style="border-radius:20px;" Text="SignIn" BorderColor="DodgerBlue" OnClick="SignUpButton_Click" hidden />
                                 
                             
                             </div>
@@ -184,50 +197,7 @@
     
                 </div>
             
-           <%-- <div class="d-n@sm- peer peer-greed h-100 pos-r bgr-n bgpX-a bgpY-c bgsz-cv" style="background-image:url(../UI/assets/static/images/Log1.jpg)">
-                <div class="pos-a Right-centerXY ">
-                    <div class="bgc-white bdrs-50p pos-r" style="width:120px;height:120px">
-                        <img class="pos-a centerXY" src="../UI/assets/static/images/logo1.png" alt=""/>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-md-4 peer pX-40 pY-80 h-100 bgc-white scrollable pos-r" style="min-width:320px">
-                <h4 class="fw-300 c-grey-900 mB-40">Login</h4>
-                
-                    <div class="form-group">
-                        <label class="text-normal text-dark">Employee Id</label>
-                        <asp:TextBox ID="EmployeeIDTextBox" CssClass="form-control" placeholder="Employee ID" runat="server" AutoPostBack="false" ></asp:TextBox>
-                    </div>
-                    <div class="form-group">
-                        <label class="text-normal text-dark">Password</label>
-                        <asp:TextBox ID="PasswordTextBox"  Cssclass="form-control" placeholder="Password" runat="server" TextMode="Password"></asp:TextBox>
-                    </div>
-                    <div class="form-group">
-                        <div class="peers ai-c jc-sb fxw-nw">
-                         <!--   <div class="peer">
-                                <div class="checkbox checkbox-circle checkbox-info peers ai-c" >
-                                    <asp:CheckBox ID="RememberMeCheckBox" CSSclass="peer" runat="server" />
-                                    <label for="inputCall1" class="peers peer-greed js-sb ai-c" >
-                                        <span class="peer peer-greed">Remember Me</span>
-                                    </label>
-                                </div>
-                            </div> -->
-                            <div class="peer">
-
-                                <asp:Button ID="SignInButton" CssClass="form-control apopbtn btn-primary" runat="server" Text="SignIn" BorderColor="DodgerBlue" OnClick="SignUpButton_Click" />
-                                
-                            </div>
-                            <div>
-                               <a href="#" name="" id="change" data-toggle="modal" data-target="#myModalChangePassword"  onclick="clearTextbox()">ChangePassword</a></div> 
-                               <%--<asp:LinkButton ID="SignUpLinkButton1" runat="server">Create Acount</asp:LinkButton>
-                               <a href="#" name="" data-toggle="modal" data-target="#myModalUpdate"  onclick="clearTextbox()">ForgotPassword</a></div> 
-                        </div>
-                        
-                     <input type="button" class="btn btn-primary" id="btnOpenMod" data-toggle="modal" data-target="#myModalChangePassword" style="visibility:hidden" value="open"/> 
-    
-
-                    </div>
-            --%>        
+           
                     <asp:Label ID="Label1" runat="server" Visible="false" Text="Label" ForeColor="Red"></asp:Label>
                     
             </div>
@@ -409,8 +379,34 @@
        <%-- <script>
         function showModal() {
             $("[id*=myModalChangePassword]").modal('show');
-        }
+        }SignInButton
             </script>--%>
+        <script>
+            $(document).ready(function () {
+
+                $("[id*=AccessDepartment]").change(function () {
+                    console.log("enter");
+                    var selectedValue=$(this).children("option:selected").val().toString();
+
+            
+                    console.log("selectvalue="+selectedValue);
+                    if (selectedValue == "prod")
+                    {
+                        document.getElementById("SignInButton").hidden = "";
+                    }
+                    else if (selectedValue == "ptrain") {
+                        document.getElementById("SignInButton").hidden = "";
+                    }
+                    else {
+                        document.getElementById("SignInButton").hidden = "hidden";
+                    }
+                });
+            })
+        </script>
+        <script>
+
+        </script>
+
        
     </form>
 </body>

@@ -155,6 +155,13 @@ namespace ProclainPIMSMaster.Form
                 //MailRepeater.SelectMethod = "IdeaId";
                 MailRepeaterreject.DataBind();
 
+                Ds = DBM.ComtEvalRepViewSendFromManager();
+                int cfrmman = Ds.Tables[0].Rows.Count;
+                countman.InnerHtml = cfrmman.ToString();
+                MailRepeaterFrmman.DataSource = Ds.Tables[0];
+                //MailRepeater.SelectMethod = "IdeaId";
+                MailRepeaterFrmman.DataBind();
+
 
             }
         }

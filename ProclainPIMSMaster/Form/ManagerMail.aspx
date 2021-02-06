@@ -1170,6 +1170,15 @@
 
                             </a>
                         </li>
+                        <li class="nav-item">
+                            <a href="javascript:void(0)" class="nav-link c-grey-800 cH-blue-500 active" data-toggle="modal" data-target="#myModalDBMresend">
+
+                                <span class="icon-holder iconmenu dot" data-toggle="tooltip" data-placement="left" title="DBM">
+                                    <i class="fa fa-reply" style="color: violet"></i>
+                                </span>
+
+                            </a>
+                        </li>
 
 
                     </ul>
@@ -1442,6 +1451,84 @@
                     <div class="modal-footer">
                         <asp:Button ID="ManagerButton" runat="server" CssClass="form-control apopbtn btn-primary" OnClick="ManagerButton_Click" Text="Send" Style="display: none;" />
                         <input type="button" class="form-control apopbtn" style="width: 100%;" value="Send" onclick="sendEmailtoOtherteam()" />
+                        <%-- OnClick="Submit_Click" OnClientClick="return submitBtn();"  style="display:none;" --%>
+
+                        <%--OnClick="TeamPopButton_Click"--%>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+     <div class="container">
+        <div class="modal fade" id="myModalDBMresend" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">DBM Resend</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+                    </div>
+                    <div class="modal-body">
+                        <div class="container">
+
+                            <div class="email-compose-body">
+                                <h4 class="c-grey-900 mB-20">Send Message</h4>
+                                <div class="send-header">
+                                    <div class="form-group">
+                                        <label>Idea Id</label>
+
+                                        <asp:TextBox ID="DBMIdeaid" CssClass="form-control inp IdeaIDClass" placeholder="Idea ID" onkeydown="return MoveNext('HodNameTextBox',event.keyCode);" runat="server"></asp:TextBox>
+
+                                    </div>
+
+                                </div>
+
+                               <%-- <div class="form-group">
+                                    <div class="peers">
+                                        <label>Team Manager: </label>
+
+                                        <asp:DropDownList ID="DropDownList1" CssClass="js-example form-control DDJQuery DDJClass" Width="100%" runat="server" AutoPostBack="false" AppendDataBoundItems="True">
+                                            <asp:ListItem>--Select--</asp:ListItem>
+
+                                        </asp:DropDownList>
+
+                                        <asp:TextBox ID="TextBox3" runat="server" hidden></asp:TextBox>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="peers">
+                                        <label>To: </label>
+                                        <asp:TextBox ID="TextBox4" CssClass="form-control inp IMPToTextBoxClass" placeholder="To: " runat="server"></asp:TextBox>
+                                        <asp:TextBox ID="TextBox5" CssClass="form-control inp IMPEmpIDTextBoxClass" placeholder="To: " runat="server" hidden></asp:TextBox>
+                                        <asp:TextBox ID="TextBox6" CssClass="form-control inp EmpIDTextBoxClass" placeholder="ID " runat="server" hidden></asp:TextBox>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label>Mail ID: </label>
+                                    <asp:TextBox ID="TextBox7" CssClass="form-control inp IMPmailidtextClass" placeholder="Mail ID" runat="server"></asp:TextBox>
+                                    <%--<input id="mailidtext" type="text" class="form-control mailidtextClass" placeholder="Mail ID" />
+                                </div>--%>
+                                
+                                <div class="form-group">
+                                    <label>Subject</label>
+                                    <asp:TextBox ID="DBMSubject" CssClass="form-control inp" placeholder="Mail Subject" runat="server"></asp:TextBox>
+
+                                </div>
+                                <div class="form-group">
+                                    <label>Remark BY Team</label>
+                                    <asp:TextBox ID="DBMRemark" CssClass="form-control inp" runat="server" placeholder="Remark BY Team" TextMode="MultiLine" Rows="10"></asp:TextBox>
+                                    <%--<textarea name="composetextarea" runat="server" class="form-control" placeholder="Remark BY Team" rows="10"></textarea>--%>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <asp:Button ID="DBMButton" runat="server" CssClass="form-control apopbtn btn-primary" OnClick="DBMButton_Click"  Text="Send"  />
+                        <%--<input type="button" class="form-control apopbtn" style="width: 100%;" value="Send" onclick="sendEmailtoOtherteam()" />--%>
                         <%-- OnClick="Submit_Click" OnClientClick="return submitBtn();"  style="display:none;" --%>
 
                         <%--OnClick="TeamPopButton_Click"--%>

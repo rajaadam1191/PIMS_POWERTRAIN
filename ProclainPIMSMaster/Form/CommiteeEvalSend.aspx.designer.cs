@@ -40,6 +40,15 @@ namespace ProclainPIMSMaster.Form {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl countrej;
         
         /// <summary>
+        /// countman control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl countman;
+        
+        /// <summary>
         /// MailRepeater control.
         /// </summary>
         /// <remarks>
@@ -65,6 +74,15 @@ namespace ProclainPIMSMaster.Form {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Repeater MailRepeaterreject;
+        
+        /// <summary>
+        /// MailRepeaterFrmman control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater MailRepeaterFrmman;
         
         /// <summary>
         /// SuggestionGridView control.

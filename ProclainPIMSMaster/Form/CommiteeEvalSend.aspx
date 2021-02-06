@@ -294,6 +294,9 @@
                                       <li class="nav-item" id="rejectclick">
                                       <a class="nav-link" data-toggle="tab" href="#reject">Reject &nbsp;<span id="countrej"   class="badge badge-pill badge-primary" runat="server">0</span></a>
                                     </li>
+                                       <li class="nav-item" id="Manclick">
+                                      <a class="nav-link" data-toggle="tab" href="#FrmMan">FromMan &nbsp;<span id="countman"   class="badge badge-pill badge-primary" runat="server">0</span></a>
+                                    </li>
     
                                   </ul>
                                         <div class="tab-content">
@@ -422,6 +425,46 @@
                                 </asp:Repeater>
                                             </div>
 
+                                             <div id="FrmMan" class="container tab-pane fade">
+                                <asp:Repeater ID="MailRepeaterFrmman" runat="server" OnItemCommand="MailRepeater_ItemCommand">
+                  
+                                    <ItemTemplate>
+                                   
+                                           
+                                                           <%--<asp:LinkButton ID="RepeaterLinkButton" CssClass="list-group-item linka lbIdeaIdclass" runat="server" CommandName="Select" OnClientClick="return ConformPsIdeaID();" CommandArgument='<%# Eval("IdeaId") %>' >--%> 
+                                           <div class="ideadiv" style="padding-left: 10px;">
+                                              <%--onclick="ConformPsIdeaID(document.getElementsByName('lblImageNameTextBox').value)"--%>
+                                                         <asp:Label ID="lblImageName" CssClass="IdeaIdclass" runat="server" Text='<%#Bind("IDeaID")%>' ClientIDMode="Static" hidden></asp:Label>             
+                                            <div class="row">
+
+                                                <div class="col-sm-10">
+                                                 <asp:TextBox   ID="lblImageNameTextBox" name="lblImageNameTextBox" CssClass="IdeaIdclasstxt" runat="server" Text='<%#Bind("IDeaID")%>' hidden></asp:TextBox>
+                                                  
+                                                    
+                                                </div>
+                                                
+
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="col-sm-12 form-control" style="border:none!important;">
+                                                    <%# Eval("SendFrom") %>
+                                                    <br />
+                                                     <%# Eval("Subject") %>
+                                                    <br />
+                                                    <%# Eval("IDeaID") %>
+                                                    <br />
+                                                    <hr />
+                                                </div>
+                                                
+                                            </div>
+                                          
+                                        </div>
+
+                                    </ItemTemplate>
+
+                                </asp:Repeater>
+                                            </div>
 
 
 

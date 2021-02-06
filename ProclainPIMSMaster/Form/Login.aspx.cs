@@ -42,9 +42,16 @@ namespace ProclainPIMSMaster.Form
         static string mailid;
         static string Rmk;
         static string firstlogin;
+        static string plant_val_FrmDB;
+        static string plant_val_FrmUI;
         protected void Page_Load(object sender, EventArgs e)
         {
             Label1.Visible = false;
+            if (!Page.IsPostBack)
+            {
+                AccessDepartment.SelectedIndex = 0;
+            }
+            
         }
 
         protected void SignUpButton_Click(object sender, EventArgs e)
@@ -220,7 +227,7 @@ namespace ProclainPIMSMaster.Form
                 if (EmployeeIDTextBox.Text != "" && EmployeeIDTextBox.Text != "System.Data.DataRowView")
                 {
                     RL.HEmployeeID = EmployeeIDTextBox.Text.ToString().Trim();
-
+                    
                     DataSet DS = new DataSet();
 
                     DS = RL.LoginSearch(RL);
@@ -230,6 +237,8 @@ namespace ProclainPIMSMaster.Form
                     chk = DS.Tables[0].Rows[0].ItemArray[3].ToString();
                     firstlogin = DS.Tables[0].Rows[0].ItemArray[4].ToString();
                     Rmk = DS.Tables[0].Rows[0].ItemArray[5].ToString();
+                    plant_val_FrmDB= DS.Tables[0].Rows[0].ItemArray[6].ToString();
+
                 }
                 else
                 {
@@ -253,7 +262,7 @@ namespace ProclainPIMSMaster.Form
             search();
             DataSet Ds = new DataSet();
             LP = PasswordTextBox.Text.ToString().Trim();
-            
+            plant_val_FrmUI = AccessDepartment.SelectedValue.ToString();
             Session["UserName"] = EM.ToString().TrimStart().TrimEnd();
             Session["Email"] = mailid.ToString();
             try
@@ -261,7 +270,7 @@ namespace ProclainPIMSMaster.Form
                 try
                 {
                     //search();
-                    if (P == LP)
+                    if (P == LP && plant_val_FrmUI == plant_val_FrmDB)
                     {
 
                         RL.HEmployeeID = EmployeeIDTextBox.Text.ToString().TrimStart().TrimEnd();
@@ -339,7 +348,7 @@ namespace ProclainPIMSMaster.Form
                         Label1.Visible = false;
                         Label1.Text = "Incorrect Password";
                         //  ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Incorrect Employee Id or Password')", true);
-                        ScriptManager.RegisterStartupScript(this, this.GetType(), "alert", "swal('Incorrect Employee Id or Password','','warning')", true);
+                        ScriptManager.RegisterStartupScript(this, this.GetType(), "alert", "swal('Incorrect Employee Id or Password or Plant','','warning')", true);
                     }
 
                         
@@ -350,7 +359,7 @@ namespace ProclainPIMSMaster.Form
                     Label1.Visible = false;
                     Label1.Text = "Employee Id or Password Incorrect";
                     //ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Employee Id or Password Incorrect')", true);
-                    ScriptManager.RegisterStartupScript(this, this.GetType(), "alert", "swal('Employee Id or Password Incorrect','','warning')", true);
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "alert", "swal('Employee Id or Password or Plant Incorrect ','','warning')", true);
                 }
         }
             catch (Exception ex)
